@@ -32,10 +32,23 @@ void initia_window(global *gb)
         sfDefaultStyle, NULL);
 }
 
+struct s_sprite *initia_sprite(global *gb)
+{
+    gb->sprite->texture = sfTexture_createFromFile(
+        "/home/Monfred/Epitech_Project/MUL_my_rpg_2018/assets/graphics/menu_background.png",
+        NULL);
+    gb->sprite[0].sprite = sfSprite_create();
+    sfSprite_setTexture(gb->sprite->sprite, gb->sprite->texture, sfTrue);
+    //gb->sprite->pos = pos;
+    //gb->sprite->rect = rect;
+    return (gb->sprite);
+}
+
 void call_initia_function(global *gb)
 {
     initia_variable(gb);
     initia_window(gb);
+    gb->sprite[0] = *initia_sprite(gb);
 }
 
 void manage_event_menu(global *gb)
@@ -44,6 +57,7 @@ void manage_event_menu(global *gb)
 
 void display_menu(global *gb)
 {
+    sfRenderWindow_drawSprite(gb->disev.window,gb->sprite[0].sprite, NULL);
 }
 
 void manage_event(global *gb)
