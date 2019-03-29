@@ -15,7 +15,7 @@
 #include <stdbool.h>
 #include <math.h>
 #include <string.h>
-#include "maccro.h"
+#include "macro.h"
 #include "./struct.h"
 
 #ifndef MY_H_
