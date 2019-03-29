@@ -14,7 +14,7 @@
 #include <SFML/Audio.h>
 
 #ifndef STRUCT_H_
-    #define STRUCT_H_
+#define STRUCT_H_
 
 struct s_sprite {
     sfSprite *sprite;
