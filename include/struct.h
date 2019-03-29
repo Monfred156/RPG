@@ -25,6 +25,7 @@ struct s_sprite {
 
 struct s_text {
     sfText *text;
+    sfFont *font;
     sfVector2f pos;
     sfUint8 red;
     sfUint8 green;
@@ -39,7 +40,7 @@ struct s_sound {
 };
 
 struct s_button {
-    sfRectangleShape *button;
+    sfRectangleShape *rect;
     sfVector2f pos;
 };
 
@@ -58,9 +59,9 @@ struct s_global {
     struct s_selectscreen selecscreen;
     struct s_display disev;
     struct s_sprite sprite[5];
-    struct s_text text;
-    struct s_sound sound;
-    struct s_button button;
+    struct s_text text[5];
+    struct s_sound sound[5];
+    struct s_button button[5];
 };
 
 typedef struct s_global global;
