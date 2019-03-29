@@ -4,7 +4,8 @@ CC	= gcc
 
 RM	= rm -f
 
-SRCS	=   ./src/rpg.c
+SRCS	=	./src/rpg.c	\
+		./src/menu.c
 
 OBJS	= $(SRCS:.c=.o)
 

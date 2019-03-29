@@ -88,15 +88,6 @@ void call_initia_function(global *gb)
         (sfVector2f) {0, 0}, (sfIntRect){0, 0, 1920, 1080});
 }
 
-void manage_event_menu(global *gb)
-{
-}
-
-void display_menu(global *gb)
-{
-    sfRenderWindow_drawSprite(gb->disev.window, gb->sprite[0].sprite, NULL);
-}
-
 void manage_event(global *gb)
 {
     while (sfRenderWindow_pollEvent(gb->disev.window, &gb->disev.event)) {

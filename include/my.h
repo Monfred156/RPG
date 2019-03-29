@@ -19,4 +19,8 @@ char *my_revstr(char *str);
 char *my_int_to_str(int nb);
 int my_strcmp(char const *s1, char const *s2);
 
+void manage_event_menu(global *gb);
+void display_menu(global *gb);
+
+
 #endif
