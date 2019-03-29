@@ -13,6 +13,6 @@ void manage_event_menu(global *gb)
 
 void display_menu(global *gb)
 {
-    sfRenderWindow_drawSprite(gb->disev.window, gb->sprite[0].sprite, NULL);
+    sfRenderWindow_drawSprite(gb->disev.window, gb->sprite[menu_background].sprite, NULL);
 }
 

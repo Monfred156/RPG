@@ -20,6 +20,7 @@ $(NAME):	$(OBJS)
 			$(CC) $(OBJS) -o $(NAME) $(LDFLAGS) -L./lib/my -lmy -l csfml-network -l csfml-window -l csfml-audio -l csfml-system -l csfml-graphics
 
 clean:
+	make clean -C ./lib/my
 	$(RM) $(OBJS)
 
 fclean: clean
