@@ -20,7 +20,7 @@ struct s_sprite {
     sfSprite *sprite;
     sfTexture *texture;
     sfVector2f pos;
-    sfRectangleShape *rect;
+    sfIntRect rect;
 };
 
 struct s_text {
