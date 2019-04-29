@@ -7,7 +7,8 @@ RM	= rm -f
 SRCS	=	./src/rpg.c	\
 		    ./src/menu.c \
 		    ./src/initia_function.c	\
-			./src/tuto.c
+			./src/tuto.c    \
+			./src/check_asset.c
 
 OBJS	= $(SRCS:.c=.o)
 

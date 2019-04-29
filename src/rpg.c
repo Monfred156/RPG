@@ -20,7 +20,6 @@ void *call_initia_function(global *gb)
     initia_window(gb);
     gb->sprite[0] = *initia_sprite(gb, "./assets/graphics/menu_background.jpg",
         (sfVector2f) {0, 0}, (sfIntRect){0, 0, 1920, 1080});
-
 }
 
 void manage_event(global *gb)
@@ -53,7 +52,8 @@ void call_destroy(global *gb)
 int game_loop()
 {
     global gb;
-    if (call_initia_function(&gb) == NULL)
+    call_initia_function(&gb);
+    if (check_assets(&gb) == 84)
         return 84;
 
     while (sfRenderWindow_isOpen(gb.disev.window)) {

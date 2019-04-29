@@ -29,4 +29,7 @@ pos);
 ///tuto.c///
 void display_tuto(global *gb);
 
+///check_asset.c///
+int check_assets(global *gb);
+
 #endif
