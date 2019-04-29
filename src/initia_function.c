@@ -58,12 +58,12 @@ struct s_sound *initia_sound(global *gb, char *path)
     return (gb->sound);
 }
 
-struct s_button *initia_button(global *gb, sfVector2f size, sfVector2f
-pos)
+struct s_button *initia_button(struct s_button *button, sfVector2f size,
+    sfVector2f pos)
 {
-    gb->button->rect = sfRectangleShape_create();
-    sfRectangleShape_setSize(gb->button->rect, size);
-    sfRectangleShape_setPosition(gb->button->rect, pos);
-    return gb->button;
+    button->rect = sfRectangleShape_create();
+    sfRectangleShape_setSize(button->rect, size);
+    sfRectangleShape_setPosition(button->rect, pos);
+    return (button);
 
 }

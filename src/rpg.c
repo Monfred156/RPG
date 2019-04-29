@@ -18,6 +18,7 @@ void *call_initia_function(global *gb)
 {
     initia_variable(gb);
     initia_window(gb);
+    initia_time(gb);
     initia_sprite_menu(gb);
     initia_button_menu(gb);
     initia_sprite_tuto(gb);

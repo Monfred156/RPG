@@ -18,6 +18,10 @@ void initia_sprite_menu(global *gb)
 
 void initia_button_menu(global *gb)
 {
-    gb->button[0] = *initia_button(gb, (sfVector2f) {450, 150}, (sfVector2f)
-    {1420, 500});
+    gb->button[0] = *initia_button(&gb->button[0], (sfVector2f) {450, 150},
+        (sfVector2f) {1420, 500});
+    gb->button[1] = *initia_button(&gb->button[1], (sfVector2f) {460, 150},
+        (sfVector2f) {1380, 670});
+    gb->button[2] = *initia_button(&gb->button[2], (sfVector2f) {520, 150},
+        (sfVector2f) {1310, 840});
 }

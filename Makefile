@@ -11,7 +11,8 @@ SRCS	=	./src/rpg.c	\
 			./src/check_asset.c \
 			./src/initia_menu.c \
 			./src/initia_tuto.c \
-			./src/mouse_clic.c
+			./src/mouse_clic.c  \
+			./src/time.c
 
 OBJS	= $(SRCS:.c=.o)
 

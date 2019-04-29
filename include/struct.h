@@ -60,6 +60,12 @@ struct s_hitbox {
     sfVector2f pos;
 };
 
+struct s_clock {
+    sfClock *clock;
+    sfTime time;
+    float seconds;
+};
+
 struct s_stats {
     int head;
     int body;
@@ -72,11 +78,12 @@ typedef struct s_stat stats;
 struct s_global {
     struct s_selectscreen selecscreen;
     struct s_display disev;
-    struct s_sprite sprite[2];
+    struct s_sprite sprite[3];
     struct s_text text[0];
     struct s_sound sound[0];
-    struct s_button button[1];
+    struct s_button button[3];
     struct s_hitbox hitbox[0];
+    struct s_clock clock;
 };
 typedef struct s_global global;
 
