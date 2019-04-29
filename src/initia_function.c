@@ -19,16 +19,15 @@ void initia_window(global *gb)
         sfDefaultStyle, NULL);
 }
 
-struct s_sprite *initia_sprite(global *gb, char *path, sfVector2f pos,
-    sfIntRect rect
-)
+struct s_sprite *initia_sprite(struct s_sprite *sprite, char *path, sfVector2f
+    pos, sfIntRect rect)
 {
-    gb->sprite->texture = sfTexture_createFromFile(path, NULL);
-    gb->sprite->sprite = sfSprite_create();
-    sfSprite_setTexture(gb->sprite->sprite, gb->sprite->texture, sfTrue);
-    gb->sprite->pos = pos;
-    gb->sprite->rect = rect;
-    return (gb->sprite);
+    sprite->texture = sfTexture_createFromFile(path, NULL);
+    sprite->sprite = sfSprite_create();
+    sfSprite_setTexture(sprite->sprite, sprite->texture, sfTrue);
+    sprite->pos = pos;
+    sprite->rect = rect;
+    return (sprite);
 }
 
 struct s_text *initia_text(global *gb, char **string, sfVector2f

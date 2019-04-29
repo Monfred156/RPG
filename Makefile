@@ -8,7 +8,10 @@ SRCS	=	./src/rpg.c	\
 		    ./src/menu.c \
 		    ./src/initia_function.c	\
 			./src/tuto.c    \
-			./src/check_asset.c
+			./src/check_asset.c \
+			./src/initia_menu.c \
+			./src/initia_tuto.c \
+			./src/mouse_clic.c
 
 OBJS	= $(SRCS:.c=.o)
 

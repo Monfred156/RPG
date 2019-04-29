@@ -72,10 +72,10 @@ typedef struct s_stat stats;
 struct s_global {
     struct s_selectscreen selecscreen;
     struct s_display disev;
-    struct s_sprite sprite[1];
+    struct s_sprite sprite[2];
     struct s_text text[0];
     struct s_sound sound[0];
-    struct s_button button[0];
+    struct s_button button[1];
     struct s_hitbox hitbox[0];
 };
 typedef struct s_global global;
