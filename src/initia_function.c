@@ -5,7 +5,9 @@
 ** rpg.c
 */
 
-#include "../include/my.h"
+#include "my.h"
+#include "function.h"
+#include "struct.h"
 
 void initia_window(global *gb)
 {
@@ -30,7 +32,7 @@ struct s_sprite *initia_sprite(global *gb, char *path, sfVector2f pos,
 }
 
 struct s_text *initia_text(global *gb, char **string, sfVector2f
-pos, sfUint8 const *color, uint *array)
+pos, sfUint8 const *color, sfUint32 *array)
 {
     gb->text->red = color[0];
     gb->text->green = color[1];
