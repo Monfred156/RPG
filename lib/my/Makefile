@@ -12,7 +12,8 @@ SRC	=	my_putstr.c \
 		int_to_str.c	\
 		my_revstr.c	\
 		my_int_to_str.c	\
-		my_strcmp.c
+		my_strcmp.c	\
+		get_next_line.c
 
 OBJ	=	$(SRC:.c=.o)
 

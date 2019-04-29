@@ -5,6 +5,10 @@
 ** Task02 Day09
 */
 
+
+#ifndef MY_H_
+#define MY_H_
+
 #include <SFML/Graphics/RenderWindow.h>
 #include <SFML/Graphics.h>
 #include <SFML/Window.h>
@@ -16,10 +20,7 @@
 #include <math.h>
 #include <string.h>
 #include "macro.h"
-#include "./struct.h"
-
-#ifndef MY_H_
-#define MY_H_
+#include "struct.h"
 
 void my_putchar(char c);
 int my_putstr(char const *str);
@@ -29,16 +30,6 @@ char *int_to_str(int nb);
 char *my_revstr(char *str);
 char *my_int_to_str(int nb);
 int my_strcmp(char const *s1, char const *s2);
-
-void manage_event_menu(global *gb);
-void display_menu(global *gb);
-void initia_window(global *gb);
-struct s_sprite *initia_sprite(global *gb, char *path, sfVector2f pos,
-    sfIntRect rect);
-struct s_text *initia_text(global *gb, char **string, sfVector2f
-pos, sfUint8 const *color, uint *array);
-struct s_sound *initia_sound(global *gb, char *path);
-struct s_button *initia_button(global *gb, sfVector2f size, sfVector2f
-pos);
+char *get_next_line(int fd);
 
 #endif

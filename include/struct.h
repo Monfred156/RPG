@@ -5,6 +5,9 @@
 ** test
 */
 
+#ifndef STRUCT_H_
+#define STRUCT_H_
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -12,9 +15,6 @@
 #include <SFML/Graphics.h>
 #include <SFML/Window.h>
 #include <SFML/Audio.h>
-
-#ifndef STRUCT_H_
-#define STRUCT_H_
 
 struct s_sprite {
     sfSprite *sprite;
@@ -55,16 +55,29 @@ struct s_display {
     sfVector2u size;
 };
 
+struct s_hitbox {
+    sfRectangleShape *hitbox;
+    sfVector2f pos;
+};
+
+struct s_stats {
+    int head;
+    int body;
+    int leg;
+    int foot;
+    int weapon;
+};
+typedef struct s_stat stats;
+
 struct s_global {
     struct s_selectscreen selecscreen;
     struct s_display disev;
-    struct s_sprite sprite[5];
-    struct s_text text[5];
-    struct s_sound sound[5];
-    struct s_button button[5];
+    struct s_sprite sprite[1];
+    struct s_text text[0];
+    struct s_sound sound[0];
+    struct s_button button[0];
+    struct s_hitbox hitbox[0];
 };
-
 typedef struct s_global global;
 
 #endif
-

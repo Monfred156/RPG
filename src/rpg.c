@@ -5,18 +5,20 @@
 ** rpg.c
 */
 
-#include "../include/my.h"
+#include "my.h"
+#include "function.h"
+#include "struct.h"
 
 void initia_variable(global *gb)
 {
     gb->selecscreen.sc = 0;
 }
 
-void call_initia_function(global *gb)
+void *call_initia_function(global *gb)
 {
     initia_variable(gb);
     initia_window(gb);
-    gb->sprite[0] = *initia_sprite(gb, "./assets/graphics/menu_background.png",
+    gb->sprite[0] = *initia_sprite(gb, "./assets/graphics/menu_background.jpg",
         (sfVector2f) {0, 0}, (sfIntRect){0, 0, 1920, 1080});
 }
 
@@ -37,6 +39,8 @@ void manage_screen(global *gb)
     switch (gb->selecscreen.sc) {
         case 0:
             display_menu(gb);
+        case 5:
+            display_tuto(gb);
     }
 }
 
@@ -45,10 +49,12 @@ void call_destroy(global *gb)
     sfRenderWindow_destroy(gb->disev.window);
 }
 
-void game_loop()
+int game_loop()
 {
     global gb;
     call_initia_function(&gb);
+    if (check_assets(&gb) == 84)
+        return 84;
 
     while (sfRenderWindow_isOpen(gb.disev.window)) {
         sfRenderWindow_clear(gb.disev.window, sfBlack);
@@ -57,12 +63,13 @@ void game_loop()
         sfRenderWindow_display(gb.disev.window);
     }
     call_destroy(&gb);
+    return 0;
 }
 
 int main(int ac, char **av)
 {
     if (ac == 1)
-        game_loop();
+        return(game_loop());
     else
         return 84;
 }
