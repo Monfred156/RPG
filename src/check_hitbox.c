@@ -9,9 +9,10 @@
 #include "function.h"
 #include "struct.h"
 
-int check_hitbox_up(global *gb, sfSprite *sprite)
+int check_hitbox_up(global *gb, sfSprite *sprite, float time_sec)
 {
     sfFloatRect hero = sfSprite_getGlobalBounds(sprite);
+    hero.top -= time_sec * 0.9;
 
     for (int i = 0; gb->hitbox[i].hitbox; i++) {
         sfFloatRect hitbox = sfRectangleShape_getGlobalBounds(gb->hitbox[i]
@@ -24,9 +25,10 @@ int check_hitbox_up(global *gb, sfSprite *sprite)
     return 0;
 }
 
-int check_hitbox_right(global *gb, sfSprite *sprite)
+int check_hitbox_right(global *gb, sfSprite *sprite, float time_sec)
 {
     sfFloatRect hero = sfSprite_getGlobalBounds(sprite);
+    hero.left += time_sec * 0.9;
 
     for (int i = 0; gb->hitbox[i].hitbox; i++) {
         sfFloatRect hitbox = sfRectangleShape_getGlobalBounds(gb->hitbox[i]
@@ -38,9 +40,10 @@ int check_hitbox_right(global *gb, sfSprite *sprite)
     return 0;
 }
 
-int check_hitbox_down(global *gb, sfSprite *sprite)
+int check_hitbox_down(global *gb, sfSprite *sprite, float time_sec)
 {
     sfFloatRect hero = sfSprite_getGlobalBounds(sprite);
+    hero.top += time_sec * 0.9;
 
     for (int i = 0; gb->hitbox[i].hitbox; i++) {
         sfFloatRect hitbox = sfRectangleShape_getGlobalBounds(gb->hitbox[i]
@@ -53,9 +56,10 @@ int check_hitbox_down(global *gb, sfSprite *sprite)
     return 0;
 }
 
-int check_hitbox_left(global *gb, sfSprite *sprite)
+int check_hitbox_left(global *gb, sfSprite *sprite, float time_sec)
 {
     sfFloatRect hero = sfSprite_getGlobalBounds(sprite);
+    hero.left -= time_sec * 0.9;
 
     for (int i = 0; gb->hitbox[i].hitbox; i++) {
         sfFloatRect hitbox = sfRectangleShape_getGlobalBounds(gb->hitbox[i]
