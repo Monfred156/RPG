@@ -75,16 +75,16 @@ void manage_event_tuto(global *gb)
 {
     static float save_time = 0;
     float time_sec;
-    sfIntRect rect = {0, 0, 150, 150};
+    sfIntRect rect = {0, 0, 75, 125};
 
     time_sec = (gb->clock.seconds - save_time) * 300;
     save_time = gb->clock.seconds;
     if (count_direction_anim(gb, time_sec) == 0)
         gb->move.walk = 0;
-    if (gb->move.walk >= 1300)
-        gb->move.walk = 150;
-    rect.top = gb->move.movement * 150;
-    rect.left = gb->move.walk;
+    if (gb->move.walk >= 8)
+        gb->move.walk = 1;
+    rect.top = gb->move.movement * 150 + 30;
+    rect.left = gb->move.walk * 150 + 35;
     sfSprite_setTextureRect(gb->sprite[HERO].sprite, rect);
 }
 

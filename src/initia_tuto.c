@@ -16,7 +16,7 @@ void initia_sprite_tuto(global *gb)
         (sfVector2f) {550, -100}, (sfIntRect) {0, 0, 1920, 1001});
     gb->sprite[HERO] = *initia_sprite(&gb->sprite[HERO],
         "./assets/graphics/TEST/hero.png", (sfVector2f) {800, 400}, (sfIntRect)
-        {20, 3220, 300, 250});
+        {0, 0, 0, 0});
     gb->move.movement = 2;
     gb->move.walk = 0;
 }

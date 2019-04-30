@@ -68,7 +68,6 @@ int game_loop()
     call_initia_function(&gb);
     if (check_assets(&gb) == 84)
         return 84;
-
     while (sfRenderWindow_isOpen(gb.disev.window)) {
         gb.clock.time = sfClock_getElapsedTime(gb.clock.clock);
         gb.clock.seconds = gb.clock.time.microseconds / 1000000.0;
