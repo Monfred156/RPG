@@ -27,6 +27,8 @@ void find_two_direction(global *gb, float time_sec, int choose)
         case 10:
             movement_back_player(gb, time_sec, 0);
             movement_right_player(gb, time_sec);
+        default:
+            break;
     }
 }
 
