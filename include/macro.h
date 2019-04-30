@@ -14,6 +14,7 @@
 #define MENU_BACKGROUND 0
 #define TUTO_BACKGROUND 1
 #define HERO 2
+#define LUNCH 3
 #define MOVE_TOP 0
 #define MOVE_BACK 2
 #define MOVE_RIGHT 3

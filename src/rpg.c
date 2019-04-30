@@ -11,7 +11,7 @@
 
 void initia_variable(global *gb)
 {
-    gb->selecscreen.sc = 5;
+    gb->selecscreen.sc = 1;
 }
 
 void call_initia_function(global *gb)
@@ -19,6 +19,7 @@ void call_initia_function(global *gb)
     initia_variable(gb);
     initia_window(gb);
     initia_time(gb);
+    initia_sprite_lunch(gb);
     initia_sprite_menu(gb);
     initia_button_menu(gb);
     initia_sprite_tuto(gb);
@@ -34,6 +35,9 @@ void manage_event(global *gb)
     switch (gb->selecscreen.sc) {
         case 0:
             manage_event_menu(gb);
+            break;
+        case 1:
+            manage_event_lunch(gb);
             break;
         case 5:
             manage_event_tuto(gb);

@@ -12,6 +12,12 @@
 #include "my.h"
 #include "struct.h"
 
+///initia_lunch.c///
+void initia_sprite_lunch(global *gb);
+
+///lunch_game.c///
+void manage_event_lunch(global *gb);
+
 ///initia_function.c///
 void initia_window(global *gb);
 struct s_sprite *initia_sprite(struct s_sprite *sprite, char *path, sfVector2f

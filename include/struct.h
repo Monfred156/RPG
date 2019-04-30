@@ -85,7 +85,7 @@ typedef struct s_stats stats;
 struct s_global {
     struct s_selectscreen selecscreen;
     struct s_display disev;
-    struct s_sprite sprite[3];
+    struct s_sprite sprite[4];
     struct s_text text[0];
     struct s_sound sound[0];
     struct s_button button[3];
