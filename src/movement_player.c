@@ -9,7 +9,7 @@
 #include "function.h"
 #include "struct.h"
 
-void movement_top_player(global *gb, float time_sec)
+void movement_top_player(global *gb, float time_sec, int animation)
 {
     static float save_time = 0;
 
@@ -17,7 +17,7 @@ void movement_top_player(global *gb, float time_sec)
     gb->move.movement = MOVE_TOP;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
-        gb->move.walk += 150;
+        gb->move.walk += animation * 150;
     }
     sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite,
         gb->sprite[TUTO_BACKGROUND].pos);
@@ -28,7 +28,7 @@ void movement_top_player(global *gb, float time_sec)
     }
 }
 
-void movement_back_player(global *gb, float time_sec)
+void movement_back_player(global *gb, float time_sec, int animation)
 {
     static float save_time = 0;
 
@@ -36,7 +36,7 @@ void movement_back_player(global *gb, float time_sec)
     gb->move.movement = MOVE_BACK;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
-        gb->move.walk += 150;
+        gb->move.walk += animation * 150;
     }
     sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite,
         gb->sprite[TUTO_BACKGROUND].pos);

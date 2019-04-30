@@ -13,19 +13,19 @@ void find_two_direction(global *gb, float time_sec, int choose)
 {
     switch (choose) {
         case 5:
-            movement_top_player(gb, time_sec);
+            movement_top_player(gb, time_sec, 0);
             movement_left_player(gb, time_sec);
             break;
         case 6:
-            movement_back_player(gb, time_sec);
+            movement_back_player(gb, time_sec, 0);
             movement_left_player(gb, time_sec);
             break;
         case 9:
-            movement_top_player(gb, time_sec);
+            movement_top_player(gb, time_sec, 0);
             movement_right_player(gb, time_sec);
             break;
         case 10:
-            movement_back_player(gb, time_sec);
+            movement_back_player(gb, time_sec, 0);
             movement_right_player(gb, time_sec);
     }
 }
@@ -34,10 +34,10 @@ void find_one_direction(global *gb, float time_sec, int choose)
 {
     switch (choose) {
         case 1:
-            movement_top_player(gb, time_sec);
+            movement_top_player(gb, time_sec, 1);
             break;
         case 2:
-            movement_back_player(gb, time_sec);
+            movement_back_player(gb, time_sec, 1);
             break;
         case 4:
             movement_left_player(gb, time_sec);
@@ -73,7 +73,7 @@ void manage_event_tuto(global *gb)
 {
     static float save_time = 0;
     float time_sec;
-    sfIntRect rect = {0, 1150 + gb->move.movement * 150, 150, 150};
+    sfIntRect rect = {0, 0, 150, 150};
 
     time_sec = (gb->clock.seconds - save_time) * 300;
     save_time = gb->clock.seconds;
@@ -81,7 +81,7 @@ void manage_event_tuto(global *gb)
         gb->move.walk = 0;
     if (gb->move.walk >= 1300)
         gb->move.walk = 150;
-    rect.top = 1150 + gb->move.movement * 150;
+    rect.top = gb->move.movement * 150;
     rect.left = gb->move.walk;
     sfSprite_setTextureRect(gb->sprite[HERO].sprite, rect);
 }
