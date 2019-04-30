@@ -63,5 +63,7 @@ int check_var(char *str, char **array);
 char **get_into_map(char **map, char *str, int counter);
 int my_strncmp(char *str1, char *str2, int counter);
 
+///save_into_file.c///
+int save_into_file(stats *stats);
 
 #endif

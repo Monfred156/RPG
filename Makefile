@@ -15,7 +15,8 @@ SRCS	=	./src/rpg.c	\
 			./src/time.c    \
 			./src/initia_function2.c    \
 			./src/get_save.c    \
-			./src/function_for_get_save.c
+			./src/function_for_get_save.c   \
+			./src/save_into_file.c
 
 OBJS	= $(SRCS:.c=.o)
 
