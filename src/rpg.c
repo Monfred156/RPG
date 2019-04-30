@@ -22,6 +22,7 @@ void call_initia_function(global *gb)
     initia_sprite_menu(gb);
     initia_button_menu(gb);
     initia_sprite_tuto(gb);
+    initia_hitbox_tuto(gb);
 }
 
 void manage_event(global *gb)

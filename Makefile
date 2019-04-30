@@ -12,7 +12,8 @@ SRCS	=	./src/rpg.c	\
 			./src/initia_menu.c \
 			./src/initia_tuto.c \
 			./src/mouse_clic.c  \
-			./src/time.c
+			./src/time.c    \
+			./src/initia_function2.c
 
 OBJS	= $(SRCS:.c=.o)
 

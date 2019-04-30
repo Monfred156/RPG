@@ -22,6 +22,10 @@ struct s_sound *initia_sound(global *gb, char *path);
 struct s_button *initia_button(struct s_button *button, sfVector2f size,
     sfVector2f pos);
 
+///initia_function2.c///
+struct s_hitbox *initia_hitbox(struct s_hitbox *hitbox, sfVector2f size,
+    sfVector2f pos);
+
 ///menu.c///
 void manage_event_menu(global *gb);
 void display_menu(global *gb);
@@ -29,6 +33,7 @@ void display_menu(global *gb);
 ///tuto.c///
 void manage_event_tuto(global *gb);
 void display_tuto(global *gb);
+void initia_hitbox_tuto(global *gb);
 
 ///check_asset.c///
 int check_assets(global *gb);

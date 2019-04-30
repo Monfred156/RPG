@@ -21,6 +21,7 @@ void manage_event_tuto(global *gb)
         //sfSprite_setTextureRect(sprite->sprite, sprite->rect);
         sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite,
             gb->sprite[TUTO_BACKGROUND].pos);
+
     }
     if (sfKeyboard_isKeyPressed(sfKeyQ)) {
         gb->sprite[TUTO_BACKGROUND].pos.x += time_sec;
@@ -45,4 +46,6 @@ void display_tuto(global *gb)
         gb->sprite[TUTO_BACKGROUND].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
+    sfRenderWindow_drawRectangleShape(gb->disev.window,
+        gb->hitbox[0].hitbox, NULL);
 }

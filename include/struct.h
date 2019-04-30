@@ -82,7 +82,7 @@ struct s_global {
     struct s_text text[0];
     struct s_sound sound[0];
     struct s_button button[3];
-    struct s_hitbox hitbox[0];
+    struct s_hitbox hitbox[1];
     struct s_clock clock;
 };
 typedef struct s_global global;
