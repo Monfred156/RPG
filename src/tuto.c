@@ -9,112 +9,75 @@
 #include "function.h"
 #include "struct.h"
 
-int movement_top_character(global *gb, float time_sec)
+void find_two_direction(global *gb, float time_sec, int choose)
 {
-    static float save_time = 0;
-
-    if (sfKeyboard_isKeyPressed(sfKeyZ)) {
-        gb->sprite[TUTO_BACKGROUND].pos.y += time_sec * 0.9;
-        gb->move.movement = MOVE_TOP;
-        if (save_time + 0.1 < gb->clock.seconds) {
-            save_time = gb->clock.seconds;
-            gb->move.walk += 150;
-        }
-        sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite,
-            gb->sprite[TUTO_BACKGROUND].pos);
-        for (int i = 0; gb->hitbox[i].hitbox; i++) {
-            gb->hitbox[i].pos.y += time_sec * 0.9;
-            sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
-                gb->hitbox[i].pos);
-        }
-        return (1);
+    switch (choose) {
+        case 5:
+            movement_top_player(gb, time_sec);
+            movement_left_player(gb, time_sec);
+            break;
+        case 6:
+            movement_back_player(gb, time_sec);
+            movement_left_player(gb, time_sec);
+            break;
+        case 9:
+            movement_top_player(gb, time_sec);
+            movement_right_player(gb, time_sec);
+            break;
+        case 10:
+            movement_back_player(gb, time_sec);
+            movement_right_player(gb, time_sec);
     }
-    return (0);
 }
 
-int movement_back_character(global *gb, float time_sec)
+void find_one_direction(global *gb, float time_sec, int choose)
 {
-    static float save_time = 0;
-
-    if (sfKeyboard_isKeyPressed(sfKeyS)) {
-        gb->sprite[TUTO_BACKGROUND].pos.y -= time_sec * 0.9;
-        gb->move.movement = MOVE_BACK;
-        if (save_time + 0.1 < gb->clock.seconds) {
-            save_time = gb->clock.seconds;
-            gb->move.walk += 150;
-        }
-        sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite,
-            gb->sprite[TUTO_BACKGROUND].pos);
-        for (int i = 0; gb->hitbox[i].hitbox; i++) {
-            gb->hitbox[i].pos.y -= time_sec * 0.9;
-            sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
-                gb->hitbox[i].pos);
-        }
-        return (1);
+    switch (choose) {
+        case 1:
+            movement_top_player(gb, time_sec);
+            break;
+        case 2:
+            movement_back_player(gb, time_sec);
+            break;
+        case 4:
+            movement_left_player(gb, time_sec);
+            break;
+        case 8:
+            movement_right_player(gb, time_sec);
+            break;
+        default:
+            find_two_direction(gb, time_sec * 0.8, choose);
     }
-    return (0);
 }
 
-int movement_left_character(global *gb, float time_sec)
+int count_direction_anim(global *gb, float time_sec)
 {
-    static float save_time = 0;
+    int choose = 0;
 
-    if (sfKeyboard_isKeyPressed(sfKeyQ)) {
-        gb->sprite[TUTO_BACKGROUND].pos.x += time_sec;
-        gb->move.movement = MOVE_LEFT;
-        if (save_time + 0.1 < gb->clock.seconds) {
-            save_time = gb->clock.seconds;
-            gb->move.walk += 150;
-        }
-        sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite,
-            gb->sprite[TUTO_BACKGROUND].pos);
-        for (int i = 0; gb->hitbox[i].hitbox; i++) {
-            gb->hitbox[i].pos.x += time_sec;
-            sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
-                gb->hitbox[i].pos);
-        }
-        return (1);
-    }
-    return (0);
-}
-
-int movement_right_character(global *gb, float time_sec)
-{
-    static float save_time = 0;
-
-    if (sfKeyboard_isKeyPressed(sfKeyD)) {
-        gb->sprite[TUTO_BACKGROUND].pos.x -= time_sec;
-        gb->move.movement = MOVE_RIGHT;
-        if (save_time + 0.1 < gb->clock.seconds) {
-            save_time = gb->clock.seconds;
-            gb->move.walk += 150;
-        }
-        sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite,
-            gb->sprite[TUTO_BACKGROUND].pos);
-        for (int i = 0; gb->hitbox[i].hitbox; i++) {
-            gb->hitbox[i].pos.x -= time_sec;
-            sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
-                gb->hitbox[i].pos);
-        }
-        return (1);
-    }
-    return (0);
+    if (sfKeyboard_isKeyPressed(sfKeyZ))
+        choose += 1;
+    if (sfKeyboard_isKeyPressed(sfKeyS))
+        choose += 2;
+    if (sfKeyboard_isKeyPressed(sfKeyQ))
+        choose += 4;
+    if (sfKeyboard_isKeyPressed(sfKeyD))
+        choose += 8;
+    choose %= 12;
+    if (choose == 3 || choose == 7 || choose == 11)
+        choose -= 3;
+    find_one_direction(gb, time_sec, choose);
+    return (choose);
 }
 
 void manage_event_tuto(global *gb)
 {
-    static float save_time;
+    static float save_time = 0;
     float time_sec;
     sfIntRect rect = {0, 1150 + gb->move.movement * 150, 150, 150};
-    int save_move = 0;
 
-    time_sec = (gb->clock.seconds - save_time) * 400;
+    time_sec = (gb->clock.seconds - save_time) * 300;
     save_time = gb->clock.seconds;
-    save_move += movement_top_character(gb, time_sec);
-    save_move += movement_back_character(gb, time_sec);
-    save_move += movement_left_character(gb, time_sec);
-    save_move += movement_right_character(gb, time_sec);
-    if (save_move == 0)
+    if (count_direction_anim(gb, time_sec) == 0)
         gb->move.walk = 0;
     if (gb->move.walk >= 1300)
         gb->move.walk = 150;

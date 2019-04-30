@@ -35,6 +35,12 @@ void manage_event_tuto(global *gb);
 void display_tuto(global *gb);
 void initia_hitbox_tuto(global *gb);
 
+///movement_player.c///
+void movement_top_player(global *gb, float time_sec);
+void movement_back_player(global *gb, float time_sec);
+void movement_left_player(global *gb, float time_sec);
+void movement_right_player(global *gb, float time_sec);
+
 ///check_asset.c///
 int check_assets(global *gb);
 
