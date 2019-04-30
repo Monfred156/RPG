@@ -67,13 +67,15 @@ struct s_clock {
 };
 
 struct s_stats {
+    int life;
     int head;
     int body;
     int leg;
     int foot;
     int weapon;
+    int xp;
 };
-typedef struct s_stat stats;
+typedef struct s_stats stats;
 
 struct s_global {
     struct s_selectscreen selecscreen;

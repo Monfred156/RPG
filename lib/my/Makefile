@@ -13,11 +13,10 @@ SRC	=	my_putstr.c \
 		my_revstr.c	\
 		my_int_to_str.c	\
 		my_strcmp.c	\
-		get_next_line.c
+		get_next_line.c \
+		my_strdup.c
 
 OBJ	=	$(SRC:.c=.o)
-
-CFLAGS	=	-g
 
 NAME	=	libmy.a
 

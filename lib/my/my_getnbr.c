@@ -19,22 +19,20 @@ int result(int num, int count_minus)
 int loop(int i, int num, char const *str)
 {
     int stop = 0;
-    int save;
+    int save = 0;
 
     for (; str[i + 1] != '\0' && stop != 1; i++) {
         if (str[i] >= '0' && str[i] <= '9') {
             save = num;
-            num = num + str[i] - 48;
             num = num * 10;
+            num = num + str[i] - 48;
             if ((save > 0 && num < 0) || (save < 0 && num > 0)) {
                 num = 0;
                 return (0);
             }
-        }
-        if (str[i] < '0' || str[i] > '9')
+        } else
             stop = 1;
     }
-    num = num + str[i] - 48;
     return (num);
 }
 
