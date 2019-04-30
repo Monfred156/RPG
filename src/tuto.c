@@ -111,11 +111,9 @@ void manage_event_tuto(global *gb)
     time_sec = (gb->clock.seconds - save_time) * 400;
     save_time = gb->clock.seconds;
     save_move += movement_top_character(gb, time_sec);
-    if (save_move == 0)
-        save_move += movement_back_character(gb, time_sec);
+    save_move += movement_back_character(gb, time_sec);
     save_move += movement_left_character(gb, time_sec);
-    if (save_move < 3)
-        save_move += movement_right_character(gb, time_sec);
+    save_move += movement_right_character(gb, time_sec);
     if (save_move == 0)
         gb->move.walk = 0;
     if (gb->move.walk >= 1300)
