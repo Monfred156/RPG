@@ -12,7 +12,7 @@
 void manage_event_tuto(global *gb)
 {
     static float time_save = 0;
-    int time_sec;
+    float time_sec;
 
     time_sec = (gb->clock.seconds - time_save) * 700;
     time_save = gb->clock.seconds;
