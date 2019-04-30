@@ -18,6 +18,7 @@ SRCS	=	./src/rpg.c	\
 			./src/function_for_get_save.c	\
 			./src/save_into_file.c	\
 			./src/movement_player.c	\
+			./src/check_hitbox.c    \
 			./src/lunch_game.c  \
 			./src/initia_lunch.c
 

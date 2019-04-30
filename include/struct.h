@@ -89,7 +89,7 @@ struct s_global {
     struct s_text text[0];
     struct s_sound sound[0];
     struct s_button button[3];
-    struct s_hitbox hitbox[10];
+    struct s_hitbox hitbox[13];
     struct s_clock clock;
     struct s_movement move;
 };

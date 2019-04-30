@@ -78,4 +78,7 @@ int my_strncmp(char *str1, char *str2, int counter);
 ///save_into_file.c///
 int save_into_file(stats *stats);
 
+///check_hitbox.c///
+int check_hitbox_up(global *gb, sfSprite *sprite);
+
 #endif

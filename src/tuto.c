@@ -56,7 +56,8 @@ int count_direction_anim(global *gb, float time_sec)
 {
     int choose = 0;
 
-    if (sfKeyboard_isKeyPressed(sfKeyZ))
+    if (sfKeyboard_isKeyPressed(sfKeyZ) && check_hitbox_up(gb, gb->sprite[HERO]
+    .sprite) == 0)
         choose += 1;
     if (sfKeyboard_isKeyPressed(sfKeyS))
         choose += 2;
@@ -98,4 +99,5 @@ void display_tuto(global *gb)
         sfRenderWindow_drawRectangleShape(gb->disev.window,
             gb->hitbox[i].hitbox, NULL);
     }
+
 }
