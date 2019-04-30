@@ -66,6 +66,11 @@ struct s_clock {
     float seconds;
 };
 
+struct s_movement {
+    int movement;
+    int walk;
+};
+
 struct s_stats {
     int life;
     int head;
@@ -86,6 +91,7 @@ struct s_global {
     struct s_button button[3];
     struct s_hitbox hitbox[4];
     struct s_clock clock;
+    struct s_movement move;
 };
 typedef struct s_global global;
 

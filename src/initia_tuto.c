@@ -17,6 +17,8 @@ void initia_sprite_tuto(global *gb)
     gb->sprite[HERO] = *initia_sprite(&gb->sprite[HERO],
         "./assets/graphics/TEST/hero.png", (sfVector2f) {800, 400}, (sfIntRect)
         {20, 3220, 300, 250});
+    gb->move.movement = 2;
+    gb->move.walk = 0;
 }
 
 void initia_hitbox_tuto(global *gb)
