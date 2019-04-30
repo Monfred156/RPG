@@ -6,15 +6,11 @@
 */
 
 
-#ifndef FUNCTION_H
+#ifndef FUNCTION_H_
 #define FUNCTION_H_
 
 #include "my.h"
 #include "struct.h"
-
-///menu.c///
-void manage_event_menu(global *gb);
-void display_menu(global *gb);
 
 ///initia_function.c///
 void initia_window(global *gb);
@@ -26,7 +22,12 @@ struct s_sound *initia_sound(global *gb, char *path);
 struct s_button *initia_button(struct s_button *button, sfVector2f size,
     sfVector2f pos);
 
+///menu.c///
+void manage_event_menu(global *gb);
+void display_menu(global *gb);
+
 ///tuto.c///
+void manage_event_tuto(global *gb);
 void display_tuto(global *gb);
 
 ///check_asset.c///
@@ -44,5 +45,8 @@ int mouse_clic_button(global *gb, sfRectangleShape *rect);
 
 ///time.c///
 void initia_time(global *gb);
+
+///rpg.c///
+void call_initia_function(global *gb);
 
 #endif

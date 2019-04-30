@@ -1,6 +1,9 @@
-//
-// Created by Monfred on 3/29/19.
-//
+/*
+** EPITECH PROJECT, 2018
+** my.h
+** File description:
+** Task02 Day09
+*/
 
 #ifndef MUL_MY_RPG_2018_MACCRO_H
 #define MUL_MY_RPG_2018_MACCRO_H

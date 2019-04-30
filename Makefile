@@ -17,7 +17,7 @@ SRCS	=	./src/rpg.c	\
 OBJS	= $(SRCS:.c=.o)
 
 CFLAGS = -I ./include/
-CFLAGS += -Wall -Wextra
+CFLAGS += -W -Wall -Wextra -Wno-unused
 
 all: $(NAME)
 

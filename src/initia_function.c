@@ -27,6 +27,8 @@ struct s_sprite *initia_sprite(struct s_sprite *sprite, char *path, sfVector2f
     sfSprite_setTexture(sprite->sprite, sprite->texture, sfTrue);
     sprite->pos = pos;
     sprite->rect = rect;
+    sfSprite_setPosition(sprite->sprite, sprite->pos);
+    sfSprite_setTextureRect(sprite->sprite, sprite->rect);
     return (sprite);
 }
 
