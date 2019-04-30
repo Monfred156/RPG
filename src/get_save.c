@@ -60,16 +60,8 @@ char **first_get(int fd)
     return (array);
 }
 
-struct s_stats *get_save(void)
+char **getString(char *str, char **array, int fd)
 {
-    stats *stats;
-    char *str = NULL;
-    char **array;
-    int fd = open("save/save.txt", O_RDONLY);
-
-    array = first_get(fd);
-    if (array == NULL || fd < 0)
-        return (NULL);
     for (int i = 1; ; i++) {
         free(str);
         str = get_next_line(fd);
@@ -79,6 +71,22 @@ struct s_stats *get_save(void)
         }
         array = get_into_map(array, my_strdup(str), i);
     }
+    return array;
+}
+
+struct s_stats *get_save(void)
+{
+    stats *stats = NULL;
+    char *str = NULL;
+    char **array;
+    int fd = open("save/save.txt", O_RDONLY);
+
+    if (fd < 0)
+        return (NULL);
+    array = first_get(fd);
+    if (array == NULL)
+        return (NULL);
+    array = getString(str, array, fd);
     if (get_all_stat(stats, array) == 1)
         return (NULL);
     return (stats);
