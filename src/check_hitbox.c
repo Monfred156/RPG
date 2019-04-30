@@ -23,3 +23,46 @@ int check_hitbox_up(global *gb, sfSprite *sprite)
     }
     return 0;
 }
+
+int check_hitbox_right(global *gb, sfSprite *sprite)
+{
+    sfFloatRect hero = sfSprite_getGlobalBounds(sprite);
+
+    for (int i = 0; gb->hitbox[i].hitbox; i++) {
+        sfFloatRect hitbox = sfRectangleShape_getGlobalBounds(gb->hitbox[i]
+                .hitbox);
+        if (hero.left + hero.width >= hitbox.left && hero.left + hero.width <= hitbox.left + hitbox.width
+            && hero.top + hero.height >= hitbox.top && hero.top <= hitbox.top + hitbox.height)
+            return 1;
+    }
+    return 0;
+}
+
+int check_hitbox_down(global *gb, sfSprite *sprite)
+{
+    sfFloatRect hero = sfSprite_getGlobalBounds(sprite);
+
+    for (int i = 0; gb->hitbox[i].hitbox; i++) {
+        sfFloatRect hitbox = sfRectangleShape_getGlobalBounds(gb->hitbox[i]
+                .hitbox);
+        if (hero.top + hero.height >= hitbox.top && hero.top + hero.height <= hitbox.top + hitbox.height
+            && hero.left + hero.width >= hitbox.left && hero.left <= hitbox.left
+            + hitbox.width)
+            return 1;
+    }
+    return 0;
+}
+
+int check_hitbox_left(global *gb, sfSprite *sprite)
+{
+    sfFloatRect hero = sfSprite_getGlobalBounds(sprite);
+
+    for (int i = 0; gb->hitbox[i].hitbox; i++) {
+        sfFloatRect hitbox = sfRectangleShape_getGlobalBounds(gb->hitbox[i]
+                .hitbox);
+        if (hero.left >= hitbox.left && hero.left <= hitbox.left + hitbox.width
+            && hero.top + hero.height >= hitbox.top && hero.top <= hitbox.top + hitbox.height)
+            return 1;
+    }
+    return 0;
+}

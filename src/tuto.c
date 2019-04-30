@@ -59,11 +59,14 @@ int count_direction_anim(global *gb, float time_sec)
     if (sfKeyboard_isKeyPressed(sfKeyZ) && check_hitbox_up(gb, gb->sprite[HERO]
     .sprite) == 0)
         choose += 1;
-    if (sfKeyboard_isKeyPressed(sfKeyS))
+    if (sfKeyboard_isKeyPressed(sfKeyS) && check_hitbox_down(gb,
+            gb->sprite[HERO].sprite) == 0)
         choose += 2;
-    if (sfKeyboard_isKeyPressed(sfKeyQ))
+    if (sfKeyboard_isKeyPressed(sfKeyQ) && check_hitbox_left(gb,
+            gb->sprite[HERO].sprite) == 0)
         choose += 4;
-    if (sfKeyboard_isKeyPressed(sfKeyD))
+    if (sfKeyboard_isKeyPressed(sfKeyD) && check_hitbox_right(gb,
+            gb->sprite[HERO].sprite) == 0)
         choose += 8;
     choose %= 12;
     if (choose == 3 || choose == 7 || choose == 11)
@@ -95,9 +98,9 @@ void display_tuto(global *gb)
         gb->sprite[TUTO_BACKGROUND].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
-    for (int i = 0; gb->hitbox[i].hitbox; i++) {
+/*    for (int i = 0; gb->hitbox[i].hitbox; i++) {
         sfRenderWindow_drawRectangleShape(gb->disev.window,
             gb->hitbox[i].hitbox, NULL);
-    }
+    }*/
 
 }
