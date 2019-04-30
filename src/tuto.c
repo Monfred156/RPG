@@ -11,5 +11,8 @@
 
 void display_tuto(global *gb)
 {
-    
+    sfRenderWindow_drawSprite(gb->disev.window,
+        gb->sprite[1].sprite, NULL);
+    sfRenderWindow_drawSprite(gb->disev.window,
+        gb->sprite[2].sprite, NULL);
 }
