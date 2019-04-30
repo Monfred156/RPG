@@ -79,7 +79,8 @@ int game_loop()
 int main(int ac, char **av)
 {
     if (ac == 1)
-        return(game_loop());
+        get_save();
+//        return(game_loop());
     else
         return 84;
 }

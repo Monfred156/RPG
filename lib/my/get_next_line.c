@@ -12,7 +12,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-char *into_str(char *buffer, char *str)
+char *into_str(char const *buffer, char *str)
 {
     int a = 0;
     char *dup;

@@ -54,4 +54,14 @@ void initia_time(global *gb);
 ///rpg.c///
 void call_initia_function(global *gb);
 
+///get_save.c///
+struct s_stats *get_save(void);
+
+///function_for_get_save.c///
+void decal(char *str, int counter);
+int check_var(char *str, char **array);
+char **get_into_map(char **map, char *str, int counter);
+int my_strncmp(char *str1, char *str2, int counter);
+
+
 #endif

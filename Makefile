@@ -13,18 +13,20 @@ SRCS	=	./src/rpg.c	\
 			./src/initia_tuto.c \
 			./src/mouse_clic.c  \
 			./src/time.c    \
-			./src/initia_function2.c
+			./src/initia_function2.c    \
+			./src/get_save.c    \
+			./src/function_for_get_save.c
 
 OBJS	= $(SRCS:.c=.o)
 
 CFLAGS = -I ./include/
-CFLAGS += -W -Wall -Wextra -Wno-unused
+CFLAGS += -W -Wall -Wextra -Wno-unused -g
 
 all: $(NAME)
 
 $(NAME):	$(OBJS)
 			make -C ./lib/my
-			$(CC) $(OBJS) -o $(NAME) $(LDFLAGS) -L./lib/my -lmy -l csfml-network -l csfml-window -l csfml-audio -l csfml-system -l csfml-graphics
+			$(CC) $(OBJS) -o $(NAME) $(LDFLAGS) -L./lib/my -lmy -l csfml-network -l csfml-window -l csfml-audio -l csfml-system -l csfml-graphics $(CFLAGS)
 
 clean:
 	make clean -C ./lib/my
