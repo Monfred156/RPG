@@ -29,5 +29,17 @@ void initia_hitbox_tuto(global *gb)
         (sfVector2f) {515, -100});
     gb->hitbox[2] = *initia_hitbox(&gb->hitbox[2], (sfVector2f) {50, 540},
         (sfVector2f) {1495, -100});
-    gb->hitbox[3].hitbox = NULL;
+    gb->hitbox[3] = *initia_hitbox(&gb->hitbox[3], (sfVector2f) {635, 100},
+        (sfVector2f) {510, 365});
+    gb->hitbox[4] = *initia_hitbox(&gb->hitbox[4], (sfVector2f) {660, 105},
+        (sfVector2f) {1315, 365});
+    gb->hitbox[5] = *initia_hitbox(&gb->hitbox[5], (sfVector2f) {50, 500},
+        (sfVector2f) {910, 450});
+    gb->hitbox[6] = *initia_hitbox(&gb->hitbox[6], (sfVector2f) {1600, 110},
+        (sfVector2f) {910, 830});
+    gb->hitbox[7] = *initia_hitbox(&gb->hitbox[7], (sfVector2f) {50, 500},
+        (sfVector2f) {2455, 360});
+    gb->hitbox[8] = *initia_hitbox(&gb->hitbox[8], (sfVector2f) {400, 105},
+        (sfVector2f) {2090, 365});
+    gb->hitbox[9].hitbox = NULL;
 }
