@@ -14,6 +14,7 @@ struct s_hitbox *initia_hitbox(struct s_hitbox *hitbox, sfVector2f size,
     sfVector2f pos)
 {
     hitbox->hitbox = sfRectangleShape_create();
+    hitbox->pos = pos;
     sfRectangleShape_setSize(hitbox->hitbox, size);
     sfRectangleShape_setPosition(hitbox->hitbox, pos);
     return (hitbox);

@@ -26,6 +26,11 @@ void manage_event_tuto(global *gb)
         walk += 150;
         sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite,
             gb->sprite[TUTO_BACKGROUND].pos);
+        for (int i = 0; gb->hitbox[i].hitbox; i++) {
+            gb->hitbox[i].pos.x -= time_sec;
+            sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
+                gb->hitbox[i].pos);
+        }
     }
     if (sfKeyboard_isKeyPressed(sfKeyQ)) {
         gb->sprite[TUTO_BACKGROUND].pos.x += time_sec;
@@ -33,6 +38,11 @@ void manage_event_tuto(global *gb)
         walk += 150;
         sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite,
             gb->sprite[TUTO_BACKGROUND].pos);
+        for (int i = 0; gb->hitbox[i].hitbox; i++) {
+            gb->hitbox[i].pos.x += time_sec;
+            sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
+                gb->hitbox[i].pos);
+        }
     }
     if (sfKeyboard_isKeyPressed(sfKeyZ)) {
         gb->sprite[TUTO_BACKGROUND].pos.y += time_sec;
@@ -40,6 +50,11 @@ void manage_event_tuto(global *gb)
         walk += 150;
         sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite,
             gb->sprite[TUTO_BACKGROUND].pos);
+        for (int i = 0; gb->hitbox[i].hitbox; i++) {
+            gb->hitbox[i].pos.y += time_sec;
+            sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
+                gb->hitbox[i].pos);
+        }
     }
     if (sfKeyboard_isKeyPressed(sfKeyS)) {
         gb->sprite[TUTO_BACKGROUND].pos.y -= time_sec;
@@ -47,6 +62,11 @@ void manage_event_tuto(global *gb)
         walk += 150;
         sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite,
             gb->sprite[TUTO_BACKGROUND].pos);
+        for (int i = 0; gb->hitbox[i].hitbox; i++) {
+            gb->hitbox[i].pos.y -= time_sec;
+            sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
+                gb->hitbox[i].pos);
+        }
     }
     if (walk == walk_save)
         walk = 0;
@@ -63,6 +83,8 @@ void display_tuto(global *gb)
         gb->sprite[TUTO_BACKGROUND].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
-    sfRenderWindow_drawRectangleShape(gb->disev.window,
-        gb->hitbox[0].hitbox, NULL);
+    for (int i = 0; gb->hitbox[i].hitbox; i++) {
+        sfRenderWindow_drawRectangleShape(gb->disev.window,
+            gb->hitbox[i].hitbox, NULL);
+    }
 }

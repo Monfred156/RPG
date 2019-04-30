@@ -37,6 +37,7 @@ void manage_event(global *gb)
             break;
         case 5:
             manage_event_tuto(gb);
+            break;
     }
 }
 
