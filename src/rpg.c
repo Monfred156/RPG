@@ -64,6 +64,8 @@ int game_loop()
         return 84;
 
     while (sfRenderWindow_isOpen(gb.disev.window)) {
+        gb.clock.time = sfClock_getElapsedTime(gb.clock.clock);
+        gb.clock.seconds = gb.clock.time.microseconds / 1000000.0;
         sfRenderWindow_clear(gb.disev.window, sfBlack);
         manage_event(&gb);
         manage_screen(&gb);

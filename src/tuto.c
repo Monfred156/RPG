@@ -11,23 +11,29 @@
 
 void manage_event_tuto(global *gb)
 {
+    static float time_save = 0;
+    int time_sec;
+
+    time_sec = (gb->clock.seconds - time_save) * 700;
+    time_save = gb->clock.seconds;
     if (sfKeyboard_isKeyPressed(sfKeyD)) {
-        gb->sprite[TUTO_BACKGROUND].pos.x -= 2;
+        gb->sprite[TUTO_BACKGROUND].pos.x -= time_sec;
+        //sfSprite_setTextureRect(sprite->sprite, sprite->rect);
         sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite,
             gb->sprite[TUTO_BACKGROUND].pos);
     }
     if (sfKeyboard_isKeyPressed(sfKeyQ)) {
-        gb->sprite[TUTO_BACKGROUND].pos.x += 2;
+        gb->sprite[TUTO_BACKGROUND].pos.x += time_sec;
         sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite,
             gb->sprite[TUTO_BACKGROUND].pos);
     }
     if (sfKeyboard_isKeyPressed(sfKeyZ)) {
-        gb->sprite[TUTO_BACKGROUND].pos.y += 2;
+        gb->sprite[TUTO_BACKGROUND].pos.y += time_sec;
         sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite,
             gb->sprite[TUTO_BACKGROUND].pos);
     }
     if (sfKeyboard_isKeyPressed(sfKeyS)) {
-        gb->sprite[TUTO_BACKGROUND].pos.y -= 2;
+        gb->sprite[TUTO_BACKGROUND].pos.y -= time_sec;
         sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite,
             gb->sprite[TUTO_BACKGROUND].pos);
     }
