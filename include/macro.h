@@ -14,5 +14,9 @@
 #define MENU_BACKGROUND 0
 #define TUTO_BACKGROUND 1
 #define HERO 2
+#define MOVE_TOP 0
+#define MOVE_BACK 2
+#define MOVE_RIGHT 3
+#define MOVE_LEFT 1
 
 #endif //MUL_MY_RPG_2018_MACCRO_H

@@ -11,33 +11,50 @@
 
 void manage_event_tuto(global *gb)
 {
-    static float time_save = 0;
+    static float time_save;
+    static int movement = 2;
+    static int walk = 0;
     float time_sec;
+    sfIntRect rect = {0, 1150 + movement * 150, 150, 150};
+    int walk_save = walk;
 
-    time_sec = (gb->clock.seconds - time_save) * 700;
+    time_sec = (gb->clock.seconds - time_save) * 400;
     time_save = gb->clock.seconds;
     if (sfKeyboard_isKeyPressed(sfKeyD)) {
         gb->sprite[TUTO_BACKGROUND].pos.x -= time_sec;
-        //sfSprite_setTextureRect(sprite->sprite, sprite->rect);
+        movement = MOVE_RIGHT;
+        walk += 150;
         sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite,
             gb->sprite[TUTO_BACKGROUND].pos);
-
     }
     if (sfKeyboard_isKeyPressed(sfKeyQ)) {
         gb->sprite[TUTO_BACKGROUND].pos.x += time_sec;
+        movement = MOVE_LEFT;
+        walk += 150;
         sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite,
             gb->sprite[TUTO_BACKGROUND].pos);
     }
     if (sfKeyboard_isKeyPressed(sfKeyZ)) {
         gb->sprite[TUTO_BACKGROUND].pos.y += time_sec;
+        movement = MOVE_TOP;
+        walk += 150;
         sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite,
             gb->sprite[TUTO_BACKGROUND].pos);
     }
     if (sfKeyboard_isKeyPressed(sfKeyS)) {
         gb->sprite[TUTO_BACKGROUND].pos.y -= time_sec;
+        movement = MOVE_BACK;
+        walk += 150;
         sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite,
             gb->sprite[TUTO_BACKGROUND].pos);
     }
+    if (walk == walk_save)
+        walk = 0;
+    if (walk >= 1300)
+        walk = 150;
+    rect.top = 1150 + movement * 150;
+    rect.left = walk;
+    sfSprite_setTextureRect(gb->sprite[HERO].sprite, rect);
 }
 
 void display_tuto(global *gb)

@@ -16,8 +16,7 @@ void initia_sprite_tuto(global *gb)
         (sfVector2f) {550, -100}, (sfIntRect) {0, 0, 1920, 1001});
     gb->sprite[HERO] = *initia_sprite(&gb->sprite[HERO],
         "./assets/graphics/TEST/hero.png", (sfVector2f) {800, 400}, (sfIntRect)
-        {20,
-            3220, 300, 250});
+        {0, 1450, 150, 150});
 }
 
 void initia_hitbox_tuto(global *gb)
