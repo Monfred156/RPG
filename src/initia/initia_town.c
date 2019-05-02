@@ -14,6 +14,43 @@ void initia_sprite_town(global *gb)
         (sfVector2f) {0, 0}, (sfIntRect) {0, 0, 3975, 2257});
 }
 
+void initia_hitbox_town3(global *gb)
+{
+    gb->hitbox[31] = *initia_hitbox(&gb->hitbox[31], (sfVector2f) {30, 3000},
+        (sfVector2f) {4000, 0});
+    gb->hitbox[32] = *initia_hitbox(&gb->hitbox[32], (sfVector2f) {230, 300},
+        (sfVector2f) {3450, 600});
+    gb->hitbox[33] = *initia_hitbox(&gb->hitbox[33], (sfVector2f) {80, 10},
+        (sfVector2f) {100, 920});
+    gb->hitbox[34] = *initia_hitbox(&gb->hitbox[34], (sfVector2f) {100, 60},
+        (sfVector2f) {0, 1200});
+    gb->hitbox[35].hitbox = NULL;
+}
+
+void initia_hitbox_town2(global *gb)
+{
+    gb->hitbox[21] = *initia_hitbox(&gb->hitbox[21], (sfVector2f) {200, 340},
+        (sfVector2f) {1750, 340});
+    gb->hitbox[22] = *initia_hitbox(&gb->hitbox[22], (sfVector2f) {250, 100},
+        (sfVector2f) {1420, 820});
+    gb->hitbox[23] = *initia_hitbox(&gb->hitbox[23], (sfVector2f) {550, 15},
+        (sfVector2f) {1420, 820});
+    gb->hitbox[24] = *initia_hitbox(&gb->hitbox[24], (sfVector2f) {190, 500},
+        (sfVector2f) {1950, 420});
+    gb->hitbox[25] = *initia_hitbox(&gb->hitbox[25], (sfVector2f) {190, 500},
+        (sfVector2f) {2250, 420});
+    gb->hitbox[26] = *initia_hitbox(&gb->hitbox[26], (sfVector2f) {800, 400},
+        (sfVector2f) {2350, 420});
+    gb->hitbox[27] = *initia_hitbox(&gb->hitbox[27], (sfVector2f) {1380, 30},
+        (sfVector2f) {220, 1340});
+    gb->hitbox[28] = *initia_hitbox(&gb->hitbox[28], (sfVector2f) {4000, 30},
+        (sfVector2f) {0, 1760});
+    gb->hitbox[29] = *initia_hitbox(&gb->hitbox[29], (sfVector2f) {4000, 30},
+        (sfVector2f) {0, 360});
+    gb->hitbox[30] = *initia_hitbox(&gb->hitbox[30], (sfVector2f) {30, 3000},
+        (sfVector2f) {0, 0});
+}
+
 void initia_hitbox_town(global *gb)
 {
     gb->hitbox[12] = *initia_hitbox(&gb->hitbox[12], (sfVector2f) {740, 100},
@@ -34,17 +71,6 @@ void initia_hitbox_town(global *gb)
         (sfVector2f) {1420, 340});
     gb->hitbox[20] = *initia_hitbox(&gb->hitbox[20], (sfVector2f) {1000, 230},
         (sfVector2f) {1420, 340});
-    gb->hitbox[21] = *initia_hitbox(&gb->hitbox[21], (sfVector2f) {200, 340},
-        (sfVector2f) {1750, 340});
-    gb->hitbox[22] = *initia_hitbox(&gb->hitbox[22], (sfVector2f) {250, 100},
-        (sfVector2f) {1420, 820});
-    gb->hitbox[23] = *initia_hitbox(&gb->hitbox[23], (sfVector2f) {550, 15},
-        (sfVector2f) {1420, 820});
-    gb->hitbox[24] = *initia_hitbox(&gb->hitbox[24], (sfVector2f) {190, 500},
-        (sfVector2f) {1950, 420});
-    gb->hitbox[25] = *initia_hitbox(&gb->hitbox[25], (sfVector2f) {190, 500},
-        (sfVector2f) {2250, 420});
-    gb->hitbox[26] = *initia_hitbox(&gb->hitbox[26], (sfVector2f) {800, 400},
-        (sfVector2f) {2350, 420});
-    gb->hitbox[27].hitbox = NULL;
+    initia_hitbox_town2(gb);
+    initia_hitbox_town3(gb);
 }
