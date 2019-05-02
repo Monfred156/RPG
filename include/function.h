@@ -54,8 +54,17 @@ void movement_back_player(global *gb, float time_sec, int animation, int sprite)
 void movement_left_player(global *gb, float time_sec, int sprite);
 void movement_right_player(global *gb, float time_sec, int sprite);
 
-///event_movment_player.c///
+///event_movement_player.c///
 void event_move_player(global *gb, int sprite);
+
+///direction_move_mob.c///
+void mob_move_top(global *gb, int mob, int movement);
+
+///movement_mob.c///
+void movement_top_mob(global *gb, float time_sec, int animation, int sprite);
+void movement_back_mob(global *gb, float time_sec, int animation, int sprite);
+void movement_left_mob(global *gb, float time_sec, int sprite);
+void movement_right_mob(global *gb, float time_sec, int sprite);
 
 ///check_asset.c///
 int check_assets(global *gb);

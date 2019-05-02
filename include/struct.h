@@ -72,6 +72,15 @@ struct s_movement {
     int walk;
 };
 
+struct s_mob {
+    int life;
+    int attack;
+    sfSprite *sprite;
+    sfTexture *texture;
+    sfVector2f pos;
+    sfIntRect rect;
+};
+
 struct s_stats {
     int life;
     int head;
@@ -93,6 +102,7 @@ struct s_global {
     struct s_hitbox hitbox[36];
     struct s_clock clock;
     struct s_movement move;
+    struct s_mob mob[1];
 };
 typedef struct s_global global;
 

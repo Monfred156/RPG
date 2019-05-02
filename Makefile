@@ -13,6 +13,8 @@ SRCS	=	./src/rpg.c						\
 			./src/initia/initia_tuto.c				\
 			./src/mouse_clic.c				\
 			./src/time.c					\
+			./src/movement_mob.c			\
+			./src/direction_move_mob.c		\
 			./src/initia/initia_function2.c		\
 			./src/save/get_save.c				\
 			./src/save/function_for_get_save.c	\

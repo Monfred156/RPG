@@ -52,12 +52,10 @@ void find_one_direction(global *gb, float time_sec, int choose, int sprite)
     }
 }
 
-int count_direction_anim(global *gb, int sprite)
+int count_direction_anim(global *gb, int sprite, float time_sec)
 {
-    float time_sec;
     int choose = 0;
 
-    time_sec = (gb->clock.seconds - gb->clock.save_sec) * 300;
     if (sfKeyboard_isKeyPressed(sfKeyZ) && check_hitbox_up(gb, gb->sprite[HERO]
     .sprite, time_sec) == 0)
         choose += MOVE_TOP;
@@ -80,8 +78,9 @@ int count_direction_anim(global *gb, int sprite)
 void event_move_player(global *gb, int sprite)
 {
     sfIntRect rect = {0, 0, 75, 125};
+    float time_sec = (gb->clock.seconds - gb->clock.save_sec) * 300;
 
-    if (count_direction_anim(gb, sprite) == 0)
+    if (count_direction_anim(gb, sprite, time_sec) == 0)
         gb->move.walk = 0;
     if (gb->move.walk >= 8)
         gb->move.walk = 1;
