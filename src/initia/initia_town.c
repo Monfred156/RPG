@@ -36,11 +36,11 @@ void initia_hitbox_town2(global *gb)
     gb->hitbox[23] = *initia_hitbox(&gb->hitbox[23], (sfVector2f) {550, 15},
         (sfVector2f) {2020, 220});
     gb->hitbox[24] = *initia_hitbox(&gb->hitbox[24], (sfVector2f) {190, 500},
-        (sfVector2f) {2550, -220});
+        (sfVector2f) {2550, -200});
     gb->hitbox[25] = *initia_hitbox(&gb->hitbox[25], (sfVector2f) {190, 500},
-        (sfVector2f) {2850, -220});
-    gb->hitbox[26] = *initia_hitbox(&gb->hitbox[26], (sfVector2f) {800, 400},
-        (sfVector2f) {2950, -220});
+        (sfVector2f) {2850, -200});
+    gb->hitbox[26] = *initia_hitbox(&gb->hitbox[26], (sfVector2f) {800, 200},
+        (sfVector2f) {2950, 0});
     gb->hitbox[27] = *initia_hitbox(&gb->hitbox[27], (sfVector2f) {1380, 30},
         (sfVector2f) {820, 740});
     gb->hitbox[28] = *initia_hitbox(&gb->hitbox[28], (sfVector2f) {4000, 30},
