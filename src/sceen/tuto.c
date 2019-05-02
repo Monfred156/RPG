@@ -11,7 +11,7 @@
 
 void manage_event_tuto(global *gb)
 {
-    event_move_player_town(gb, TUTO_BACKGROUND);
+    event_move_player_tuto(gb, TUTO_BACKGROUND);
 }
 
 void display_tuto(global *gb)
@@ -20,9 +20,8 @@ void display_tuto(global *gb)
         gb->sprite[TUTO_BACKGROUND].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
-/*    for (int i = 0; gb->hitbox[i].hitbox; i++) {
+    for (int i = 0; i != 12; i++) {
         sfRenderWindow_drawRectangleShape(gb->disev.window,
             gb->hitbox[i].hitbox, NULL);
-    }*/
-
+    }
 }

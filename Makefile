@@ -29,7 +29,9 @@ SRCS	=	./src/rpg.c								\
 			./src/initia/initia_pub.c   \
 			./src/sceen/tavern.c    \
 			./src/player/event_movement_player_pub.c    \
-			./src/player/movement_player_pub.c
+			./src/player/movement_player_pub.c  \
+			./src/player/event_movement_player_tuto.c    \
+         	./src/player/movement_player_tuto.c
 
 OBJS	= $(SRCS:.c=.o)
 

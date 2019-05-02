@@ -12,6 +12,15 @@
 #include "my.h"
 #include "struct.h"
 
+///movement_player_tuto.c///
+void movement_top_player_tuto(global *gb, float time_sec, int animation, int sprite);
+void movement_back_player_tuto(global *gb, float time_sec, int animation, int sprite);
+void movement_left_player_tuto(global *gb, float time_sec, int sprite);
+void movement_right_player_tuto(global *gb, float time_sec, int sprite);
+
+///event_movement_player_tuto.c///
+void event_move_player_tuto(global *gb, int sprite);
+
 ///movement_player_pub.c///
 void movement_top_player_pub(global *gb, float time_sec, int animation, int sprite);
 void movement_back_player_pub(global *gb, float time_sec, int animation, int sprite);
