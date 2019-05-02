@@ -13,7 +13,7 @@ void manage_event_menu(global *gb)
 {
     if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
         gb->button[BUTTON_PLAY].rect) == 0) {
-        gb->selecscreen.sc = 5; ///BOUTON JOUER -> TUTO
+        gb->selecscreen.sc = 1; ///BOUTON JOUER -> SAVE
     }
     if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
         gb->button[BUTTON_OPTION].rect) == 0) {
