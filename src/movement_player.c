@@ -14,7 +14,7 @@ void movement_top_player(global *gb, float time_sec, int animation)
     static float save_time = 0;
 
     gb->sprite[TUTO_BACKGROUND].pos.y += time_sec * 0.9;
-    gb->move.movement = MOVE_TOP;
+    gb->move.movement = ANIM_TOP;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
         gb->move.walk += animation;
@@ -33,7 +33,7 @@ void movement_back_player(global *gb, float time_sec, int animation)
     static float save_time = 0;
 
     gb->sprite[TUTO_BACKGROUND].pos.y -= time_sec * 0.9;
-    gb->move.movement = MOVE_BACK;
+    gb->move.movement = ANIM_BACK;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
         gb->move.walk += animation;
@@ -52,7 +52,7 @@ void movement_left_player(global *gb, float time_sec)
     static float save_time = 0;
 
     gb->sprite[TUTO_BACKGROUND].pos.x += time_sec;
-    gb->move.movement = MOVE_LEFT;
+    gb->move.movement = ANIM_LEFT;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
         gb->move.walk += 1;
@@ -71,7 +71,7 @@ void movement_right_player(global *gb, float time_sec)
     static float save_time = 0;
 
     gb->sprite[TUTO_BACKGROUND].pos.x -= time_sec;
-    gb->move.movement = MOVE_RIGHT;
+    gb->move.movement = ANIM_RIGHT;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
         gb->move.walk += 1;

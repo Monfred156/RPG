@@ -12,19 +12,19 @@
 void find_two_direction(global *gb, float time_sec, int choose)
 {
     switch (choose) {
-        case 5:
+        case MOVE_TOP_L:
             movement_top_player(gb, time_sec, 0);
             movement_left_player(gb, time_sec);
             break;
-        case 6:
+        case MOVE_BACK_L:
             movement_back_player(gb, time_sec, 0);
             movement_left_player(gb, time_sec);
             break;
-        case 9:
+        case MOVE_TOP_R:
             movement_top_player(gb, time_sec, 0);
             movement_right_player(gb, time_sec);
             break;
-        case 10:
+        case MOVE_BACK_R:
             movement_back_player(gb, time_sec, 0);
             movement_right_player(gb, time_sec);
         default:
@@ -35,16 +35,16 @@ void find_two_direction(global *gb, float time_sec, int choose)
 void find_one_direction(global *gb, float time_sec, int choose)
 {
     switch (choose) {
-        case 1:
+        case MOVE_TOP:
             movement_top_player(gb, time_sec, 1);
             break;
-        case 2:
+        case MOVE_BACK:
             movement_back_player(gb, time_sec, 1);
             break;
-        case 4:
+        case MOVE_LEFT:
             movement_left_player(gb, time_sec);
             break;
-        case 8:
+        case MOVE_RIGHT:
             movement_right_player(gb, time_sec);
             break;
         default:
@@ -58,16 +58,16 @@ int count_direction_anim(global *gb, float time_sec)
 
     if (sfKeyboard_isKeyPressed(sfKeyZ) && check_hitbox_up(gb, gb->sprite[HERO]
     .sprite, time_sec) == 0)
-        choose += 1;
+        choose += MOVE_TOP;
     if (sfKeyboard_isKeyPressed(sfKeyS) && check_hitbox_down(gb,
             gb->sprite[HERO].sprite, time_sec) == 0)
-        choose += 2;
+        choose += MOVE_BACK;
     if (sfKeyboard_isKeyPressed(sfKeyQ) && check_hitbox_left(gb,
             gb->sprite[HERO].sprite, time_sec) == 0)
-        choose += 4;
+        choose += MOVE_LEFT;
     if (sfKeyboard_isKeyPressed(sfKeyD) && check_hitbox_right(gb,
             gb->sprite[HERO].sprite, time_sec) == 0)
-        choose += 8;
+        choose += MOVE_RIGHT;
     choose %= 12;
     if (choose == 3 || choose == 7 || choose == 11)
         choose -= 3;
@@ -83,6 +83,8 @@ void manage_event_tuto(global *gb)
 
     time_sec = (gb->clock.seconds - save_time) * 300;
     save_time = gb->clock.seconds;
+    if (time_sec > 5)
+        time_sec = 5;
     if (count_direction_anim(gb, time_sec) == 0)
         gb->move.walk = 0;
     if (gb->move.walk >= 8)
