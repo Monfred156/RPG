@@ -47,5 +47,4 @@ void initia_hitbox_tuto(global *gb)
         (sfVector2f) {2200, 200});
     gb->hitbox[11] = *initia_hitbox(&gb->hitbox[11], (sfVector2f) {440, 110},
         (sfVector2f) {1810, 200});
-    gb->hitbox[12].hitbox = NULL;
 }

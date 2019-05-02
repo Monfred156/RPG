@@ -22,6 +22,8 @@ SRCS	=	./src/rpg.c						\
 			./src/lunch_game.c				\
 			./src/initia_lunch.c			\
 			./src/event_movement_player.c	\
+			./src/town.c    \
+			./src/initia_town.c
 
 OBJS	= $(SRCS:.c=.o)
 

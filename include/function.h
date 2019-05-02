@@ -12,8 +12,16 @@
 #include "my.h"
 #include "struct.h"
 
-///initia_lunch.c///
-void initia_sprite_lunch(global *gb);
+///initia_town.c//
+void initia_sprite_town(global *gb);
+void initia_hitbox_town(global *gb);
+
+///town.c///
+void display_town(global *gb);
+void manage_event_town(global *gb);
+
+///initia_launch.c///
+void initia_sprite_launch(global *gb);
 
 ///lunch_game.c///
 void manage_event_lunch(global *gb);
@@ -22,8 +30,8 @@ void manage_event_lunch(global *gb);
 void initia_window(global *gb);
 struct s_sprite *initia_sprite(struct s_sprite *sprite, char *path, sfVector2f
 pos, sfIntRect rect);
-struct s_text *initia_text(global *gb, char **string, sfVector2f
-pos, sfUint8 const *color, sfUint32 *array);
+struct s_text *initia_text(struct s_text *text, char **string, sfVector2f
+pos, sfColor color, unsigned int size);
 struct s_sound *initia_sound(global *gb, char *path);
 struct s_button *initia_button(struct s_button *button, sfVector2f size,
     sfVector2f pos);

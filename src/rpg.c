@@ -11,7 +11,7 @@
 
 void initia_variable(global *gb)
 {
-    gb->selecscreen.sc = 1;
+    gb->selecscreen.sc = 6;
 }
 
 void call_initia_function(global *gb)
@@ -19,11 +19,13 @@ void call_initia_function(global *gb)
     initia_variable(gb);
     initia_window(gb);
     initia_time(gb);
-    initia_sprite_lunch(gb);
+    initia_sprite_launch(gb);
     initia_sprite_menu(gb);
     initia_button_menu(gb);
     initia_sprite_tuto(gb);
     initia_hitbox_tuto(gb);
+    initia_hitbox_town(gb);
+    initia_sprite_town(gb);
 }
 
 void manage_event(global *gb)
@@ -42,6 +44,9 @@ void manage_event(global *gb)
         case 5:
             manage_event_tuto(gb);
             break;
+        case 6:
+            manage_event_town(gb);
+            break;
     }
 }
 
@@ -53,6 +58,9 @@ void manage_screen(global *gb)
             break;
         case 5:
             display_tuto(gb);
+            break;
+        case 6:
+            display_town(gb);
             break;
     }
 }

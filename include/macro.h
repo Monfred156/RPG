@@ -15,6 +15,7 @@
 #define TUTO_BACKGROUND 1
 #define HERO 2
 #define LUNCH 3
+#define TOWN_BACKGROUND 4
 #define ANIM_TOP 0
 #define ANIM_BACK 2
 #define ANIM_RIGHT 3
