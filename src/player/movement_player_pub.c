@@ -16,10 +16,10 @@ void movement_top_player_town(global *gb, float time_sec, int animation, int spr
     gb->sprite[sprite].pos.y += time_sec * 0.9;
     gb->sprite[PORTAL].pos.y += time_sec * 0.9;
     gb->teleport[PUB].pos.y += time_sec * 0.9;
-    gb->move.movement = ANIM_TOP;
+    gb->move->movement = ANIM_TOP;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
-        gb->move.walk += animation;
+        gb->move->walk += animation;
     }
     sfSprite_setPosition(gb->sprite[sprite].sprite, gb->sprite[sprite].pos);
     sfSprite_setPosition(gb->sprite[PORTAL].sprite, gb->sprite[PORTAL].pos);
@@ -37,10 +37,10 @@ void movement_back_player_town(global *gb, float time_sec, int animation, int sp
     gb->sprite[sprite].pos.y -= time_sec * 0.9;
     gb->sprite[PORTAL].pos.y -= time_sec * 0.9;
     gb->teleport[PUB].pos.y -= time_sec * 0.9;
-    gb->move.movement = ANIM_BACK;
+    gb->move->movement = ANIM_BACK;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
-        gb->move.walk += animation;
+        gb->move->walk += animation;
     }
     sfSprite_setPosition(gb->sprite[sprite].sprite, gb->sprite[sprite].pos);
     sfSprite_setPosition(gb->sprite[PORTAL].sprite, gb->sprite[PORTAL].pos);
@@ -58,10 +58,10 @@ void movement_left_player_town(global *gb, float time_sec, int sprite)
     gb->sprite[sprite].pos.x += time_sec;
     gb->sprite[PORTAL].pos.x += time_sec;
     gb->teleport[PUB].pos.x += time_sec;
-    gb->move.movement = ANIM_LEFT;
+    gb->move->movement = ANIM_LEFT;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
-        gb->move.walk += 1;
+        gb->move->walk += 1;
     }
     sfSprite_setPosition(gb->sprite[sprite].sprite, gb->sprite[sprite].pos);
     sfSprite_setPosition(gb->sprite[PORTAL].sprite, gb->sprite[PORTAL].pos);
@@ -79,10 +79,10 @@ void movement_right_player_town(global *gb, float time_sec, int sprite)
     gb->sprite[sprite].pos.x -= time_sec;
     gb->sprite[PORTAL].pos.x -= time_sec;
     gb->teleport[PUB].pos.x -= time_sec;
-    gb->move.movement = ANIM_RIGHT;
+    gb->move->movement = ANIM_RIGHT;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
-        gb->move.walk += 1;
+        gb->move->walk += 1;
     }
     sfSprite_setPosition(gb->sprite[sprite].sprite, gb->sprite[sprite].pos);
     sfSprite_setPosition(gb->sprite[PORTAL].sprite, gb->sprite[PORTAL].pos);

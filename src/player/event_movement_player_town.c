@@ -81,11 +81,11 @@ void event_move_player_town(global *gb, int sprite)
     float time_sec = (gb->clock.seconds - gb->clock.save_sec) * 300;
 
     if (count_direction_anim_town(gb, sprite, time_sec) == 0)
-        gb->move.walk = 0;
-    if (gb->move.walk >= 8)
-        gb->move.walk = 1;
-    rect.top = gb->move.movement * 150 + 30;
-    rect.left = gb->move.walk * 150 + 35;
+        gb->move->walk = 0;
+    if (gb->move->walk >= 8)
+        gb->move->walk = 1;
+    rect.top = gb->move->movement * 150 + 30;
+    rect.left = gb->move->walk * 150 + 35;
     sfSprite_setTextureRect(gb->sprite[HERO].sprite, rect);
     sfRectangleShape_setPosition(gb->teleport[PUB].teleport,
         gb->teleport[PUB].pos);
