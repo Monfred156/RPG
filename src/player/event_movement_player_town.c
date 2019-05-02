@@ -55,7 +55,7 @@ void find_one_direction_town(global *gb, float time_sec, int choose, int sprite)
 int count_direction_anim_town(global *gb, int sprite, float time_sec)
 {
     int choose = 0;
-    int val[2] = {12, 35};
+    int val[2] = {VAL_MIN_TOWN, VAL_MAX_TOWN};
 
     if (sfKeyboard_isKeyPressed(sfKeyZ) && check_hitbox_up(gb, gb->sprite[HERO]
     .sprite, time_sec, val) == 0)

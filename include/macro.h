@@ -45,4 +45,8 @@
 #define VAL_MIN_TUTO 0
 #define VAL_MAX_TUTO 18
 
+///HITBOX TOWN///
+#define VAL_MIN_TOWN 19
+#define VAL_MAX_TOWN 42
+
 #endif //MUL_MY_RPG_2018_MACCRO_H

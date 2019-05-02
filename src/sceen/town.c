@@ -15,7 +15,7 @@ void teleport_to_place_town(global *gb)
     for (int i = 0; i != 1; i++) {
         size = sfRectangleShape_getSize(gb->teleport[i].teleport);
         if (player.x > gb->teleport[i].pos.x && player.x + 100 < gb->teleport[i].pos.x + size.x &&
-        player.y > gb->teleport[i].pos.y && player.y + 110 < gb->teleport[i].pos.y + size.y) {
+            player.y > gb->teleport[i].pos.y && player.y + 110 < gb->teleport[i].pos.y + size.y) {
             if (sfKeyboard_isKeyPressed(sfKeyE))
                 gb->selecscreen.sc = 7;
         }
@@ -30,6 +30,10 @@ void display_town(global *gb)
         gb->sprite[PORTAL].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
+    for (int i = VAL_MIN_TOWN; i <= VAL_MAX_TOWN; i++) {
+        sfRenderWindow_drawRectangleShape(gb->disev.window,
+            gb->hitbox[i].hitbox, NULL);
+    }
 }
 
 void move_rect_portal(global *gb, int offset, int max_value, float *time)
