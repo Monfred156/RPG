@@ -4,23 +4,24 @@ CC	= gcc
 
 RM	= rm -f
 
-SRCS	=	./src/rpg.c	\
-		    ./src/menu.c	\
-		    ./src/initia_function.c	\
-			./src/tuto.c	\
-			./src/check_asset.c	\
-			./src/initia_menu.c	\
-			./src/initia_tuto.c	\
-			./src/mouse_clic.c	\
-			./src/time.c	\
-			./src/initia_function2.c	\
-			./src/get_save.c	\
+SRCS	=	./src/rpg.c						\
+			./src/menu.c					\
+			./src/initia_function.c			\
+			./src/tuto.c					\
+			./src/check_asset.c				\
+			./src/initia_menu.c				\
+			./src/initia_tuto.c				\
+			./src/mouse_clic.c				\
+			./src/time.c					\
+			./src/initia_function2.c		\
+			./src/get_save.c				\
 			./src/function_for_get_save.c	\
-			./src/save_into_file.c	\
-			./src/movement_player.c	\
-			./src/check_hitbox.c    \
-			./src/lunch_game.c  \
-			./src/initia_lunch.c
+			./src/save_into_file.c			\
+			./src/movement_player.c			\
+			./src/check_hitbox.c			\
+			./src/lunch_game.c				\
+			./src/initia_lunch.c			\
+			./src/event_movement_player.c	\
 
 OBJS	= $(SRCS:.c=.o)
 

@@ -64,6 +64,7 @@ struct s_clock {
     sfClock *clock;
     sfTime time;
     float seconds;
+    float save_sec;
 };
 
 struct s_movement {

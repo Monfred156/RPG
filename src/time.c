@@ -13,5 +13,6 @@ void initia_time(global *gb)
 {
     gb->clock.clock = sfClock_create();
     gb->clock.seconds = 0;
+    gb->clock.save_sec = 0;
 }
 

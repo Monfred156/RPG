@@ -75,6 +75,7 @@ int game_loop()
         manage_event(&gb);
         manage_screen(&gb);
         sfRenderWindow_display(gb.disev.window);
+        gb.clock.save_sec = gb.clock.seconds;
     }
     call_destroy(&gb);
     return 0;

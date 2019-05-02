@@ -39,13 +39,15 @@ void display_menu(global *gb);
 ///tuto.c///
 void manage_event_tuto(global *gb);
 void display_tuto(global *gb);
-void initia_hitbox_tuto(global *gb);
 
 ///movement_player.c///
-void movement_top_player(global *gb, float time_sec, int animation);
-void movement_back_player(global *gb, float time_sec, int animation);
-void movement_left_player(global *gb, float time_sec);
-void movement_right_player(global *gb, float time_sec);
+void movement_top_player(global *gb, float time_sec, int animation, int sprite);
+void movement_back_player(global *gb, float time_sec, int animation, int sprite);
+void movement_left_player(global *gb, float time_sec, int sprite);
+void movement_right_player(global *gb, float time_sec, int sprite);
+
+///event_movment_player.c///
+void event_move_player(global *gb, int sprite);
 
 ///check_asset.c///
 int check_assets(global *gb);
@@ -65,6 +67,7 @@ void initia_time(global *gb);
 
 ///rpg.c///
 void call_initia_function(global *gb);
+void initia_hitbox_tuto(global *gb);
 
 ///get_save.c///
 struct s_stats *get_save(void);
