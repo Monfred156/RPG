@@ -9,17 +9,17 @@
 #include "function.h"
 #include "struct.h"
 
-void movement_top_player(global *gb, float time_sec, int animation, int sprite)
+void movement_top_player_town(global *gb, float time_sec, int animation, int sprite)
 {
     static float save_time = 0;
 
     gb->sprite[sprite].pos.y += time_sec * 0.9;
     gb->sprite[PORTAL].pos.y += time_sec * 0.9;
-    gb->button[BUTTON_PUB].pos.y += time_sec * 0.9;
-    gb->move[0].movement = ANIM_TOP;
+    gb->teleport[PUB].pos.y += time_sec * 0.9;
+    gb->move.movement = ANIM_TOP;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
-        gb->move[0].walk += animation;
+        gb->move.walk += animation;
     }
     sfSprite_setPosition(gb->sprite[sprite].sprite, gb->sprite[sprite].pos);
     sfSprite_setPosition(gb->sprite[PORTAL].sprite, gb->sprite[PORTAL].pos);
@@ -30,17 +30,17 @@ void movement_top_player(global *gb, float time_sec, int animation, int sprite)
     }
 }
 
-void movement_back_player(global *gb, float time_sec, int animation, int sprite)
+void movement_back_player_town(global *gb, float time_sec, int animation, int sprite)
 {
     static float save_time = 0;
 
     gb->sprite[sprite].pos.y -= time_sec * 0.9;
     gb->sprite[PORTAL].pos.y -= time_sec * 0.9;
-    gb->button[BUTTON_PUB].pos.y -= time_sec * 0.9;
-    gb->move[0].movement = ANIM_BACK;
+    gb->teleport[PUB].pos.y -= time_sec * 0.9;
+    gb->move.movement = ANIM_BACK;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
-        gb->move[0].walk += animation;
+        gb->move.walk += animation;
     }
     sfSprite_setPosition(gb->sprite[sprite].sprite, gb->sprite[sprite].pos);
     sfSprite_setPosition(gb->sprite[PORTAL].sprite, gb->sprite[PORTAL].pos);
@@ -51,17 +51,17 @@ void movement_back_player(global *gb, float time_sec, int animation, int sprite)
     }
 }
 
-void movement_left_player(global *gb, float time_sec, int sprite)
+void movement_left_player_town(global *gb, float time_sec, int sprite)
 {
     static float save_time = 0;
 
     gb->sprite[sprite].pos.x += time_sec;
     gb->sprite[PORTAL].pos.x += time_sec;
-    gb->button[BUTTON_PUB].pos.x += time_sec;
-    gb->move[0].movement = ANIM_LEFT;
+    gb->teleport[PUB].pos.x += time_sec;
+    gb->move.movement = ANIM_LEFT;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
-        gb->move[0].walk += 1;
+        gb->move.walk += 1;
     }
     sfSprite_setPosition(gb->sprite[sprite].sprite, gb->sprite[sprite].pos);
     sfSprite_setPosition(gb->sprite[PORTAL].sprite, gb->sprite[PORTAL].pos);
@@ -72,17 +72,17 @@ void movement_left_player(global *gb, float time_sec, int sprite)
     }
 }
 
-void movement_right_player(global *gb, float time_sec, int sprite)
+void movement_right_player_town(global *gb, float time_sec, int sprite)
 {
     static float save_time = 0;
 
     gb->sprite[sprite].pos.x -= time_sec;
     gb->sprite[PORTAL].pos.x -= time_sec;
-    gb->button[BUTTON_PUB].pos.x -= time_sec;
-    gb->move[0].movement = ANIM_RIGHT;
+    gb->teleport[PUB].pos.x -= time_sec;
+    gb->move.movement = ANIM_RIGHT;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
-        gb->move[0].walk += 1;
+        gb->move.walk += 1;
     }
     sfSprite_setPosition(gb->sprite[sprite].sprite, gb->sprite[sprite].pos);
     sfSprite_setPosition(gb->sprite[PORTAL].sprite, gb->sprite[PORTAL].pos);

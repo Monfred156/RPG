@@ -72,6 +72,11 @@ struct s_movement {
     int walk;
 };
 
+struct s_teleport {
+    sfRectangleShape *teleport;
+    sfVector2f pos;
+};
+
 struct s_mob {
     int life;
     int attack;
@@ -93,12 +98,13 @@ struct s_stats {
 typedef struct s_stats stats;
 
 struct s_global {
+    struct s_teleport teleport[1];
     struct s_selectscreen selecscreen;
     struct s_display disev;
-    struct s_sprite sprite[6];
+    struct s_sprite sprite[7];
     struct s_text text[2];
     struct s_sound sound[0];
-    struct s_button button[4];
+    struct s_button button[3];
     struct s_hitbox hitbox[37];
     struct s_clock clock;
     struct s_movement move[2];

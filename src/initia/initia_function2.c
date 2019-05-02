@@ -9,7 +9,6 @@
 #include "function.h"
 #include "struct.h"
 
-
 struct s_hitbox *initia_hitbox(struct s_hitbox *hitbox, sfVector2f size,
     sfVector2f pos)
 {
@@ -18,5 +17,15 @@ struct s_hitbox *initia_hitbox(struct s_hitbox *hitbox, sfVector2f size,
     sfRectangleShape_setSize(hitbox->hitbox, size);
     sfRectangleShape_setPosition(hitbox->hitbox, pos);
     return (hitbox);
+}
+
+struct s_teleport *initia_teleport(struct s_teleport *teleport,
+    sfVector2f size, sfVector2f pos)
+{
+    teleport->teleport = sfRectangleShape_create();
+    teleport->pos = pos;
+    sfRectangleShape_setSize(teleport->teleport, size);
+    sfRectangleShape_setPosition(teleport->teleport, pos);
+    return (teleport);
 }
 

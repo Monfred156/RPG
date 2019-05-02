@@ -7,6 +7,21 @@
 
 #include "function.h"
 
+void teleport_to_place(global *gb)
+{
+    sfVector2f player = sfSprite_getPosition(gb->sprite[HERO].sprite);
+    sfVector2f size;
+
+    for (int i = 0; i != 1; i++) {
+        size = sfRectangleShape_getSize(gb->teleport[i].teleport);
+        if (player.x > gb->teleport[i].pos.x && player.x + 100 < gb->teleport[i].pos.x + size.x &&
+        player.y > gb->teleport[i].pos.y && player.y + 110 < gb->teleport[i].pos.y + size.y) {
+            if (sfKeyboard_isKeyPressed(sfKeyE))
+                gb->selecscreen.sc = 7;
+        }
+    }
+}
+
 void display_town(global *gb)
 {
     sfRenderWindow_drawSprite(gb->disev.window,
@@ -15,7 +30,6 @@ void display_town(global *gb)
         gb->sprite[PORTAL].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
-    sfRenderWindow_drawRectangleShape(gb->disev.window, gb->button[BUTTON_PUB].rect, NULL);
 }
 
 void move_rect_portal(global *gb, int offset, int max_value, float *time)
@@ -36,5 +50,6 @@ void manage_event_town(global *gb)
 
     time += gb->clock.seconds - gb->clock.save_sec;
     move_rect_portal(gb, 300, 900, &time);
-    event_move_player(gb, TOWN_BACKGROUND);
+    event_move_player_town(gb, TOWN_BACKGROUND);
+    teleport_to_place(gb);
 }

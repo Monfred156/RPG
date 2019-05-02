@@ -11,7 +11,7 @@
 
 void manage_event_tuto(global *gb)
 {
-    event_move_player(gb, TUTO_BACKGROUND);
+    event_move_player_town(gb, TUTO_BACKGROUND);
 }
 
 void display_tuto(global *gb)

@@ -9,8 +9,8 @@
 
 void initia_button_town(global *gb)
 {
-    gb->button[BUTTON_PUB] = *initia_button(&gb->button[BUTTON_PUB],
-        (sfVector2f){100, 100}, (sfVector2f){300, 300});
+    gb->teleport[0] = *initia_teleport(&gb->teleport[0],
+        (sfVector2f){140, 230}, (sfVector2f){2720, 200});
 }
 
 void initia_sprite_town(global *gb)

@@ -27,6 +27,7 @@ void call_initia_function(global *gb)
     initia_button_town(gb);
     initia_hitbox_town(gb);
     initia_sprite_town(gb);
+    initia_sprite_pub(gb);
 }
 
 void manage_event(global *gb)
@@ -48,6 +49,9 @@ void manage_event(global *gb)
         case 6:
             manage_event_town(gb);
             break;
+        case 7:
+            manage_event_pub(gb);
+            break;
     }
 }
 
@@ -62,6 +66,9 @@ void manage_screen(global *gb)
             break;
         case 6:
             display_town(gb);
+            break;
+        case 7:
+            display_pub(gb);
             break;
     }
 }

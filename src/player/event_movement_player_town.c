@@ -9,50 +9,50 @@
 #include "function.h"
 #include "struct.h"
 
-void find_two_direction(global *gb, float time_sec, int choose, int sprite)
+void find_two_direction_town(global *gb, float time_sec, int choose, int sprite)
 {
     switch (choose) {
         case MOVE_TOP_L:
-            movement_top_player(gb, time_sec, 0, sprite);
-            movement_left_player(gb, time_sec, sprite);
+            movement_top_player_town(gb, time_sec, 0, sprite);
+            movement_left_player_town(gb, time_sec, sprite);
             break;
         case MOVE_BACK_L:
-            movement_back_player(gb, time_sec, 0, sprite);
-            movement_left_player(gb, time_sec, sprite);
+            movement_back_player_town(gb, time_sec, 0, sprite);
+            movement_left_player_town(gb, time_sec, sprite);
             break;
         case MOVE_TOP_R:
-            movement_top_player(gb, time_sec, 0, sprite);
-            movement_right_player(gb, time_sec, sprite);
+            movement_top_player_town(gb, time_sec, 0, sprite);
+            movement_right_player_town(gb, time_sec, sprite);
             break;
         case MOVE_BACK_R:
-            movement_back_player(gb, time_sec, 0, sprite);
-            movement_right_player(gb, time_sec, sprite);
+            movement_back_player_town(gb, time_sec, 0, sprite);
+            movement_right_player_town(gb, time_sec, sprite);
         default:
             break;
     }
 }
 
-void find_one_direction(global *gb, float time_sec, int choose, int sprite)
+void find_one_direction_town(global *gb, float time_sec, int choose, int sprite)
 {
     switch (choose) {
         case MOVE_TOP:
-            movement_top_player(gb, time_sec, 1, sprite);
+            movement_top_player_town(gb, time_sec, 1, sprite);
             break;
         case MOVE_BACK:
-            movement_back_player(gb, time_sec, 1, sprite);
+            movement_back_player_town(gb, time_sec, 1, sprite);
             break;
         case MOVE_LEFT:
-            movement_left_player(gb, time_sec, sprite);
+            movement_left_player_town(gb, time_sec, sprite);
             break;
         case MOVE_RIGHT:
-            movement_right_player(gb, time_sec, sprite);
+            movement_right_player_town(gb, time_sec, sprite);
             break;
         default:
-            find_two_direction(gb, time_sec * 0.8, choose, sprite);
+            find_two_direction_town(gb, time_sec * 0.8, choose, sprite);
     }
 }
 
-int count_direction_anim(global *gb, int sprite, float time_sec)
+int count_direction_anim_town(global *gb, int sprite, float time_sec)
 {
     int choose = 0;
 
@@ -71,22 +71,22 @@ int count_direction_anim(global *gb, int sprite, float time_sec)
     choose %= 12;
     if (choose == 3 || choose == 7 || choose == 11)
         choose -= 3;
-    find_one_direction(gb, time_sec, choose, sprite);
+    find_one_direction_town(gb, time_sec, choose, sprite);
     return (choose);
 }
 
-void event_move_player(global *gb, int sprite)
+void event_move_player_town(global *gb, int sprite)
 {
     sfIntRect rect = {0, 0, 75, 125};
     float time_sec = (gb->clock.seconds - gb->clock.save_sec) * 300;
 
-    if (count_direction_anim(gb, sprite, time_sec) == 0)
-        gb->move[0].walk = 0;
-    if (gb->move[0].walk >= 8)
-        gb->move[0].walk = 1;
-    rect.top = gb->move[0].movement * 150 + 30;
-    rect.left = gb->move[0].walk * 150 + 35;
+    if (count_direction_anim_town(gb, sprite, time_sec) == 0)
+        gb->move.walk = 0;
+    if (gb->move.walk >= 8)
+        gb->move.walk = 1;
+    rect.top = gb->move.movement * 150 + 30;
+    rect.left = gb->move.walk * 150 + 35;
     sfSprite_setTextureRect(gb->sprite[HERO].sprite, rect);
-    //sfRectangleShape_setPosition(gb->button[BUTTON_PUB].rect,
-      //gb->button[BUTTON_PUB].pos);
+    sfRectangleShape_setPosition(gb->teleport[PUB].teleport,
+        gb->teleport[PUB].pos);
 }

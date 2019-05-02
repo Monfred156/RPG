@@ -11,13 +11,18 @@
 #define BUTTON_PLAY 0
 #define BUTTON_OPTION 1
 #define BUTTON_QUIT 2
-#define BUTTON_PUB 3
+
+///SPRITE///
 #define MENU_BACKGROUND 0
 #define TUTO_BACKGROUND 1
 #define HERO 2
 #define LUNCH 3
 #define TOWN_BACKGROUND 4
 #define PORTAL 5
+#define TAVERN 6
+
+///TELEPORTATION///
+#define PUB 0
 
 ///ANIMATION///
 #define ANIM_TOP 0
