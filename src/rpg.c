@@ -11,7 +11,7 @@
 
 void initia_variable(global *gb)
 {
-    gb->selecscreen.sc = 5;
+    gb->selecscreen.sc = 6;
 }
 
 void call_initia_function(global *gb)

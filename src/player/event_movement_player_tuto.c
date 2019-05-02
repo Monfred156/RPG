@@ -55,18 +55,19 @@ void find_one_direction_tuto(global *gb, float time_sec, int choose, int sprite)
 int count_direction_anim_tuto(global *gb, int sprite, float time_sec)
 {
     int choose = 0;
+    int val[2] = {0 ,12};
 
-    if (sfKeyboard_isKeyPressed(sfKeyZ) && check_hitbox_up(gb, gb->sprite[HERO]
-    .sprite, time_sec) == 0)
+    if (sfKeyboard_isKeyPressed(sfKeyZ) && check_hitbox_up
+    (gb, gb->sprite[HERO].sprite, time_sec, val) == 0)
         choose += MOVE_TOP;
     if (sfKeyboard_isKeyPressed(sfKeyS) && check_hitbox_down(gb,
-            gb->sprite[HERO].sprite, time_sec) == 0)
+            gb->sprite[HERO].sprite, time_sec, val) == 0)
         choose += MOVE_BACK;
     if (sfKeyboard_isKeyPressed(sfKeyQ) && check_hitbox_left(gb,
-            gb->sprite[HERO].sprite, time_sec) == 0)
+            gb->sprite[HERO].sprite, time_sec, val) == 0)
         choose += MOVE_LEFT;
     if (sfKeyboard_isKeyPressed(sfKeyD) && check_hitbox_right(gb,
-            gb->sprite[HERO].sprite, time_sec) == 0)
+            gb->sprite[HERO].sprite, time_sec, val) == 0)
         choose += MOVE_RIGHT;
     choose %= 12;
     if (choose == 3 || choose == 7 || choose == 11)

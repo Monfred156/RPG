@@ -127,9 +127,13 @@ int my_strncmp(char *str1, char *str2, int counter);
 int save_into_file(stats *stats);
 
 ///check_hitbox.c///
-int check_hitbox_up(global *gb, sfSprite *sprite, float time_sec);
-int check_hitbox_right(global *gb, sfSprite *sprite, float time_sec);
-int check_hitbox_down(global *gb, sfSprite *sprite, float time_sec);
-int check_hitbox_left(global *gb, sfSprite *sprite, float time_sec);
+int check_hitbox_up(global *gb, sfSprite *sprite, float time_sec, int
+*limit_value);
+int check_hitbox_right(global *gb, sfSprite *sprite, float
+time_sec, int *limit_value);
+int check_hitbox_down(global *gb, sfSprite *sprite, float time_sec, int
+*limit_value);
+int check_hitbox_left(global *gb, sfSprite *sprite, float time_sec, int
+*limit_value);
 
 #endif
