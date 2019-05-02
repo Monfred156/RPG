@@ -12,14 +12,17 @@
 #include "my.h"
 #include "struct.h"
 
+///event_movement_player_tuto.c///
+void event_move_player_tuto(global *gb, int sprite);
+
 ///movement_player_tuto.c///
 void movement_top_player_tuto(global *gb, float time_sec, int animation, int sprite);
 void movement_back_player_tuto(global *gb, float time_sec, int animation, int sprite);
 void movement_left_player_tuto(global *gb, float time_sec, int sprite);
 void movement_right_player_tuto(global *gb, float time_sec, int sprite);
 
-///event_movement_player_tuto.c///
-void event_move_player_tuto(global *gb, int sprite);
+///event_movement_player_pub.c///
+void event_move_player_pub(global *gb, int sprite);
 
 ///movement_player_pub.c///
 void movement_top_player_pub(global *gb, float time_sec, int animation, int sprite);
@@ -28,7 +31,13 @@ void movement_left_player_pub(global *gb, float time_sec, int sprite);
 void movement_right_player_pub(global *gb, float time_sec, int sprite);
 
 ///event_movement_player_town.c///
-void event_move_player_pub(global *gb, int sprite);
+void event_move_player_town(global *gb, int sprite);
+
+///movement_player_town.c///
+void movement_top_player_town(global *gb, float time_sec, int animation, int sprite);
+void movement_back_player_town(global *gb, float time_sec, int animation, int sprite);
+void movement_left_player_town(global *gb, float time_sec, int sprite);
+void movement_right_player_town(global *gb, float time_sec, int sprite);
 
 ///tavern.c///
 void manage_event_pub(global *gb);
@@ -75,15 +84,6 @@ void display_menu(global *gb);
 ///tuto.c///
 void manage_event_tuto(global *gb);
 void display_tuto(global *gb);
-
-///movement_player_town.c///
-void movement_top_player_town(global *gb, float time_sec, int animation, int sprite);
-void movement_back_player_town(global *gb, float time_sec, int animation, int sprite);
-void movement_left_player_town(global *gb, float time_sec, int sprite);
-void movement_right_player_town(global *gb, float time_sec, int sprite);
-
-///event_movement_player_town.c///
-void event_move_player_town(global *gb, int sprite);
 
 ///direction_move_mob.c///
 void mob_move_top(global *gb, int mob, int movement);

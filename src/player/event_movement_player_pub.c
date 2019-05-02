@@ -14,15 +14,15 @@ void find_two_direction_pub(global *gb, float time_sec, int choose, int sprite)
     switch (choose) {
         case MOVE_TOP_L:
             movement_top_player_pub(gb, time_sec, 0, sprite);
-            movement_left_player_town(gb, time_sec, sprite);
+            movement_left_player_pub(gb, time_sec, sprite);
             break;
         case MOVE_BACK_L:
             movement_back_player_pub(gb, time_sec, 0, sprite);
-            movement_left_player_town(gb, time_sec, sprite);
+            movement_left_player_pub(gb, time_sec, sprite);
             break;
         case MOVE_TOP_R:
             movement_top_player_pub(gb, time_sec, 0, sprite);
-            movement_right_player_town(gb, time_sec, sprite);
+            movement_right_player_pub(gb, time_sec, sprite);
             break;
         case MOVE_BACK_R:
             movement_back_player_pub(gb, time_sec, 0, sprite);
@@ -88,6 +88,4 @@ void event_move_player_pub(global *gb, int sprite)
     rect.top = gb->move->movement * 150 + 30;
     rect.left = gb->move->walk * 150 + 35;
     sfSprite_setTextureRect(gb->sprite[HERO].sprite, rect);
-    sfRectangleShape_setPosition(gb->teleport[PUB].teleport,
-        gb->teleport[PUB].pos);
 }
