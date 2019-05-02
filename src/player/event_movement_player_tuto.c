@@ -88,4 +88,6 @@ void event_move_player_tuto(global *gb, int sprite)
     rect.top = gb->move->movement * 150 + 30;
     rect.left = gb->move->walk * 150 + 35;
     sfSprite_setTextureRect(gb->sprite[HERO].sprite, rect);
+    sfRectangleShape_setPosition(gb->teleport[1].teleport,
+        gb->teleport[1].pos);
 }

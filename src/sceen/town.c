@@ -7,7 +7,7 @@
 
 #include "function.h"
 
-void teleport_to_place(global *gb)
+void teleport_to_place_town(global *gb)
 {
     sfVector2f player = sfSprite_getPosition(gb->sprite[HERO].sprite);
     sfVector2f size;
@@ -51,5 +51,5 @@ void manage_event_town(global *gb)
     time += gb->clock.seconds - gb->clock.save_sec;
     move_rect_portal(gb, 300, 900, &time);
     event_move_player_town(gb, TOWN_BACKGROUND);
-    teleport_to_place(gb);
+    teleport_to_place_town(gb);
 }

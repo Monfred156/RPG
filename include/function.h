@@ -5,7 +5,6 @@
 ** Task02 Day09
 */
 
-
 #ifndef FUNCTION_H_
 #define FUNCTION_H_
 
@@ -52,6 +51,7 @@ void initia_sprite_town(global *gb);
 void initia_hitbox_town(global *gb);
 
 ///town.c///
+void teleport_to_place_town(global *gb);
 void display_town(global *gb);
 void manage_event_town(global *gb);
 
@@ -84,6 +84,7 @@ void display_menu(global *gb);
 ///tuto.c///
 void manage_event_tuto(global *gb);
 void display_tuto(global *gb);
+void initia_button_tuto(global *gb);
 
 ///direction_move_mob.c///
 void mob_move_top(global *gb, int mob, int movement);

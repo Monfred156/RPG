@@ -11,7 +11,7 @@
 
 void initia_variable(global *gb)
 {
-    gb->selecscreen.sc = 6;
+    gb->selecscreen.sc = 0;
 }
 
 void call_initia_function(global *gb)
@@ -28,6 +28,7 @@ void call_initia_function(global *gb)
     initia_hitbox_town(gb);
     initia_sprite_town(gb);
     initia_sprite_pub(gb);
+    initia_button_tuto(gb);
 }
 
 void manage_event(global *gb)

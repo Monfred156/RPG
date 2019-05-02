@@ -14,6 +14,7 @@ void movement_top_player_tuto(global *gb, float time_sec, int animation, int spr
     static float save_time = 0;
 
     gb->sprite[sprite].pos.y += time_sec * 0.9;
+    gb->teleport[1].pos.y += time_sec * 0.9;
     gb->move->movement = ANIM_TOP;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
@@ -32,6 +33,7 @@ void movement_back_player_tuto(global *gb, float time_sec, int animation, int sp
     static float save_time = 0;
 
     gb->sprite[sprite].pos.y -= time_sec * 0.9;
+    gb->teleport[1].pos.y -= time_sec * 0.9;
     gb->move->movement = ANIM_BACK;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
@@ -50,6 +52,7 @@ void movement_left_player_tuto(global *gb, float time_sec, int sprite)
     static float save_time = 0;
 
     gb->sprite[sprite].pos.x += time_sec;
+    gb->teleport[1].pos.x += time_sec;
     gb->move->movement = ANIM_LEFT;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
@@ -68,6 +71,7 @@ void movement_right_player_tuto(global *gb, float time_sec, int sprite)
     static float save_time = 0;
 
     gb->sprite[sprite].pos.x -= time_sec;
+    gb->teleport[1].pos.x -= time_sec;
     gb->move->movement = ANIM_RIGHT;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;

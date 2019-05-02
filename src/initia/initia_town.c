@@ -16,10 +16,10 @@ void initia_button_town(global *gb)
 void initia_sprite_town(global *gb)
 {
     gb->sprite[TOWN_BACKGROUND] = *initia_sprite(&gb->sprite[TOWN_BACKGROUND],
-        "./assets/graphics/TEST/map.png",
+        "./assets/graphics/map.jpg",
         (sfVector2f) {600, -600}, (sfIntRect) {0, 0, 3975, 2257});
     gb->sprite[PORTAL] = *initia_sprite(&gb->sprite[PORTAL],
-        "./assets/graphics/TEST/portal.png",
+        "./assets/graphics/portal.png",
         (sfVector2f) {4270, 50}, (sfIntRect) {300, 0, 266, 900});
 }
 

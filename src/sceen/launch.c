@@ -18,7 +18,7 @@ void launch_intercat(global *gb, int nb, sfVector2f pos, sfVector2f size)
         (click.y >= pos.y && click.y <= pos.y + size.y)) {
         sfText_setFillColor(gb->text[nb].text, sfRed);
         if (sfMouse_isButtonPressed(sfMouseLeft))
-            gb->selecscreen.sc = 6;
+            gb->selecscreen.sc = 5;
     } else
         sfText_setFillColor(gb->text[nb].text, sfWhite);
 }

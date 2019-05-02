@@ -9,13 +9,19 @@
 #include "function.h"
 #include "struct.h"
 
+void initia_button_tuto(global *gb)
+{
+    gb->teleport[1] = *initia_teleport(&gb->teleport[1],
+        (sfVector2f){145, 200}, (sfVector2f){1960, 300});
+}
+
 void initia_sprite_tuto(global *gb)
 {
     gb->sprite[TUTO_BACKGROUND] = *initia_sprite(&gb->sprite[1],
-        "./assets/graphics/TEST/tuto_map.png",
+        "./assets/graphics/tuto_map.png",
         (sfVector2f) {550, 200}, (sfIntRect) {0, 0, 1920, 1001});
     gb->sprite[HERO] = *initia_sprite(&gb->sprite[HERO],
-        "./assets/graphics/TEST/hero.png", (sfVector2f) {800, 400}, (sfIntRect)
+        "./assets/graphics/hero.png", (sfVector2f) {800, 400}, (sfIntRect)
         {0, 0, 0, 0});
     gb->move[0].movement = 2;
     gb->move[0].walk = 0;

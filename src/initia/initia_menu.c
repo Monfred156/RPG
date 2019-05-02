@@ -12,7 +12,7 @@
 void initia_sprite_menu(global *gb)
 {
     gb->sprite[MENU_BACKGROUND] = *initia_sprite(&gb->sprite[MENU_BACKGROUND],
-        "./assets/graphics/menu_background.png",
+        "./assets/graphics/menu_background.jpg",
         (sfVector2f) {0, 0}, (sfIntRect) {0, 0, 1920, 1080});
 }
 
