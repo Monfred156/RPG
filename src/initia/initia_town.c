@@ -7,11 +7,20 @@
 
 #include "function.h"
 
+void initia_button_town(global *gb)
+{
+    gb->button[BUTTON_PUB] = *initia_button(&gb->button[BUTTON_PUB],
+        (sfVector2f){100, 100}, (sfVector2f){300, 300});
+}
+
 void initia_sprite_town(global *gb)
 {
     gb->sprite[TOWN_BACKGROUND] = *initia_sprite(&gb->sprite[TOWN_BACKGROUND],
         "./assets/graphics/TEST/map.png",
         (sfVector2f) {600, -600}, (sfIntRect) {0, 0, 3975, 2257});
+    gb->sprite[PORTAL] = *initia_sprite(&gb->sprite[PORTAL],
+        "./assets/graphics/TEST/portal.png",
+        (sfVector2f) {4270, 50}, (sfIntRect) {300, 0, 266, 900});
 }
 
 void initia_hitbox_town3(global *gb)
@@ -24,7 +33,9 @@ void initia_hitbox_town3(global *gb)
         (sfVector2f) {700, 320});
     gb->hitbox[34] = *initia_hitbox(&gb->hitbox[34], (sfVector2f) {100, 60},
         (sfVector2f) {600, 600});
-    gb->hitbox[35].hitbox = NULL;
+    gb->hitbox[35] = *initia_hitbox(&gb->hitbox[35], (sfVector2f) {220, 20},
+        (sfVector2f) {4300, 170});
+    gb->hitbox[36].hitbox = NULL;
 }
 
 void initia_hitbox_town2(global *gb)
@@ -69,7 +80,7 @@ void initia_hitbox_town(global *gb)
         (sfVector2f) {1900, -90});
     gb->hitbox[19] = *initia_hitbox(&gb->hitbox[19], (sfVector2f) {200, 340},
         (sfVector2f) {2020, -260});
-    gb->hitbox[20] = *initia_hitbox(&gb->hitbox[20], (sfVector2f) {1000, 230},
+    gb->hitbox[20] = *initia_hitbox(&gb->hitbox[20], (sfVector2f) {1000, 420},
         (sfVector2f) {2020, -340});
     initia_hitbox_town2(gb);
     initia_hitbox_town3(gb);

@@ -13,6 +13,7 @@
 #include "struct.h"
 
 ///initia_town.c//
+void initia_button_town(global *gb);
 void initia_sprite_town(global *gb);
 void initia_hitbox_town(global *gb);
 

@@ -87,4 +87,6 @@ void event_move_player(global *gb, int sprite)
     rect.top = gb->move.movement * 150 + 30;
     rect.left = gb->move.walk * 150 + 35;
     sfSprite_setTextureRect(gb->sprite[HERO].sprite, rect);
+    //sfRectangleShape_setPosition(gb->button[BUTTON_PUB].rect,
+      //gb->button[BUTTON_PUB].pos);
 }

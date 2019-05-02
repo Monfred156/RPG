@@ -24,6 +24,7 @@ void call_initia_function(global *gb)
     initia_button_menu(gb);
     initia_sprite_tuto(gb);
     initia_hitbox_tuto(gb);
+    initia_button_town(gb);
     initia_hitbox_town(gb);
     initia_sprite_town(gb);
 }
