@@ -41,4 +41,8 @@
 #define MOVE_BACK_L 6
 #define MOVE_BACK_R 10
 
+///HITBOX TUTO///
+#define VAL_MIN_TUTO 0
+#define VAL_MAX_TUTO 18
+
 #endif //MUL_MY_RPG_2018_MACCRO_H

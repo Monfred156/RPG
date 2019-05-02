@@ -55,7 +55,7 @@ void find_one_direction_tuto(global *gb, float time_sec, int choose, int sprite)
 int count_direction_anim_tuto(global *gb, int sprite, float time_sec)
 {
     int choose = 0;
-    int val[2] = {0 ,12};
+    int val[2] = {VAL_MIN_TUTO, VAL_MAX_TUTO};
 
     if (sfKeyboard_isKeyPressed(sfKeyZ) && check_hitbox_up
     (gb, gb->sprite[HERO].sprite, time_sec, val) == 0)

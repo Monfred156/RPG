@@ -64,7 +64,7 @@ void initia_hitbox_town2(global *gb)
 
 void initia_hitbox_town(global *gb)
 {
-    gb->hitbox[12] = *initia_hitbox(&gb->hitbox[12], (sfVector2f) {740, 100},
+    /*gb->hitbox[12] = *initia_hitbox(&gb->hitbox[12], (sfVector2f) {740, 100},
         (sfVector2f) {600, 150});
     gb->hitbox[13] = *initia_hitbox(&gb->hitbox[13], (sfVector2f) {300, 100},
         (sfVector2f) {1500, 150});
@@ -83,5 +83,5 @@ void initia_hitbox_town(global *gb)
     gb->hitbox[20] = *initia_hitbox(&gb->hitbox[20], (sfVector2f) {1000, 420},
         (sfVector2f) {2020, -340});
     initia_hitbox_town2(gb);
-    initia_hitbox_town3(gb);
+    initia_hitbox_town3(gb);*/
 }

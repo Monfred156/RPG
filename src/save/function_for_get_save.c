@@ -27,7 +27,7 @@ char **get_into_map(char **map, char *str, int counter)
 int my_strncmp(char *str1, char *str2, int counter)
 {
     str1[counter] = '\0';
-    if (strcmp(str1, str2) == 0)
+    if (my_strcmp(str1, str2) == 0)
         return (0);
     return (1);
 }

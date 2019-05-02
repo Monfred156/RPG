@@ -31,26 +31,40 @@ void initia_hitbox_tuto(global *gb)
 {
     gb->hitbox[0] = *initia_hitbox(&gb->hitbox[0], (sfVector2f) {50, 540},
         (sfVector2f) {515, 200});
-    gb->hitbox[1] = *initia_hitbox(&gb->hitbox[1], (sfVector2f) {1000, 105},
+    gb->hitbox[1] = *initia_hitbox(&gb->hitbox[1], (sfVector2f) {1000, 30},
         (sfVector2f) {515, 200});
-    gb->hitbox[2] = *initia_hitbox(&gb->hitbox[2], (sfVector2f) {50, 540},
+    gb->hitbox[2] = *initia_hitbox(&gb->hitbox[2], (sfVector2f) {30, 665},
         (sfVector2f) {1495, 200});
-    gb->hitbox[3] = *initia_hitbox(&gb->hitbox[3], (sfVector2f) {635, 100},
+    gb->hitbox[3] = *initia_hitbox(&gb->hitbox[3], (sfVector2f) {635, 30},
         (sfVector2f) {510, 665});
-    gb->hitbox[4] = *initia_hitbox(&gb->hitbox[4], (sfVector2f) {660, 105},
+    gb->hitbox[4] = *initia_hitbox(&gb->hitbox[4], (sfVector2f) {660, 30},
         (sfVector2f) {1315, 665});
     gb->hitbox[5] = *initia_hitbox(&gb->hitbox[5], (sfVector2f) {50, 500},
         (sfVector2f) {910, 750});
-    gb->hitbox[6] = *initia_hitbox(&gb->hitbox[6], (sfVector2f) {1600, 110},
+    gb->hitbox[6] = *initia_hitbox(&gb->hitbox[6], (sfVector2f) {1600, 30},
         (sfVector2f) {910, 1130});
     gb->hitbox[7] = *initia_hitbox(&gb->hitbox[7], (sfVector2f) {50, 500},
         (sfVector2f) {2455, 660});
-    gb->hitbox[8] = *initia_hitbox(&gb->hitbox[8], (sfVector2f) {400, 105},
+    gb->hitbox[8] = *initia_hitbox(&gb->hitbox[8], (sfVector2f) {400, 30},
         (sfVector2f) {2090, 665});
-    gb->hitbox[9] = *initia_hitbox(&gb->hitbox[9], (sfVector2f) {50, 500},
+    gb->hitbox[9] = *initia_hitbox(&gb->hitbox[9], (sfVector2f) {50, 490},
         (sfVector2f) {1810, 200});
-    gb->hitbox[10] = *initia_hitbox(&gb->hitbox[10], (sfVector2f) {50, 500},
+    gb->hitbox[10] = *initia_hitbox(&gb->hitbox[10], (sfVector2f) {50, 490},
         (sfVector2f) {2200, 200});
-    gb->hitbox[11] = *initia_hitbox(&gb->hitbox[11], (sfVector2f) {440, 110},
+    gb->hitbox[11] = *initia_hitbox(&gb->hitbox[11], (sfVector2f) {440, 30},
         (sfVector2f) {1810, 200});
+    gb->hitbox[12] = *initia_hitbox(&gb->hitbox[12], (sfVector2f) {250, 100},
+        (sfVector2f) {600, 250});
+    gb->hitbox[13] = *initia_hitbox(&gb->hitbox[13], (sfVector2f) {170, 70},
+        (sfVector2f) {1320, 700});
+    gb->hitbox[14] = *initia_hitbox(&gb->hitbox[14], (sfVector2f) {90, 80},
+        (sfVector2f) {1645, 700});
+    gb->hitbox[15] = *initia_hitbox(&gb->hitbox[15], (sfVector2f) {90, 80},
+        (sfVector2f) {1865, 700});
+    gb->hitbox[16] = *initia_hitbox(&gb->hitbox[16], (sfVector2f) {90, 80},
+        (sfVector2f) {2100, 700});
+    gb->hitbox[17] = *initia_hitbox(&gb->hitbox[17], (sfVector2f) {90, 80},
+        (sfVector2f) {2340, 700});
+    gb->hitbox[18] = *initia_hitbox(&gb->hitbox[18], (sfVector2f) {90, 80},
+        (sfVector2f) {1985, 250});
 }
