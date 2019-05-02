@@ -101,7 +101,7 @@ struct s_global {
     struct s_button button[4];
     struct s_hitbox hitbox[37];
     struct s_clock clock;
-    struct s_movement move;
+    struct s_movement move[2];
     struct s_mob mob[1];
 };
 typedef struct s_global global;

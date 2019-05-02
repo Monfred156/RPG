@@ -36,7 +36,7 @@ void one_direction_mob(global *gb, float time_sec, int mob, int movement)
 {
     switch (movement) {
         case NO_MOVE:
-            gb->move.walk = 0;
+            gb->move[mob + 1].walk = 0;
             break;
         case MOVE_TOP:
             movement_top_mob(gb, time_sec, mob, 1);
@@ -62,9 +62,9 @@ void mob_move_top(global *gb, int mob, int movement)
 
     time_sec = (gb->clock.seconds - gb->clock.save_sec) * 300;
     one_direction_mob(gb, time_sec, mob, movement);
-    if (gb->move.walk >= 8)
-        gb->move.walk = 1;
-    rect.top = gb->move.movement * 150 + 30;
-    rect.left = gb->move.walk * 150 + 35;
+    if (gb->move[mob + 1].walk >= 8)
+        gb->move[mob + 1].walk = 1;
+    rect.top = gb->move[mob + 1].movement * 150 + 30;
+    rect.left = gb->move[mob + 1].walk * 150 + 35;
     sfSprite_setTextureRect(gb->sprite[mob].sprite, rect);
 }

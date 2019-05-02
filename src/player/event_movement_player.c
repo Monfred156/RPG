@@ -81,11 +81,11 @@ void event_move_player(global *gb, int sprite)
     float time_sec = (gb->clock.seconds - gb->clock.save_sec) * 300;
 
     if (count_direction_anim(gb, sprite, time_sec) == 0)
-        gb->move.walk = 0;
-    if (gb->move.walk >= 8)
-        gb->move.walk = 1;
-    rect.top = gb->move.movement * 150 + 30;
-    rect.left = gb->move.walk * 150 + 35;
+        gb->move[0].walk = 0;
+    if (gb->move[0].walk >= 8)
+        gb->move[0].walk = 1;
+    rect.top = gb->move[0].movement * 150 + 30;
+    rect.left = gb->move[0].walk * 150 + 35;
     sfSprite_setTextureRect(gb->sprite[HERO].sprite, rect);
     //sfRectangleShape_setPosition(gb->button[BUTTON_PUB].rect,
       //gb->button[BUTTON_PUB].pos);
