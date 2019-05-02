@@ -9,7 +9,7 @@
 #include "function.h"
 #include "struct.h"
 
-void movement_top_player_pub(global *gb, float time_sec, int animation, int sprite)
+void movement_top_player_town(global *gb, float time_sec, int animation, int sprite)
 {
     static float save_time = 0;
 
@@ -32,7 +32,7 @@ void movement_top_player_pub(global *gb, float time_sec, int animation, int spri
     }
 }
 
-void movement_back_player_pub(global *gb, float time_sec, int animation, int sprite)
+void movement_back_player_town(global *gb, float time_sec, int animation, int sprite)
 {
     static float save_time = 0;
 
@@ -55,7 +55,7 @@ void movement_back_player_pub(global *gb, float time_sec, int animation, int spr
     }
 }
 
-void movement_left_player_pub(global *gb, float time_sec, int sprite)
+void movement_left_player_town(global *gb, float time_sec, int sprite)
 {
     static float save_time = 0;
 
@@ -78,7 +78,7 @@ void movement_left_player_pub(global *gb, float time_sec, int sprite)
     }
 }
 
-void movement_right_player_pub(global *gb, float time_sec, int sprite)
+void movement_right_player_town(global *gb, float time_sec, int sprite)
 {
     static float save_time = 0;
 
