@@ -4,28 +4,28 @@ CC	= gcc
 
 RM	= rm -f
 
-SRCS	=	./src/rpg.c						\
-			./src/sceen/menu.c				\
+SRCS	=	./src/rpg.c								\
+			./src/sceen/menu.c						\
 			./src/initia/initia_function.c			\
-			./src/sceen/tuto.c				\
+			./src/sceen/tuto.c						\
 			./src/initia/check_asset.c				\
 			./src/initia/initia_menu.c				\
 			./src/initia/initia_tuto.c				\
-			./src/mouse_clic.c				\
-			./src/time.c					\
-			./src/movement_mob.c			\
-			./src/direction_move_mob.c		\
-			./src/initia/initia_function2.c		\
-			./src/save/get_save.c				\
-			./src/save/function_for_get_save.c	\
-			./src/save/save_into_file.c			\
+			./src/mouse_clic.c						\
+			./src/time.c							\
+			./src/mob/movement_mob.c				\
+			./src/mob/direction_move_mob.c			\
+			./src/initia/initia_function2.c			\
+			./src/save/get_save.c					\
+			./src/save/function_for_get_save.c		\
+			./src/save/save_into_file.c				\
 			./src/player/movement_player.c			\
-			./src/player/check_hitbox.c			\
-			./src/sceen/launch.c			\
-			./src/initia/initia_lunch.c			\
+			./src/player/check_hitbox.c				\
+			./src/sceen/launch.c					\
+			./src/initia/initia_lunch.c				\
 			./src/player/event_movement_player.c	\
-			./src/sceen/town.c              \
-			./src/initia/initia_town.c
+			./src/sceen/town.c						\
+			./src/initia/initia_town.c				\
 
 OBJS	= $(SRCS:.c=.o)
 
