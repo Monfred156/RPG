@@ -13,6 +13,10 @@ void display_town(global *gb)
         gb->sprite[TOWN_BACKGROUND].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
+    for (int i = 12; gb->hitbox[i].hitbox; i++) {
+        sfRenderWindow_drawRectangleShape(gb->disev.window,
+            gb->hitbox[i].hitbox, NULL);
+    }
 
 }
 
