@@ -57,9 +57,11 @@ void manage_event_town(global *gb);
 
 ///initia_launch.c///
 void initia_sprite_launch(global *gb);
+void initia_button_launch(global *gb);
 
-///lunch_game.c///
-void manage_event_lunch(global *gb);
+///launch_.c///
+void manage_event_launch(global *gb);
+void display_launch(global *gb);
 
 ///initia_function.c///
 void initia_window(global *gb);

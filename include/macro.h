@@ -8,9 +8,13 @@
 #ifndef MUL_MY_RPG_2018_MACCRO_H
 #define MUL_MY_RPG_2018_MACCRO_H
 
+///BUTTON///
 #define BUTTON_PLAY 0
 #define BUTTON_OPTION 1
 #define BUTTON_QUIT 2
+#define BUTTON_RETOUR 3
+#define BUTTON_NEW_GAME 4
+#define BUTTON_CONTINUE 5
 
 ///SPRITE///
 #define MENU_BACKGROUND 0
@@ -20,7 +24,8 @@
 #define TOWN_BACKGROUND 4
 #define PORTAL 5
 #define TAVERN 6
-#define NUMBER_SPRITE 7
+#define INVENTORY 7
+#define NUMBER_SPRITE 8
 
 ///TELEPORTATION///
 #define PUB 0
