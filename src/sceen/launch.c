@@ -9,30 +9,38 @@
 #include "function.h"
 #include "struct.h"
 
-void launch_intercat(global *gb, int nb, sfVector2f pos, sfVector2f size)
+void launch_intercat(global *gb, int nb)
 {
-    sfVector2i click;
-
-    click = sfMouse_getPositionRenderWindow(gb->disev.window);
-    if ((click.x >= pos.x && click.x <= pos.x + size.x) &&
-        (click.y >= pos.y && click.y <= pos.y + size.y)) {
-        sfText_setFillColor(gb->text[nb].text, sfRed);
+    if (mouse_clic_button(gb, gb->button[BUTTON_RETOUR].rect) == 0) {
+        sfText_setFillColor(gb->text[2].text, sfRed);
+        if (sfMouse_isButtonPressed(sfMouseLeft))
+            gb->selecscreen.sc = 0;
+    }
+    if (mouse_clic_button(gb, gb->button[BUTTON_NEW_GAME].rect) == 0) {
+        sfText_setFillColor(gb->text[0].text, sfRed);
         if (sfMouse_isButtonPressed(sfMouseLeft))
             gb->selecscreen.sc = 5;
-    } else
-        sfText_setFillColor(gb->text[nb].text, sfWhite);
+    }
+    if (mouse_clic_button(gb, gb->button[BUTTON_CONTINUE].rect) == 0) {
+        sfText_setFillColor(gb->text[1].text, sfRed);
+        if (sfMouse_isButtonPressed(sfMouseLeft))
+            gb->selecscreen.sc = 5;
+    }
 }
 
-void display_lunch(global *gb)
+void display_launch(global *gb)
 {
     sfRenderWindow_drawSprite(gb->disev.window, gb->sprite[LUNCH].sprite, NULL);
     sfRenderWindow_drawText(gb->disev.window, gb->text[0].text, NULL);
     sfRenderWindow_drawText(gb->disev.window, gb->text[1].text, NULL);
+    sfRenderWindow_drawText(gb->disev.window, gb->text[2].text, NULL);
 }
 
-void manage_event_lunch(global *gb)
+void manage_event_launch(global *gb)
 {
-    launch_intercat(gb, 0, (sfVector2f){500, 200}, (sfVector2f){900, 100});
-    launch_intercat(gb, 1, (sfVector2f){550, 500}, (sfVector2f){600, 100});
-    display_lunch(gb);
+    for (int i = 0; i < 3; i++)
+        sfText_setFillColor(gb->text[i].text, sfWhite);
+    launch_intercat(gb, 0);
+    launch_intercat(gb, 1);
+    launch_intercat(gb, 2);
 }

@@ -19,4 +19,16 @@ void initia_sprite_launch(global *gb)
     initia_text(&gb->text[0], send, (sfVector2f){500, 200}, sfWhite, 100);
     send[0] = my_strdup("Continuer");
     initia_text(&gb->text[1], send, (sfVector2f){550, 500}, sfWhite, 100);
+    send[0] = my_strdup("Retour");
+    initia_text(&gb->text[2], send, (sfVector2f){50, 0}, sfWhite, 70);
+}
+
+void initia_button_launch(global *gb)
+{
+    gb->button[BUTTON_RETOUR] = *initia_button(&gb->button[BUTTON_RETOUR],
+            (sfVector2f) {600, 100}, (sfVector2f) {50, 0});
+    gb->button[BUTTON_NEW_GAME] = *initia_button(&gb->button[BUTTON_NEW_GAME],
+            (sfVector2f) {900, 100}, (sfVector2f) {500, 200});
+    gb->button[BUTTON_CONTINUE] = *initia_button(&gb->button[BUTTON_CONTINUE],
+            (sfVector2f) {600, 100}, (sfVector2f) {550, 500});
 }

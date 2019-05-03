@@ -21,6 +21,7 @@ void call_initia_function(global *gb)
     initia_time(gb);
     initia_sprite_menu(gb);
     initia_button_menu(gb);
+    initia_button_launch(gb);
     initia_sound_menu(gb);
     initia_sprite_launch(gb);
     initia_sprite_tuto(gb);
@@ -43,7 +44,7 @@ void manage_event(global *gb)
             manage_event_menu(gb);
             break;
         case 1:
-            manage_event_lunch(gb);
+            manage_event_launch(gb);
             break;
         case 5:
             manage_event_tuto(gb);
@@ -62,6 +63,9 @@ void manage_screen(global *gb)
     switch (gb->selecscreen.sc) {
         case 0:
             display_menu(gb);
+            break;
+        case 1:
+            display_launch(gb);
             break;
         case 5:
             display_tuto(gb);

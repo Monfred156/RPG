@@ -23,7 +23,6 @@ void manage_event_menu(global *gb)
         gb->button[BUTTON_QUIT].rect) == 0) {
         sfRenderWindow_close(gb->disev.window); ///QUITTER
     }
-
 }
 
 void display_menu(global *gb)
