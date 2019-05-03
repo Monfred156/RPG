@@ -15,8 +15,6 @@ void initia_sprite_menu(global *gb)
         "./assets/graphics/menu_background.jpg",
         (sfVector2f) {0, 0}, (sfIntRect) {0, 0, 1920, 1080});
 
-    gb->sound[SOUND_MENU] = *initia_sound(&gb->sound[SOUND_MENU],
-        "./assets/sound/sound_menu.ogg", true);
 }
 
 void initia_button_menu(global *gb)
@@ -27,4 +25,10 @@ void initia_button_menu(global *gb)
         (sfVector2f) {460, 150}, (sfVector2f) {1380, 670});
     gb->button[BUTTON_QUIT] = *initia_button(&gb->button[BUTTON_QUIT],
         (sfVector2f) {520, 150}, (sfVector2f) {1310, 840});
+}
+
+void initia_sound_menu(global *gb)
+{
+    gb->sound[SOUND_MENU] = *initia_sound(&gb->sound[SOUND_MENU],
+        "./assets/sound/sound_menu.ogg", true);
 }

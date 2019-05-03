@@ -43,7 +43,7 @@ pos, sfColor color, unsigned int size)
     sfText_setFont(text->text, text->font);
     sfText_setCharacterSize(text->text, size);
     sfText_setPosition(text->text, text->pos);
-    return text;
+    return (text);
 }
 
 struct s_sound *initia_sound(struct s_sound *sound, char *path, bool loop)

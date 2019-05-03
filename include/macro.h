@@ -20,6 +20,7 @@
 #define TOWN_BACKGROUND 4
 #define PORTAL 5
 #define TAVERN 6
+#define NUMBER_SPRITE 7
 
 ///TELEPORTATION///
 #define PUB 0

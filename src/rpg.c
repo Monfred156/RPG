@@ -19,16 +19,17 @@ void call_initia_function(global *gb)
     initia_variable(gb);
     initia_window(gb);
     initia_time(gb);
-    initia_sprite_launch(gb);
     initia_sprite_menu(gb);
     initia_button_menu(gb);
+    initia_sound_menu(gb);
+    initia_sprite_launch(gb);
     initia_sprite_tuto(gb);
     initia_hitbox_tuto(gb);
+    initia_button_tuto(gb);
     initia_button_town(gb);
     initia_hitbox_town(gb);
     initia_sprite_town(gb);
     initia_sprite_pub(gb);
-    initia_button_tuto(gb);
 }
 
 void manage_event(global *gb)
@@ -76,12 +77,14 @@ void manage_screen(global *gb)
 
 void call_destroy(global *gb)
 {
+    sfMusic_destroy(gb->sound[0].music);
     sfRenderWindow_destroy(gb->disev.window);
 }
 
 int game_loop()
 {
     global gb;
+
     call_initia_function(&gb);
     if (check_assets(&gb) == 84)
         return 84;

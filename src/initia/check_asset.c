@@ -11,9 +11,7 @@
 
 int check_texture(global *gb)
 {
-    if (gb->sprite[0].texture == NULL)
-        return 84;
-    for (int i = 0; gb->sprite[i].texture != NULL; i++) {
+    for (int i = 0; i <= NUMBER_SPRITE; i++) {
         if (gb->sprite[i].texture == NULL)
             return 84;
     }
