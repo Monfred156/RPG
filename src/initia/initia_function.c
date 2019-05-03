@@ -46,10 +46,12 @@ pos, sfColor color, unsigned int size)
     return text;
 }
 
-struct s_sound *initia_sound(global *gb, char *path)
+struct s_sound *initia_sound(struct s_sound *sound, char *path, bool loop)
 {
-    gb->sound->music = sfMusic_createFromFile(path);
-    return (gb->sound);
+    sound->music = sfMusic_createFromFile(path);
+    if (loop == true)
+        sfMusic_setLoop(sound->music, sfTrue);
+    return (sound);
 }
 
 struct s_button *initia_button(struct s_button *button, sfVector2f size,

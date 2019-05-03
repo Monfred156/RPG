@@ -103,7 +103,7 @@ struct s_global {
     struct s_display disev;
     struct s_sprite sprite[7];
     struct s_text text[2];
-    struct s_sound sound[0];
+    struct s_sound sound[2];
     struct s_button button[3];
     struct s_hitbox hitbox[43];
     struct s_clock clock;

@@ -14,6 +14,9 @@ void initia_sprite_menu(global *gb)
     gb->sprite[MENU_BACKGROUND] = *initia_sprite(&gb->sprite[MENU_BACKGROUND],
         "./assets/graphics/menu_background.jpg",
         (sfVector2f) {0, 0}, (sfIntRect) {0, 0, 1920, 1080});
+
+    gb->sound[SOUND_MENU] = *initia_sound(&gb->sound[SOUND_MENU],
+        "./assets/sound/sound_menu.ogg", true);
 }
 
 void initia_button_menu(global *gb)

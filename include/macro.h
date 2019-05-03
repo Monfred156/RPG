@@ -49,4 +49,11 @@
 #define VAL_MIN_TOWN 19
 #define VAL_MAX_TOWN 42
 
+///HITBOX PUB///
+#define VAL_MIN_PUB 43
+#define VAL_MAX_PUB 43
+
+///SOUND///
+#define SOUND_MENU 0
+
 #endif //MUL_MY_RPG_2018_MACCRO_H

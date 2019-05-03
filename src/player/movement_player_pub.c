@@ -9,7 +9,9 @@
 #include "function.h"
 #include "struct.h"
 
-void movement_top_player_pub(global *gb, float time_sec, int animation, int sprite)
+void movement_top_player_pub(global *gb, float time_sec, int animation,
+    int sprite
+)
 {
     static float save_time = 0;
 
@@ -20,14 +22,16 @@ void movement_top_player_pub(global *gb, float time_sec, int animation, int spri
         gb->move->walk += animation;
     }
     sfSprite_setPosition(gb->sprite[sprite].sprite, gb->sprite[sprite].pos);
-    for (int i = 12; gb->hitbox[i].hitbox; i++) {
+    for (int i = VAL_MIN_PUB; i <= VAL_MAX_PUB; i++) {
         gb->hitbox[i].pos.y += time_sec * 0.9;
         sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
             gb->hitbox[i].pos);
     }
 }
 
-void movement_back_player_pub(global *gb, float time_sec, int animation, int sprite)
+void movement_back_player_pub(global *gb, float time_sec, int animation,
+    int sprite
+)
 {
     static float save_time = 0;
 
@@ -38,7 +42,7 @@ void movement_back_player_pub(global *gb, float time_sec, int animation, int spr
         gb->move->walk += animation;
     }
     sfSprite_setPosition(gb->sprite[sprite].sprite, gb->sprite[sprite].pos);
-    for (int i = 0; gb->hitbox[i].hitbox; i++) {
+    for (int i = VAL_MIN_PUB; i <= VAL_MAX_PUB; i++) {
         gb->hitbox[i].pos.y -= time_sec * 0.9;
         sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
             gb->hitbox[i].pos);
@@ -56,7 +60,7 @@ void movement_left_player_pub(global *gb, float time_sec, int sprite)
         gb->move->walk += 1;
     }
     sfSprite_setPosition(gb->sprite[sprite].sprite, gb->sprite[sprite].pos);
-    for (int i = 0; gb->hitbox[i].hitbox; i++) {
+    for (int i = VAL_MIN_PUB; i <= VAL_MAX_PUB; i++) {
         gb->hitbox[i].pos.x += time_sec;
         sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
             gb->hitbox[i].pos);
@@ -74,7 +78,7 @@ void movement_right_player_pub(global *gb, float time_sec, int sprite)
         gb->move->walk += 1;
     }
     sfSprite_setPosition(gb->sprite[sprite].sprite, gb->sprite[sprite].pos);
-    for (int i = 0; gb->hitbox[i].hitbox; i++) {
+    for (int i = VAL_MIN_PUB; i <= VAL_MAX_PUB; i++) {
         gb->hitbox[i].pos.x -= time_sec;
         sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
             gb->hitbox[i].pos);

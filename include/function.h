@@ -67,7 +67,7 @@ struct s_sprite *initia_sprite(struct s_sprite *sprite, char *path, sfVector2f
 pos, sfIntRect rect);
 struct s_text *initia_text(struct s_text *text, char **string, sfVector2f
 pos, sfColor color, unsigned int size);
-struct s_sound *initia_sound(global *gb, char *path);
+struct s_sound *initia_sound(struct s_sound *sound, char *path, bool loop);
 struct s_button *initia_button(struct s_button *button, sfVector2f size,
     sfVector2f pos);
 

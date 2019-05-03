@@ -11,7 +11,7 @@
 
 void initia_variable(global *gb)
 {
-    gb->selecscreen.sc = 5;
+    gb->selecscreen.sc = 0;
 }
 
 void call_initia_function(global *gb)
@@ -85,6 +85,7 @@ int game_loop()
     call_initia_function(&gb);
     if (check_assets(&gb) == 84)
         return 84;
+    sfMusic_play(gb.sound[0].music);
     while (sfRenderWindow_isOpen(gb.disev.window)) {
         gb.clock.time = sfClock_getElapsedTime(gb.clock.clock);
         gb.clock.seconds = gb.clock.time.microseconds / 1000000.0;
