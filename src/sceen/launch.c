@@ -31,9 +31,9 @@ void launch_intercat(global *gb, int nb)
 void display_launch(global *gb)
 {
     sfRenderWindow_drawSprite(gb->disev.window, gb->sprite[LUNCH].sprite, NULL);
-    sfRenderWindow_drawText(gb->disev.window, gb->text[0].text, NULL);
-    sfRenderWindow_drawText(gb->disev.window, gb->text[1].text, NULL);
-    sfRenderWindow_drawText(gb->disev.window, gb->text[2].text, NULL);
+    sfRenderWindow_drawText(gb->disev.window, gb->text[TXT_NEW_GAME].text, NULL);
+    sfRenderWindow_drawText(gb->disev.window, gb->text[TXT_RETOUR].text, NULL);
+    sfRenderWindow_drawText(gb->disev.window, gb->text[TXT_CONTINUER].text, NULL);
 }
 
 void manage_event_launch(global *gb)

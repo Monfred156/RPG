@@ -15,6 +15,15 @@
 #define BUTTON_RETOUR 3
 #define BUTTON_NEW_GAME 4
 #define BUTTON_CONTINUE 5
+#define BUTTON_SON 6
+#define BUTTON_QUITTER 7
+
+///TEXT///
+#define TXT_NEW_GAME 0
+#define TXT_CONTINUER 1
+#define TXT_RETOUR 2
+#define TXT_QUITTER 3
+#define TXT_SON 4
 
 ///SPRITE///
 #define MENU_BACKGROUND 0
@@ -25,7 +34,8 @@
 #define PORTAL 5
 #define TAVERN 6
 #define INVENTORY 7
-#define NUMBER_SPRITE 8
+#define OPTION_BACKGROUND 8
+#define NUMBER_SPRITE 9
 
 ///TELEPORTATION///
 #define PUB 0

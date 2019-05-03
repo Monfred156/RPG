@@ -63,6 +63,14 @@ void initia_button_launch(global *gb);
 void manage_event_launch(global *gb);
 void display_launch(global *gb);
 
+///option.c///
+void display_option(global *gb);
+void manage_event_option(global *gb);
+
+///initia_option.c///
+void initia_button_option(global *gb);
+void initia_sprite_option(global *gb);
+
 ///initia_function.c///
 void initia_window(global *gb);
 struct s_sprite *initia_sprite(struct s_sprite *sprite, char *path, sfVector2f

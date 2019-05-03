@@ -31,6 +31,8 @@ void call_initia_function(global *gb)
     initia_hitbox_town(gb);
     initia_sprite_town(gb);
     initia_sprite_pub(gb);
+    initia_sprite_option(gb);
+    initia_button_option(gb);
 }
 
 void manage_event(global *gb)
@@ -45,6 +47,9 @@ void manage_event(global *gb)
             break;
         case 1:
             manage_event_launch(gb);
+            break;
+        case 2:
+            manage_event_option(gb);
             break;
         case 5:
             manage_event_tuto(gb);
@@ -66,6 +71,9 @@ void manage_screen(global *gb)
             break;
         case 1:
             display_launch(gb);
+            break;
+        case 2:
+            display_option(gb);
             break;
         case 5:
             display_tuto(gb);

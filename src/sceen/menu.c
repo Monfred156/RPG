@@ -29,6 +29,4 @@ void display_menu(global *gb)
 {
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[MENU_BACKGROUND].sprite, NULL);
-    /*sfRenderWindow_drawRectangleShape(gb->disev.window, gb->button[2].rect,
-        NULL);*/
 }
