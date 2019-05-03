@@ -56,4 +56,6 @@ void manage_event_town(global *gb)
     move_rect_portal(gb, 300, 900, &time);
     event_move_player_town(gb, TOWN_BACKGROUND);
     teleport_to_place_town(gb);
+    if (sfKeyboard_isKeyPressed(sfKeyEscape))
+        gb->selecscreen.sc = 2;
 }
