@@ -42,9 +42,8 @@ SRCS	=	./src/rpg.c									\
 			./src/player/inventory.c					\
 			./src/initia/initia_stats.c					\
 			./src/mob/pattern.c							\
-			./src/initia/initia_pnj.c                   \
-			./src/check_2_in.c
 			./src/initia/initia_pnj.c					\
+			./src/check_2_in.c							\
 			./src/initia/initia_fight.c					\
 			./src/sceen/fight.c							\
 
