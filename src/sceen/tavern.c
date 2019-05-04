@@ -18,15 +18,13 @@ void check_touche_key(global *gb, sfKeyCode key)
 void teleport_to_place_pub(global *gb)
 {
     sfVector2f player = sfSprite_getPosition(gb->sprite[HERO].sprite);
-    sfVector2f size;
+    sfVector2f size = sfRectangleShape_getSize(gb->teleport[EXIT_PUB].teleport);
 
-    size = sfRectangleShape_getSize(gb->teleport[EXIT_PUB].teleport);
-    if (player.x > gb->teleport[EXIT_PUB].pos.x && player.x + 100 <
-    gb->teleport[EXIT_PUB].pos.x + size.x && player.y >
-    gb->teleport[EXIT_PUB].pos.y && player.y + 110 <
-    gb->teleport[EXIT_PUB].pos.y + size.y) {
+    if (player.x + 40 > gb->teleport[EXIT_PUB].pos.x && player.x + 50 < gb->teleport[EXIT_PUB].pos.x + size.x &&
+        player.y + 10 > gb->teleport[EXIT_PUB].pos.y - 10 && player.y + 70 < gb->teleport[EXIT_PUB].pos.y + size.y) {
         if (sfKeyboard_isKeyPressed(sfKeyE)) {
             gb->selecscreen.sc = 6;
+            check_touche_key(gb, sfKeyE);
             sleep(1);
         }
     }

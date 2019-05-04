@@ -10,14 +10,22 @@
 void teleport_to_place_town(global *gb)
 {
     sfVector2f player = sfSprite_getPosition(gb->sprite[HERO].sprite);
-    sfVector2f size;
+    sfVector2f size = sfRectangleShape_getSize(gb->teleport[PUB].teleport);
 
-    for (int i = 0; i != 1; i++) {
-        size = sfRectangleShape_getSize(gb->teleport[i].teleport);
-        if (player.x > gb->teleport[i].pos.x && player.x + 100 < gb->teleport[i].pos.x + size.x &&
-            player.y > gb->teleport[i].pos.y && player.y + 110 < gb->teleport[i].pos.y + size.y) {
-            if (sfKeyboard_isKeyPressed(sfKeyE))
-                gb->selecscreen.sc = 7;
+    if (player.x + 40 > gb->teleport[PUB].pos.x && player.x + 50 < gb->teleport[PUB].pos.x + size.x &&
+        player.y + 10 > gb->teleport[PUB].pos.y - 10 && player.y + 70 < gb->teleport[PUB].pos.y + size.y) {
+        if (sfKeyboard_isKeyPressed(sfKeyE)) {
+            check_touche_key(gb, sfKeyE);
+            sleep(1);
+            gb->selecscreen.sc = 7;
+        }
+    }
+    if (player.x + 40 > gb->teleport[OPEN_PORTAL].pos.x && player.x + 50 < gb->teleport[OPEN_PORTAL].pos.x + size.x &&
+        player.y + 10 > gb->teleport[OPEN_PORTAL].pos.y - 10 && player.y + 70 < gb->teleport[OPEN_PORTAL].pos.y + size.y) {
+        if (sfKeyboard_isKeyPressed(sfKeyE)) {
+            check_touche_key(gb, sfKeyE);
+            sleep(1);
+            gb->selecscreen.sc = 8;
         }
     }
 }

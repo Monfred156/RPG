@@ -11,13 +11,25 @@
 
 void teleport_to_place_tuto(global *gb)
 {
-    sfVector2f player = sfSprite_getPosition(gb->sprite[HERO].sprite);
-    sfVector2f size = sfRectangleShape_getSize(gb->teleport[1].teleport);
+    /*sfVector2f player = sfSprite_getPosition(gb->sprite[HERO].sprite);
+    sfVector2f size = sfRectangleShape_getSize(gb->teleport[CHEST].teleport);
 
-    if (player.x + 40 > gb->teleport[1].pos.x && player.x + 50 < gb->teleport[1].pos.x + size.x &&
-        player.y + 10 > gb->teleport[1].pos.y - 10 && player.y + 70 < gb->teleport[1].pos.y + size.y) {
+    if (player.x + 40 > gb->teleport[CHEST].pos.x && player.x + 50 < gb->teleport[CHEST].pos.x + size.x &&
+        player.y + 10 > gb->teleport[CHEST].pos.y - 10 && player.y + 70 < gb->teleport[CHEST].pos.y + size.y) {
         if (sfKeyboard_isKeyPressed(sfKeyE))
             gb->selecscreen.sc = 6;
+    }*/
+    sfVector2f player = sfSprite_getPosition(gb->sprite[HERO].sprite);
+    sfVector2f size = sfRectangleShape_getSize(gb->teleport[CHEST].teleport);
+
+    if (player.x + 40 > gb->teleport[CHEST].pos.x && player.x + 50 < gb->teleport[CHEST].pos.x + size.x &&
+        player.y + 10 > gb->teleport[CHEST].pos.y - 10 && player.y + 70 < gb->teleport[CHEST].pos.y + size.y) {
+        if (sfKeyboard_isKeyPressed(sfKeyE)) {
+            check_touche_key(gb, sfKeyE);
+            gb->selecscreen.sc = 6;
+            check_touche_key(gb, sfKeyE);
+            sleep(1);
+        }
     }
 }
 
@@ -53,5 +65,6 @@ void display_tuto(global *gb)
         gb->mob[0].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
+    sfRenderWindow_drawRectangleShape(gb->disev.window, gb->teleport[CHEST].teleport, NULL);
     display_inventory(gb);
 }

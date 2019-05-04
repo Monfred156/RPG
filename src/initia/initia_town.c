@@ -14,9 +14,10 @@ void initia_var_town(global *gb)
 
 void initia_button_town(global *gb)
 {
-    gb->teleport[0] = *initia_teleport(&gb->teleport[0],
-        (sfVector2f){140, 230}, (sfVector2f){2720, 200});
-    sfRectangleShape_setFillColor(gb->teleport[1].teleport, sfRed);
+    gb->teleport[PUB] = *initia_teleport(&gb->teleport[PUB],
+        (sfVector2f){140, 230}, (sfVector2f){2720, 250});
+    gb->teleport[OPEN_PORTAL] = *initia_teleport(&gb->teleport[OPEN_PORTAL],
+        (sfVector2f){240, 230}, (sfVector2f){4300, 100});
 }
 
 void initia_sprite_town(global *gb)

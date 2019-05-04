@@ -50,9 +50,10 @@
 #define NUMBER_SPRITE 13
 
 ///TELEPORTATION///
-#define PUB 0
-#define CHEST 1
-#define EXIT_PUB 2
+#define CHEST 0
+#define PUB 1
+#define OPEN_PORTAL 2
+#define EXIT_PUB 3
 
 ///ANIMATION///
 #define ANIM_TOP 0

@@ -89,4 +89,6 @@ void event_move_player_town(global *gb, int sprite)
     sfSprite_setTextureRect(gb->sprite[HERO].sprite, gb->sprite[HERO].rect);
     sfRectangleShape_setPosition(gb->teleport[PUB].teleport,
         gb->teleport[PUB].pos);
+    sfRectangleShape_setPosition(gb->teleport[OPEN_PORTAL].teleport,
+        gb->teleport[OPEN_PORTAL].pos);
 }

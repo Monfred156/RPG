@@ -16,7 +16,7 @@ void initia_var_tuto(global *gb)
 
 void initia_button_tuto(global *gb)
 {
-    gb->teleport[1] = *initia_teleport(&gb->teleport[1],
+    gb->teleport[CHEST] = *initia_teleport(&gb->teleport[CHEST],
         (sfVector2f){145, 200}, (sfVector2f){1960, 300});
 }
 
