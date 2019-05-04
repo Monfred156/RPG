@@ -50,19 +50,22 @@ void move_rect_portal(global *gb, int offset, int max_value, float *time)
 
 void manage_event_town(global *gb)
 {
+    static float anim_portail = 0;
     static float time = 0;
-    //int nb = 0;
 
-    time += gb->clock.seconds - gb->clock.save_sec;
-    move_rect_portal(gb, 300, 900, &time);
-    //if (nb == 0)
+    anim_portail += gb->clock.seconds - gb->clock.save_sec;
+    move_rect_portal(gb, 300, 900, & anim_portail);
+    if (time <= 0) {
+        if (gb->sprite[HERO].rect.top > 3000) {
+            gb->sprite[HERO].rect.width = 150;
+        }
         event_move_player_town(gb, TOWN_BACKGROUND);
-    //if (sfKeyboard_isKeyPressed(sfKeySpace))
-    //    nb = 1000;
-    //if (nb > 0) {
-    //    anim_attack(gb, HERO);
-    //    nb--;
-    //}
+        if (sfKeyboard_isKeyPressed(sfKeySpace))
+            time = 0.45;
+    } else {
+        time -= gb->clock.seconds - gb->clock.save_sec;
+        anim_attack(gb, HERO);
+    }
     teleport_to_place_town(gb);
     if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
         gb->selecscreen.sc = 2;

@@ -34,7 +34,7 @@ SRCS	=	./src/rpg.c									\
 			./src/player/movement_player_tuto.c			\
 			./src/sceen/option.c						\
 			./src/initia/initia_option.c				\
-			./src/attack.c								\
+			./src/player/attack.c						\
 
 
 
