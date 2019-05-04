@@ -14,8 +14,6 @@ void display_inventory(global *gb)
     int temp = 0;
     sfVector2f pos= {1100 , 354};
 
-    gb->inv.inv[0] = AXE;
-    gb->inv.inv[10] = LANCE;
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[INVENTORY].sprite, NULL);
     for (int i = 0; i <= 30; i++) {

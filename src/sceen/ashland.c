@@ -66,7 +66,6 @@ void display_ash(global *gb)
         gb->sprite[ASH_BACKGROUND].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[PORTAL_BACK].sprite, NULL);
-    display_inventory(gb);
     for (int i = 1; i < NB_MOB; i++)
         sfRenderWindow_drawSprite(gb->disev.window,
             gb->mob[i].sprite, NULL);
