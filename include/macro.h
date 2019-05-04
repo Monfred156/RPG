@@ -39,7 +39,7 @@
 #define ASH_BACKGROUND 10
 
 ///NUMBER OF MOB///
-#define NB_MOB 10
+#define NB_MOB 6
 
 ///NUMBER OF PARTICULES///
 #define PARTICULES 60

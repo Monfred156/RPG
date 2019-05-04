@@ -33,8 +33,6 @@ void display_ash(global *gb)
 {
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[ASH_BACKGROUND].sprite, NULL);
-    sfRenderWindow_drawSprite(gb->disev.window,
-        gb->sprite[HERO].sprite, NULL);
     display_inventory(gb);
     for (int i = 1; i < NB_MOB; i++)
         sfRenderWindow_drawSprite(gb->disev.window,
@@ -43,4 +41,6 @@ void display_ash(global *gb)
         sfRenderWindow_drawRectangleShape(gb->disev.window,
                 gb->hitbox[i].hitbox, NULL);
     }
+    sfRenderWindow_drawSprite(gb->disev.window,
+    gb->sprite[HERO].sprite, NULL);
 }

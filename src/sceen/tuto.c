@@ -50,8 +50,8 @@ void display_tuto(global *gb)
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[TUTO_BACKGROUND].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
-        gb->sprite[HERO].sprite, NULL);
-    sfRenderWindow_drawSprite(gb->disev.window,
         gb->mob[0].sprite, NULL);
+    sfRenderWindow_drawSprite(gb->disev.window,
+        gb->sprite[HERO].sprite, NULL);
     display_inventory(gb);
 }
