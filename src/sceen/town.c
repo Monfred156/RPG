@@ -70,7 +70,42 @@ void event_trader(global *gb)
         gb->trader.open = 0;
     }
     if (gb->trader.open == 1) {
-
+        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                gb->button[BUTTON_BUY1].rect) == 0) {
+        }
+        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                gb->button[BUTTON_BUY2].rect) == 0) {
+        }
+        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                gb->button[BUTTON_BUY3].rect) == 0) {
+        }
+        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                gb->button[BUTTON_BUY4].rect) == 0) {
+        }
+        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                gb->button[BUTTON_BUY5].rect) == 0) {
+        }
+        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                gb->button[BUTTON_BUY6].rect) == 0) {
+        }
+        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                gb->button[BUTTON_BUY7].rect) == 0) {
+        }
+        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                gb->button[BUTTON_BUY8].rect) == 0) {
+        }
+        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                gb->button[BUTTON_BUY9].rect) == 0) {
+        }
+        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                gb->button[BUTTON_BUY10].rect) == 0) {
+        }
+        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                gb->button[BUTTON_BUY11].rect) == 0) {
+        }
+        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                gb->button[BUTTON_BUY12].rect) == 0) {
+        }
     }
 }
 

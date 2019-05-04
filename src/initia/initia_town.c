@@ -7,11 +7,6 @@
 
 #include "function.h"
 
-void initia_var_town(global *gb)
-{
-    gb->trader.open = 0;
-}
-
 void initia_button_town(global *gb)
 {
     gb->teleport[PUB] = *initia_teleport(&gb->teleport[PUB],

@@ -11,7 +11,7 @@
 
 void initia_screen(global *gb)
 {
-    gb->selecscreen.sc = 8;
+    gb->selecscreen.sc = 0;
 }
 
 void call_initia_function(global *gb)
@@ -46,6 +46,7 @@ void call_initia_function(global *gb)
     initia_fight(gb);
     initia_items(gb);
     initia_button_ash(gb);
+    initia_button_shop(gb);
 }
 
 void manage_event(global *gb)

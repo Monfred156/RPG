@@ -28,11 +28,14 @@ void initia_button_pub(global *gb);
 void initia_sprite_pub(global *gb);
 void initia_hitbox_pub(global *gb);
 
+///initia_shop.c///
+void initia_var_town(global *gb);
+void initia_button_shop(global *gb);
+
 ///initia_town.c//
 void initia_button_town(global *gb);
 void initia_sprite_town(global *gb);
 void initia_hitbox_town(global *gb);
-void initia_var_town(global *gb);
 
 ///initia_launch.c///
 void initia_sprite_launch(global *gb);

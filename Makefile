@@ -47,7 +47,8 @@ SRCS	=	./src/rpg.c									\
 			./src/initia/initia_items.c                 \
 			./src/sceen/fight.c	                        \
 			./src/initia/initia_fight.c                 \
-			./src/initia/initia_inventory.c
+			./src/initia/initia_inventory.c             \
+			./src/initia/initia_shop.c
 
 
 
