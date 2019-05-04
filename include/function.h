@@ -150,9 +150,18 @@ void initia_button_menu(global *gb);
 void initia_sound_menu(global *gb);
 void initia_pos_particule_menu(global *gb);
 
-///intia_tuto.c///
+///initia_tuto.c///
 void initia_sprite_tuto(global *gb);
 void initia_var_tuto(global *gb);
+
+///initia_pnj.c///
+void initia_pnj(global *gb);
+
+///initia_fight.c///
+void initia_fight(global *gb);
+
+///fight.c///
+void display_fight(global *gb);
 
 ///mouse_clic.c///
 int mouse_clic_button(global *gb, sfRectangleShape *rect);

@@ -11,7 +11,7 @@
 
 void initia_screen(global *gb)
 {
-    gb->selecscreen.sc = 6;
+    gb->selecscreen.sc = 8;
 }
 
 void call_initia_function(global *gb)
@@ -40,6 +40,8 @@ void call_initia_function(global *gb)
     initia_button_pub(gb);
     initia_sprite_ash(gb);
     initia_hitbox_ash(gb);
+    initia_pnj(gb);
+    initia_fight(gb);
 }
 
 void manage_event(global *gb)
@@ -70,6 +72,9 @@ void manage_event(global *gb)
         case 8:
             manage_event_ash(gb);
             break;
+        case 9:
+            display_fight(gb);
+            break;
     }
 }
 
@@ -96,6 +101,9 @@ void manage_screen(global *gb)
             break;
         case 8:
             display_ash(gb);
+            break;
+        case 9:
+            display_fight(gb);
             break;
     }
 }

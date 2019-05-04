@@ -38,6 +38,7 @@
 #define RAIN_PARTICULES 9
 #define ASH_BACKGROUND 10
 #define SHOP 11
+#define FIGHT_BACKGROUND 12
 
 ///NUMBER OF MOB///
 #define NB_MOB 6
@@ -46,7 +47,7 @@
 #define PARTICULES 60
 
 ///NUMBER OF SPRITE///
-#define NUMBER_SPRITE 9
+#define NUMBER_SPRITE 13
 
 ///TELEPORTATION///
 #define PUB 0
