@@ -9,24 +9,24 @@
 #include "function.h"
 #include "struct.h"
 
-void two_direction_mob(global *gb, float time_sec, int choose, int sprite)
+void two_direction_mob(global *gb, float time_sec, int choose, int mob)
 {
     switch (choose) {
         case MOVE_TOP_L:
-            movement_top_mob(gb, time_sec, 0, sprite);
-            movement_left_mob(gb, time_sec, sprite);
+            movement_top_mob(gb, time_sec, mob, 0);
+            movement_left_mob(gb, time_sec, mob);
             break;
         case MOVE_BACK_L:
-            movement_back_mob(gb, time_sec, 0, sprite);
-            movement_left_mob(gb, time_sec, sprite);
+            movement_back_mob(gb, time_sec, mob, 0);
+            movement_left_mob(gb, time_sec, mob);
             break;
         case MOVE_TOP_R:
-            movement_top_mob(gb, time_sec, 0, sprite);
-            movement_right_mob(gb, time_sec, sprite);
+            movement_top_mob(gb, time_sec, mob, 0);
+            movement_right_mob(gb, time_sec, mob);
             break;
         case MOVE_BACK_R:
-            movement_back_mob(gb, time_sec, 0, sprite);
-            movement_right_mob(gb, time_sec, sprite);
+            movement_back_mob(gb, time_sec, mob, 0);
+            movement_right_mob(gb, time_sec, mob);
         default:
             break;
     }
@@ -51,20 +51,19 @@ void one_direction_mob(global *gb, float time_sec, int mob, int movement)
             movement_right_mob(gb, time_sec, mob);
             break;
         default:
-            two_direction_mob(gb, time_sec * 0.8, mob, movement);
+            two_direction_mob(gb, time_sec * 0.8, movement, mob);
     }
 }
 
-void mob_move_top(global *gb, int mob, int movement)
+void mob_move(global *gb, int mob, int movement)
 {
-    sfIntRect rect = {0, 0, 75, 125};
     float time_sec;
 
     time_sec = (gb->clock.seconds - gb->clock.save_sec) * 300;
     one_direction_mob(gb, time_sec, mob, movement);
     if (gb->move[mob + 1].walk >= 8)
         gb->move[mob + 1].walk = 1;
-    rect.top = gb->move[mob + 1].movement * 150 + 30;
-    rect.left = gb->move[mob + 1].walk * 150 + 35;
-    sfSprite_setTextureRect(gb->sprite[mob].sprite, rect);
+    gb->mob[mob].rect.top = gb->move[mob + 1].movement * 150;
+    gb->mob[mob].rect.left = gb->move[mob + 1].walk * 150;
+    sfSprite_setTextureRect(gb->mob[mob].sprite, gb->mob[mob].rect);
 }

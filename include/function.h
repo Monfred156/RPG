@@ -98,6 +98,8 @@ pos, sfColor color, unsigned int size);
 struct s_sound *initia_sound(struct s_sound *sound, char *path, bool loop);
 struct s_button *initia_button(struct s_button *button, sfVector2f size,
     sfVector2f pos);
+struct s_mob *initia_sprite_mob(struct s_mob *mob, char *path, sfVector2f
+pos, sfIntRect rect);
 
 ///initia_function2.c///
 struct s_hitbox *initia_hitbox(struct s_hitbox *hitbox, sfVector2f size,
@@ -115,7 +117,7 @@ void display_tuto(global *gb);
 void initia_button_tuto(global *gb);
 
 ///direction_move_mob.c///
-void mob_move_top(global *gb, int mob, int movement);
+void mob_move(global *gb, int mob, int movement);
 
 ///movement_mob.c///
 void movement_top_mob(global *gb, float time_sec, int animation, int sprite);

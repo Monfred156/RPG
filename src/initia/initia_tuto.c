@@ -26,6 +26,11 @@ void initia_sprite_tuto(global *gb)
     gb->sprite[INVENTORY] = *initia_sprite(&gb->sprite[INVENTORY],
             "./assets/graphics/TEST/Inventory.png", (sfVector2f) {800, 400},
             (sfIntRect) {0, 0, 0, 0});
+    for (int i = 0; i < NB_MOB; i++) {
+        gb->mob[i] = *initia_sprite_mob(&gb->mob[i],
+            "./assets/graphics/orck.png", (sfVector2f) {800, 400},
+            (sfIntRect) {0, 0, 150, 150});
+    }
     gb->move[0].movement = 2;
     gb->move[0].walk = 0;
 }

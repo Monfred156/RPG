@@ -19,6 +19,19 @@ void initia_window(global *gb)
         sfDefaultStyle, NULL);
 }
 
+struct s_mob *initia_sprite_mob(struct s_mob *mob, char *path, sfVector2f
+    pos, sfIntRect rect)
+{
+    mob->texture = sfTexture_createFromFile(path, NULL);
+    mob->sprite = sfSprite_create();
+    sfSprite_setTexture(mob->sprite, mob->texture, sfTrue);
+    mob->pos = pos;
+    mob->rect = rect;
+    sfSprite_setPosition(mob->sprite, mob->pos);
+    sfSprite_setTextureRect(mob->sprite, mob->rect);
+    return (mob);
+}
+
 struct s_sprite *initia_sprite(struct s_sprite *sprite, char *path, sfVector2f
     pos, sfIntRect rect)
 {

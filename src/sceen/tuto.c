@@ -37,6 +37,7 @@ void manage_event_tuto(global *gb)
         time -= gb->clock.seconds - gb->clock.save_sec;
         anim_attack(gb, HERO);
     }
+    mob_move(gb, 0, MOVE_RIGHT);
     teleport_to_place_tuto(gb);
     if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
         gb->selecscreen.sc = 2;
@@ -50,6 +51,9 @@ void display_tuto(global *gb)
         gb->sprite[TUTO_BACKGROUND].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
+    for (int i = 0; i < NB_MOB; i++)
+        sfRenderWindow_drawSprite(gb->disev.window,
+            gb->mob[i].sprite, NULL);
     for (int i = VAL_MIN_TUTO; i <= VAL_MAX_TUTO; i++) {
         sfRenderWindow_drawRectangleShape(gb->disev.window,
             gb->hitbox[i].hitbox, NULL);
