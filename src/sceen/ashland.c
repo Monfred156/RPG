@@ -70,6 +70,12 @@ void display_ash(global *gb)
     for (int i = 1; i < NB_MOB; i++)
         sfRenderWindow_drawSprite(gb->disev.window,
             gb->mob[i].sprite, NULL);
+    for (int i = VAL_MIN_ASH; i <= VAL_MAX_ASH; i++) {
+        sfRenderWindow_drawRectangleShape(gb->disev.window,
+                gb->hitbox[i].hitbox, NULL);
+    }
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
+    if (gb->inv.open == 1)
+        display_inventory(gb);
 }

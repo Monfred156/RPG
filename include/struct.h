@@ -121,7 +121,7 @@ struct s_global {
     struct s_teleport teleport[5];
     struct s_selectscreen selecscreen;
     struct s_display disev;
-    struct s_sprite sprite[14];
+    struct s_sprite sprite[26];
     struct s_text text[5];
     struct s_sound sound[2];
     struct s_button button[8];

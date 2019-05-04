@@ -17,6 +17,18 @@
 #define BUTTON_CONTINUE 5
 #define BUTTON_SON 6
 #define BUTTON_BACK_MENU 7
+#define BUTTON_BUY1 8
+#define BUTTON_BUY2 9
+#define BUTTON_BUY3 10
+#define BUTTON_BUY4 11
+#define BUTTON_BUY5 12
+#define BUTTON_BUY6 13
+#define BUTTON_BUY7 14
+#define BUTTON_BUY8 15
+#define BUTTON_BUY9 16
+#define BUTTON_BUY10 17
+#define BUTTON_BUY11 18
+#define BUTTON_BUY12 19
 
 ///TEXT///
 #define TXT_NEW_GAME 0
@@ -39,7 +51,19 @@
 #define ASH_BACKGROUND 10
 #define SHOP 11
 #define FIGHT_BACKGROUND 12
-#define PORTAL_BACK 13
+#define AXE 13
+#define ARMOR 14
+#define ARMOR2 15
+#define HEAD 16
+#define HEAD2 17
+#define LANCE 18
+#define LEGS 19
+#define LEGS2 20
+#define SHIELD 21
+#define SWORD 22
+#define SWORD1 23
+#define SWORD2 24
+#define PORTAL_BACK 25
 
 ///NUMBER OF MOB///
 #define NB_MOB 6
@@ -48,7 +72,7 @@
 #define PARTICULES 60
 
 ///NUMBER OF SPRITE///
-#define NUMBER_SPRITE 13
+#define NUMBER_SPRITE 25
 
 ///TELEPORTATION///
 #define CHEST 0

@@ -62,6 +62,12 @@ struct s_teleport *initia_teleport(struct s_teleport *teleport,
 struct s_trader *initia_trader(struct s_trader *trader,
     sfVector2f size, sfVector2f pos);
 
+///initia_items.c///
+void initia_items(global *gb);
+
+///initia_inventory.c///
+void initia_inventory(global *gb);
+
 ////////////////////////////////////////////////////////////////////////////////
 
 ///event_movement_player_ash.c///

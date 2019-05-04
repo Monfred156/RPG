@@ -43,5 +43,8 @@ void display_pub(global *gb)
         gb->sprite[TAVERN].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
-    display_inventory(gb);
+    sfRenderWindow_drawRectangleShape(gb->disev.window,
+        gb->teleport[EXIT_PUB].teleport, NULL);
+    if (gb->inv.open == 1)
+        display_inventory(gb);
 }

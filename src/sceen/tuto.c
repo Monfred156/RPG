@@ -57,5 +57,7 @@ void display_tuto(global *gb)
         gb->mob[0].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
-    display_inventory(gb);
+    sfRenderWindow_drawRectangleShape(gb->disev.window, gb->teleport[CHEST].teleport, NULL);
+    if (gb->inv.open == 1)
+        display_inventory(gb);
 }

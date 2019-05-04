@@ -44,7 +44,8 @@ void display_town(global *gb)
         sfRenderWindow_drawSprite(gb->disev.window,
             gb->sprite[INVENTORY].sprite, NULL);
     }
-    display_inventory(gb);
+    if (gb->inv.open == 1)
+        display_inventory(gb);
 }
 
 void move_rect_portal(global *gb, int offset, int max_value, float *time)
@@ -68,6 +69,9 @@ void event_trader(global *gb)
          == 0) {
         gb->trader.open = 0;
     }
+    if (gb->trader.open == 1) {
+
+    }
 }
 
 void manage_event_town(global *gb)
@@ -88,8 +92,8 @@ void manage_event_town(global *gb)
         time -= gb->clock.seconds - gb->clock.save_sec;
         anim_attack(gb, HERO);
     }
-    teleport_to_place_town(gb);
     open_inventory(gb);
+    teleport_to_place_town(gb);
     event_trader(gb);
     if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
         gb->selecscreen.sc = 2;

@@ -18,6 +18,7 @@ void call_initia_function(global *gb)
 {
     initia_screen(gb);
     initia_stats(gb);
+    initia_inventory(gb);
     initia_window(gb);
     initia_time(gb);
     initia_sprite_menu(gb);
@@ -43,6 +44,7 @@ void call_initia_function(global *gb)
     initia_hitbox_pub(gb);
     initia_pnj(gb);
     initia_fight(gb);
+    initia_items(gb);
     initia_button_ash(gb);
 }
 
