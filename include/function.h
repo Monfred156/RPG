@@ -148,4 +148,7 @@ int check_hitbox_down(global *gb, sfSprite *sprite, float time_sec, int
 int check_hitbox_left(global *gb, sfSprite *sprite, float time_sec, int
 *limit_value);
 
+///attack///
+void anim_attack(global *gb, int sprite);
+
 #endif

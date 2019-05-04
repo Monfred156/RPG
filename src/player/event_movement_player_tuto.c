@@ -78,16 +78,16 @@ int count_direction_anim_tuto(global *gb, int sprite, float time_sec)
 
 void event_move_player_tuto(global *gb, int sprite)
 {
-    sfIntRect rect = {0, 0, 75, 125};
     float time_sec = (gb->clock.seconds - gb->clock.save_sec) * 300;
 
     if (count_direction_anim_tuto(gb, sprite, time_sec) == 0)
         gb->move->walk = 0;
     if (gb->move->walk >= 8)
         gb->move->walk = 1;
-    rect.top = gb->move->movement * 150 + 30;
-    rect.left = gb->move->walk * 150 + 35;
-    sfSprite_setTextureRect(gb->sprite[HERO].sprite, rect);
+    gb->sprite[HERO].rect.top = gb->move->movement * 150;
+    gb->sprite[HERO].rect.left = gb->move->walk * 150;
+    sfSprite_setTextureRect(gb->sprite[HERO].sprite,
+    gb->sprite[HERO].rect);
     sfRectangleShape_setPosition(gb->teleport[1].teleport,
         gb->teleport[1].pos);
 }

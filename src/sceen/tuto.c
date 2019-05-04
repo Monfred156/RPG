@@ -24,7 +24,19 @@ void teleport_to_place_tuto(global *gb)
 
 void manage_event_tuto(global *gb)
 {
-    event_move_player_tuto(gb, TUTO_BACKGROUND);
+    static float time = 0;
+
+    if (time <= 0) {
+        if (gb->sprite[HERO].rect.top > 3000) {
+            gb->sprite[HERO].rect.width = 150;
+        }
+        event_move_player_tuto(gb, TUTO_BACKGROUND);
+        if (sfKeyboard_isKeyPressed(sfKeySpace))
+            time = 0.45;
+    } else {
+        time -= gb->clock.seconds - gb->clock.save_sec;
+        anim_attack(gb, HERO);
+    }
     teleport_to_place_tuto(gb);
 }
 

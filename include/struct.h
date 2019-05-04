@@ -94,8 +94,7 @@ struct s_stats {
     int foot;
     int weapon;
     int xp;
-};
-typedef struct s_stats stats;
+}; typedef struct s_stats stats;
 
 struct s_global {
     struct s_teleport teleport[2];

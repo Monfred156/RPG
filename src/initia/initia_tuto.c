@@ -22,10 +22,10 @@ void initia_sprite_tuto(global *gb)
         (sfVector2f) {550, 200}, (sfIntRect) {0, 0, 1920, 1001});
     gb->sprite[HERO] = *initia_sprite(&gb->sprite[HERO],
         "./assets/graphics/hero.png", (sfVector2f) {800, 400}, (sfIntRect)
-        {0, 0, 0, 0});
+        {0, 0, 150, 150});
     gb->sprite[INVENTORY] = *initia_sprite(&gb->sprite[INVENTORY],
-            "./assets/graphics/TEST/Inventory.png", (sfVector2f) {800, 400}, (sfIntRect)
-            {0, 0, 0, 0});
+            "./assets/graphics/TEST/Inventory.png", (sfVector2f) {800, 400},
+            (sfIntRect) {0, 0, 0, 0});
     gb->move[0].movement = 2;
     gb->move[0].walk = 0;
 }
