@@ -43,6 +43,7 @@ void call_initia_function(global *gb)
     initia_hitbox_pub(gb);
     initia_pnj(gb);
     initia_fight(gb);
+    initia_button_ash(gb);
 }
 
 void manage_event(global *gb)

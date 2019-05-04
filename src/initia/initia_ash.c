@@ -9,11 +9,20 @@
 #include "function.h"
 #include "struct.h"
 
+void initia_button_ash(global *gb)
+{
+    gb->teleport[EXIT_PORTAL] = *initia_teleport(&gb->teleport[EXIT_PORTAL],
+        (sfVector2f){240, 230}, (sfVector2f){780, 320});
+}
+
 void initia_sprite_ash(global *gb)
 {
     gb->sprite[ASH_BACKGROUND] = *initia_sprite(&gb->sprite[ASH_BACKGROUND],
         "./assets/graphics/ashland.png",
         (sfVector2f) {0, 0}, (sfIntRect) {0, 0, 1672, 1518});
+    gb->sprite[PORTAL_BACK] = *initia_sprite(&gb->sprite[PORTAL_BACK],
+        "./assets/graphics/portal_back.png",
+        (sfVector2f) {740, 300}, (sfIntRect) {300, 0, 266, 900});
 }
 
 void initia_hitbox_ash(global *gb)

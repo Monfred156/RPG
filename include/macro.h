@@ -39,6 +39,7 @@
 #define ASH_BACKGROUND 10
 #define SHOP 11
 #define FIGHT_BACKGROUND 12
+#define PORTAL_BACK 13
 
 ///NUMBER OF MOB///
 #define NB_MOB 6
@@ -54,6 +55,7 @@
 #define PUB 1
 #define OPEN_PORTAL 2
 #define EXIT_PUB 3
+#define EXIT_PORTAL 4
 
 ///ANIMATION///
 #define ANIM_TOP 0

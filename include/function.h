@@ -19,6 +19,7 @@ void initia_sprite_pnj(global *gb);
 void initia_stats(global *gb);
 
 ///initia_ash.c///
+void initia_button_ash(global *gb);
 void initia_sprite_ash(global *gb);
 void initia_hitbox_ash(global *gb);
 
@@ -73,6 +74,8 @@ void movement_left_player_ash(global *gb, float time_sec, int sprite);
 void movement_right_player_ash(global *gb, float time_sec, int sprite);
 
 ///ashland.c///
+void teleport_to_place_ash(global *gb);
+void move_rect_portal_back(global *gb, int offset, int max_value, float *time);
 void manage_event_ash(global *gb);
 void display_ash(global *gb);
 

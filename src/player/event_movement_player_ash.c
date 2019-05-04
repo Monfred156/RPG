@@ -87,4 +87,7 @@ void event_move_player_ash(global *gb, int sprite)
     gb->sprite[HERO].rect.top = gb->move->movement * 150;
     gb->sprite[HERO].rect.left = gb->move->walk * 150;
     sfSprite_setTextureRect(gb->sprite[HERO].sprite, gb->sprite[HERO].rect);
+    sfSprite_setPosition(gb->sprite[PORTAL_BACK].sprite, gb->sprite[PORTAL_BACK].pos);
+    sfRectangleShape_setPosition(gb->teleport[EXIT_PORTAL].teleport,
+        gb->teleport[EXIT_PORTAL].pos);
 }

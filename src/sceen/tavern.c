@@ -43,11 +43,5 @@ void display_pub(global *gb)
         gb->sprite[TAVERN].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
-//    sfRenderWindow_drawRectangleShape(gb->disev.window,
-//        gb->teleport[EXIT_PUB].teleport, NULL);
     display_inventory(gb);
-    for (int i = VAL_MIN_PUB; i <= VAL_MAX_PUB; i++) {
-        sfRenderWindow_drawRectangleShape(gb->disev.window,
-                gb->hitbox[i].hitbox, NULL);
-    }
 }
