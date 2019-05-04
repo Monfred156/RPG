@@ -15,7 +15,7 @@ void teleport_to_place_tuto(global *gb)
     sfVector2f size = sfRectangleShape_getSize(gb->teleport[1].teleport);
 
     if (player.x + 40 > gb->teleport[1].pos.x && player.x + 50 < gb->teleport[1].pos.x + size.x &&
-        player.y > gb->teleport[1].pos.y && player.y + 50 < gb->teleport[1].pos.y + size.y) {
+        player.y + 10 > gb->teleport[1].pos.y && player.y + 70 < gb->teleport[1].pos.y + size.y) {
         if (sfKeyboard_isKeyPressed(sfKeyE))
             gb->selecscreen.sc = 6;
     }
