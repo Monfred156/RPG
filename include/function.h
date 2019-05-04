@@ -39,10 +39,12 @@ void movement_left_player_town(global *gb, float time_sec, int sprite);
 void movement_right_player_town(global *gb, float time_sec, int sprite);
 
 ///tavern.c///
+void check_touche_key(global *gb, sfKeyCode key);
 void manage_event_pub(global *gb);
 void display_pub(global *gb);
 
 ///initia_pub.c///
+void initia_button_pub(global *gb);
 void initia_sprite_pub(global *gb);
 
 ///initia_town.c//

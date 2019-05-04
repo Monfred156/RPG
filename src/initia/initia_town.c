@@ -11,6 +11,7 @@ void initia_button_town(global *gb)
 {
     gb->teleport[0] = *initia_teleport(&gb->teleport[0],
         (sfVector2f){140, 230}, (sfVector2f){2720, 200});
+    sfRectangleShape_setFillColor(gb->teleport[1].teleport, sfRed);
 }
 
 void initia_sprite_town(global *gb)

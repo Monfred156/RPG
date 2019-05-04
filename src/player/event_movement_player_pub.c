@@ -87,4 +87,6 @@ void event_move_player_pub(global *gb, int sprite)
     gb->sprite[HERO].rect.top = gb->move->movement * 150;
     gb->sprite[HERO].rect.left = gb->move->walk * 150;
     sfSprite_setTextureRect(gb->sprite[HERO].sprite, gb->sprite[HERO].rect);
+    sfRectangleShape_setPosition(gb->teleport[EXIT_PUB].teleport,
+        gb->teleport[EXIT_PUB].pos);
 }

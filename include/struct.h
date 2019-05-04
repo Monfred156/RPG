@@ -54,6 +54,7 @@ struct s_display {
     sfVideoMode video_mode;
     sfEvent event;
     sfVector2u size;
+    int tele;
 };
 
 struct s_hitbox {
@@ -103,7 +104,7 @@ struct s_stats {
 }; typedef struct s_stats stats;
 
 struct s_global {
-    struct s_teleport teleport[2];
+    struct s_teleport teleport[3];
     struct s_selectscreen selecscreen;
     struct s_display disev;
     struct s_sprite sprite[10];

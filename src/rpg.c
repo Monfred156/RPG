@@ -34,6 +34,7 @@ void call_initia_function(global *gb)
     initia_sprite_pub(gb);
     initia_sprite_option(gb);
     initia_button_option(gb);
+    initia_button_pub(gb);
 }
 
 void manage_event(global *gb)

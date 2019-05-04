@@ -34,6 +34,8 @@ void display_town(global *gb)
         sfRenderWindow_drawRectangleShape(gb->disev.window,
             gb->hitbox[i].hitbox, NULL);
     }*/
+    sfRenderWindow_drawRectangleShape(gb->disev.window,
+        gb->teleport[PUB].teleport, NULL);
 }
 
 void move_rect_portal(global *gb, int offset, int max_value, float *time)

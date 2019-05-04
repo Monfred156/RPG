@@ -45,6 +45,8 @@
 
 ///TELEPORTATION///
 #define PUB 0
+#define CHEST 1
+#define EXIT_PUB 2
 
 ///ANIMATION///
 #define ANIM_TOP 0
@@ -73,7 +75,7 @@
 
 ///HITBOX PUB///
 #define VAL_MIN_PUB 43
-#define VAL_MAX_PUB 43
+#define VAL_MAX_PUB 42
 
 ///SOUND///
 #define SOUND_MENU 0
