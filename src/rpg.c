@@ -11,7 +11,7 @@
 
 void initia_screen(global *gb)
 {
-    gb->selecscreen.sc = 8;
+    gb->selecscreen.sc = 0;
 }
 
 void call_initia_function(global *gb)
@@ -79,7 +79,7 @@ void manage_event(global *gb)
             manage_event_ash(gb);
             break;
         case 9:
-            display_fight(gb);
+            manage_event_fight(gb);
             break;
     }
 }

@@ -115,6 +115,11 @@ struct s_stats {
     int weapon;
     int xp;
     int gold;
+    int dommage;
+};
+
+struct s_fight {
+    int mob;
 };
 
 struct s_global {
@@ -133,6 +138,7 @@ struct s_global {
     struct s_inventory inv;
     struct s_stats stats;
     struct s_trader trader;
+    struct s_fight num;
 };
 typedef struct s_global global;
 

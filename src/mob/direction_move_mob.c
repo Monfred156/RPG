@@ -55,14 +55,14 @@ void one_direction_mob(global *gb, float time_sec, int mob, int movement)
     }
 }
 
-void mob_move(global *gb, int mob, int movement)
+void mob_move(global *gb, int mob, int movement, float speed)
 {
     float time_sec;
 
     movement %= 12;
     if (movement == 3 || movement == 7 || movement == 11)
         movement -= 3;
-    time_sec = (gb->clock.seconds - gb->clock.save_sec) * 200;
+    time_sec = (gb->clock.seconds - gb->clock.save_sec) * 200 * speed;
     one_direction_mob(gb, time_sec, mob, movement);
     if (gb->move[mob + 1].walk >= 8)
         gb->move[mob + 1].walk = 1;

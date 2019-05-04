@@ -143,7 +143,7 @@ void display_tuto(global *gb);
 void initia_button_tuto(global *gb);
 
 ///direction_move_mob.c///
-void mob_move(global *gb, int mob, int movement);
+void mob_move(global *gb, int mob, int movement, float speed);
 
 ///movement_mob.c///
 void movement_top_mob(global *gb, float time_sec, int animation, int sprite);
@@ -175,6 +175,7 @@ void initia_fight(global *gb);
 
 ///fight.c///
 void display_fight(global *gb);
+void manage_event_fight(global *gb);
 
 ///mouse_clic.c///
 int mouse_clic_button(global *gb, sfRectangleShape *rect);
@@ -216,7 +217,15 @@ void open_inventory(global *gb);
 void display_inventory (global *gb);
 void initia_button_inventory(global *gb);
 
+///event_movement_player.c///
+void event_move_player_fight(global *gb, int sprite);
+
+///movement_player.c///
+void movement_left_player_fight(global *gb, float time_sec, int sprite);
+void movement_right_player_fight(global *gb, float time_sec, int sprite);
+
 ///check_2_in.c///
 int collision_between__sprite(sfSprite *sprite1, sfRectangleShape *rect1);
+int collision_between__mob(sfSprite *sprite1, sfSprite *rect);
 
 #endif

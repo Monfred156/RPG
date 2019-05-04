@@ -56,7 +56,8 @@ void movement_left_mob(global *gb, float time_sec, int mob)
         val[0] = VAL_MIN_ASH;
         val[1] = VAL_MAX_ASH;
     }
-    if (check_hitbox_left(gb, gb->mob[mob].sprite, time_sec, val) == 0) {
+    if (gb->selecscreen.sc == 9 ||
+    check_hitbox_left(gb, gb->mob[mob].sprite, time_sec, val) == 0) {
         gb->mob[mob].pos.x -= time_sec;
         gb->move[mob + 1].movement = ANIM_LEFT;
         if (gb->mob[mob].time > 0.1) {
@@ -75,7 +76,8 @@ void movement_right_mob(global *gb, float time_sec, int mob)
         val[0] = VAL_MIN_ASH;
         val[1] = VAL_MAX_ASH;
     }
-    if (check_hitbox_right(gb, gb->mob[mob].sprite, time_sec, val) == 0) {
+    if (gb->selecscreen.sc == 9 ||
+    check_hitbox_right(gb, gb->mob[mob].sprite, time_sec, val) == 0) {
         gb->mob[mob].pos.x += time_sec;
         gb->move[mob + 1].movement = ANIM_RIGHT;
         if (gb->mob[mob].time > 0.1) {

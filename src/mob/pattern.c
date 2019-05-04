@@ -22,5 +22,5 @@ void pattern_mob(global *gb, int mob)
             gb->mob[mob].rand = 0;
         random = rand() % 2;
     }
-    mob_move(gb, mob, gb->mob[mob].rand);
+    mob_move(gb, mob, gb->mob[mob].rand, 1);
 }

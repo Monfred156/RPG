@@ -25,21 +25,36 @@ void teleport_to_place_tuto(global *gb)
     }
 }
 
-void manage_event_tuto(global *gb)
+void touch_enemy(global *gb)
+{
+    if (collision_between__mob(gb->sprite[HERO].sprite,
+    gb->mob[0].sprite) == 1) {
+        gb->num.mob = 0;
+        gb->selecscreen.sc = 9;
+        gb->selecscreen.back = 9;
+    }
+}
+
+void click_player(global *gb)
 {
     static float time = 0;
 
     if (time <= 0) {
-        if (gb->sprite[HERO].rect.top > 3000) {
+        if (gb->sprite[HERO].rect.top > 3000)
             gb->sprite[HERO].rect.width = 150;
-        }
         event_move_player_tuto(gb, TUTO_BACKGROUND);
         if (sfKeyboard_isKeyPressed(sfKeySpace))
             time = 0.45;
     } else {
         time -= gb->clock.seconds - gb->clock.save_sec;
         anim_attack(gb, HERO);
+        touch_enemy(gb);
     }
+}
+
+void manage_event_tuto(global *gb)
+{
+    click_player(gb);
     pattern_mob(gb, 0);
     teleport_to_place_tuto(gb);
     if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
