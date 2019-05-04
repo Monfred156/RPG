@@ -11,7 +11,20 @@
 
 void manage_event_ash(global *gb)
 {
-    event_move_player_ash(gb, ASH_BACKGROUND);
+    static float time = 0;
+
+    if (time <= 0) {
+        if (gb->sprite[HERO].rect.top > 3000) {
+            gb->sprite[HERO].rect.width = 150;
+        }
+        event_move_player_ash(gb, ASH_BACKGROUND);
+        if (sfKeyboard_isKeyPressed(sfKeySpace))
+            time = 0.45;
+    } else {
+        time -= gb->clock.seconds - gb->clock.save_sec;
+        anim_attack(gb, HERO);
+    }
+    pattern_mob(gb);
     open_inventory(gb);
 }
 
@@ -22,4 +35,7 @@ void display_ash(global *gb)
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
     display_inventory(gb);
+    for (int i = 0; i < NB_MOB; i++)
+        sfRenderWindow_drawSprite(gb->disev.window,
+            gb->mob[i].sprite, NULL);
 }

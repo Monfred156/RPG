@@ -29,12 +29,14 @@ void initia_sprite_tuto(global *gb)
         "./assets/graphics/hero.png", (sfVector2f) {800, 400}, (sfIntRect)
         {0, 0, 150, 150});
     gb->sprite[INVENTORY] = *initia_sprite(&gb->sprite[INVENTORY],
-            "./assets/graphics/inventory.png", (sfVector2f) {530, 320},
-            (sfIntRect) {0, 0, 818, 335});
+        "./assets/graphics/inventory.png", (sfVector2f) {530, 320},
+        (sfIntRect) {0, 0, 818, 335});
     for (int i = 0; i < NB_MOB; i++) {
         gb->mob[i] = *initia_sprite_mob(&gb->mob[i],
-            "./assets/graphics/orck.png", (sfVector2f) {800, 400},
-            (sfIntRect) {0, 0, 150, 150});
+        "./assets/graphics/orck.png", (sfVector2f) {800, 400},
+        (sfIntRect) {0, 0, 150, 150});
+        gb->move[i + 1].movement = 0;
+        gb->move[i + 1].walk = 0;
     }
     gb->move[0].movement = 2;
     gb->move[0].walk = 0;

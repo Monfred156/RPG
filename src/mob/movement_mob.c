@@ -19,7 +19,6 @@ void movement_top_mob(global *gb, float time_sec, int mob, int animation)
         save_time = gb->clock.seconds;
         gb->move[mob + 1].walk += animation;
     }
-    sfSprite_setPosition(gb->mob[mob].sprite, gb->mob[mob].pos);
 }
 
 void movement_back_mob(global *gb, float time_sec, int mob, int animation)
@@ -32,7 +31,6 @@ void movement_back_mob(global *gb, float time_sec, int mob, int animation)
         save_time = gb->clock.seconds;
         gb->move[mob + 1].walk += animation;
     }
-    sfSprite_setPosition(gb->mob[mob].sprite, gb->mob[mob].pos);
 }
 
 void movement_left_mob(global *gb, float time_sec, int mob)
@@ -45,7 +43,6 @@ void movement_left_mob(global *gb, float time_sec, int mob)
         save_time = gb->clock.seconds;
         gb->move[mob + 1].walk += 1;
     }
-    sfSprite_setPosition(gb->mob[mob].sprite, gb->mob[mob].pos);
 }
 
 void movement_right_mob(global *gb, float time_sec, int mob)
@@ -58,5 +55,4 @@ void movement_right_mob(global *gb, float time_sec, int mob)
         save_time = gb->clock.seconds;
         gb->move[mob + 1].walk += 1;
     }
-    sfSprite_setPosition(gb->mob[mob].sprite, gb->mob[mob].pos);
 }

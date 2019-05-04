@@ -133,6 +133,9 @@ void movement_back_mob(global *gb, float time_sec, int animation, int sprite);
 void movement_left_mob(global *gb, float time_sec, int sprite);
 void movement_right_mob(global *gb, float time_sec, int sprite);
 
+///pathern.c///
+void pattern_mob(global *gb);
+
 ///check_asset.c///
 int check_assets(global *gb);
 
