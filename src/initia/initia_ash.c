@@ -35,4 +35,6 @@ void initia_hitbox_ash(global *gb)
             (sfVector2f) {-50, 290});
     gb->hitbox[46] = *initia_hitbox(&gb->hitbox[46], (sfVector2f) {10, 1020},
             (sfVector2f) {1700, 290});
+    gb->hitbox[47] = *initia_hitbox(&gb->hitbox[47], (sfVector2f) {10, 10},
+            (sfVector2f) {870, 400});
 }

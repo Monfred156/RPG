@@ -35,12 +35,12 @@ void initia_hitbox_pub2(global *gb)
             (sfVector2f) {1010, -62});
     gb->hitbox[59] = *initia_hitbox(&gb->hitbox[59], (sfVector2f) {10, 10},
             (sfVector2f) {1085, -70});
+    gb->hitbox[60] = *initia_hitbox(&gb->hitbox[60], (sfVector2f) {600, 10},
+            (sfVector2f) {437, 543});
 }
 
 void initia_hitbox_pub(global *gb)
 {
-    gb->hitbox[47] = *initia_hitbox(&gb->hitbox[47], (sfVector2f) {600, 10},
-            (sfVector2f) {437, 543});
     gb->hitbox[48] = *initia_hitbox(&gb->hitbox[48], (sfVector2f) {10, 300},
             (sfVector2f) {380, 200});
     gb->hitbox[49] = *initia_hitbox(&gb->hitbox[49], (sfVector2f) {10, 300},
