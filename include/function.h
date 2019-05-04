@@ -173,4 +173,7 @@ int check_hitbox_left(global *gb, sfSprite *sprite, float time_sec, int
 ///attack///
 void anim_attack(global *gb, int sprite);
 
+///invnetory.c///
+void open_inventory(global *gb);
+
 #endif

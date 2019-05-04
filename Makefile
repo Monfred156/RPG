@@ -39,6 +39,7 @@ SRCS	=	./src/rpg.c									\
 			./src/initia/initia_ash.c                   \
 			./src/player/event_movement_player_ash.c	\
 			./src/player/movement_player_ash.c			\
+			./src/player/inventory.c
 
 
 
