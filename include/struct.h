@@ -46,6 +46,7 @@ struct s_button {
 
 struct s_selectscreen {
     int sc;
+    int back;
 };
 
 struct s_display {

@@ -64,6 +64,8 @@ void manage_event_town(global *gb)
     //    nb--;
     //}
     teleport_to_place_town(gb);
-    if (sfKeyboard_isKeyPressed(sfKeyEscape))
+    if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
         gb->selecscreen.sc = 2;
+        gb->selecscreen.back = 6;
+    }
 }

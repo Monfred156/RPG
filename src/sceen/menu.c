@@ -18,6 +18,7 @@ void manage_event_menu(global *gb)
     if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
         gb->button[BUTTON_OPTION].rect) == 0) {
         gb->selecscreen.sc = 2; ///BOUTON OPTION -> OPTION
+        gb->selecscreen.back = 0;
     }
     if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
         gb->button[BUTTON_QUIT].rect) == 0) {

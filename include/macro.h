@@ -16,13 +16,13 @@
 #define BUTTON_NEW_GAME 4
 #define BUTTON_CONTINUE 5
 #define BUTTON_SON 6
-#define BUTTON_QUITTER 7
+#define BUTTON_BACK_MENU 7
 
 ///TEXT///
 #define TXT_NEW_GAME 0
 #define TXT_CONTINUER 1
 #define TXT_RETOUR 2
-#define TXT_QUITTER 3
+#define TXT_BACK_MENU 3
 #define TXT_SON 4
 
 ///SPRITE///

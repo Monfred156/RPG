@@ -38,6 +38,10 @@ void manage_event_tuto(global *gb)
         anim_attack(gb, HERO);
     }
     teleport_to_place_tuto(gb);
+    if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
+        gb->selecscreen.sc = 2;
+        gb->selecscreen.back = 5;
+    }
 }
 
 void display_tuto(global *gb)
