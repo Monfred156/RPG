@@ -25,6 +25,7 @@ void initia_hitbox_ash(global *gb);
 ///initia_pub.c///
 void initia_button_pub(global *gb);
 void initia_sprite_pub(global *gb);
+void initia_hitbox_pub(global *gb);
 
 ///initia_town.c//
 void initia_button_town(global *gb);

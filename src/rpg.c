@@ -40,6 +40,7 @@ void call_initia_function(global *gb)
     initia_button_pub(gb);
     initia_sprite_ash(gb);
     initia_hitbox_ash(gb);
+    initia_hitbox_pub(gb);
     initia_pnj(gb);
     initia_fight(gb);
 }

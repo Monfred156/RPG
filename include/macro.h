@@ -85,8 +85,8 @@
 #define VAL_MAX_ASH 46
 
 ///HITBOX PUB///
-#define VAL_MIN_PUB 43
-#define VAL_MAX_PUB 42
+#define VAL_MIN_PUB 47
+#define VAL_MAX_PUB 59
 
 ///SOUND///
 #define SOUND_MENU 0
