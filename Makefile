@@ -35,6 +35,10 @@ SRCS	=	./src/rpg.c									\
 			./src/sceen/option.c						\
 			./src/initia/initia_option.c				\
 			./src/player/attack.c						\
+			./src/sceen/ashland.c                       \
+			./src/initia/initia_ash.c                   \
+			./src/player/event_movement_player_ash.c	\
+			./src/player/movement_player_ash.c			\
 
 
 

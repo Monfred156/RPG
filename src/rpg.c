@@ -11,7 +11,7 @@
 
 void initia_variable(global *gb)
 {
-    gb->selecscreen.sc = 0;
+    gb->selecscreen.sc = 8;
 }
 
 void call_initia_function(global *gb)
@@ -35,6 +35,7 @@ void call_initia_function(global *gb)
     initia_sprite_option(gb);
     initia_button_option(gb);
     initia_button_pub(gb);
+    initia_sprite_ash(gb);
 }
 
 void manage_event(global *gb)
@@ -62,6 +63,9 @@ void manage_event(global *gb)
         case 7:
             manage_event_pub(gb);
             break;
+        case 8:
+            manage_event_ash(gb);
+            break;
     }
 }
 
@@ -85,6 +89,9 @@ void manage_screen(global *gb)
             break;
         case 7:
             display_pub(gb);
+            break;
+        case 8:
+            display_ash(gb);
             break;
     }
 }
