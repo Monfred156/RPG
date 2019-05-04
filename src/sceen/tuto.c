@@ -50,8 +50,8 @@ void display_tuto(global *gb)
         gb->sprite[TUTO_BACKGROUND].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
-    /*for (int i = VAL_MIN_TUTO; i <= VAL_MAX_TUTO; i++) {
+    for (int i = VAL_MIN_TUTO; i <= VAL_MAX_TUTO; i++) {
         sfRenderWindow_drawRectangleShape(gb->disev.window,
             gb->hitbox[i].hitbox, NULL);
-    }*/
+    }
 }
