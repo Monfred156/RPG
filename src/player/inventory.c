@@ -30,6 +30,10 @@ void display_inventory(global *gb)
             pos.x += 47;
         temp++;
     }
+    for (int i = BUTTON_INV1; i <= BUTTON_INV15; i++) {
+        sfRenderWindow_drawRectangleShape(gb->disev.window,
+            gb->button[i].rect, NULL);
+    }
 }
 
 void open_inventory(global *gb)

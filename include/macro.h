@@ -29,6 +29,21 @@
 #define BUTTON_BUY10 17
 #define BUTTON_BUY11 18
 #define BUTTON_BUY12 19
+#define BUTTON_INV1 20
+#define BUTTON_INV2 21
+#define BUTTON_INV3 22
+#define BUTTON_INV4 23
+#define BUTTON_INV5 24
+#define BUTTON_INV6 25
+#define BUTTON_INV7 26
+#define BUTTON_INV8 27
+#define BUTTON_INV9 28
+#define BUTTON_INV10 29
+#define BUTTON_INV11 30
+#define BUTTON_INV12 31
+#define BUTTON_INV13 32
+#define BUTTON_INV14 33
+#define BUTTON_INV15 34
 
 ///TEXT///
 #define TXT_NEW_GAME 0

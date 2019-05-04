@@ -11,16 +11,17 @@
 
 void initia_screen(global *gb)
 {
-    gb->selecscreen.sc = 0;
+    gb->selecscreen.sc = 8;
 }
 
 void call_initia_function(global *gb)
 {
     initia_screen(gb);
     initia_stats(gb);
-    initia_inventory(gb);
     initia_window(gb);
     initia_time(gb);
+    initia_inventory(gb);
+    initia_button_inventory(gb);
     initia_sprite_menu(gb);
     initia_button_menu(gb);
     initia_sound_menu(gb);

@@ -214,6 +214,7 @@ void anim_attack(global *gb, int sprite);
 ///inventory.c///
 void open_inventory(global *gb);
 void display_inventory (global *gb);
+void initia_button_inventory(global *gb);
 
 ///check_2_in.c///
 int collision_between__sprite(sfSprite *sprite1, sfRectangleShape *rect1);

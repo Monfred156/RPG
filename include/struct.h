@@ -124,7 +124,7 @@ struct s_global {
     struct s_sprite sprite[26];
     struct s_text text[5];
     struct s_sound sound[2];
-    struct s_button button[20];
+    struct s_button button[36];
     struct s_hitbox hitbox[61];
     struct s_clock clock;
     struct s_movement move[7];
