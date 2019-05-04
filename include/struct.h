@@ -93,6 +93,11 @@ struct s_smoke {
     double posy[PARTICULES+1];
 };
 
+struct s_inventory {
+    int *inv;
+    int open;
+};
+
 struct s_stats {
     int life;
     int head;
@@ -116,6 +121,7 @@ struct s_global {
     struct s_movement move[2];
     struct s_mob mob[1];
     struct s_smoke smoke;
+    struct s_inventory inv;
 };
 typedef struct s_global global;
 

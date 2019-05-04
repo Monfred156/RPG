@@ -136,6 +136,7 @@ void initia_pos_particule_menu(global *gb);
 
 ///intia_tuto.c///
 void initia_sprite_tuto(global *gb);
+void initia_var_tuto(global *gb);
 
 ///mouse_clic.c///
 int mouse_clic_button(global *gb, sfRectangleShape *rect);

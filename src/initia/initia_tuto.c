@@ -9,6 +9,11 @@
 #include "function.h"
 #include "struct.h"
 
+void initia_var_tuto(global *gb)
+{
+    gb->inv.open = 0;
+}
+
 void initia_button_tuto(global *gb)
 {
     gb->teleport[1] = *initia_teleport(&gb->teleport[1],
@@ -24,8 +29,8 @@ void initia_sprite_tuto(global *gb)
         "./assets/graphics/hero.png", (sfVector2f) {800, 400}, (sfIntRect)
         {0, 0, 150, 150});
     gb->sprite[INVENTORY] = *initia_sprite(&gb->sprite[INVENTORY],
-            "./assets/graphics/TEST/Inventory.png", (sfVector2f) {800, 400},
-            (sfIntRect) {0, 0, 0, 0});
+            "./assets/graphics/inventory.png", (sfVector2f) {530, 320},
+            (sfIntRect) {0, 0, 818, 335});
     for (int i = 0; i < NB_MOB; i++) {
         gb->mob[i] = *initia_sprite_mob(&gb->mob[i],
             "./assets/graphics/orck.png", (sfVector2f) {800, 400},

@@ -25,6 +25,7 @@ void call_initia_function(global *gb)
     initia_pos_particule_menu(gb);
     initia_sprite_launch(gb);
     initia_button_launch(gb);
+    initia_var_tuto(gb);
     initia_sprite_tuto(gb);
     initia_hitbox_tuto(gb);
     initia_button_tuto(gb);

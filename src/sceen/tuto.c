@@ -22,6 +22,23 @@ void teleport_to_place_tuto(global *gb)
     }
 }
 
+void open_inventory(global *gb)
+{
+    static float sec_open = 0;
+
+    sec_open += gb->clock.seconds - gb->clock.save_sec;
+    if (sec_open >= 0.15) {
+        if (sfKeyboard_isKeyPressed(sfKeyTab) || sfKeyboard_isKeyPressed(
+            sfKeyI)) {
+            if (gb->inv.open == 0)
+                gb->inv.open = 1;
+            else if (gb->inv.open == 1)
+                gb->inv.open = 0;
+        }
+        sec_open = 0;
+    }
+}
+
 void manage_event_tuto(global *gb)
 {
     static float time = 0;
@@ -43,6 +60,7 @@ void manage_event_tuto(global *gb)
         gb->selecscreen.sc = 2;
         gb->selecscreen.back = 5;
     }
+    open_inventory(gb);
 }
 
 void display_tuto(global *gb)
@@ -54,8 +72,11 @@ void display_tuto(global *gb)
     for (int i = 0; i < NB_MOB; i++)
         sfRenderWindow_drawSprite(gb->disev.window,
             gb->mob[i].sprite, NULL);
-    for (int i = VAL_MIN_TUTO; i <= VAL_MAX_TUTO; i++) {
+    if (gb->inv.open == 1)
+        sfRenderWindow_drawSprite(gb->disev.window,
+            gb->sprite[INVENTORY].sprite, NULL);
+    /*for (int i = VAL_MIN_TUTO; i <= VAL_MAX_TUTO; i++) {
         sfRenderWindow_drawRectangleShape(gb->disev.window,
             gb->hitbox[i].hitbox, NULL);
-    }
+    }*/
 }
