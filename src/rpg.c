@@ -38,6 +38,7 @@ void call_initia_function(global *gb)
     initia_button_option(gb);
     initia_button_pub(gb);
     initia_sprite_ash(gb);
+    initia_hitbox_ash(gb);
 }
 
 void manage_event(global *gb)

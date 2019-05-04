@@ -77,6 +77,10 @@
 #define VAL_MIN_TOWN 19
 #define VAL_MAX_TOWN 42
 
+///HITBOX ASH///
+#define VAL_MIN_ASH 43
+#define VAL_MAX_ASH 46
+
 ///HITBOX PUB///
 #define VAL_MIN_PUB 43
 #define VAL_MAX_PUB 42

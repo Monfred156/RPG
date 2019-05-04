@@ -14,7 +14,7 @@ void initia_sprite_launch(global *gb)
     char *send[3] = {"Nouvelle partie", "./assets/font/GODOFWAR.TTF", NULL};
 
     gb->sprite[LUNCH] = *initia_sprite(&gb->sprite[LUNCH],
-        "./assets/graphics/lunch.jpg",
+        "./assets/graphics/launch.jpg",
         (sfVector2f) {0, 0}, (sfIntRect) {0, 0, 1920, 1080});
     initia_text(&gb->text[TXT_NEW_GAME], send, (sfVector2f){500, 200}, sfWhite, 100);
     send[0] = my_strdup("Continuer");

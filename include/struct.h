@@ -118,7 +118,7 @@ struct s_global {
     struct s_text text[5];
     struct s_sound sound[2];
     struct s_button button[8];
-    struct s_hitbox hitbox[43];
+    struct s_hitbox hitbox[47];
     struct s_clock clock;
     struct s_movement move[11];
     struct s_mob mob[10];

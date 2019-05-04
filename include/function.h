@@ -17,6 +17,7 @@ void initia_stats(global *gb);
 
 ///initia_ash.c///
 void initia_sprite_ash(global *gb);
+void initia_hitbox_ash(global *gb);
 
 ///initia_pub.c///
 void initia_button_pub(global *gb);
