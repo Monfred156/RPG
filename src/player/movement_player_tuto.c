@@ -26,8 +26,7 @@ void movement_top_player_tuto(global *gb, float time_sec, int animation, int spr
         sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
             gb->hitbox[i].pos);
     }
-    for (int i = 0; i < NB_MOB; i++)
-        gb->mob[i].pos.y += time_sec * 0.9;
+    gb->mob[0].pos.y += time_sec * 0.9;
 }
 
 void movement_back_player_tuto(global *gb, float time_sec, int animation, int sprite)
@@ -47,8 +46,7 @@ void movement_back_player_tuto(global *gb, float time_sec, int animation, int sp
         sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
             gb->hitbox[i].pos);
     }
-    for (int i = 0; i < NB_MOB; i++)
-        gb->mob[i].pos.y -= time_sec * 0.9;
+    gb->mob[0].pos.y -= time_sec * 0.9;
 }
 
 void movement_left_player_tuto(global *gb, float time_sec, int sprite)
@@ -68,8 +66,7 @@ void movement_left_player_tuto(global *gb, float time_sec, int sprite)
         sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
             gb->hitbox[i].pos);
     }
-    for (int i = 0; i < NB_MOB; i++)
-        gb->mob[i].pos.x += time_sec;
+    gb->mob[0].pos.x += time_sec;
 }
 
 void movement_right_player_tuto(global *gb, float time_sec, int sprite)
@@ -89,6 +86,5 @@ void movement_right_player_tuto(global *gb, float time_sec, int sprite)
         sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
             gb->hitbox[i].pos);
     }
-    for (int i = 0; i < NB_MOB; i++)
-        gb->mob[i].pos.x -= time_sec;
+    gb->mob[0].pos.x -= time_sec;
 }

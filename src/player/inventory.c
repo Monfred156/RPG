@@ -32,4 +32,3 @@ void open_inventory(global *gb)
         sec_open = 0;
     }
 }
-

@@ -37,6 +37,7 @@ void initia_sprite_tuto(global *gb)
         (sfIntRect) {0, 0, 150, 150});
         gb->move[i + 1].movement = 0;
         gb->move[i + 1].walk = 0;
+        gb->mob[i].rand = 0;
     }
     gb->move[0].movement = 2;
     gb->move[0].walk = 0;

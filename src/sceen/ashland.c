@@ -24,7 +24,8 @@ void manage_event_ash(global *gb)
         time -= gb->clock.seconds - gb->clock.save_sec;
         anim_attack(gb, HERO);
     }
-    pattern_mob(gb);
+    for (int i = 1; i < NB_MOB; i++)
+        pattern_mob(gb, i);
     open_inventory(gb);
 }
 
@@ -35,7 +36,7 @@ void display_ash(global *gb)
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
     display_inventory(gb);
-    for (int i = 0; i < NB_MOB; i++)
+    for (int i = 1; i < NB_MOB; i++)
         sfRenderWindow_drawSprite(gb->disev.window,
             gb->mob[i].sprite, NULL);
 }

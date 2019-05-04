@@ -113,8 +113,6 @@ void display_launch(global *gb);
 void display_option(global *gb);
 void manage_event_option(global *gb);
 
-
-
 ///menu.c///
 void manage_event_menu(global *gb);
 void display_menu(global *gb);
@@ -134,7 +132,7 @@ void movement_left_mob(global *gb, float time_sec, int sprite);
 void movement_right_mob(global *gb, float time_sec, int sprite);
 
 ///pathern.c///
-void pattern_mob(global *gb);
+void pattern_mob(global *gb, int mob);
 
 ///check_asset.c///
 int check_assets(global *gb);

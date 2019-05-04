@@ -27,7 +27,7 @@ void movement_top_player_ash(global *gb, float time_sec, int animation,
         sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
             gb->hitbox[i].pos);
     }
-    for (int i = 0; i < NB_MOB; i++)
+    for (int i = 1; i < NB_MOB; i++)
         gb->mob[i].pos.y += time_sec * 0.9;
 }
 
@@ -49,7 +49,7 @@ void movement_back_player_ash(global *gb, float time_sec, int animation,
         sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
             gb->hitbox[i].pos);
     }
-    for (int i = 0; i < NB_MOB; i++)
+    for (int i = 1; i < NB_MOB; i++)
         gb->mob[i].pos.y -= time_sec * 0.9;
 }
 
@@ -70,7 +70,7 @@ void movement_left_player_ash(global *gb, float time_sec, int sprite)
         sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
             gb->hitbox[i].pos);
     }
-    for (int i = 0; i < NB_MOB; i++)
+    for (int i = 1; i < NB_MOB; i++)
         gb->mob[i].pos.x += time_sec;
 }
 
@@ -91,6 +91,6 @@ void movement_right_player_ash(global *gb, float time_sec, int sprite)
         sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
             gb->hitbox[i].pos);
     }
-    for (int i = 0; i < NB_MOB; i++)
+    for (int i = 1; i < NB_MOB; i++)
         gb->mob[i].pos.x -= time_sec;
 }

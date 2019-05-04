@@ -86,6 +86,7 @@ struct s_mob {
     sfTexture *texture;
     sfVector2f pos;
     sfIntRect rect;
+    float rand;
 };
 
 struct s_smoke {
@@ -119,8 +120,8 @@ struct s_global {
     struct s_button button[8];
     struct s_hitbox hitbox[43];
     struct s_clock clock;
-    struct s_movement move[2];
-    struct s_mob mob[1];
+    struct s_movement move[11];
+    struct s_mob mob[10];
     struct s_smoke smoke;
     struct s_inventory inv;
     struct s_stats stats;
