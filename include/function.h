@@ -12,6 +12,9 @@
 #include "struct.h"
 ///////////////////////////////INITIA FOLDER////////////////////////////////////
 
+///initia_pnj.c///
+void initia_sprite_pnj(global *gb);
+
 ///initia_stats.c///
 void initia_stats(global *gb);
 

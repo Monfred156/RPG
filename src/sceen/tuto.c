@@ -12,11 +12,10 @@
 void teleport_to_place_tuto(global *gb)
 {
     sfVector2f player = sfSprite_getPosition(gb->sprite[HERO].sprite);
-    sfVector2f size;
+    sfVector2f size = sfRectangleShape_getSize(gb->teleport[1].teleport);
 
-    size = sfRectangleShape_getSize(gb->teleport[1].teleport);
-    if (player.x > gb->teleport[1].pos.x && player.x + 100 < gb->teleport[1].pos.x + size.x &&
-    player.y > gb->teleport[1].pos.y && player.y + 110 < gb->teleport[1].pos.y + size.y) {
+    if (player.x + 40 > gb->teleport[1].pos.x && player.x + 50 < gb->teleport[1].pos.x + size.x &&
+        player.y > gb->teleport[1].pos.y && player.y + 50 < gb->teleport[1].pos.y + size.y) {
         if (sfKeyboard_isKeyPressed(sfKeyE))
             gb->selecscreen.sc = 6;
     }
@@ -55,8 +54,6 @@ void display_tuto(global *gb)
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->mob[0].sprite, NULL);
     display_inventory(gb);
-    /*for (int i = VAL_MIN_TUTO; i <= VAL_MAX_TUTO; i++) {
-        sfRenderWindow_drawRectangleShape(gb->disev.window,
-            gb->hitbox[i].hitbox, NULL);
-    }*/
+    sfRenderWindow_drawRectangleShape(gb->disev.window,
+        gb->teleport[CHEST].teleport, NULL);
 }
