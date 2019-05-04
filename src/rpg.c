@@ -9,14 +9,15 @@
 #include "function.h"
 #include "struct.h"
 
-void initia_variable(global *gb)
+void initia_screen(global *gb)
 {
     gb->selecscreen.sc = 6;
 }
 
 void call_initia_function(global *gb)
 {
-    initia_variable(gb);
+    initia_screen(gb);
+    initia_stats(gb);
     initia_window(gb);
     initia_time(gb);
     initia_sprite_menu(gb);

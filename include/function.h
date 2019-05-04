@@ -10,6 +10,50 @@
 
 #include "my.h"
 #include "struct.h"
+///////////////////////////////INITIA FOLDER////////////////////////////////////
+
+///initia_stats.c///
+void initia_stats(global *gb);
+
+///initia_ash.c///
+void initia_sprite_ash(global *gb);
+
+///initia_pub.c///
+void initia_button_pub(global *gb);
+void initia_sprite_pub(global *gb);
+
+///initia_town.c//
+void initia_button_town(global *gb);
+void initia_sprite_town(global *gb);
+void initia_hitbox_town(global *gb);
+
+///initia_launch.c///
+void initia_sprite_launch(global *gb);
+void initia_button_launch(global *gb);
+
+///initia_option.c///
+void initia_button_option(global *gb);
+void initia_sprite_option(global *gb);
+
+///initia_function.c///
+void initia_window(global *gb);
+struct s_sprite *initia_sprite(struct s_sprite *sprite, char *path, sfVector2f
+pos, sfIntRect rect);
+struct s_text *initia_text(struct s_text *text, char **string, sfVector2f
+pos, sfColor color, unsigned int size);
+struct s_sound *initia_sound(struct s_sound *sound, char *path, bool loop);
+struct s_button *initia_button(struct s_button *button, sfVector2f size,
+    sfVector2f pos);
+struct s_mob *initia_sprite_mob(struct s_mob *mob, char *path, sfVector2f
+pos, sfIntRect rect);
+
+///initia_function2.c///
+struct s_hitbox *initia_hitbox(struct s_hitbox *hitbox, sfVector2f size,
+    sfVector2f pos);
+struct s_teleport *initia_teleport(struct s_teleport *teleport,
+    sfVector2f size, sfVector2f pos);
+
+////////////////////////////////////////////////////////////////////////////////
 
 ///event_movement_player_ash.c///
 void event_move_player_ash(global *gb, int sprite);
@@ -19,9 +63,6 @@ void movement_top_player_ash(global *gb, float time_sec, int animation, int spri
 void movement_back_player_ash(global *gb, float time_sec, int animation, int sprite);
 void movement_left_player_ash(global *gb, float time_sec, int sprite);
 void movement_right_player_ash(global *gb, float time_sec, int sprite);
-
-///initia_ash.c///
-void initia_sprite_ash(global *gb);
 
 ///ashland.c///
 void manage_event_ash(global *gb);
@@ -59,23 +100,10 @@ void check_touche_key(global *gb, sfKeyCode key);
 void manage_event_pub(global *gb);
 void display_pub(global *gb);
 
-///initia_pub.c///
-void initia_button_pub(global *gb);
-void initia_sprite_pub(global *gb);
-
-///initia_town.c//
-void initia_button_town(global *gb);
-void initia_sprite_town(global *gb);
-void initia_hitbox_town(global *gb);
-
 ///town.c///
 void teleport_to_place_town(global *gb);
 void display_town(global *gb);
 void manage_event_town(global *gb);
-
-///initia_launch.c///
-void initia_sprite_launch(global *gb);
-void initia_button_launch(global *gb);
 
 ///launch_.c///
 void manage_event_launch(global *gb);
@@ -85,27 +113,7 @@ void display_launch(global *gb);
 void display_option(global *gb);
 void manage_event_option(global *gb);
 
-///initia_option.c///
-void initia_button_option(global *gb);
-void initia_sprite_option(global *gb);
 
-///initia_function.c///
-void initia_window(global *gb);
-struct s_sprite *initia_sprite(struct s_sprite *sprite, char *path, sfVector2f
-pos, sfIntRect rect);
-struct s_text *initia_text(struct s_text *text, char **string, sfVector2f
-pos, sfColor color, unsigned int size);
-struct s_sound *initia_sound(struct s_sound *sound, char *path, bool loop);
-struct s_button *initia_button(struct s_button *button, sfVector2f size,
-    sfVector2f pos);
-struct s_mob *initia_sprite_mob(struct s_mob *mob, char *path, sfVector2f
-pos, sfIntRect rect);
-
-///initia_function2.c///
-struct s_hitbox *initia_hitbox(struct s_hitbox *hitbox, sfVector2f size,
-    sfVector2f pos);
-struct s_teleport *initia_teleport(struct s_teleport *teleport,
-    sfVector2f size, sfVector2f pos);
 
 ///menu.c///
 void manage_event_menu(global *gb);
@@ -173,7 +181,8 @@ int check_hitbox_left(global *gb, sfSprite *sprite, float time_sec, int
 ///attack///
 void anim_attack(global *gb, int sprite);
 
-///invnetory.c///
+///inventory.c///
 void open_inventory(global *gb);
+void display_inventory (global *gb);
 
 #endif

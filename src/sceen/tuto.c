@@ -55,9 +55,7 @@ void display_tuto(global *gb)
     for (int i = 0; i < NB_MOB; i++)
         sfRenderWindow_drawSprite(gb->disev.window,
             gb->mob[i].sprite, NULL);
-    if (gb->inv.open == 1)
-        sfRenderWindow_drawSprite(gb->disev.window,
-            gb->sprite[INVENTORY].sprite, NULL);
+    display_inventory(gb);
     /*for (int i = VAL_MIN_TUTO; i <= VAL_MAX_TUTO; i++) {
         sfRenderWindow_drawRectangleShape(gb->disev.window,
             gb->hitbox[i].hitbox, NULL);

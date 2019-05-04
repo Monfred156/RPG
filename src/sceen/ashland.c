@@ -21,7 +21,5 @@ void display_ash(global *gb)
         gb->sprite[ASH_BACKGROUND].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
-    if (gb->inv.open == 1)
-        sfRenderWindow_drawSprite(gb->disev.window,
-            gb->sprite[INVENTORY].sprite, NULL);
+    display_inventory(gb);
 }

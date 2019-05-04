@@ -94,7 +94,7 @@ struct s_smoke {
 };
 
 struct s_inventory {
-    int *inv;
+    int inv[31];
     int open;
 };
 
@@ -106,6 +106,7 @@ struct s_stats {
     int foot;
     int weapon;
     int xp;
+    int gold;
 };
 
 struct s_global {

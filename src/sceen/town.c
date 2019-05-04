@@ -36,9 +36,7 @@ void display_town(global *gb)
     }
     sfRenderWindow_drawRectangleShape(gb->disev.window,
         gb->teleport[PUB].teleport, NULL);
-    if (gb->inv.open == 1)
-        sfRenderWindow_drawSprite(gb->disev.window,
-            gb->sprite[INVENTORY].sprite, NULL);
+    display_inventory(gb);
 }
 
 void move_rect_portal(global *gb, int offset, int max_value, float *time)

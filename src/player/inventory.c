@@ -9,6 +9,12 @@
 #include "function.h"
 #include "struct.h"
 
+void display_inventory (global *gb)
+{
+    if (gb->inv.open == 1)
+        sfRenderWindow_drawSprite(gb->disev.window,
+            gb->sprite[INVENTORY].sprite, NULL);
+}
 
 void open_inventory(global *gb)
 {
