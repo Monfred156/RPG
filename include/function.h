@@ -149,7 +149,7 @@ void call_initia_function(global *gb);
 void initia_hitbox_tuto(global *gb);
 
 ///get_save.c///
-struct s_stats *get_save(void);
+int get_save(global *gb);
 
 ///function_for_get_save.c///
 void decal(char *str, int counter);
@@ -158,7 +158,7 @@ char **get_into_map(char **map, char *str, int counter);
 int my_strncmp(char *str1, char *str2, int counter);
 
 ///save_into_file.c///
-int save_into_file(stats *stats);
+int save_into_file(global *gb);
 
 ///check_hitbox.c///
 int check_hitbox_up(global *gb, sfSprite *sprite, float time_sec, int

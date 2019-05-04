@@ -30,10 +30,10 @@ void display_town(global *gb)
         gb->sprite[PORTAL].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
-    /*for (int i = VAL_MIN_TOWN; i <= VAL_MAX_TOWN; i++) {
+    for (int i = VAL_MIN_TOWN; i <= VAL_MAX_TOWN; i++) {
         sfRenderWindow_drawRectangleShape(gb->disev.window,
             gb->hitbox[i].hitbox, NULL);
-    }*/
+    }
     sfRenderWindow_drawRectangleShape(gb->disev.window,
         gb->teleport[PUB].teleport, NULL);
     if (gb->inv.open == 1)

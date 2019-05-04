@@ -27,7 +27,7 @@ int get_one_stat(char **array, char *str)
     return (-1);
 }
 
-int get_all_stat(stats *stats, char **array)
+int get_all_stat(global *gb, char **array)
 {
     char *all_var[7] = {"LIFE", "HEAD", "BODY", "LEG", "FOOT", "WEAPON", "XP"};
 
@@ -35,13 +35,13 @@ int get_all_stat(stats *stats, char **array)
         if (check_var(all_var[i], array) != 1)
             return (1);
     }
-    stats->life = get_one_stat(array, "LIFE");
-    stats->head = get_one_stat(array, "HEAD");
-    stats->body = get_one_stat(array, "BODY");
-    stats->leg = get_one_stat(array, "LEG");
-    stats->foot = get_one_stat(array, "FOOT");
-    stats->weapon = get_one_stat(array, "WEAPON");
-    stats->xp = get_one_stat(array, "XP");
+    gb->stats.life = get_one_stat(array, "LIFE");
+    gb->stats.head = get_one_stat(array, "HEAD");
+    gb->stats.body = get_one_stat(array, "BODY");
+    gb->stats.leg = get_one_stat(array, "LEG");
+    gb->stats.foot = get_one_stat(array, "FOOT");
+    gb->stats.weapon = get_one_stat(array, "WEAPON");
+    gb->stats.xp = get_one_stat(array, "XP");
     return (0);
 }
 
@@ -74,20 +74,19 @@ char **getString(char *str, char **array, int fd)
     return array;
 }
 
-struct s_stats *get_save(void)
+int get_save(global *gb)
 {
-    stats *stats = NULL;
     char *str = NULL;
     char **array;
     int fd = open("save/save.txt", O_RDONLY);
 
     if (fd < 0)
-        return (NULL);
+        return (-1);
     array = first_get(fd);
     if (array == NULL)
-        return (NULL);
+        return (-1);
     array = getString(str, array, fd);
-    if (get_all_stat(stats, array) == 1)
-        return (NULL);
-    return (stats);
+    if (get_all_stat(gb, array) == 1)
+        return (-1);
+    return (0);
 }

@@ -12,25 +12,25 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-int save_into_file(stats *stats)
+int save_into_file(global *gb)
 {
     int fd = open("save/save.txt", O_CREAT | O_TRUNC | O_RDWR, 0664);
     if (fd < 0)
         return (-1);
     write(fd, "LIFE=", 5);
-    write(fd, my_int_to_str(stats->life), my_strlen(my_int_to_str(stats->life)));
+    write(fd, my_int_to_str(gb->stats.life), my_strlen(my_int_to_str(gb->stats.life)));
     write(fd, "\nHEAD=", 6);
-    write(fd, my_int_to_str(stats->head), my_strlen(my_int_to_str(stats->head)));
+    write(fd, my_int_to_str(gb->stats.head), my_strlen(my_int_to_str(gb->stats.head)));
     write(fd, "\nBODY=", 6);
-    write(fd, my_int_to_str(stats->body), my_strlen(my_int_to_str(stats->body)));
+    write(fd, my_int_to_str(gb->stats.body), my_strlen(my_int_to_str(gb->stats.body)));
     write(fd, "\nLEG=", 5);
-    write(fd, my_int_to_str(stats->leg), my_strlen(my_int_to_str(stats->leg)));
+    write(fd, my_int_to_str(gb->stats.leg), my_strlen(my_int_to_str(gb->stats.leg)));
     write(fd, "\nFOOT=", 6);
-    write(fd, my_int_to_str(stats->foot), my_strlen(my_int_to_str(stats->foot)));
+    write(fd, my_int_to_str(gb->stats.foot), my_strlen(my_int_to_str(gb->stats.foot)));
     write(fd, "\nWEAPON=", 8);
-    write(fd, my_int_to_str(stats->weapon), my_strlen(my_int_to_str(stats->weapon)));
+    write(fd, my_int_to_str(gb->stats.weapon), my_strlen(my_int_to_str(gb->stats.weapon)));
     write(fd, "\nXP=", 4);
-    write(fd, my_int_to_str(stats->xp), my_strlen(my_int_to_str(stats->xp)));
+    write(fd, my_int_to_str(gb->stats.xp), my_strlen(my_int_to_str(gb->stats.xp)));
     write(fd, "\n", 1);
     return (0);
 }

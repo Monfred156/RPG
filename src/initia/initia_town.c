@@ -64,18 +64,18 @@ void initia_hitbox_town2(global *gb)
 
 void initia_hitbox_town(global *gb)
 {
-    gb->hitbox[19] = *initia_hitbox(&gb->hitbox[19], (sfVector2f) {740, 100},
-        (sfVector2f) {600, 150});
-    gb->hitbox[20] = *initia_hitbox(&gb->hitbox[20], (sfVector2f) {300, 100},
-        (sfVector2f) {1500, 150});
-    gb->hitbox[21] = *initia_hitbox(&gb->hitbox[21], (sfVector2f) {20, 200},
-        (sfVector2f) {1170, 150});
-    gb->hitbox[22] = *initia_hitbox(&gb->hitbox[22], (sfVector2f) {20, 200},
-        (sfVector2f) {1770, 150});
-    gb->hitbox[23] = *initia_hitbox(&gb->hitbox[23], (sfVector2f) {15, 450},
-        (sfVector2f) {1910, -130});
+    gb->hitbox[19] = *initia_hitbox(&gb->hitbox[19], (sfVector2f) {400, 10},
+        (sfVector2f) {600, 240});
+    gb->hitbox[20] = *initia_hitbox(&gb->hitbox[20], (sfVector2f) {170, 10},
+        (sfVector2f) {1000, 170});
+    gb->hitbox[21] = *initia_hitbox(&gb->hitbox[21], (sfVector2f) {2, 160},
+        (sfVector2f) {1170, 170});
+    gb->hitbox[22] = *initia_hitbox(&gb->hitbox[22], (sfVector2f) {2, 160},
+        (sfVector2f) {1770, 170});
+    gb->hitbox[23] = *initia_hitbox(&gb->hitbox[23], (sfVector2f) {10, 450},
+        (sfVector2f) {1890, -130});
     gb->hitbox[24] = *initia_hitbox(&gb->hitbox[24], (sfVector2f) {140, 10},
-        (sfVector2f) {1785, 260});
+        (sfVector2f) {1770, 260});
     gb->hitbox[25] = *initia_hitbox(&gb->hitbox[25], (sfVector2f) {130, 10},
         (sfVector2f) {1900, -90});
     gb->hitbox[26] = *initia_hitbox(&gb->hitbox[26], (sfVector2f) {200, 340},
