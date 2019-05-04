@@ -21,9 +21,10 @@ void call_initia_function(global *gb)
     initia_time(gb);
     initia_sprite_menu(gb);
     initia_button_menu(gb);
-    initia_button_launch(gb);
     initia_sound_menu(gb);
+    initia_pos_particule_menu(gb);
     initia_sprite_launch(gb);
+    initia_button_launch(gb);
     initia_sprite_tuto(gb);
     initia_hitbox_tuto(gb);
     initia_button_tuto(gb);
@@ -116,6 +117,8 @@ int game_loop()
 
 int main(int ac, char **av)
 {
+    srand(time(NULL));
+
     if (ac == 1)
         return(game_loop());
     else

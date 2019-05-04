@@ -87,6 +87,11 @@ struct s_mob {
     sfIntRect rect;
 };
 
+struct s_smoke {
+    double posx[PARTICULES+1];
+    double posy[PARTICULES+1];
+};
+
 struct s_stats {
     int life;
     int head;
@@ -101,7 +106,7 @@ struct s_global {
     struct s_teleport teleport[2];
     struct s_selectscreen selecscreen;
     struct s_display disev;
-    struct s_sprite sprite[9];
+    struct s_sprite sprite[10];
     struct s_text text[5];
     struct s_sound sound[2];
     struct s_button button[8];
@@ -109,6 +114,7 @@ struct s_global {
     struct s_clock clock;
     struct s_movement move[2];
     struct s_mob mob[1];
+    struct s_smoke smoke;
 };
 typedef struct s_global global;
 

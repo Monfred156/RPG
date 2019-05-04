@@ -112,6 +112,7 @@ int check_assets(global *gb);
 void initia_sprite_menu (global *gb);
 void initia_button_menu(global *gb);
 void initia_sound_menu(global *gb);
+void initia_pos_particule_menu(global *gb);
 
 ///intia_tuto.c///
 void initia_sprite_tuto(global *gb);

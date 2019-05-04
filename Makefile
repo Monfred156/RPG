@@ -47,7 +47,7 @@ all: $(NAME)
 
 $(NAME):	$(OBJS)
 			make -C ./lib/my
-			$(CC) $(OBJS) -o $(NAME) $(LDFLAGS) -L./lib/my -lmy -l csfml-network -l csfml-window -l csfml-audio -l csfml-system -l csfml-graphics $(CFLAGS)
+			$(CC) $(OBJS) -o $(NAME) $(LDFLAGS) -L./lib/my -lmy -lm -l csfml-network -l csfml-window -l csfml-audio -l csfml-system -lcsfml-graphics $(CFLAGS)
 			@echo -e "\033[32mCOMPILED WITH SUCCESS\033[42m"
 
 %.o: %.c 
