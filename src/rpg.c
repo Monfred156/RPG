@@ -11,7 +11,7 @@
 
 void initia_screen(global *gb)
 {
-    gb->selecscreen.sc = 8;
+    gb->selecscreen.sc = 6;
 }
 
 void call_initia_function(global *gb)
@@ -30,6 +30,7 @@ void call_initia_function(global *gb)
     initia_sprite_tuto(gb);
     initia_hitbox_tuto(gb);
     initia_button_tuto(gb);
+    initia_var_town(gb);
     initia_button_town(gb);
     initia_hitbox_town(gb);
     initia_sprite_town(gb);
@@ -105,7 +106,7 @@ void call_destroy(global *gb)
     sfRenderWindow_destroy(gb->disev.window);
 }
 
-int game_loop()
+int game_loop(void)
 {
     global gb;
 

@@ -100,6 +100,12 @@ struct s_inventory {
     int open;
 };
 
+struct s_trader {
+    sfRectangleShape *talk;
+    sfVector2f pos;
+    int open;
+};
+
 struct s_stats {
     int life;
     int head;
@@ -115,7 +121,7 @@ struct s_global {
     struct s_teleport teleport[3];
     struct s_selectscreen selecscreen;
     struct s_display disev;
-    struct s_sprite sprite[11];
+    struct s_sprite sprite[12];
     struct s_text text[5];
     struct s_sound sound[2];
     struct s_button button[8];
@@ -126,6 +132,7 @@ struct s_global {
     struct s_smoke smoke;
     struct s_inventory inv;
     struct s_stats stats;
+    struct s_trader trader;
 };
 typedef struct s_global global;
 

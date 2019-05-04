@@ -30,6 +30,7 @@ void initia_sprite_pub(global *gb);
 void initia_button_town(global *gb);
 void initia_sprite_town(global *gb);
 void initia_hitbox_town(global *gb);
+void initia_var_town(global *gb);
 
 ///initia_launch.c///
 void initia_sprite_launch(global *gb);
@@ -55,6 +56,8 @@ pos, sfIntRect rect);
 struct s_hitbox *initia_hitbox(struct s_hitbox *hitbox, sfVector2f size,
     sfVector2f pos);
 struct s_teleport *initia_teleport(struct s_teleport *teleport,
+    sfVector2f size, sfVector2f pos);
+struct s_trader *initia_trader(struct s_trader *trader,
     sfVector2f size, sfVector2f pos);
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -189,5 +192,8 @@ void anim_attack(global *gb, int sprite);
 ///inventory.c///
 void open_inventory(global *gb);
 void display_inventory (global *gb);
+
+///check_2_in.c///
+int collision_between__sprite(sfSprite *sprite1, sfRectangleShape *rect1);
 
 #endif

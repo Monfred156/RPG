@@ -30,12 +30,12 @@ void display_town(global *gb)
         gb->sprite[PORTAL].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
-    for (int i = VAL_MIN_TOWN; i <= VAL_MAX_TOWN; i++) {
-        sfRenderWindow_drawRectangleShape(gb->disev.window,
-            gb->hitbox[i].hitbox, NULL);
+    if (gb->trader.open == 1) {
+        sfRenderWindow_drawSprite(gb->disev.window,
+            gb->sprite[SHOP].sprite, NULL);
+        sfRenderWindow_drawSprite(gb->disev.window,
+            gb->sprite[INVENTORY].sprite, NULL);
     }
-    sfRenderWindow_drawRectangleShape(gb->disev.window,
-        gb->teleport[PUB].teleport, NULL);
     display_inventory(gb);
 }
 
@@ -51,13 +51,24 @@ void move_rect_portal(global *gb, int offset, int max_value, float *time)
     }
 }
 
+void event_trader(global *gb)
+{
+    if (collision_between__sprite(gb->sprite[HERO].sprite, gb->trader.talk)
+    == 1 && sfKeyboard_isKeyPressed(sfKeyE))
+        gb->trader.open = 1;
+    if (collision_between__sprite(gb->sprite[HERO].sprite, gb->trader.talk)
+         == 0) {
+        gb->trader.open = 0;
+    }
+}
+
 void manage_event_town(global *gb)
 {
     static float anim_portail = 0;
     static float time = 0;
 
     anim_portail += gb->clock.seconds - gb->clock.save_sec;
-    move_rect_portal(gb, 300, 900, & anim_portail);
+    move_rect_portal(gb, 300, 900, &anim_portail);
     if (time <= 0) {
         if (gb->sprite[HERO].rect.top > 3000) {
             gb->sprite[HERO].rect.width = 150;
@@ -71,6 +82,7 @@ void manage_event_town(global *gb)
     }
     teleport_to_place_town(gb);
     open_inventory(gb);
+    event_trader(gb);
     if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
         gb->selecscreen.sc = 2;
         gb->selecscreen.back = 6;

@@ -29,3 +29,13 @@ struct s_teleport *initia_teleport(struct s_teleport *teleport,
     return (teleport);
 }
 
+struct s_trader *initia_trader(struct s_trader *trader,
+    sfVector2f size, sfVector2f pos)
+{
+    trader->talk = sfRectangleShape_create();
+    trader->pos = pos;
+    sfRectangleShape_setSize(trader->talk, size);
+    sfRectangleShape_setPosition(trader->talk, pos);
+    return (trader);
+}
+

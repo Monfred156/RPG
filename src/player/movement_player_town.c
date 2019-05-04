@@ -30,6 +30,8 @@ void movement_top_player_town(global *gb, float time_sec, int animation, int spr
         sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
             gb->hitbox[i].pos);
     }
+    gb->trader.pos.y += time_sec * 0.9;
+    sfRectangleShape_setPosition(gb->trader.talk, gb->trader.pos);
 }
 
 void movement_back_player_town(global *gb, float time_sec, int animation, int sprite)
@@ -53,6 +55,8 @@ void movement_back_player_town(global *gb, float time_sec, int animation, int sp
         sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
             gb->hitbox[i].pos);
     }
+    gb->trader.pos.y -= time_sec * 0.9;
+    sfRectangleShape_setPosition(gb->trader.talk, gb->trader.pos);
 }
 
 void movement_left_player_town(global *gb, float time_sec, int sprite)
@@ -76,6 +80,8 @@ void movement_left_player_town(global *gb, float time_sec, int sprite)
         sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
             gb->hitbox[i].pos);
     }
+    gb->trader.pos.x += time_sec;
+    sfRectangleShape_setPosition(gb->trader.talk, gb->trader.pos);
 }
 
 void movement_right_player_town(global *gb, float time_sec, int sprite)
@@ -99,4 +105,6 @@ void movement_right_player_town(global *gb, float time_sec, int sprite)
         sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
             gb->hitbox[i].pos);
     }
+    gb->trader.pos.x -= time_sec;
+    sfRectangleShape_setPosition(gb->trader.talk, gb->trader.pos);
 }

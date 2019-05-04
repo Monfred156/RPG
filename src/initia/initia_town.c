@@ -7,6 +7,11 @@
 
 #include "function.h"
 
+void initia_var_town(global *gb)
+{
+    gb->trader.open = 0;
+}
+
 void initia_button_town(global *gb)
 {
     gb->teleport[0] = *initia_teleport(&gb->teleport[0],
@@ -22,6 +27,9 @@ void initia_sprite_town(global *gb)
     gb->sprite[PORTAL] = *initia_sprite(&gb->sprite[PORTAL],
         "./assets/graphics/portal.png",
         (sfVector2f) {4270, 50}, (sfIntRect) {300, 0, 266, 900});
+    gb->sprite[SHOP] = *initia_sprite(&gb->sprite[SHOP],
+        "./assets/graphics/shop.png",
+        (sfVector2f) {1130, 120}, (sfIntRect) {0, 0, 872, 735});
 }
 
 void initia_hitbox_town3(global *gb)
@@ -36,6 +44,8 @@ void initia_hitbox_town3(global *gb)
         (sfVector2f) {610, 620});
     gb->hitbox[42] = *initia_hitbox(&gb->hitbox[42], (sfVector2f) {220, 20},
         (sfVector2f) {4300, 170});
+    gb->trader = *initia_trader(&gb->trader, (sfVector2f) {600, 100},
+        (sfVector2f) {3150, 200});
 }
 
 void initia_hitbox_town2(global *gb)

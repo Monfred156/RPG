@@ -37,6 +37,7 @@
 #define OPTION_BACKGROUND 8
 #define RAIN_PARTICULES 9
 #define ASH_BACKGROUND 10
+#define SHOP 11
 
 ///NUMBER OF MOB///
 #define NB_MOB 6

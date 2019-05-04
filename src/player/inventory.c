@@ -9,7 +9,7 @@
 #include "function.h"
 #include "struct.h"
 
-void display_inventory (global *gb)
+void display_inventory(global *gb)
 {
     if (gb->inv.open == 1)
         sfRenderWindow_drawSprite(gb->disev.window,
@@ -22,8 +22,8 @@ void open_inventory(global *gb)
 
     sec_open += gb->clock.seconds - gb->clock.save_sec;
     if (sec_open >= 0.15) {
-        if (sfKeyboard_isKeyPressed(sfKeyTab) || sfKeyboard_isKeyPressed(
-            sfKeyI)) {
+        if (sfKeyboard_isKeyPressed(sfKeyTab) ||sfKeyboard_isKeyPressed(sfKeyI))
+        {
             if (gb->inv.open == 0)
                 gb->inv.open = 1;
             else if (gb->inv.open == 1)
