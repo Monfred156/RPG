@@ -57,13 +57,13 @@ void initia_hitbox_tuto2(global *gb)
 void initia_hitbox_tuto(global *gb)
 {
     gb->hitbox[0] = *initia_hitbox(&gb->hitbox[0], (sfVector2f) {10, 540},
-        (sfVector2f) {515, 200});
-    gb->hitbox[1] = *initia_hitbox(&gb->hitbox[1], (sfVector2f) {1000, 30},
+        (sfVector2f) {510, 200});
+    gb->hitbox[1] = *initia_hitbox(&gb->hitbox[1], (sfVector2f) {1000, 10},
         (sfVector2f) {515, 200});
     gb->hitbox[2] = *initia_hitbox(&gb->hitbox[2], (sfVector2f) {10, 569},
-        (sfVector2f) {1515, 200});
-    gb->hitbox[3] = *initia_hitbox(&gb->hitbox[3], (sfVector2f) {635, 30},
-        (sfVector2f) {510, 665});
+        (sfVector2f) {1520, 200});
+    gb->hitbox[3] = *initia_hitbox(&gb->hitbox[3], (sfVector2f) {635, 20},
+        (sfVector2f) {510, 678});
     gb->hitbox[4] = *initia_hitbox(&gb->hitbox[4], (sfVector2f) {660, 30},
         (sfVector2f) {1315, 665});
     gb->hitbox[5] = *initia_hitbox(&gb->hitbox[5], (sfVector2f) {50, 500},
