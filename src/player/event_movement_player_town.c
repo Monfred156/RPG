@@ -91,4 +91,6 @@ void event_move_player_town(global *gb, int sprite)
         gb->teleport[PUB].pos);
     sfRectangleShape_setPosition(gb->teleport[OPEN_PORTAL].teleport,
         gb->teleport[OPEN_PORTAL].pos);
+    sfSprite_setPosition(gb->sprite[PNJ_RED].sprite, gb->sprite[PNJ_RED].pos);
+    sfRectangleShape_setPosition(gb->quest[1].shape, gb->quest[1].pos);
 }

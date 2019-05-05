@@ -39,10 +39,10 @@ void initia_pnj(global *gb)
      gb->quest[0] =*initia_quest(&gb->quest[0], (sfVector2f){130, 130},
          (sfVector2f){930, 380}, 0);
     gb->sprite[PNJ_RED] = *initia_sprite(&gb->sprite[PNJ_RED],
-        "./assets/graphics/PNJ/pnj_D.png", (sfVector2f){0, 0},
+        "./assets/graphics/PNJ/pnj_D.png", (sfVector2f){3900, 300},
         (sfIntRect){0, 0, 32, 50});
     gb->quest[1] =*initia_quest(&gb->quest[1], (sfVector2f){130, 130},
-        (sfVector2f){930, 380}, 0);
+        (sfVector2f){3880, 300}, 0);
     gb->sprite[PNJ_GIRL] = *initia_sprite(&gb->sprite[PNJ_GIRL],
         "./assets/graphics/PNJ/pnj_C.png", (sfVector2f){0, 0},
         (sfIntRect){0, 0, 32, 50});
@@ -63,6 +63,6 @@ void initia_pnj(global *gb)
         (sfIntRect){0, 0, 32, 50});
     gb->quest[5] =*initia_quest(&gb->quest[5], (sfVector2f){130, 130},
         (sfVector2f){930, 380}, 0);
-        for (int i = PNJ_BEND; i <= PNJ_MAJ; i++)
-            sfSprite_setScale(gb->sprite[i].sprite, (sfVector2f){2.3, 2.3});
+    for (int i = PNJ_BEND; i <= PNJ_MAJ; i++)
+        sfSprite_setScale(gb->sprite[i].sprite, (sfVector2f){2.3, 2.3});
 }

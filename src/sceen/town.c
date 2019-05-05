@@ -9,6 +9,7 @@
 
 void dialogue_pnj_town(global *gb, int sprite, int quest)
 {
+    pnj_rando_rect(gb, PNJ_RED, 32, 128);
     if (collision_between__sprite(gb->sprite[HERO].sprite, gb->quest[quest].shape)
         == 1 && sfKeyboard_isKeyPressed(sfKeyE))
         gb->quest[0].open = 1;
@@ -53,6 +54,8 @@ void display_town(global *gb)
         gb->sprite[TOWN_BACKGROUND].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[PORTAL].sprite, NULL);
+    sfRenderWindow_drawSprite(gb->disev.window,
+        gb->sprite[PNJ_RED].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
     if (gb->trader.open == 1) {

@@ -24,7 +24,7 @@ void initia_dialogue(global *gb)
                      , "./assets/font/arial.ttf", NULL};
 
     initia_text(&gb->text[PNJ_TUTO], send, (sfVector2f){1020, 750}, sfBlack, 40);
-    send[0] = my_strdup("Avant j'etait aventurier..\nMais je me suis "
+    send[0] = my_strdup("Avant j'etais aventurier..\nMais je me suis pris"
                         "une fleche dans le genoux..\n\n"
                         "[+] Peux-tu tuer 2 orcs au nom d'Ulfric?");
     initia_text(&gb->text[PNJ_ULFRIC], send, (sfVector2f){1020, 750}, sfBlack, 40);
