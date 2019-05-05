@@ -39,6 +39,8 @@ void manage_event_ash(global *gb)
 {
     static float anim_portail = 0;
 
+    if (gb->sprite[HERO].rect.top < 3000)
+        gb->sprite[HERO].rect.width = 150;
     anim_portail += gb->clock.seconds - gb->clock.save_sec;
     move_rect_portal_back(gb, 300, 900, &anim_portail);
     if (gb->fght.time_ash <= 0) {

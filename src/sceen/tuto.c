@@ -46,6 +46,8 @@ void teleport_to_place_tuto(global *gb)
 
 void click_player(global *gb)
 {
+    if (gb->sprite[HERO].rect.top < 3000)
+        gb->sprite[HERO].rect.width = 150;
     if (gb->fght.time_tuto <= 0) {
         event_move_player_tuto(gb, TUTO_BACKGROUND);
         if (sfKeyboard_isKeyPressed(sfKeySpace))
