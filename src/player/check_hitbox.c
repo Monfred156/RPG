@@ -35,8 +35,10 @@ int check_hitbox_right(global *gb, sfSprite *sprite, float time_sec, int
     for (int i = limit_value[0]; i <= limit_value[1]; i++) {
         sfFloatRect hitbox = sfRectangleShape_getGlobalBounds(gb->hitbox[i]
                 .hitbox);
-        if (hero.left + hero.width >= hitbox.left && hero.left + hero.width <= hitbox.left + hitbox.width
-            && hero.top + hero.height >= hitbox.top && hero.top <= hitbox.top + hitbox.height)
+        if (hero.left + hero.width >= hitbox.left && hero.left + hero.width <=
+        hitbox.left + hitbox.width
+            && hero.top + hero.height >= hitbox.top && hero.top <= hitbox.top +
+            hitbox.height)
             return 1;
     }
     return 0;
@@ -51,7 +53,8 @@ int check_hitbox_down(global *gb, sfSprite *sprite, float time_sec, int
     for (int i = limit_value[0]; i <= limit_value[1]; i++) {
         sfFloatRect hitbox = sfRectangleShape_getGlobalBounds(gb->hitbox[i]
                 .hitbox);
-        if (hero.top + hero.height >= hitbox.top && hero.top + hero.height <= hitbox.top + hitbox.height
+        if (hero.top + hero.height >= hitbox.top && hero.top + hero.height <=
+        hitbox.top + hitbox.height
             && hero.left + hero.width >= hitbox.left && hero.left <= hitbox.left
             + hitbox.width)
             return 1;
@@ -69,7 +72,8 @@ int check_hitbox_left(global *gb, sfSprite *sprite, float time_sec, int
         sfFloatRect hitbox = sfRectangleShape_getGlobalBounds(gb->hitbox[i]
                 .hitbox);
         if (hero.left >= hitbox.left && hero.left <= hitbox.left + hitbox.width
-            && hero.top + hero.height >= hitbox.top && hero.top <= hitbox.top + hitbox.height)
+            && hero.top + hero.height >= hitbox.top && hero.top <= hitbox.top +
+            hitbox.height)
             return 1;
     }
     return 0;

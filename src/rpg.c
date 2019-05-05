@@ -127,12 +127,6 @@ void manage_screen(global *gb)
     }
 }
 
-void call_destroy(global *gb)
-{
-    sfMusic_destroy(gb->sound[0].music);
-    sfRenderWindow_destroy(gb->disev.window);
-}
-
 int game_loop(void)
 {
     global gb;
@@ -152,14 +146,4 @@ int game_loop(void)
     }
     call_destroy(&gb);
     return 0;
-}
-
-int main(int ac, char **av)
-{
-    srand(time(NULL));
-
-    if (ac == 1)
-        return(game_loop());
-    else
-        return 84;
 }

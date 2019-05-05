@@ -9,17 +9,12 @@
 #include "function.h"
 #include "struct.h"
 
-void movement_top_player_town(global *gb, float time_sec, int animation, int sprite)
+void movement_top_player_town(global *gb, float time_sec, int animation,
+    int sprite)
 {
     static float save_time = 0;
 
-    gb->sprite[sprite].pos.y += time_sec * 0.9;
-    gb->sprite[PNJ_RED].pos.y += time_sec * 0.9;
-    gb->sprite[PORTAL].pos.y += time_sec * 0.9;
-    gb->teleport[OPEN_PORTAL].pos.y += time_sec * 0.9;
-    gb->teleport[PUB].pos.y += time_sec * 0.9;
-    gb->quest[1].pos.y += time_sec * 0.9;
-    gb->move->movement = ANIM_TOP;
+    mov_top_ini_town(gb, time_sec, animation, sprite);
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
         gb->move->walk += animation;
@@ -37,17 +32,12 @@ void movement_top_player_town(global *gb, float time_sec, int animation, int spr
     sfRectangleShape_setPosition(gb->trader.talk, gb->trader.pos);
 }
 
-void movement_back_player_town(global *gb, float time_sec, int animation, int sprite)
+void movement_back_player_town(global *gb, float time_sec, int animation,
+    int sprite)
 {
     static float save_time = 0;
 
-    gb->sprite[sprite].pos.y -= time_sec * 0.9;
-    gb->sprite[PNJ_RED].pos.y -= time_sec * 0.9;
-    gb->sprite[PORTAL].pos.y -= time_sec * 0.9;
-    gb->teleport[PUB].pos.y -= time_sec * 0.9;
-    gb->teleport[OPEN_PORTAL].pos.y -= time_sec * 0.9;
-    gb->quest[1].pos.y -= time_sec * 0.9;
-    gb->move->movement = ANIM_BACK;
+    mov_back_ini_town(gb, time_sec, animation, sprite);
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
         gb->move->walk += animation;
@@ -69,13 +59,7 @@ void movement_left_player_town(global *gb, float time_sec, int sprite)
 {
     static float save_time = 0;
 
-    gb->sprite[sprite].pos.x += time_sec;
-    gb->sprite[PNJ_RED].pos.x += time_sec;
-    gb->sprite[PORTAL].pos.x += time_sec;
-    gb->teleport[PUB].pos.x += time_sec;
-    gb->teleport[OPEN_PORTAL].pos.x += time_sec;
-    gb->quest[1].pos.x += time_sec;
-    gb->move->movement = ANIM_LEFT;
+    mov_left_ini_town(gb, time_sec, sprite);
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
         gb->move->walk += 1;
@@ -97,13 +81,7 @@ void movement_right_player_town(global *gb, float time_sec, int sprite)
 {
     static float save_time = 0;
 
-    gb->sprite[sprite].pos.x -= time_sec;
-    gb->sprite[PNJ_RED].pos.x -= time_sec;
-    gb->sprite[PORTAL].pos.x -= time_sec;
-    gb->teleport[PUB].pos.x -= time_sec;
-    gb->teleport[OPEN_PORTAL].pos.x -= time_sec;
-    gb->quest[1].pos.x -= time_sec;
-    gb->move->movement = ANIM_RIGHT;
+    mov_right_ini_town(gb, time_sec, sprite);
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
         gb->move->walk += 1;

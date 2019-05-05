@@ -9,7 +9,8 @@
 #include "function.h"
 #include "struct.h"
 
-void movement_top_player_tuto(global *gb, float time_sec, int animation, int sprite)
+void movement_top_player_tuto(global *gb, float time_sec, int animation,
+    int sprite)
 {
     static float save_time = 0;
 
@@ -31,7 +32,8 @@ void movement_top_player_tuto(global *gb, float time_sec, int animation, int spr
     gb->mob[0].pos.y += time_sec * 0.9;
 }
 
-void movement_back_player_tuto(global *gb, float time_sec, int animation, int sprite)
+void movement_back_player_tuto(global *gb, float time_sec, int animation,
+    int sprite)
 {
     static float save_time = 0;
 

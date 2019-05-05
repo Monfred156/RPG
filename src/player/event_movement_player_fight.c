@@ -9,7 +9,8 @@
 #include "function.h"
 #include "struct.h"
 
-void find_one_direction_fight(global *gb, float time_sec, int choose, int sprite)
+void find_one_direction_fight(global *gb, float time_sec, int choose,
+    int sprite)
 {
     switch (choose) {
         case MOVE_LEFT:

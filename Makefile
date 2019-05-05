@@ -66,9 +66,11 @@ SRCS	=	./src/rpg.c									\
             ./src/sceen/escape.c                        \
             ./src/initia/initia_esc.c                   \
             ./src/player/info_inventory.c               \
-            ./src/player/calculate_stats.c              \
             ./src/player/decrease_stats.c               \
-            ./src/player/increase_stats.c
+            ./src/player/increase_stats.c               \
+            ./src/player/calculate_stats.c              \
+            ./src/player/mov_player_ini_town.c          \
+            ./src/main.c                                \
 
 
 OBJS	=	$(SRCS:.c=.o)

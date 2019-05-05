@@ -12,6 +12,16 @@
 #include "struct.h"
 ///////////////////////////////INITIA FOLDER////////////////////////////////////
 
+///main.c///
+void call_destroy(global *gb);
+int main(int ac, char **av);
+
+///mov_player_ini_town.c///
+void mov_top_ini_town(global *gb, float time_sec, int animation, int sprite);
+void mov_back_ini_town(global *gb, float time_sec, int animation, int sprite);
+void mov_left_ini_town(global *gb, float time_sec, int sprite);
+void mov_right_ini_town(global *gb, float time_sec, int sprite);
+
 ///pnj_random_move.c///
 void move_rect_pnj(global *gb,const int *value, float *time, int sprite);
 void pnj_rando_rect(global *gb, int sprite, int offset, int max_value);
@@ -197,6 +207,7 @@ void initia_sound_menu(global *gb);
 void initia_pos_particule_menu(global *gb);
 
 ///initia_tuto.c///
+void initia_hitbox_tuto(global *gb);
 void initia_sprite_tuto(global *gb);
 void initia_var_tuto(global *gb);
 
@@ -218,8 +229,11 @@ int mouse_clic_button(global *gb, sfRectangleShape *rect);
 void initia_time(global *gb);
 
 ///rpg.c///
+void initia_screen(global *gb);
 void call_initia_function(global *gb);
-void initia_hitbox_tuto(global *gb);
+void manage_event(global *gb);
+void manage_screen(global *gb);
+int game_loop(void);
 
 ///get_save.c///
 int get_save(global *gb);
