@@ -57,10 +57,10 @@
 #define TXT_RETOUR 2
 #define TXT_BACK_MENU 3
 #define TXT_SON 4
-#define TXT_SAVE 7
-#define PNJ_TUTO 5
-#define PNJ_ULFRIC 6
-#define PNJ_LIFE 7
+#define TXT_SAVE 5
+#define PNJ_TUTO 6
+#define PNJ_ULFRIC 7
+#define PNJ_LIFE 6
 
 ///SPRITE///
 #define MENU_BACKGROUND 0
