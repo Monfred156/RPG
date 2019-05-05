@@ -266,6 +266,9 @@ int collision__mob(int mob, global *gb);
 
 ///display_hud.c///
 void display_hud(global *gb);
+void display_hud_mob(global *gb);
+struct s_hud_mob *initia_hud_mob(struct s_hud_mob *hud_mob,
+sfVector2f size, sfVector2f pos);
 
 ///continue.c///
 void pressed_continued(global *gb);

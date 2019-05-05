@@ -24,7 +24,7 @@ void initia_mob(global *gb)
         gb->move[i + 1].walk = 0;
         gb->mob[i].rand = 0;
         gb->mob[i].time = 0;
-        gb->mob[i].life = 10;
+        gb->mob[i].life = 100;
         gb->mob[i].attack = 10;
     }
 }

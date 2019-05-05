@@ -103,4 +103,6 @@ void display_fight(global *gb)
     if (flot2 % 13 < 6 || gb->stats.life <= 0)
         sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
+    display_hud(gb);
+    display_hud_mob(gb);
 }

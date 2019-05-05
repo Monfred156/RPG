@@ -59,4 +59,3 @@ struct s_hud *initia_hud(struct s_hud *hud, sfVector2f size, sfVector2f pos)
     sfRectangleShape_setPosition(hud->rect, pos);
     return (hud);
 }
-
