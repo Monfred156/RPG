@@ -44,6 +44,11 @@
 #define BUTTON_INV13 32
 #define BUTTON_INV14 33
 #define BUTTON_INV15 34
+#define BUTTON_INV_HEAD 35
+#define BUTTON_INV_SHIELD 36
+#define BUTTON_INV_ARMOR 37
+#define BUTTON_INV_WEAPON 38
+#define BUTTON_INV_LEGS 39
 
 ///TEXT///
 #define TXT_NEW_GAME 0
@@ -69,17 +74,17 @@
 #define SHOP 11
 #define FIGHT_BACKGROUND 12
 #define AXE 13
-#define ARMOR 14
-#define ARMOR2 15
-#define HEAD 16
-#define HEAD2 17
-#define LANCE 18
-#define LEGS 19
-#define LEGS2 20
-#define SHIELD 21
-#define SWORD 22
-#define SWORD1 23
-#define SWORD2 24
+#define SWORD 14
+#define SWORD1 15
+#define SWORD2 16
+#define LANCE 17
+#define ARMOR 18
+#define ARMOR2 19
+#define HEAD 20
+#define HEAD2 21
+#define LEGS 22
+#define LEGS2 23
+#define SHIELD 24
 #define PORTAL_BACK 25
 #define PNJ_BEND 26
 #define PNJ_RED 27

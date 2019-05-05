@@ -232,6 +232,7 @@ void anim_attack(global *gb, int sprite);
 void open_inventory(global *gb);
 void display_inventory (global *gb);
 void initia_button_inventory(global *gb);
+void event_inventory(global *gb);
 
 ///event_movement_player.c///
 void event_move_player_fight(global *gb, int sprite);

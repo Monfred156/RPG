@@ -58,8 +58,6 @@ void display_town(global *gb)
     if (gb->trader.open == 1) {
         sfRenderWindow_drawSprite(gb->disev.window,
             gb->sprite[SHOP].sprite, NULL);
-        sfRenderWindow_drawSprite(gb->disev.window,
-            gb->sprite[INVENTORY].sprite, NULL);
     }
     display_hud(gb);
     if (gb->inv.open == 1)
@@ -83,49 +81,128 @@ void move_rect_portal(global *gb, int offset, int max_value, float *time)
 
 void event_trader(global *gb)
 {
+    static float sec_buy = 0;
+
+    sec_buy += gb->clock.seconds - gb->clock.save_sec;
     if (collision_between__sprite(gb->sprite[HERO].sprite, gb->trader.talk)
-    == 1 && sfKeyboard_isKeyPressed(sfKeyE))
+    == 1 && sfKeyboard_isKeyPressed(sfKeyE)) {
         gb->trader.open = 1;
-    if (collision_between__sprite(gb->sprite[HERO].sprite, gb->trader.talk)
+        gb->inv.open = 1;
+    } if (collision_between__sprite(gb->sprite[HERO].sprite, gb->trader.talk)
          == 0) {
         gb->trader.open = 0;
     }
     if (gb->trader.open == 1) {
-        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+        if (sec_buy >= 0.1) {
+            if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
                 gb->button[BUTTON_BUY1].rect) == 0) {
-        }
-        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                for (int i = 0; i <= 15; i++) {
+                    if (gb->inv.inv[i] == 0) {
+                        gb->inv.inv[i] = SWORD;
+                        break;
+                    }
+                }
+            }
+            if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
                 gb->button[BUTTON_BUY2].rect) == 0) {
-        }
-        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                for (int i = 0; i <= 15; i++) {
+                    if (gb->inv.inv[i] == 0) {
+                        gb->inv.inv[i] = SWORD1;
+                        break;
+                    }
+                }
+            }
+            if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
                 gb->button[BUTTON_BUY3].rect) == 0) {
-        }
-        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                for (int i = 0; i <= 15; i++) {
+                    if (gb->inv.inv[i] == 0) {
+                        gb->inv.inv[i] = AXE;
+                        break;
+                    }
+                }
+            }
+            if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
                 gb->button[BUTTON_BUY4].rect) == 0) {
-        }
-        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                for (int i = 0; i <= 15; i++) {
+                    if (gb->inv.inv[i] == 0) {
+                        gb->inv.inv[i] = LANCE;
+                        break;
+                    }
+                }
+            }
+            if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
                 gb->button[BUTTON_BUY5].rect) == 0) {
-        }
-        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                for (int i = 0; i <= 15; i++) {
+                    if (gb->inv.inv[i] == 0) {
+                        gb->inv.inv[i] = SWORD2;
+                        break;
+                    }
+                }
+            }
+            if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
                 gb->button[BUTTON_BUY6].rect) == 0) {
-        }
-        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                for (int i = 0; i <= 15; i++) {
+                    if (gb->inv.inv[i] == 0) {
+                        gb->inv.inv[i] = SHIELD;
+                        break;
+                    }
+                }
+            }
+            if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
                 gb->button[BUTTON_BUY7].rect) == 0) {
-        }
-        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                for (int i = 0; i <= 15; i++) {
+                    if (gb->inv.inv[i] == 0) {
+                        gb->inv.inv[i] = HEAD2;
+                        break;
+                    }
+                }
+            }
+            if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
                 gb->button[BUTTON_BUY8].rect) == 0) {
-        }
-        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                for (int i = 0; i <= 15; i++) {
+                    if (gb->inv.inv[i] == 0) {
+                        gb->inv.inv[i] = ARMOR2;
+                        break;
+                    }
+                }
+            }
+            if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
                 gb->button[BUTTON_BUY9].rect) == 0) {
-        }
-        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                for (int i = 0; i <= 15; i++) {
+                    if (gb->inv.inv[i] == 0) {
+                        gb->inv.inv[i] = LEGS2;
+                        break;
+                    }
+                }
+            }
+            if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
                 gb->button[BUTTON_BUY10].rect) == 0) {
-        }
-        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                for (int i = 0; i <= 15; i++) {
+                    if (gb->inv.inv[i] == 0) {
+                        gb->inv.inv[i] = HEAD;
+                        break;
+                    }
+                }
+            }
+            if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
                 gb->button[BUTTON_BUY11].rect) == 0) {
-        }
-        if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
+                for (int i = 0; i <= 15; i++) {
+                    if (gb->inv.inv[i] == 0) {
+                        gb->inv.inv[i] = ARMOR;
+                        break;
+                    }
+                }
+            }
+            if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
                 gb->button[BUTTON_BUY12].rect) == 0) {
+                for (int i = 0; i <= 15; i++) {
+                    if (gb->inv.inv[i] == 0) {
+                        gb->inv.inv[i] = LEGS;
+                        break;
+                    }
+                }
+            }
+            sec_buy = 0;
         }
     }
 }
@@ -151,6 +228,7 @@ void manage_event_town(global *gb)
     open_inventory(gb);
     teleport_to_place_town(gb);
     event_trader(gb);
+    event_inventory(gb);
     if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
         gb->selecscreen.sc = 2;
         gb->selecscreen.back = 6;

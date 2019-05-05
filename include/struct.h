@@ -101,7 +101,7 @@ struct s_hud {
 };
 
 struct s_inventory {
-    int inv[31];
+    int inv[30];
     int open;
 };
 
@@ -150,7 +150,7 @@ struct s_global {
     struct s_sprite sprite[33];
     struct s_text text[7];
     struct s_sound sound[2];
-    struct s_button button[36];
+    struct s_button button[41];
     struct s_hitbox hitbox[61];
     struct s_clock clock;
     struct s_movement move[7];
