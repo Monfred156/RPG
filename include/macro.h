@@ -60,7 +60,7 @@
 #define TXT_SAVE 5
 #define PNJ_TUTO 6
 #define PNJ_ULFRIC 7
-#define PNJ_LIFE 6
+#define PNJ_LIFE 8
 
 ///SPRITE///
 #define MENU_BACKGROUND 0
