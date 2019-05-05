@@ -51,6 +51,7 @@ SRCS	=	./src/rpg.c									\
 			./src/initia/initia_shop.c					\
 			./src/player/event_movement_player_fight.c	\
 			./src/player/movement_player_fight.c		\
+			./src/end_fight.c							\
 
 
 

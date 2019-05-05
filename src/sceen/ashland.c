@@ -24,6 +24,16 @@ void teleport_to_place_ash(global *gb)
     }
 }
 
+void touch_enemy_ash(global *gb)
+{
+    for (int i = 1; i < NB_MOB; i++)
+        if (collision_between__mob(gb->sprite[HERO].sprite,
+        gb->mob[i].sprite) == 1) {
+            gb->fght.mob = i;
+            gb->selecscreen.sc = 9;
+        }
+}
+
 void manage_event_ash(global *gb)
 {
     static float anim_portail = 0;
@@ -41,6 +51,7 @@ void manage_event_ash(global *gb)
     } else {
         time -= gb->clock.seconds - gb->clock.save_sec;
         anim_attack(gb, HERO);
+        touch_enemy_ash(gb);
     }
     for (int i = 1; i < NB_MOB; i++)
         pattern_mob(gb, i);
@@ -66,9 +77,13 @@ void display_ash(global *gb)
         gb->sprite[ASH_BACKGROUND].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[PORTAL_BACK].sprite, NULL);
-    for (int i = 1; i < NB_MOB; i++)
-        sfRenderWindow_drawSprite(gb->disev.window,
+    for (int i = 1; i < NB_MOB; i++) {
+        if (gb->mob[i].life > 0)
+            sfRenderWindow_drawSprite(gb->disev.window,
             gb->mob[i].sprite, NULL);
+        else
+            sfSprite_setPosition(gb->mob[i].sprite, gb->fght.dead);
+    }
     for (int i = VAL_MIN_ASH; i <= VAL_MAX_ASH; i++) {
         sfRenderWindow_drawRectangleShape(gb->disev.window,
                 gb->hitbox[i].hitbox, NULL);

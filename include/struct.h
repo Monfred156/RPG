@@ -115,11 +115,16 @@ struct s_stats {
     int weapon;
     int xp;
     int gold;
-    int dommage;
+    int damage;
 };
 
 struct s_fight {
     int mob;
+    float time_atk;
+    float save_y;
+    float save_x;
+    int initia;
+    sfVector2f dead;
 };
 
 struct s_global {
@@ -138,7 +143,7 @@ struct s_global {
     struct s_inventory inv;
     struct s_stats stats;
     struct s_trader trader;
-    struct s_fight num;
+    struct s_fight fght;
 };
 typedef struct s_global global;
 

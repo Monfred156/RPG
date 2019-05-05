@@ -23,5 +23,5 @@ void initia_stats(global *gb)
     gb->stats.weapon = 0;
     gb->stats.xp = 0;
     gb->stats.gold = 0;
-    gb->stats.dommage = 1;
+    gb->stats.damage = 1;
 }

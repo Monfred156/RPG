@@ -66,8 +66,8 @@ void mob_move(global *gb, int mob, int movement, float speed)
     one_direction_mob(gb, time_sec, mob, movement);
     if (gb->move[mob + 1].walk >= 8)
         gb->move[mob + 1].walk = 1;
-    gb->mob[mob].rect.top = gb->move[mob + 1].movement * 150;
-    gb->mob[mob].rect.left = gb->move[mob + 1].walk * 150;
+    gb->mob[mob].rect.top = gb->move[mob + 1].movement * 150 + 30;
+    gb->mob[mob].rect.left = gb->move[mob + 1].walk * 150 + 35;
     sfSprite_setTextureRect(gb->mob[mob].sprite, gb->mob[mob].rect);
     sfSprite_setPosition(gb->mob[mob].sprite, gb->mob[mob].pos);
 }

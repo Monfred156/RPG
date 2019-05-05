@@ -29,9 +29,8 @@ void touch_enemy(global *gb)
 {
     if (collision_between__mob(gb->sprite[HERO].sprite,
     gb->mob[0].sprite) == 1) {
-        gb->num.mob = 0;
+        gb->fght.mob = 0;
         gb->selecscreen.sc = 9;
-        gb->selecscreen.back = 9;
     }
 }
 
@@ -55,7 +54,8 @@ void click_player(global *gb)
 void manage_event_tuto(global *gb)
 {
     click_player(gb);
-    pattern_mob(gb, 0);
+    if (gb->mob[0].life > 0)
+        pattern_mob(gb, 0);
     teleport_to_place_tuto(gb);
     if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
         gb->selecscreen.sc = 2;
@@ -68,11 +68,15 @@ void display_tuto(global *gb)
 {
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[TUTO_BACKGROUND].sprite, NULL);
-    sfRenderWindow_drawSprite(gb->disev.window,
+    if (gb->mob[0].life > 0)
+        sfRenderWindow_drawSprite(gb->disev.window,
         gb->mob[0].sprite, NULL);
+    else
+        sfSprite_setPosition(gb->mob[0].sprite, gb->fght.dead);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
-    sfRenderWindow_drawRectangleShape(gb->disev.window, gb->teleport[CHEST].teleport, NULL);
+    sfRenderWindow_drawRectangleShape(gb->disev.window,
+    gb->teleport[CHEST].teleport, NULL);
     if (gb->inv.open == 1)
         display_inventory(gb);
 }

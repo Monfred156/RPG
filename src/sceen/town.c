@@ -46,6 +46,8 @@ void display_town(global *gb)
     }
     if (gb->inv.open == 1)
         display_inventory(gb);
+    for (int i = 1; i < NB_MOB; i++)
+        gb->mob[i].life = 10;
 }
 
 void move_rect_portal(global *gb, int offset, int max_value, float *time)

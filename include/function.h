@@ -177,6 +177,9 @@ void initia_fight(global *gb);
 void display_fight(global *gb);
 void manage_event_fight(global *gb);
 
+///end_fight.c///
+void end_game(global *gb);
+
 ///mouse_clic.c///
 int mouse_clic_button(global *gb, sfRectangleShape *rect);
 
