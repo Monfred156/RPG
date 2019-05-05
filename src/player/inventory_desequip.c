@@ -16,6 +16,7 @@ void desequip_head_shield(global *gb)
         for (int j = 0; j <= 14; j++) {
             if (gb->inv.inv[j] == 0) {
                 gb->inv.inv[j] = gb->inv.inv[15];
+                decrease_stats_head(gb);
                 gb->inv.inv[15] = 0;
                 break;
             }
@@ -26,6 +27,7 @@ void desequip_head_shield(global *gb)
         for (int j = 0; j <= 14; j++) {
             if (gb->inv.inv[j] == 0) {
                 gb->inv.inv[j] = gb->inv.inv[16];
+                decrease_stats_shield(gb);
                 gb->inv.inv[16] = 0;
                 break;
             }
@@ -40,6 +42,7 @@ void desequip_armor_weapon(global *gb)
         for (int j = 0; j <= 14; j++) {
             if (gb->inv.inv[j] == 0) {
                 gb->inv.inv[j] = gb->inv.inv[17];
+                decrease_stats_armor(gb);
                 gb->inv.inv[17] = 0;
                 break;
             }
@@ -50,6 +53,7 @@ void desequip_armor_weapon(global *gb)
         for (int j = 0; j <= 14; j++) {
             if (gb->inv.inv[j] == 0) {
                 gb->inv.inv[j] = gb->inv.inv[18];
+                decrease_stats_weapon(gb);
                 gb->inv.inv[18] = 0;
                 break;
             }
@@ -64,6 +68,7 @@ void desequip_legs(global *gb)
         for (int j = 0; j <= 14; j++) {
             if (gb->inv.inv[j] == 0) {
                 gb->inv.inv[j] = gb->inv.inv[19];
+                decrease_stats_legs(gb);
                 gb->inv.inv[19] = 0;
                 break;
             }

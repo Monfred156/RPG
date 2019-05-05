@@ -62,7 +62,7 @@ void manage_event(global *gb)
         if (gb->disev.event.type == sfEvtClosed)
             sfRenderWindow_close(gb->disev.window);
     }
-    calculate_stats(gb);
+    calculate_xp(gb);
     switch (gb->selecscreen.sc) {
         case 0:
             manage_event_menu(gb);

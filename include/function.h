@@ -302,6 +302,20 @@ void desequip_legs(global *gb);
 void display_stats(global *gb);
 
 ///calculate_stats.c///
-void calculate_stats(global *gb);
+void calculate_xp(global *gb);
+
+///decrease_stats.c///
+void decrease_stats_shield(global *gb);
+void decrease_stats_head(global *gb);
+void decrease_stats_armor(global *gb);
+void decrease_stats_weapon(global *gb);
+void decrease_stats_legs(global *gb);
+
+///increase_stats_legs.c///
+void increase_stats_legs(global *gb);
+void increase_stats_weapon(global *gb);
+void increase_stats_armor(global *gb);
+void increase_stats_head(global *gb);
+void increase_stats_shield(global *gb);
 
 #endif
