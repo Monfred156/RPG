@@ -55,7 +55,7 @@ SRCS	=	./src/rpg.c									\
 			./src/save/continue.c                       \
 			./src/end_fight.c							\
 			./src/initia/initia_speak.c                 \
-
+            ./src/display_hud.c
 
 
 OBJS	=	$(SRCS:.c=.o)

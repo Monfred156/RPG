@@ -51,3 +51,12 @@ struct s_quest *initia_quest(struct s_quest *quest,
     return (quest);
 }
 
+struct s_hud *initia_hud(struct s_hud *hud, sfVector2f size, sfVector2f pos)
+{
+    hud->rect = sfRectangleShape_create();
+    hud->pos = pos;
+    sfRectangleShape_setSize(hud->rect, size);
+    sfRectangleShape_setPosition(hud->rect, pos);
+    return (hud);
+}
+

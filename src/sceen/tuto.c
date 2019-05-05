@@ -84,4 +84,5 @@ void display_tuto(global *gb)
     dialogue_pnj(gb, 0);
     if (gb->inv.open == 1)
         display_inventory(gb);
+    display_hud(gb);
 }

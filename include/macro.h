@@ -140,4 +140,8 @@
 ///SOUND///
 #define SOUND_MENU 0
 
+///HUD///
+#define GREEN 0
+#define RED 1
+
 #endif //MUL_MY_RPG_2018_MACCRO_H

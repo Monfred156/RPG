@@ -92,4 +92,5 @@ void display_ash(global *gb)
         gb->sprite[HERO].sprite, NULL);
     if (gb->inv.open == 1)
         display_inventory(gb);
+    display_hud(gb);
 }

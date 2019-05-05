@@ -11,6 +11,8 @@
 
 void initia_var_tuto(global *gb)
 {
+    gb->hud[GREEN] = *initia_hud(&gb->hud[GREEN], (sfVector2f) {700, 20}, (sfVector2f) {600, 900});
+    gb->hud[RED] = *initia_hud(&gb->hud[RED], (sfVector2f) {700, 20}, (sfVector2f) {600, 900});
     gb->inv.open = 0;
 }
 

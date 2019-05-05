@@ -44,6 +44,7 @@ void display_town(global *gb)
         sfRenderWindow_drawSprite(gb->disev.window,
             gb->sprite[INVENTORY].sprite, NULL);
     }
+    display_hud(gb);
     if (gb->inv.open == 1)
         display_inventory(gb);
     for (int i = 1; i < NB_MOB; i++)

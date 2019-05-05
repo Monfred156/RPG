@@ -74,6 +74,7 @@ struct s_trader *initia_trader(struct s_trader *trader,
     sfVector2f size, sfVector2f pos);
 struct s_quest *initia_quest(struct s_quest *quest,
     sfVector2f size, sfVector2f pos, int nb_quest);
+struct s_hud *initia_hud(struct s_hud *hud, sfVector2f size, sfVector2f pos);
 
 ///initia_items.c///
 void initia_items(global *gb);
@@ -240,5 +241,11 @@ void movement_right_player_fight(global *gb, float time_sec, int sprite);
 ///check_2_in.c///
 int collision_between__sprite(sfSprite *sprite1, sfRectangleShape *rect1);
 int collision_between__mob(sfSprite *sprite1, sfSprite *rect);
+
+///display_hud.c///
+void display_hud(global *gb);
+
+///continue.c///
+void pressed_continued(global *gb);
 
 #endif

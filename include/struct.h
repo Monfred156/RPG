@@ -95,6 +95,11 @@ struct s_smoke {
     double posy[PARTICULES+1];
 };
 
+struct s_hud {
+    sfRectangleShape *rect;
+    sfVector2f pos;
+};
+
 struct s_inventory {
     int inv[31];
     int open;
@@ -120,7 +125,7 @@ struct s_stats {
     int posy;
 };
 
-struct s_quest{
+struct s_quest {
     sfRectangleShape *shape;
     sfVector2f size;
     sfVector2f pos;
@@ -155,6 +160,7 @@ struct s_global {
     struct s_stats stats;
     struct s_trader trader;
     struct s_fight fght;
+    struct s_hud hud[2];
 };
 typedef struct s_global global;
 

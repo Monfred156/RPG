@@ -47,4 +47,5 @@ void display_pub(global *gb)
         gb->teleport[EXIT_PUB].teleport, NULL);
     if (gb->inv.open == 1)
         display_inventory(gb);
+    display_hud(gb);
 }
