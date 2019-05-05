@@ -20,6 +20,8 @@ void display_inventory(global *gb)
     set_stuff1(gb);
     set_stuff2(gb);
     set_stuff3(gb);
+    display_stats(gb);
+
 }
 
 void event_inventory(global *gb)

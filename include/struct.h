@@ -118,6 +118,7 @@ struct s_stats {
     int foot;
     int weapon;
     int xp;
+    int lvl;
     int gold;
     int damage;
     int sceen;

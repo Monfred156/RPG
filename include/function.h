@@ -295,6 +295,10 @@ void desequip_head_shield(global *gb);
 void desequip_armor_weapon(global *gb);
 void desequip_legs(global *gb);
 
+///info_inventory.c///
+void display_stats(global *gb);
 
+///calculate_stats.c///
+void calculate_stats(global *gb);
 
 #endif
