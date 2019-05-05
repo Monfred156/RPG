@@ -46,8 +46,8 @@ int collision__mob(int mob, global *gb)
 
     rect1[0] = gb->sprite[HERO].pos.x + 120;
     rect1[1] = rect1[0] + 100;
-    rect2[0] = gb->mob[mob].pos.x + 37;
-    rect2[1] = rect2[0] + 217;
+    rect2[0] = gb->mob[mob].pos.x;
+    rect2[1] = rect2[0] + 300;
     if (rect1[0] < rect2[0] && rect1[1] > rect2[0] &&
     gb->mob[mob].rect.left == 600)
         return (1);

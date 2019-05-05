@@ -16,7 +16,7 @@ void event_mob(global *gb, int mob)
     if (gb->mob[mob].rand == 3) {
         time += gb->clock.seconds - gb->clock.save_sec;
         gb->mob[mob].rect.top = 1500;
-        if (time > 0.3) {
+        if (time > 0.17) {
             gb->mob[mob].rect.left += 150;
             time = 0;
         }
@@ -29,7 +29,7 @@ void event_mob(global *gb, int mob)
         mob_move_fght(gb, mob, gb->mob[mob].rand * 4, 1.6);
 }
 
-void click_player_fght(global *gb)
+void click_player_fght(global *gb, int mob)
 {
     static float time = 0;
 
@@ -42,9 +42,8 @@ void click_player_fght(global *gb)
     } else {
         time -= gb->clock.seconds - gb->clock.save_sec;
         anim_attack(gb, HERO);
-        if (collision_fght__mob(gb->fght.mob, gb) == 1 &&
-        gb->fght.time_atk <= 0) {
-            gb->mob[gb->fght.mob].life -= gb->stats.damage;
+        if (collision_fght__mob(mob, gb) == 1 && gb->fght.time_atk <= 0) {
+            gb->mob[mob].life -= gb->stats.damage;
             gb->fght.time_atk = 1;
         }
     }
@@ -67,23 +66,24 @@ void initia_fght(global *gb)
 void manage_event_fight(global *gb)
 {
     static float time = 0;
+    int mob = gb->fght.mob;
 
     if (gb->fght.initia == 0)
         initia_fght(gb);
     time += gb->clock.seconds - gb->clock.save_sec;
-    if (((time >= 1 && gb->mob[gb->fght.mob].rand != 3) || time >= 1.5) &&
-    gb->mob[gb->fght.mob].life > 0) {
-        gb->mob[gb->fght.mob].rect.left = 0;
-        sfSprite_setTextureRect(gb->mob[gb->fght.mob].sprite,
-        gb->mob[gb->fght.mob].rect);
+    if (time >= 0.8 && gb->mob[mob].life > 0) {
+        gb->mob[mob].rect.left = 0;
+        sfSprite_setTextureRect(gb->mob[mob].sprite, gb->mob[mob].rect);
         time = 0;
-        gb->mob[gb->fght.mob].rand = rand() % 4;
+        gb->mob[mob].rand = rand() % 5;
+        if (gb->mob[mob].rand > 3)
+            gb->mob[mob].rand = 3;
     }
-    click_player_fght(gb);
+    click_player_fght(gb, mob);
     if (gb->fght.time_atk > 0)
         gb->fght.time_atk -= gb->clock.seconds - gb->clock.save_sec;
-    if (gb->mob[gb->fght.mob].life > 0)
-        event_mob(gb, gb->fght.mob);
+    if (gb->mob[mob].life > 0)
+        event_mob(gb, mob);
     end_game(gb);
 }
 
