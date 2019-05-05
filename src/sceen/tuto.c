@@ -54,6 +54,8 @@ void click_player(global *gb)
 void manage_event_tuto(global *gb)
 {
     click_player(gb);
+    pnj_rando_rect(gb, PNJ_MAJ, 32, 128);
+    pattern_mob(gb, 0);
     if (gb->mob[0].life > 0)
         pattern_mob(gb, 0);
     teleport_to_place_tuto(gb);
@@ -73,10 +75,13 @@ void display_tuto(global *gb)
         gb->mob[0].sprite, NULL);
     else
         sfSprite_setPosition(gb->mob[0].sprite, gb->fght.dead);
+    sfRenderWindow_drawRectangleShape(gb->disev.window, gb->quest[0].shape, NULL);
+    sfRenderWindow_drawSprite(gb->disev.window, gb->sprite[PNJ_MAJ].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
     sfRenderWindow_drawRectangleShape(gb->disev.window,
     gb->teleport[CHEST].teleport, NULL);
+    dialogue_pnj(gb, 0);
     if (gb->inv.open == 1)
         display_inventory(gb);
 }

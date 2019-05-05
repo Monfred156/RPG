@@ -12,8 +12,12 @@
 #include "struct.h"
 ///////////////////////////////INITIA FOLDER////////////////////////////////////
 
+///pnj_random_move.c///
+void move_rect_pnj(global *gb,const int *value, float *time, int sprite);
+void pnj_rando_rect(global *gb, int sprite, int offset, int max_value);
+
 ///initia_pnj.c///
-void initia_sprite_pnj(global *gb);
+void initia_pnj(global *gb);
 
 ///initia_stats.c///
 void initia_stats(global *gb);
@@ -41,6 +45,10 @@ void initia_hitbox_town(global *gb);
 void initia_sprite_launch(global *gb);
 void initia_button_launch(global *gb);
 
+///initia_dialogue.c///
+void dialogue_pnj(global *gb, int sprite);
+void initia_dialogue(global *gb);
+
 ///initia_option.c///
 void initia_button_option(global *gb);
 void initia_sprite_option(global *gb);
@@ -64,6 +72,8 @@ struct s_teleport *initia_teleport(struct s_teleport *teleport,
     sfVector2f size, sfVector2f pos);
 struct s_trader *initia_trader(struct s_trader *trader,
     sfVector2f size, sfVector2f pos);
+struct s_quest *initia_quest(struct s_quest *quest,
+    sfVector2f size, sfVector2f pos, int nb_quest);
 
 ///initia_items.c///
 void initia_items(global *gb);

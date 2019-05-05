@@ -39,3 +39,15 @@ struct s_trader *initia_trader(struct s_trader *trader,
     return (trader);
 }
 
+struct s_quest *initia_quest(struct s_quest *quest,
+    sfVector2f size, sfVector2f pos, int nb_quest)
+{
+    quest->shape = sfRectangleShape_create();
+    quest->pos = pos;
+    quest->size = size;
+    sfRectangleShape_setSize(quest->shape, size);
+    sfRectangleShape_setPosition(quest->shape, pos);
+    quest->quest = nb_quest;
+    return (quest);
+}
+

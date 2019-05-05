@@ -51,6 +51,7 @@
 #define TXT_RETOUR 2
 #define TXT_BACK_MENU 3
 #define TXT_SON 4
+#define PNJ_TUTO 5
 
 ///SPRITE///
 #define MENU_BACKGROUND 0
@@ -79,6 +80,13 @@
 #define SWORD1 23
 #define SWORD2 24
 #define PORTAL_BACK 25
+#define PNJ_BEND 26
+#define PNJ_RED 27
+#define PNJ_GIRL 28
+#define PNJ_SOLD 29
+#define PNJ_PUB 30
+#define PNJ_MAJ 31
+#define PNJ_MAJ 32
 
 ///NUMBER OF MOB///
 #define NB_MOB 6
@@ -87,7 +95,7 @@
 #define PARTICULES 60
 
 ///NUMBER OF SPRITE///
-#define NUMBER_SPRITE 25
+#define NUMBER_SPRITE 32
 
 ///TELEPORTATION///
 #define CHEST 0

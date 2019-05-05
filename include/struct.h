@@ -120,6 +120,14 @@ struct s_stats {
     int posy;
 };
 
+struct s_quest{
+    sfRectangleShape *shape;
+    sfVector2f size;
+    sfVector2f pos;
+    int quest;
+    char *text;
+};
+
 struct s_fight {
     int mob;
     float time_atk;
@@ -130,11 +138,12 @@ struct s_fight {
 };
 
 struct s_global {
+    struct s_quest quest[1];
     struct s_teleport teleport[5];
     struct s_selectscreen selecscreen;
     struct s_display disev;
-    struct s_sprite sprite[26];
-    struct s_text text[5];
+    struct s_sprite sprite[33];
+    struct s_text text[6];
     struct s_sound sound[2];
     struct s_button button[36];
     struct s_hitbox hitbox[61];

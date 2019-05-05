@@ -90,4 +90,8 @@ void event_move_player_tuto(global *gb, int sprite)
     gb->sprite[HERO].rect);
     sfRectangleShape_setPosition(gb->teleport[CHEST].teleport,
         gb->teleport[CHEST].pos);
+    sfSprite_setPosition(gb->sprite[PNJ_MAJ].sprite,
+        gb->sprite[PNJ_MAJ].pos);
+    sfRectangleShape_setPosition(gb->quest[0].shape,
+        gb->quest[0].pos);
 }

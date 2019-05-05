@@ -46,6 +46,7 @@ SRCS	=	./src/rpg.c									\
 			./src/check_2_in.c							\
 			./src/initia/initia_items.c					\
 			./src/sceen/fight.c							\
+			./src/pnj_random_move.c                     \
 			./src/initia/initia_fight.c					\
 			./src/initia/initia_inventory.c				\
 			./src/initia/initia_shop.c					\
@@ -53,6 +54,7 @@ SRCS	=	./src/rpg.c									\
 			./src/player/movement_player_fight.c		\
 			./src/save/continue.c                       \
 			./src/end_fight.c							\
+			./src/initia/initia_speak.c                 \
 
 
 

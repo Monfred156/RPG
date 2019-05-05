@@ -48,6 +48,7 @@ void call_initia_function(global *gb)
     initia_items(gb);
     initia_button_ash(gb);
     initia_button_shop(gb);
+    initia_dialogue(gb);
 }
 
 void manage_event(global *gb)
