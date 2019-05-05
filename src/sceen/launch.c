@@ -23,8 +23,13 @@ void launch_intercat(global *gb, int nb)
     }
     if (mouse_clic_button(gb, gb->button[BUTTON_CONTINUE].rect) == 0) {
         sfText_setFillColor(gb->text[1].text, sfRed);
-        if (sfMouse_isButtonPressed(sfMouseLeft))
-            gb->selecscreen.sc = 5;
+        if (sfMouse_isButtonPressed(sfMouseLeft)) {
+            if (get_save(gb) == -1)
+                gb->selecscreen.sc = 5;
+            else {
+                pressed_continued(gb);
+            }
+        }
     }
 }
 

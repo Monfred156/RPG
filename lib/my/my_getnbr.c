@@ -24,15 +24,17 @@ int loop(int i, int num, char const *str)
     for (; str[i + 1] != '\0' && stop != 1; i++) {
         if (str[i] >= '0' && str[i] <= '9') {
             save = num;
-            num = num * 10;
             num = num + str[i] - 48;
+            num = num * 10;
             if ((save > 0 && num < 0) || (save < 0 && num > 0)) {
                 num = 0;
                 return (0);
             }
-        } else
+        }
+        if (str[i] < '0' || str[i] > '9')
             stop = 1;
     }
+    num = num + str[i] - 48;
     return (num);
 }
 

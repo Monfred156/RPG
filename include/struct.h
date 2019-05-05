@@ -110,12 +110,14 @@ struct s_stats {
     int life;
     int head;
     int body;
-    int leg;
     int foot;
     int weapon;
     int xp;
     int gold;
     int damage;
+    int sceen;
+    int posx;
+    int posy;
 };
 
 struct s_fight {

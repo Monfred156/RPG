@@ -23,8 +23,6 @@ int save_into_file(global *gb)
     write(fd, my_int_to_str(gb->stats.head), my_strlen(my_int_to_str(gb->stats.head)));
     write(fd, "\nBODY=", 6);
     write(fd, my_int_to_str(gb->stats.body), my_strlen(my_int_to_str(gb->stats.body)));
-    write(fd, "\nLEG=", 5);
-    write(fd, my_int_to_str(gb->stats.leg), my_strlen(my_int_to_str(gb->stats.leg)));
     write(fd, "\nFOOT=", 6);
     write(fd, my_int_to_str(gb->stats.foot), my_strlen(my_int_to_str(gb->stats.foot)));
     write(fd, "\nWEAPON=", 8);

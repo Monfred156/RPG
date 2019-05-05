@@ -9,6 +9,13 @@
 #include "function.h"
 #include "struct.h"
 
+void touch_enemy_fght(global *gb)
+{
+    if (collision_between__mob(gb->sprite[HERO].sprite,
+    gb->mob[gb->fght.mob].sprite) == 1)
+        gb->mob[gb->fght.mob].life -= gb->stats.damage;
+}
+
 void click_player_fght(global *gb)
 {
     static float time = 0;

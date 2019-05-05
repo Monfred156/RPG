@@ -19,7 +19,7 @@ int get_one_stat(char **array, char *str)
 
     for (int i = 0; array[i]; i++) {
         if (my_strncmp(my_strdup(array[i]), str, my_strlen(str)) == 0) {
-            decal(array[i], my_strlen(str - 1));
+            decal(array[i], my_strlen(str) + 1);
             stat = my_getnbr(array[i]);
             return (stat);
         }
@@ -29,19 +29,22 @@ int get_one_stat(char **array, char *str)
 
 int get_all_stat(global *gb, char **array)
 {
-    char *all_var[7] = {"LIFE", "HEAD", "BODY", "LEG", "FOOT", "WEAPON", "XP"};
+    char *all_var[10] = {"LIFE", "HEAD", "BODY", "FOOT", "WEAPON", "XP", "DAMAGE", "SCEEN", "POSX", "POSY"};
 
-    for (int i = 0; i < 7; i++) {
+    for (int i = 0; i < 10; i++) {
         if (check_var(all_var[i], array) != 1)
             return (1);
     }
     gb->stats.life = get_one_stat(array, "LIFE");
     gb->stats.head = get_one_stat(array, "HEAD");
     gb->stats.body = get_one_stat(array, "BODY");
-    gb->stats.leg = get_one_stat(array, "LEG");
     gb->stats.foot = get_one_stat(array, "FOOT");
     gb->stats.weapon = get_one_stat(array, "WEAPON");
     gb->stats.xp = get_one_stat(array, "XP");
+    gb->stats.damage= get_one_stat(array, "DAMAGE");
+    gb->stats.sceen = get_one_stat(array, "SCEEN");
+    gb->stats.posx = get_one_stat(array, "POSX");
+    gb->stats.posy = get_one_stat(array, "POSY");
     return (0);
 }
 
@@ -78,7 +81,7 @@ int get_save(global *gb)
 {
     char *str = NULL;
     char **array;
-    int fd = open("save/save.txt", O_RDONLY);
+    int fd = open("save.txt", O_RDONLY);
 
     if (fd < 0)
         return (-1);
