@@ -119,10 +119,6 @@ struct s_trader {
 
 struct s_stats {
     int life;
-    int head;
-    int body;
-    int foot;
-    int weapon;
     int xp;
     int lvl;
     int gold;

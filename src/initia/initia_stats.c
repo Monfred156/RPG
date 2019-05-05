@@ -38,10 +38,6 @@ void initia_text_stats(global *gb)
 void initia_stats(global *gb)
 {
     gb->stats.life = 100;
-    gb->stats.head = 0;
-    gb->stats.body = 0;
-    gb->stats.foot = 0;
-    gb->stats.weapon = 0;
     gb->stats.xp = 0;
     gb->stats.gold = 10;
     gb->stats.damage = 10;

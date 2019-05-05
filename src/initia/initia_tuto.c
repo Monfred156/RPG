@@ -11,14 +11,10 @@
 
 void initia_var_tuto(global *gb)
 {
-    gb->hud[GREEN] = *initia_hud(&gb->hud[GREEN],
-    (sfVector2f) {700, 20}, (sfVector2f) {100, 100});
-    gb->hud[RED] = *initia_hud(&gb->hud[RED],
-    (sfVector2f) {700, 20}, (sfVector2f) {100, 100});
-    gb->hud_mob[GREEN] = *initia_hud_mob(&gb->hud_mob[GREEN],
-    (sfVector2f) {700, 20}, (sfVector2f) {1100, 100});
-    gb->hud_mob[RED] = *initia_hud_mob(&gb->hud_mob[RED],
-    (sfVector2f) {700, 20}, (sfVector2f) {1100, 100});
+    gb->hud[GREEN] = *initia_hud(&gb->hud[GREEN], (sfVector2f) {700, 20}, (sfVector2f) {100, 50});
+    gb->hud[RED] = *initia_hud(&gb->hud[RED], (sfVector2f) {700, 20}, (sfVector2f) {100, 50});
+    gb->hud_mob[GREEN] = *initia_hud_mob(&gb->hud_mob[GREEN], (sfVector2f) {700, 20}, (sfVector2f) {900, 50});
+    gb->hud_mob[RED] = *initia_hud_mob(&gb->hud_mob[RED], (sfVector2f) {700, 20}, (sfVector2f) {900, 50});
     gb->inv.open = 0;
 }
 

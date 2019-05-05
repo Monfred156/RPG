@@ -18,8 +18,10 @@ void launch_intercat(global *gb, int nb)
     }
     if (mouse_clic_button(gb, gb->button[BUTTON_NEW_GAME].rect) == 0) {
         sfText_setFillColor(gb->text[0].text, sfRed);
-        if (sfMouse_isButtonPressed(sfMouseLeft))
+        if (sfMouse_isButtonPressed(sfMouseLeft)) {
+            reini_all(gb);
             gb->selecscreen.sc = 5;
+        }
     }
     if (mouse_clic_button(gb, gb->button[BUTTON_CONTINUE].rect) == 0) {
         sfText_setFillColor(gb->text[1].text, sfRed);

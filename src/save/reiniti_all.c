@@ -9,6 +9,32 @@
 #include "function.h"
 #include "struct.h"
 
+void reini_tuto(global *gb)
+{
+    int x = 0;
+    int y = 0;
+    sfVector2f pos;
+    pos = sfRectangleShape_getPosition(gb->hitbox[VAL_MIN_TUTO].hitbox);
+    gb->sprite[HERO].pos.x = 800;
+    gb->sprite[HERO].pos.y = 400;
+    gb->sprite[TUTO_BACKGROUND].pos.x = 550;
+    gb->sprite[TUTO_BACKGROUND].pos.y = 200;
+    gb->mob[0].pos.x = 1800;
+    gb->mob[0].pos.y = 900;
+    gb->mob[0].life = 10;
+    gb->teleport[CHEST].pos.x = 1960;
+    gb->teleport[CHEST].pos.y = 300;
+    sfSprite_setPosition(gb->sprite[HERO].sprite, gb->sprite[HERO].pos);
+    sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite, gb->sprite[TUTO_BACKGROUND].pos);
+    x = 510 - pos.x;
+    y = 200 - pos.y;
+    for (int i = VAL_MIN_TUTO; i <= VAL_MAX_TUTO; i++) {
+        gb->hitbox[i].pos.x += x;
+        gb->hitbox[i].pos.y += y;
+        sfRectangleShape_setPosition(gb->hitbox[i].hitbox, gb->hitbox[i].pos);
+    }
+}
+
 void reini_pub(global *gb)
 {
     int x = 0;
@@ -78,4 +104,5 @@ void reini_all(global *gb)
     }
     reini_pub(gb);
     reini_town(gb);
+    reini_tuto(gb);
 }
