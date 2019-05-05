@@ -54,6 +54,7 @@ struct s_display {
     sfVideoMode video_mode;
     sfEvent event;
     sfVector2u size;
+    int kill;
     int tele;
 };
 

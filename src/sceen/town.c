@@ -18,6 +18,8 @@ void dialogue_pnj_town(global *gb, int sprite, int quest)
         gb->quest[0].open = 0;
     }
     if (gb->quest->open == 1) {
+        if (gb->disev.kill == -1)
+            gb->disev.kill = 0;
         sfRenderWindow_drawSprite(gb->disev.window,
             gb->sprite[BACK_TEXT].sprite, NULL);
         sfRenderWindow_drawText(gb->disev.window, gb->text[sprite].text,
