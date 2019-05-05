@@ -81,8 +81,19 @@ void initia_items(global *gb);
 
 ///initia_inventory.c///
 void initia_inventory(global *gb);
+void initia_button_inventory(global *gb);
+void initia_button_inventory2(global *gb);
+void initia_button_inventory3(global *gb);
+void initia_button_inventory4(global *gb);
 
 ////////////////////////////////////////////////////////////////////////////////
+
+
+///display_inventory.c///
+void draw_item(global *gb, int temp, sfVector2f *pos);
+void set_stuff1(global *gb);
+void set_stuff2(global *gb);
+void set_stuff3(global *gb);
 
 ///event_movement_player_ash.c///
 void event_move_player_ash(global *gb, int sprite);
@@ -180,9 +191,6 @@ void initia_pos_particule_menu(global *gb);
 void initia_sprite_tuto(global *gb);
 void initia_var_tuto(global *gb);
 
-///initia_pnj.c///
-void initia_pnj(global *gb);
-
 ///initia_fight.c///
 void initia_fight(global *gb);
 
@@ -253,5 +261,30 @@ void display_hud(global *gb);
 
 ///continue.c///
 void pressed_continued(global *gb);
+
+///trader.c///
+void event_trader(global *gb);
+
+///buy.c///
+void function_buy1(global *gb);
+void function_buy2(global *gb);
+void function_buy3(global *gb);
+
+///envent_inventory.c///
+void equip_stuff(global *gb, int *place);
+void desequip_stuff(global *gb);
+
+///inventory_equip.c///
+void equip_weapon_chest(global *gb, int const *place);
+void equip_head_shield(global *gb, int const *place);
+void equip_legs(global *gb, const int *place);
+
+
+///inventory_desequip.c///
+void desequip_head_shield(global *gb);
+void desequip_armor_weapon(global *gb);
+void desequip_legs(global *gb);
+
+
 
 #endif
