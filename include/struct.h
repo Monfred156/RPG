@@ -141,6 +141,7 @@ struct s_fight {
     float save_x;
     int initia;
     sfVector2f dead;
+    int end;
 };
 
 struct s_global {

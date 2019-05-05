@@ -63,15 +63,14 @@ void initia_fght(global *gb)
     gb->mob[gb->fght.mob].rand = 0;
 }
 
-void manage_event_fight(global *gb)
+void manage_event_fight(global *gb, int mob)
 {
     static float time = 0;
-    int mob = gb->fght.mob;
 
     if (gb->fght.initia == 0)
         initia_fght(gb);
     time += gb->clock.seconds - gb->clock.save_sec;
-    if (time >= 0.8 && gb->mob[mob].life > 0) {
+    if (time >= 0.8 && gb->fght.end == 0) {
         gb->mob[mob].rect.left = 0;
         sfSprite_setTextureRect(gb->mob[mob].sprite, gb->mob[mob].rect);
         time = 0;
@@ -79,12 +78,13 @@ void manage_event_fight(global *gb)
         if (gb->mob[mob].rand > 3)
             gb->mob[mob].rand = 3;
     }
-    click_player_fght(gb, mob);
     if (gb->fght.time_atk > 0)
         gb->fght.time_atk -= gb->clock.seconds - gb->clock.save_sec;
-    if (gb->mob[mob].life > 0)
+    if (gb->fght.end == 0) {
+        click_player_fght(gb, mob);
         event_mob(gb, mob);
-    end_game(gb);
+    }
+    end_game(gb, mob);
 }
 
 void display_fight(global *gb)
@@ -100,7 +100,7 @@ void display_fight(global *gb)
         sfRenderWindow_drawSprite(gb->disev.window,
         gb->mob[gb->fght.mob].sprite, NULL);
     sfSprite_setScale(gb->sprite[HERO].sprite, size);
-    if (flot2 % 13 < 6 || gb->mob[gb->fght.mob].life <= 0)
+    if (flot2 % 13 < 6 || gb->stats.life <= 0)
         sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
 }

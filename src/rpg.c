@@ -82,7 +82,7 @@ void manage_event(global *gb)
             manage_event_ash(gb);
             break;
         case 9:
-            manage_event_fight(gb);
+            manage_event_fight(gb, gb->fght.mob);
             break;
     }
 }

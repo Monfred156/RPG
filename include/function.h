@@ -197,10 +197,10 @@ void initia_fight(global *gb);
 
 ///fight.c///
 void display_fight(global *gb);
-void manage_event_fight(global *gb);
+void manage_event_fight(global *gb, int mob);
 
 ///end_fight.c///
-void end_game(global *gb);
+void end_game(global *gb, int mob);
 void mob_move_fght(global *gb, int mob, int movement, float speed);
 
 ///mouse_clic.c///

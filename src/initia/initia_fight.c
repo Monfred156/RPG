@@ -19,4 +19,5 @@ void initia_fight(global *gb)
     gb->fght.initia = 0;
     gb->fght.dead.y = 5000;
     gb->fght.dead.x = 5000;
+    gb->fght.end = 0;
 }
