@@ -283,6 +283,8 @@ void equip_weapon_chest(global *gb, int const *place);
 void equip_head_shield(global *gb, int const *place);
 void equip_legs(global *gb, const int *place);
 
+///reiniti_all.c///
+void reini_all(global *gb);
 
 ///inventory_desequip.c///
 void desequip_head_shield(global *gb);

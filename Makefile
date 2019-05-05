@@ -62,6 +62,7 @@ SRCS	=	./src/rpg.c									\
             ./src/player/event_inventory.c              \
             ./src/player/inventory_equip.c              \
             ./src/player/inventory_desequip.c           \
+            ./src/save/reiniti_all.c                    \
             ./src/sceen/escape.c                        \
 
 
