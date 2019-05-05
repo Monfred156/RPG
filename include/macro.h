@@ -70,6 +70,9 @@
 #define TXT_ATTACK 14
 #define TXT_QUEST 15
 
+///NUMBER OF TEXT///
+#define NUMBER_TEXT 16
+
 ///SPRITE///
 #define MENU_BACKGROUND 0
 #define TUTO_BACKGROUND 1
@@ -105,14 +108,14 @@
 #define PNJ_MAJ 31
 #define BACK_TEXT 32
 
+///NUMBER OF SPRITE///
+#define NUMBER_SPRITE 33
+
 ///NUMBER OF MOB///
 #define NB_MOB 6
 
 ///NUMBER OF PARTICULES///
 #define PARTICULES 60
-
-///NUMBER OF SPRITE///
-#define NUMBER_SPRITE 32
 
 ///TELEPORTATION///
 #define CHEST 0
@@ -156,6 +159,9 @@
 
 ///SOUND///
 #define SOUND_MENU 0
+
+///NUMBER OF SOUND///
+#define NUMBER_SOUND 1
 
 ///HUD///
 #define GREEN 0
