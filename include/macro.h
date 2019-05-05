@@ -68,6 +68,7 @@
 #define TXT_GOLD 12
 #define TXT_ARMOR 13
 #define TXT_ATTACK 14
+#define TXT_QUEST 15
 
 ///SPRITE///
 #define MENU_BACKGROUND 0

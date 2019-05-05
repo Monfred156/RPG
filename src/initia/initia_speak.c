@@ -30,4 +30,8 @@ void initia_dialogue(global *gb)
     initia_text(&gb->text[PNJ_ULFRIC], send, (sfVector2f){1000, 700}, sfBlack, 40);
     send[0] = my_strdup("Rien ne vaut une chope d'Hydromel\npour repartir de bons pieds ! <3");
     initia_text(&gb->text[PNJ_LIFE], send, (sfVector2f){1000, 700}, sfBlack, 40);
+    send[0] = my_strdup("Merci beaucoup pour ces orcs..\n"
+                        "Heureusement que tu es la pour\n"
+                        "proteger notre village.\n");
+    initia_text(&gb->text[TXT_QUEST], send, (sfVector2f){1000, 700}, sfRed, 40);
 }
