@@ -35,7 +35,8 @@ void anim_end(global *gb, int sceen, sfIntRect *rect, sfSprite *sprite)
     static float time = 0;
 
     gb->fght.end = 1;
-    if (rect->top < 3000) {
+    if (rect->top != 3000) {
+        rect->width = 150;
         rect->top = 3000;
         rect->left = 0;
     }
@@ -55,7 +56,7 @@ void end_game(global *gb, int mob)
 
     if (mob != 0)
         nb = 8;
-    if (gb->stats.life == 0)
+    if (gb->stats.life <= 0)
         anim_end(gb, 7, &gb->sprite[HERO].rect, gb->sprite[HERO].sprite);
     if (gb->mob[mob].life <= 0)
             anim_end(gb, nb, &gb->mob[mob].rect, gb->mob[mob].sprite);

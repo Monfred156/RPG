@@ -149,6 +149,8 @@ struct s_fight {
     int initia;
     sfVector2f dead;
     int end;
+    float time_ash;
+    float time_tuto;
 };
 
 struct s_global {

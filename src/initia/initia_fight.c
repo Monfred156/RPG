@@ -20,4 +20,6 @@ void initia_fight(global *gb)
     gb->fght.dead.y = 5000;
     gb->fght.dead.x = 5000;
     gb->fght.end = 0;
+    gb->fght.time_ash = 0;
+    gb->fght.time_tuto = 0;
 }

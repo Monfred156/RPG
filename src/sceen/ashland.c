@@ -29,6 +29,7 @@ void touch_enemy_ash(global *gb)
     for (int i = 1; i < NB_MOB; i++)
         if (collision_between__mob(gb->sprite[HERO].sprite,
         gb->mob[i].sprite) == 1) {
+            gb->fght.time_ash = 0;
             gb->fght.mob = i;
             gb->selecscreen.sc = 9;
         }
@@ -37,19 +38,15 @@ void touch_enemy_ash(global *gb)
 void manage_event_ash(global *gb)
 {
     static float anim_portail = 0;
-    static float time = 0;
 
     anim_portail += gb->clock.seconds - gb->clock.save_sec;
     move_rect_portal_back(gb, 300, 900, &anim_portail);
-    if (time <= 0) {
-        if (gb->sprite[HERO].rect.top > 3000) {
-            gb->sprite[HERO].rect.width = 150;
-        }
+    if (gb->fght.time_ash <= 0) {
         event_move_player_ash(gb, ASH_BACKGROUND);
         if (sfKeyboard_isKeyPressed(sfKeySpace))
-            time = 0.45;
+            gb->fght.time_ash = 0.45;
     } else {
-        time -= gb->clock.seconds - gb->clock.save_sec;
+        gb->fght.time_ash -= gb->clock.seconds - gb->clock.save_sec;
         anim_attack(gb, HERO);
         touch_enemy_ash(gb);
     }

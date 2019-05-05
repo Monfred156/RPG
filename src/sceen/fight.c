@@ -82,7 +82,8 @@ void manage_event_fight(global *gb, int mob)
         gb->fght.time_atk -= gb->clock.seconds - gb->clock.save_sec;
     if (gb->fght.end == 0)
         event_mob(gb, mob);
-    click_player_fght(gb, mob);
+    if (gb->stats.life > 0)
+        click_player_fght(gb, mob);
     end_game(gb, mob);
 }
 

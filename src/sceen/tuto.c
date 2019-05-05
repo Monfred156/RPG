@@ -46,19 +46,16 @@ void teleport_to_place_tuto(global *gb)
 
 void click_player(global *gb)
 {
-    static float time = 0;
-
-    if (time <= 0) {
-        if (gb->sprite[HERO].rect.top > 3000)
-            gb->sprite[HERO].rect.width = 150;
+    if (gb->fght.time_tuto <= 0) {
         event_move_player_tuto(gb, TUTO_BACKGROUND);
         if (sfKeyboard_isKeyPressed(sfKeySpace))
-            time = 0.45;
+            gb->fght.time_tuto = 0.45;
     } else {
-        time -= gb->clock.seconds - gb->clock.save_sec;
+        gb->fght.time_tuto -= gb->clock.seconds - gb->clock.save_sec;
         anim_attack(gb, HERO);
         if (collision_between__mob(gb->sprite[HERO].sprite,
         gb->mob[0].sprite) == 1) {
+            gb->fght.time_tuto = 0;
             gb->fght.mob = 0;
             gb->selecscreen.sc = 9;
         }
