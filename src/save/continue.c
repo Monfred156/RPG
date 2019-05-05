@@ -11,21 +11,21 @@
 
 void tp_in_town(global *gb, int posx, int posy)
 {
-    gb->sprite[TOWN_BACKGROUND].pos.x -= posx;
-    gb->sprite[TOWN_BACKGROUND].pos.y -= posy;
-    gb->sprite[PORTAL].pos.x -= posx;
-    gb->sprite[PORTAL].pos.y -= posy;
-    gb->teleport[OPEN_PORTAL].pos.x -= posx;
-    gb->teleport[OPEN_PORTAL].pos.y -= posy;
-    gb->teleport[PUB].pos.x -= posx;
-    gb->teleport[PUB].pos.y -= posy;
-    gb->trader.pos.y -= posy;
-    gb->trader.pos.x -= posx;
+    gb->sprite[TOWN_BACKGROUND].pos.x += posx -600;
+    gb->sprite[TOWN_BACKGROUND].pos.y += posy + 590;
+    gb->sprite[PORTAL].pos.x += posx - 600;
+    gb->sprite[PORTAL].pos.y += posy + 590;
+    gb->teleport[OPEN_PORTAL].pos.x += posx - 600;
+    gb->teleport[OPEN_PORTAL].pos.y += posy + 590;
+    gb->teleport[PUB].pos.x += posx - 600;
+    gb->teleport[PUB].pos.y += posy + 590;
+    gb->trader.pos.x += posx - 600;
+    gb->trader.pos.y += posy + 590;
     sfSprite_setPosition(gb->sprite[TOWN_BACKGROUND].sprite, gb->sprite[TOWN_BACKGROUND].pos);
     sfSprite_setPosition(gb->sprite[PORTAL].sprite, gb->sprite[PORTAL].pos);
     for (int i = VAL_MIN_TOWN; i <= VAL_MAX_TOWN; i++) {
-        gb->hitbox[i].pos.x -= posx;
-        gb->hitbox[i].pos.y -= posy;
+        gb->hitbox[i].pos.x += posx - 600;
+        gb->hitbox[i].pos.y += posy + 590;
         sfRectangleShape_setPosition(gb->hitbox[i].hitbox, gb->hitbox[i].pos);
     }
 }
@@ -64,11 +64,17 @@ void tp_in_ashland(global *gb)
 
 void pressed_continued(global *gb)
 {
-    if (gb->stats.sceen == 6)
-        tp_in_town(gb, gb->stats.posx, gb->stats.posy);
-    if (gb->stats.sceen == 7)
-        tp_in_pub(gb);
-    if (gb->stats.sceen == 8)
-        tp_in_ashland(gb);
+    static int i = 0;
+    if (i == 0) {
+        i++;
+        printf("%d\n", gb->stats.posy);
+        printf("%d\n", gb->stats.posx);
+        if (gb->stats.sceen == 6)
+            tp_in_town(gb, gb->stats.posx, gb->stats.posy);
+        if (gb->stats.sceen == 7)
+            tp_in_pub(gb);
+        if (gb->stats.sceen == 8)
+            tp_in_ashland(gb);
+    }
     gb->selecscreen.sc = gb->stats.sceen;
 }

@@ -23,4 +23,7 @@ void initia_stats(global *gb)
     gb->stats.xp = 0;
     gb->stats.gold = 0;
     gb->stats.damage = 1;
+    gb->stats.sceen = 5;
+    gb->stats.posx = 0;
+    gb->stats.posy = 0;
 }

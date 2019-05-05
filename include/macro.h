@@ -17,6 +17,7 @@
 #define BUTTON_CONTINUE 5
 #define BUTTON_SON 6
 #define BUTTON_BACK_MENU 7
+#define BUTTON_SAVE 40
 #define BUTTON_BUY1 8
 #define BUTTON_BUY2 9
 #define BUTTON_BUY3 10
@@ -56,6 +57,7 @@
 #define TXT_RETOUR 2
 #define TXT_BACK_MENU 3
 #define TXT_SON 4
+#define TXT_SAVE 7
 #define PNJ_TUTO 5
 #define PNJ_ULFRIC 6
 

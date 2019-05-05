@@ -41,6 +41,7 @@ int get_all_stat(global *gb, char **array)
     gb->stats.foot = get_one_stat(array, "FOOT");
     gb->stats.weapon = get_one_stat(array, "WEAPON");
     gb->stats.xp = get_one_stat(array, "XP");
+    gb->stats.gold = get_one_stat(array, "GOLD");
     gb->stats.damage= get_one_stat(array, "DAMAGE");
     gb->stats.sceen = get_one_stat(array, "SCEEN");
     gb->stats.posx = get_one_stat(array, "POSX");
