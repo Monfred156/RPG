@@ -86,7 +86,7 @@ struct s_mob {
     sfTexture *texture;
     sfVector2f pos;
     sfIntRect rect;
-    float rand;
+    int rand;
     float time;
 };
 

@@ -19,6 +19,26 @@ int collision_between__sprite(sfSprite *sprite1, sfRectangleShape *rect)
         return 0;
 }
 
+int collision_fght__mob(int mob, global *gb)
+{
+    int rect1[2];
+    int rect2[2];
+
+    rect1[0] = gb->sprite[HERO].pos.x;
+    rect1[1] = rect1[0] + 160;
+    rect2[0] = gb->mob[mob].pos.x + 95;
+    rect2[1] = rect2[0] + 88;
+    if (gb->sprite[HERO].rect.top == 3600) {
+        rect1[0] += 170;
+        rect1[1] += 170;
+    }
+    if (rect1[0] < rect2[0] && rect1[1] > rect2[0])
+        return (1);
+    if (rect1[0] < rect2[1] && rect1[1] > rect2[1])
+        return (1);
+    return (0);
+}
+
 int collision_between__mob(sfSprite *sprite1, sfSprite *rect)
 {
     sfFloatRect f_rect = sfSprite_getGlobalBounds(sprite1);

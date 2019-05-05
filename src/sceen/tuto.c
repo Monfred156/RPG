@@ -31,23 +31,16 @@ void teleport_to_place_tuto(global *gb)
     sfVector2f player = sfSprite_getPosition(gb->sprite[HERO].sprite);
     sfVector2f size = sfRectangleShape_getSize(gb->teleport[CHEST].teleport);
 
-    if (player.x + 40 > gb->teleport[CHEST].pos.x && player.x + 50 < gb->teleport[CHEST].pos.x + size.x &&
-        player.y + 10 > gb->teleport[CHEST].pos.y - 10 && player.y + 70 < gb->teleport[CHEST].pos.y + size.y) {
+    if (player.x + 40 > gb->teleport[CHEST].pos.x &&
+    player.x + 50 < gb->teleport[CHEST].pos.x + size.x &&
+    player.y + 10 > gb->teleport[CHEST].pos.y - 10 &&
+    player.y + 70 < gb->teleport[CHEST].pos.y + size.y) {
         if (sfKeyboard_isKeyPressed(sfKeyE)) {
             check_touche_key(gb, sfKeyE);
             gb->selecscreen.sc = 6;
             check_touche_key(gb, sfKeyE);
             sleep(1);
         }
-    }
-}
-
-void touch_enemy(global *gb)
-{
-    if (collision_between__mob(gb->sprite[HERO].sprite,
-    gb->mob[0].sprite) == 1) {
-        gb->fght.mob = 0;
-        gb->selecscreen.sc = 9;
     }
 }
 
@@ -64,7 +57,11 @@ void click_player(global *gb)
     } else {
         time -= gb->clock.seconds - gb->clock.save_sec;
         anim_attack(gb, HERO);
-        touch_enemy(gb);
+        if (collision_between__mob(gb->sprite[HERO].sprite,
+        gb->mob[0].sprite) == 1) {
+            gb->fght.mob = 0;
+            gb->selecscreen.sc = 9;
+        }
     }
 }
 
@@ -72,7 +69,6 @@ void manage_event_tuto(global *gb)
 {
     click_player(gb);
     pnj_rando_rect(gb, PNJ_MAJ, 32, 128);
-    pattern_mob(gb, 0);
     if (gb->mob[0].life > 0)
         pattern_mob(gb, 0);
     teleport_to_place_tuto(gb);

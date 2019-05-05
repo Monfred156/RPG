@@ -27,9 +27,9 @@ int count_direction_anim_fight(global *gb, int sprite, float time_sec)
 {
     int choose = 0;
 
-    if (sfKeyboard_isKeyPressed(sfKeyQ))
+    if (sfKeyboard_isKeyPressed(sfKeyQ) && gb->sprite[HERO].pos.x > -90)
         choose += MOVE_LEFT;
-    if (sfKeyboard_isKeyPressed(sfKeyD))
+    if (sfKeyboard_isKeyPressed(sfKeyD) && gb->sprite[HERO].pos.x < 1680)
         choose += MOVE_RIGHT;
     choose %= 12;
     find_one_direction_fight(gb, time_sec, choose, sprite);
