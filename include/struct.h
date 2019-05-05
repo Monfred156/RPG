@@ -130,7 +130,7 @@ struct s_quest {
     sfVector2f size;
     sfVector2f pos;
     int quest;
-    char *text;
+    int open;
 };
 
 struct s_fight {
@@ -143,12 +143,12 @@ struct s_fight {
 };
 
 struct s_global {
-    struct s_quest quest[1];
+    struct s_quest quest[6];
     struct s_teleport teleport[5];
     struct s_selectscreen selecscreen;
     struct s_display disev;
     struct s_sprite sprite[33];
-    struct s_text text[6];
+    struct s_text text[7];
     struct s_sound sound[2];
     struct s_button button[36];
     struct s_hitbox hitbox[61];

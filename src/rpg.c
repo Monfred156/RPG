@@ -11,6 +11,7 @@
 
 void initia_screen(global *gb)
 {
+    gb->quest[0].open = 0;
     gb->selecscreen.sc = 0;
 }
 
@@ -49,6 +50,7 @@ void call_initia_function(global *gb)
     initia_button_ash(gb);
     initia_button_shop(gb);
     initia_dialogue(gb);
+    initia_sprite_speak(gb);
 }
 
 void manage_event(global *gb)

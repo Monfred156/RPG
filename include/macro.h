@@ -52,6 +52,7 @@
 #define TXT_BACK_MENU 3
 #define TXT_SON 4
 #define PNJ_TUTO 5
+#define PNJ_ULFRIC 6
 
 ///SPRITE///
 #define MENU_BACKGROUND 0

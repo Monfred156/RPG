@@ -46,7 +46,7 @@ void initia_sprite_launch(global *gb);
 void initia_button_launch(global *gb);
 
 ///initia_dialogue.c///
-void dialogue_pnj(global *gb, int sprite);
+void initia_sprite_speak(global *gb);
 void initia_dialogue(global *gb);
 
 ///initia_option.c///
@@ -132,6 +132,7 @@ void manage_event_pub(global *gb);
 void display_pub(global *gb);
 
 ///town.c///
+void dialogue_pnj_town(global *gb, int sprite, int quest);
 void teleport_to_place_town(global *gb);
 void display_town(global *gb);
 void manage_event_town(global *gb);
@@ -149,6 +150,7 @@ void manage_event_menu(global *gb);
 void display_menu(global *gb);
 
 ///tuto.c///
+void dialogue_pnj_tuto(global *gb, int sprite, int quest);
 void manage_event_tuto(global *gb);
 void display_tuto(global *gb);
 void initia_button_tuto(global *gb);

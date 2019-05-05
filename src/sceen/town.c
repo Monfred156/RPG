@@ -7,6 +7,23 @@
 
 #include "function.h"
 
+void dialogue_pnj_town(global *gb, int sprite, int quest)
+{
+    if (collision_between__sprite(gb->sprite[HERO].sprite, gb->quest[quest].shape)
+        == 1 && sfKeyboard_isKeyPressed(sfKeyE))
+        gb->quest[0].open = 1;
+    if (collision_between__sprite(gb->sprite[HERO].sprite, gb->quest[quest].shape)
+        == 0) {
+        gb->quest[0].open = 0;
+    }
+    if (gb->quest->open == 1) {
+        sfRenderWindow_drawSprite(gb->disev.window,
+            gb->sprite[BACK_TEXT].sprite, NULL);
+        sfRenderWindow_drawText(gb->disev.window, gb->text[sprite].text,
+            NULL);
+    }
+}
+
 void teleport_to_place_town(global *gb)
 {
     sfVector2f player = sfSprite_getPosition(gb->sprite[HERO].sprite);
@@ -49,6 +66,7 @@ void display_town(global *gb)
         display_inventory(gb);
     for (int i = 1; i < NB_MOB; i++)
         gb->mob[i].life = 10;
+    dialogue_pnj_town(gb, PNJ_ULFRIC, 1);
 }
 
 void move_rect_portal(global *gb, int offset, int max_value, float *time)

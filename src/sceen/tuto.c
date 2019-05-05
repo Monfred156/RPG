@@ -9,6 +9,23 @@
 #include "function.h"
 #include "struct.h"
 
+void dialogue_pnj_tuto(global *gb, int sprite, int quest)
+{
+    if (collision_between__sprite(gb->sprite[HERO].sprite, gb->quest[quest].shape)
+        == 1 && sfKeyboard_isKeyPressed(sfKeyE))
+        gb->quest[0].open = 1;
+    if (collision_between__sprite(gb->sprite[HERO].sprite, gb->quest[quest].shape)
+        == 0) {
+        gb->quest[0].open = 0;
+    }
+    if (gb->quest->open == 1) {
+        sfRenderWindow_drawSprite(gb->disev.window,
+            gb->sprite[BACK_TEXT].sprite, NULL);
+        sfRenderWindow_drawText(gb->disev.window, gb->text[sprite].text,
+            NULL);
+    }
+}
+
 void teleport_to_place_tuto(global *gb)
 {
     sfVector2f player = sfSprite_getPosition(gb->sprite[HERO].sprite);
@@ -75,13 +92,10 @@ void display_tuto(global *gb)
         gb->mob[0].sprite, NULL);
     else
         sfSprite_setPosition(gb->mob[0].sprite, gb->fght.dead);
-    sfRenderWindow_drawRectangleShape(gb->disev.window, gb->quest[0].shape, NULL);
     sfRenderWindow_drawSprite(gb->disev.window, gb->sprite[PNJ_MAJ].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
-    sfRenderWindow_drawRectangleShape(gb->disev.window,
-    gb->teleport[CHEST].teleport, NULL);
-    dialogue_pnj(gb, 0);
+    dialogue_pnj_tuto(gb, PNJ_TUTO, 0);
     if (gb->inv.open == 1)
         display_inventory(gb);
     display_hud(gb);
