@@ -11,15 +11,13 @@
 
 void initia_sprite_speak(global *gb, int sprite)
 {
-    gb->sprite[] = *initia_sprite(&gb->sprite[MENU_BACKGROUND],
-        "./assets/graphics/menu_background.jpg",
+    gb->sprite[BACK_TEXT] = *initia_sprite(&gb->sprite[BACK_TEXT],
+        "./assets/graphics/bulle.jpg",
         (sfVector2f) {0, 0}, (sfIntRect) {0, 0, 1920, 1080});
 }
 
 void dialogue_pnj(global *gb, int sprite)
 {
-    sprite -= 26;
-
     sfRenderWindow_drawText(gb->disev.window, gb->text[PNJ_TUTO].text, NULL);
 }
 

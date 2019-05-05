@@ -86,7 +86,7 @@
 #define PNJ_SOLD 29
 #define PNJ_PUB 30
 #define PNJ_MAJ 31
-#define PNJ_MAJ 32
+#define BACK_TEXT 32
 
 ///NUMBER OF MOB///
 #define NB_MOB 6
