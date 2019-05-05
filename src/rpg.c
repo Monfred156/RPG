@@ -51,6 +51,7 @@ void call_initia_function(global *gb)
     initia_button_shop(gb);
     initia_dialogue(gb);
     initia_sprite_speak(gb);
+    initia_sprite_esc(gb);
 }
 
 void manage_event(global *gb)

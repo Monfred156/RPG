@@ -26,7 +26,7 @@ void initia_sprite_launch(global *gb)
 void initia_button_launch(global *gb)
 {
     gb->button[BUTTON_RETOUR] = *initia_button(&gb->button[BUTTON_RETOUR],
-            (sfVector2f) {600, 100}, (sfVector2f) {50, 0});
+            (sfVector2f) {300, 100}, (sfVector2f) {50, 0});
     gb->button[BUTTON_NEW_GAME] = *initia_button(&gb->button[BUTTON_NEW_GAME],
             (sfVector2f) {900, 100}, (sfVector2f) {500, 200});
     gb->button[BUTTON_CONTINUE] = *initia_button(&gb->button[BUTTON_CONTINUE],

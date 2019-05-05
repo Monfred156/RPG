@@ -15,9 +15,8 @@ void manage_event_option(global *gb)
     static float sec_open = 0;
     sec_open += gb->clock.seconds - gb->clock.save_sec;
 
-    for (int i = 0; i < 5; i++)
-        sfText_setFillColor(gb->text[i].text, sfWhite);
-    sfText_setFillColor(gb->text[TXT_SAVE].text, sfWhite);
+    sfText_setFillColor(gb->text[TXT_RETOUR].text, sfWhite);
+    sfText_setFillColor(gb->text[TXT_RETOUR].text, sfWhite);
     if (mouse_clic_button(gb, gb->button[BUTTON_RETOUR].rect) == 0) {
         sfText_setFillColor(gb->text[TXT_RETOUR].text, sfRed);
         if (sfMouse_isButtonPressed(sfMouseLeft)) {

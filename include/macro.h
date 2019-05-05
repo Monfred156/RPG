@@ -17,7 +17,6 @@
 #define BUTTON_CONTINUE 5
 #define BUTTON_SON 6
 #define BUTTON_BACK_MENU 7
-#define BUTTON_SAVE 40
 #define BUTTON_BUY1 8
 #define BUTTON_BUY2 9
 #define BUTTON_BUY3 10
@@ -50,6 +49,8 @@
 #define BUTTON_INV_ARMOR 37
 #define BUTTON_INV_WEAPON 38
 #define BUTTON_INV_LEGS 39
+#define BUTTON_QUIT_ESC 40
+#define BUTTON_SAVE 41
 
 ///TEXT///
 #define TXT_NEW_GAME 0
@@ -61,6 +62,7 @@
 #define PNJ_TUTO 6
 #define PNJ_ULFRIC 7
 #define PNJ_LIFE 8
+#define TXT_QUIT 9
 
 ///SPRITE///
 #define MENU_BACKGROUND 0

@@ -150,9 +150,9 @@ struct s_global {
     struct s_selectscreen selecscreen;
     struct s_display disev;
     struct s_sprite sprite[33];
-    struct s_text text[9];
+    struct s_text text[10];
     struct s_sound sound[2];
-    struct s_button button[41];
+    struct s_button button[42];
     struct s_hitbox hitbox[61];
     struct s_clock clock;
     struct s_movement move[7];

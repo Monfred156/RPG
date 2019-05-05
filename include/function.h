@@ -86,6 +86,10 @@ void initia_button_inventory2(global *gb);
 void initia_button_inventory3(global *gb);
 void initia_button_inventory4(global *gb);
 
+///initi_esc.c///
+void initia_sprite_esc(global *gb);
+void initia_button_esc(global *gb);
+
 ////////////////////////////////////////////////////////////////////////////////
 
 ///escape.c///
