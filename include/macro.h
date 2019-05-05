@@ -63,6 +63,11 @@
 #define PNJ_ULFRIC 7
 #define PNJ_LIFE 8
 #define TXT_QUIT 9
+#define TXT_LVL 10
+#define TXT_XP 11
+#define TXT_GOLD 12
+#define TXT_ARMOR 13
+#define TXT_ATTACK 14
 
 ///SPRITE///
 #define MENU_BACKGROUND 0
