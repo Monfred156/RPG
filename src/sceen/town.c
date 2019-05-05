@@ -68,7 +68,7 @@ void display_town(global *gb)
     if (gb->inv.open == 1)
         display_inventory(gb);
     for (int i = 1; i < NB_MOB; i++)
-        gb->mob[i].life = 10;
+        gb->mob[i].life = 100;
     dialogue_pnj_town(gb, PNJ_ULFRIC, 1);
 }
 

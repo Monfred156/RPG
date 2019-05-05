@@ -21,6 +21,8 @@ void come_back_fght(global *gb, int sceen)
     if (gb->stats.life <= 0)
         gb->stats.life = 10;
     else {
+        if (gb->disev.kill >= 0)
+            gb->disev.kill++;
         gb->stats.gold += 5;
         gb->stats.xp += 5;
     }
@@ -34,8 +36,8 @@ void anim_end(global *gb, int sceen, sfIntRect *rect, sfSprite *sprite)
 
     gb->fght.end = 1;
     if (rect->top < 3000) {
-        rect->top = 3030;
-        rect->left = 35;
+        rect->top = 3000;
+        rect->left = 0;
     }
     time += gb->clock.seconds - gb->clock.save_sec;
     if (time > 0.3) {

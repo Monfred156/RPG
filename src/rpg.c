@@ -11,9 +11,9 @@
 
 void initia_screen(global *gb)
 {
-    //gb->disev.kill = -1;
+    gb->disev.kill = -1;
     gb->quest[0].open = 0;
-    gb->selecscreen.sc = 6;
+    gb->selecscreen.sc = 0;
 }
 
 void call_initia_function(global *gb)
