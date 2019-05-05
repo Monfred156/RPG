@@ -12,7 +12,7 @@
 void initia_screen(global *gb)
 {
     gb->quest[0].open = 0;
-    gb->selecscreen.sc = 0;
+    gb->selecscreen.sc = 7;
 }
 
 void call_initia_function(global *gb)

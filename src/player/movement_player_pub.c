@@ -16,7 +16,9 @@ void movement_top_player_pub(global *gb, float time_sec, int animation,
     static float save_time = 0;
 
     gb->sprite[sprite].pos.y += time_sec * 0.9;
+    gb->sprite[PNJ_PUB].pos.y += time_sec * 0.9;
     gb->teleport[EXIT_PUB].pos.y += time_sec * 0.9;
+    gb->quest[3].pos.y += time_sec * 0.9;
     gb->move->movement = ANIM_TOP;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
@@ -37,7 +39,9 @@ void movement_back_player_pub(global *gb, float time_sec, int animation,
     static float save_time = 0;
 
     gb->sprite[sprite].pos.y -= time_sec * 0.9;
+    gb->sprite[PNJ_PUB].pos.y -= time_sec * 0.9;
     gb->teleport[EXIT_PUB].pos.y -= time_sec * 0.9;
+    gb->quest[3].pos.y -= time_sec * 0.9;
     gb->move->movement = ANIM_BACK;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
@@ -57,6 +61,8 @@ void movement_left_player_pub(global *gb, float time_sec, int sprite)
 
     gb->sprite[sprite].pos.x += time_sec;
     gb->teleport[EXIT_PUB].pos.x += time_sec;
+    gb->sprite[PNJ_PUB].pos.x += time_sec;
+    gb->quest[3].pos.x += time_sec;
     gb->move->movement = ANIM_LEFT;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;
@@ -76,6 +82,8 @@ void movement_right_player_pub(global *gb, float time_sec, int sprite)
 
     gb->sprite[sprite].pos.x -= time_sec;
     gb->teleport[EXIT_PUB].pos.x -= time_sec;
+    gb->quest[3].pos.x -= time_sec;
+    gb->sprite[PNJ_PUB].pos.x -= time_sec;
     gb->move->movement = ANIM_RIGHT;
     if (save_time + 0.1 < gb->clock.seconds) {
         save_time = gb->clock.seconds;

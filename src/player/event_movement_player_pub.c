@@ -89,4 +89,8 @@ void event_move_player_pub(global *gb, int sprite)
     sfSprite_setTextureRect(gb->sprite[HERO].sprite, gb->sprite[HERO].rect);
     sfRectangleShape_setPosition(gb->teleport[EXIT_PUB].teleport,
         gb->teleport[EXIT_PUB].pos);
+    sfSprite_setPosition(gb->sprite[PNJ_PUB].sprite,
+        gb->sprite[PNJ_PUB].pos);
+    sfRectangleShape_setPosition(gb->quest[3].shape,
+        gb->quest[3].pos);
 }

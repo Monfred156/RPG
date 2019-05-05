@@ -144,7 +144,7 @@ struct s_fight {
 };
 
 struct s_global {
-    struct s_quest quest[6];
+    struct s_quest quest[4];
     struct s_teleport teleport[5];
     struct s_selectscreen selecscreen;
     struct s_display disev;
