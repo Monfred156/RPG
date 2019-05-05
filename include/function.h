@@ -246,6 +246,7 @@ void movement_right_player_fight(global *gb, float time_sec, int sprite);
 int collision_between__sprite(sfSprite *sprite1, sfRectangleShape *rect1);
 int collision_between__mob(sfSprite *sprite1, sfSprite *rect);
 int collision_fght__mob(int mob, global *gb);
+int collision__mob(int mob, global *gb);
 
 ///display_hud.c///
 void display_hud(global *gb);

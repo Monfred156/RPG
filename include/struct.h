@@ -136,6 +136,7 @@ struct s_quest {
 struct s_fight {
     int mob;
     float time_atk;
+    float take_dmg;
     float save_y;
     float save_x;
     int initia;
