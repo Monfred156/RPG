@@ -67,8 +67,6 @@ void pressed_continued(global *gb)
     static int i = 0;
     if (i == 0) {
         i++;
-        printf("%d\n", gb->stats.posy);
-        printf("%d\n", gb->stats.posx);
         if (gb->stats.sceen == 6)
             tp_in_town(gb, gb->stats.posx, gb->stats.posy);
         if (gb->stats.sceen == 7)

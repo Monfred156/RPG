@@ -61,7 +61,8 @@ SRCS	=	./src/rpg.c									\
             ./src/player/display_inventory.c            \
             ./src/player/event_inventory.c              \
             ./src/player/inventory_equip.c              \
-            ./src/player/inventory_desequip.c
+            ./src/player/inventory_desequip.c           \
+            ./src/sceen/escape.c                        \
 
 
 OBJS	=	$(SRCS:.c=.o)

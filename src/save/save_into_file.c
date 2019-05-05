@@ -46,8 +46,6 @@ int save_into_file(global *gb)
         pos = sfSprite_getPosition(gb->sprite[ASH_BACKGROUND].sprite);
     posx = pos.x;
     posy = pos.y;
-    printf("%d\n", posx);
-    printf("%d\n", posy);
     write(fd, "\nPOSX=", 6);
     write(fd, my_int_to_str(pos.x), my_strlen(my_int_to_str(pos.x)));
     write(fd, "\nPOSY=", 6);

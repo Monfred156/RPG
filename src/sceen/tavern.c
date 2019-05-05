@@ -53,6 +53,10 @@ void manage_event_pub(global *gb)
     event_move_player_pub(gb, TAVERN);
     teleport_to_place_pub(gb);
     open_inventory(gb);
+    if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
+        gb->selecscreen.sc = 3;
+        gb->selecscreen.back = 7;
+    }
 }
 
 void display_pub(global *gb)

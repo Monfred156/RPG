@@ -105,7 +105,7 @@ void manage_event_town(global *gb)
     event_trader(gb);
     event_inventory(gb);
     if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
-        gb->selecscreen.sc = 2;
+        gb->selecscreen.sc = 3;
         gb->selecscreen.back = 6;
     }
 }

@@ -88,6 +88,9 @@ void initia_button_inventory4(global *gb);
 
 ////////////////////////////////////////////////////////////////////////////////
 
+///escape.c///
+void manage_event_esc(global *gb);
+void display_esc(global *gb);
 
 ///display_inventory.c///
 void draw_item(global *gb, int temp, sfVector2f *pos);

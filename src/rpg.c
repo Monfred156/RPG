@@ -69,6 +69,9 @@ void manage_event(global *gb)
         case 2:
             manage_event_option(gb);
             break;
+        case 3:
+            manage_event_esc(gb);
+            break;
         case 5:
             manage_event_tuto(gb);
             break;
@@ -98,6 +101,9 @@ void manage_screen(global *gb)
             break;
         case 2:
             display_option(gb);
+            break;
+        case 3:
+            display_esc(gb);
             break;
         case 5:
             display_tuto(gb);

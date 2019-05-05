@@ -73,7 +73,7 @@ void manage_event_tuto(global *gb)
         pattern_mob(gb, 0);
     teleport_to_place_tuto(gb);
     if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
-        gb->selecscreen.sc = 2;
+        gb->selecscreen.sc = 3;
         gb->selecscreen.back = 5;
     }
     open_inventory(gb);

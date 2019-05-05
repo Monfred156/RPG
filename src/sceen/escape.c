@@ -1,15 +1,15 @@
 /*
 ** EPITECH PROJECT, 2018
-** option
+** escape
 ** File description:
-** .c
+** escape
 */
 
 #include "my.h"
 #include "function.h"
 #include "struct.h"
 
-void manage_event_option(global *gb)
+void manage_event_esc(global *gb)
 {
     static float volum = 100;
     static float sec_open = 0;
@@ -45,12 +45,12 @@ void manage_event_option(global *gb)
     }
 }
 
-void display_option(global *gb)
+void display_esc(global *gb)
 {
     sfRenderWindow_drawSprite(gb->disev.window,
-            gb->sprite[OPTION_BACKGROUND].sprite, NULL);
-    //sfRenderWindow_drawText(gb->disev.window, gb->text[TXT_BACK_MENU].text, NULL);
-    sfRenderWindow_drawText(gb->disev.window, gb->text[TXT_SON].text, NULL);
+        gb->sprite[OPTION_BACKGROUND].sprite, NULL);
+    sfRenderWindow_drawText(gb->disev.window, gb->text[TXT_BACK_MENU].text, NULL);
+    //sfRenderWindow_drawText(gb->disev.window, gb->text[TXT_SON].text, NULL);
     sfRenderWindow_drawText(gb->disev.window, gb->text[TXT_RETOUR].text, NULL);
-    //sfRenderWindow_drawText(gb->disev.window, gb->text[TXT_SAVE].text, NULL);
+    sfRenderWindow_drawText(gb->disev.window, gb->text[TXT_SAVE].text, NULL);
 }

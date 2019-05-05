@@ -57,6 +57,10 @@ void manage_event_ash(global *gb)
         pattern_mob(gb, i);
     teleport_to_place_ash(gb);
     open_inventory(gb);
+    if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
+        gb->selecscreen.sc = 3;
+        gb->selecscreen.back = 8;
+    }
 }
 
 void move_rect_portal_back(global *gb, int offset, int max_value, float *time)
