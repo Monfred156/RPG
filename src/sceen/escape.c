@@ -9,6 +9,20 @@
 #include "function.h"
 #include "struct.h"
 
+void manage_event_esc_other_button(global *gb)
+{
+    if (mouse_clic_button(gb, gb->button[BUTTON_SAVE].rect) == 0) {
+        sfText_setFillColor(gb->text[TXT_SAVE].text, sfRed);
+        if (sfMouse_isButtonPressed(sfMouseLeft))
+            save_into_file(gb);
+    }
+    if (mouse_clic_button(gb, gb->button[BUTTON_QUIT_ESC].rect) == 0) {
+        sfText_setFillColor(gb->text[TXT_QUIT].text, sfRed);
+        if (sfMouse_isButtonPressed(sfMouseLeft))
+            sfRenderWindow_close(gb->disev.window);
+    }
+}
+
 void manage_event_esc(global *gb)
 {
     static float volum = 100;
@@ -30,16 +44,7 @@ void manage_event_esc(global *gb)
         if (sfMouse_isButtonPressed(sfMouseLeft))
             gb->selecscreen.sc = 0;
     }
-    if (mouse_clic_button(gb, gb->button[BUTTON_SAVE].rect) == 0) {
-        sfText_setFillColor(gb->text[TXT_SAVE].text, sfRed);
-        if (sfMouse_isButtonPressed(sfMouseLeft))
-            save_into_file(gb);
-    }
-    if (mouse_clic_button(gb, gb->button[BUTTON_QUIT_ESC].rect) == 0) {
-        sfText_setFillColor(gb->text[TXT_QUIT].text, sfRed);
-        if (sfMouse_isButtonPressed(sfMouseLeft))
-            sfRenderWindow_close(gb->disev.window);
-    }
+    manage_event_esc_other_button(gb);
 }
 
 void display_esc(global *gb)

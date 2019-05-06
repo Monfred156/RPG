@@ -12,27 +12,36 @@
 void teleport_to_place_ash(global *gb)
 {
     sfVector2f player = sfSprite_getPosition(gb->sprite[HERO].sprite);
-    sfVector2f size = sfRectangleShape_getSize(gb->teleport[EXIT_PORTAL].teleport);
+    sfVector2f size = sfRectangleShape_getSize(
+            gb->teleport[EXIT_PORTAL].teleport);
 
-    if (player.x + 40 > gb->teleport[EXIT_PORTAL].pos.x && player.x + 50 < gb->teleport[EXIT_PORTAL].pos.x + size.x &&
-        player.y + 10 > gb->teleport[EXIT_PORTAL].pos.y - 10 && player.y + 70 < gb->teleport[EXIT_PORTAL].pos.y + size.y) {
+    if (player.x + 40 > gb->teleport[EXIT_PORTAL].pos.x &&
+    player.x + 50 < gb->teleport[EXIT_PORTAL].pos.x + size.x &&
+    player.y + 10 > gb->teleport[EXIT_PORTAL].pos.y - 10 &&
+    player.y + 70 < gb->teleport[EXIT_PORTAL].pos.y + size.y) {
         if (sfKeyboard_isKeyPressed(sfKeyE)) {
             check_touche_key(gb, sfKeyE);
             sleep(1);
             gb->selecscreen.sc = 6;
         }
     }
+    open_inventory(gb);
+    if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
+        gb->selecscreen.sc = 3;
+        gb->selecscreen.back = 8;
+    }
 }
 
 void touch_enemy_ash(global *gb)
 {
-    for (int i = 1; i < NB_MOB; i++)
+    for (int i = 1; i < NB_MOB; i++) {
         if (collision_between__mob(gb->sprite[HERO].sprite,
-        gb->mob[i].sprite) == 1) {
+                gb->mob[i].sprite) == 1) {
             gb->fght.time_ash = 0;
             gb->fght.mob = i;
             gb->selecscreen.sc = 9;
         }
+    }
 }
 
 void manage_event_ash(global *gb)
@@ -55,11 +64,6 @@ void manage_event_ash(global *gb)
     for (int i = 1; i < NB_MOB; i++)
         pattern_mob(gb, i);
     teleport_to_place_ash(gb);
-    open_inventory(gb);
-    if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
-        gb->selecscreen.sc = 3;
-        gb->selecscreen.back = 8;
-    }
 }
 
 void move_rect_portal_back(global *gb, int offset, int max_value, float *time)
@@ -69,7 +73,7 @@ void move_rect_portal_back(global *gb, int offset, int max_value, float *time)
         if (gb->sprite[PORTAL_BACK].rect.left >= max_value)
             gb->sprite[PORTAL_BACK].rect.left = 0;
         sfSprite_setTextureRect(gb->sprite[PORTAL_BACK].sprite,
-            gb->sprite[PORTAL_BACK].rect);
+                gb->sprite[PORTAL_BACK].rect);
         *time = 0;
     }
 }
@@ -77,18 +81,18 @@ void move_rect_portal_back(global *gb, int offset, int max_value, float *time)
 void display_ash(global *gb)
 {
     sfRenderWindow_drawSprite(gb->disev.window,
-        gb->sprite[ASH_BACKGROUND].sprite, NULL);
+            gb->sprite[ASH_BACKGROUND].sprite, NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
-        gb->sprite[PORTAL_BACK].sprite, NULL);
+            gb->sprite[PORTAL_BACK].sprite, NULL);
     for (int i = 1; i < NB_MOB; i++) {
         if (gb->mob[i].life > 0)
             sfRenderWindow_drawSprite(gb->disev.window,
-            gb->mob[i].sprite, NULL);
+                    gb->mob[i].sprite, NULL);
         else
             sfSprite_setPosition(gb->mob[i].sprite, gb->fght.dead);
     }
     sfRenderWindow_drawSprite(gb->disev.window,
-        gb->sprite[HERO].sprite, NULL);
+            gb->sprite[HERO].sprite, NULL);
     if (gb->inv.open == 1)
         display_inventory(gb);
     display_hud(gb);

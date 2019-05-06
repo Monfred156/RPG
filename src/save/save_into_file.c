@@ -36,7 +36,6 @@ void save_into_file_next(global *gb, int fd)
 int save_into_file(global *gb)
 {
     int fd = open("save.txt", O_CREAT | O_TRUNC | O_RDWR, 0664);
-
     if (fd < 0)
         return (-1);
     write(fd, "LIFE=", 5);

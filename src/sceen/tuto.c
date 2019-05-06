@@ -15,9 +15,8 @@ void dialogue_pnj_tuto(global *gb, int sprite, int quest)
         == 1 && sfKeyboard_isKeyPressed(sfKeyE))
         gb->quest[0].open = 1;
     if (collision_between__sprite(gb->sprite[HERO].sprite, gb->quest[quest].shape)
-        == 0) {
+        == 0)
         gb->quest[0].open = 0;
-    }
     if (gb->quest->open == 1) {
         sfRenderWindow_drawSprite(gb->disev.window,
             gb->sprite[BACK_TEXT].sprite, NULL);

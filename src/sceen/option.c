@@ -19,9 +19,8 @@ void manage_event_option(global *gb)
     sfText_setFillColor(gb->text[TXT_RETOUR].text, sfWhite);
     if (mouse_clic_button(gb, gb->button[BUTTON_RETOUR].rect) == 0) {
         sfText_setFillColor(gb->text[TXT_RETOUR].text, sfRed);
-        if (sfMouse_isButtonPressed(sfMouseLeft)) {
+        if (sfMouse_isButtonPressed(sfMouseLeft))
             gb->selecscreen.sc = gb->selecscreen.back;
-        }
     }
     if (mouse_clic_button(gb, gb->button[BUTTON_SON].rect) == 0) {
         sfText_setFillColor(gb->text[TXT_SON].text, sfRed);
