@@ -44,7 +44,6 @@ int save_into_file(global *gb)
     write(fd, "\nXP=", 4);
     write(fd, my_int_to_str(gb->stats.xp), my_strlen(my_int_to_str(gb->stats.xp)));
     write(fd, "\nGOLD=", 6);
-    printf("%d\n", gb->stats.gold);
     write(fd, my_int_to_str(gb->stats.gold), my_strlen(my_int_to_str(gb->stats.gold)));
     write(fd, "\nDAMAGE=", 8);
     write(fd, my_int_to_str(gb->stats.damage), my_strlen(my_int_to_str(gb->stats.damage)));
