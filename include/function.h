@@ -29,7 +29,7 @@ void mov_left_ini_town(global *gb, float time_sec, int sprite);
 void mov_right_ini_town(global *gb, float time_sec, int sprite);
 
 ///pnj_random_move.c///
-void move_rect_pnj(global *gb,const int *value, float *time, int sprite);
+void move_rect_pnj(global *gb, const int *value, float *time, int sprite);
 void pnj_rando_rect(global *gb, int sprite, int offset, int max_value);
 
 ///initia_pnj.c///
@@ -125,8 +125,10 @@ void set_stuff3(global *gb);
 void event_move_player_ash(global *gb, int sprite);
 
 ///movement_player_ash.c///
-void movement_top_player_ash(global *gb, float time_sec, int animation, int sprite);
-void movement_back_player_ash(global *gb, float time_sec, int animation, int sprite);
+void movement_top_player_ash(global *gb, float time_sec, int animation,
+    int sprite);
+void movement_back_player_ash(global *gb, float time_sec, int animation,
+    int sprite);
 void movement_left_player_ash(global *gb, float time_sec, int sprite);
 void movement_right_player_ash(global *gb, float time_sec, int sprite);
 
@@ -140,8 +142,10 @@ void display_ash(global *gb);
 void event_move_player_tuto(global *gb, int sprite);
 
 ///movement_player_tuto.c///
-void movement_top_player_tuto(global *gb, float time_sec, int animation, int sprite);
-void movement_back_player_tuto(global *gb, float time_sec, int animation, int sprite);
+void movement_top_player_tuto(global *gb, float time_sec, int animation,
+    int sprite);
+void movement_back_player_tuto(global *gb, float time_sec, int animation,
+    int sprite);
 void movement_left_player_tuto(global *gb, float time_sec, int sprite);
 void movement_right_player_tuto(global *gb, float time_sec, int sprite);
 
@@ -149,8 +153,10 @@ void movement_right_player_tuto(global *gb, float time_sec, int sprite);
 void event_move_player_pub(global *gb, int sprite);
 
 ///movement_player_pub.c///
-void movement_top_player_pub(global *gb, float time_sec, int animation, int sprite);
-void movement_back_player_pub(global *gb, float time_sec, int animation, int sprite);
+void movement_top_player_pub(global *gb, float time_sec, int animation,
+    int sprite);
+void movement_back_player_pub(global *gb, float time_sec, int animation,
+    int sprite);
 void movement_left_player_pub(global *gb, float time_sec, int sprite);
 void movement_right_player_pub(global *gb, float time_sec, int sprite);
 
@@ -158,8 +164,10 @@ void movement_right_player_pub(global *gb, float time_sec, int sprite);
 void event_move_player_town(global *gb, int sprite);
 
 ///movement_player_town.c///
-void movement_top_player_town(global *gb, float time_sec, int animation, int sprite);
-void movement_back_player_town(global *gb, float time_sec, int animation, int sprite);
+void movement_top_player_town(global *gb, float time_sec, int animation,
+    int sprite);
+void movement_back_player_town(global *gb, float time_sec, int animation,
+    int sprite);
 void movement_left_player_town(global *gb, float time_sec, int sprite);
 void movement_right_player_town(global *gb, float time_sec, int sprite);
 
