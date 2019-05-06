@@ -21,7 +21,8 @@ void reini_tuto(global *gb)
     gb->teleport[CHEST].pos.x = 1960;
     gb->teleport[CHEST].pos.y = 300;
     sfSprite_setPosition(gb->sprite[HERO].sprite, gb->sprite[HERO].pos);
-    sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite, gb->sprite[TUTO_BACKGROUND].pos);
+    sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite,
+            gb->sprite[TUTO_BACKGROUND].pos);
     gb->teleport[OPEN_PORTAL].pos.x = 4300;
     gb->teleport[OPEN_PORTAL].pos.y = 100;
     gb->teleport[PUB].pos.x = 2720;
@@ -43,8 +44,8 @@ void reini_pub(global *gb)
     gb->teleport[EXIT_PORTAL].pos.y = 320;
     gb->sprite[PORTAL_BACK].pos.x = 740;
     gb->sprite[PORTAL_BACK].pos.y = 300;
-    sfSprite_setPosition(gb->sprite[ASH_BACKGROUND].sprite, gb->sprite[ASH_BACKGROUND].pos);
-
+    sfSprite_setPosition(gb->sprite[ASH_BACKGROUND].sprite,
+            gb->sprite[ASH_BACKGROUND].pos);
 }
 
 void reini_town(global *gb)
@@ -58,7 +59,8 @@ void reini_town(global *gb)
     gb->sprite[TOWN_BACKGROUND].pos.y = -600;
     gb->sprite[PORTAL].pos.x = 4270;
     gb->sprite[PORTAL].pos.y = 50;
-    sfSprite_setPosition(gb->sprite[TOWN_BACKGROUND].sprite, gb->sprite[TOWN_BACKGROUND].pos);
+    sfSprite_setPosition(gb->sprite[TOWN_BACKGROUND].sprite,
+            gb->sprite[TOWN_BACKGROUND].pos);
     sfSprite_setPosition(gb->sprite[PORTAL].sprite, gb->sprite[PORTAL].pos);
     x = 600 - pos.x;
     y = 240 - pos.y;

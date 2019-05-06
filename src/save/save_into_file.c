@@ -40,15 +40,20 @@ int save_into_file(global *gb)
     if (fd < 0)
         return (-1);
     write(fd, "LIFE=", 5);
-    write(fd, my_int_to_str(gb->stats.life), my_strlen(my_int_to_str(gb->stats.life)));
+    write(fd, my_int_to_str(gb->stats.life),
+            my_strlen(my_int_to_str(gb->stats.life)));
     write(fd, "\nXP=", 4);
-    write(fd, my_int_to_str(gb->stats.xp), my_strlen(my_int_to_str(gb->stats.xp)));
+    write(fd, my_int_to_str(gb->stats.xp),
+            my_strlen(my_int_to_str(gb->stats.xp)));
     write(fd, "\nGOLD=", 6);
-    write(fd, my_int_to_str(gb->stats.gold), my_strlen(my_int_to_str(gb->stats.gold)));
+    write(fd, my_int_to_str(gb->stats.gold),
+            my_strlen(my_int_to_str(gb->stats.gold)));
     write(fd, "\nDAMAGE=", 8);
-    write(fd, my_int_to_str(gb->stats.damage), my_strlen(my_int_to_str(gb->stats.damage)));
+    write(fd, my_int_to_str(gb->stats.damage),
+            my_strlen(my_int_to_str(gb->stats.damage)));
     write(fd, "\nSCEEN=", 7);
-    write(fd, my_int_to_str(gb->selecscreen.back), my_strlen(my_int_to_str(gb->selecscreen.back)));
+    write(fd, my_int_to_str(gb->selecscreen.back),
+            my_strlen(my_int_to_str(gb->selecscreen.back)));
     save_into_file_next(gb, fd);
     return (0);
 }

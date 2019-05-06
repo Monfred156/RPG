@@ -29,7 +29,8 @@ int get_one_stat(char **array, char *str)
 
 int get_all_stat(global *gb, char **array)
 {
-    char *all_var[7] = {"LIFE", "XP", "GOLD", "DAMAGE", "SCEEN", "POSX", "POSY"};
+    char *all_var[7] = {"LIFE", "XP", "GOLD", "DAMAGE",
+                        "SCEEN", "POSX", "POSY"};
 
     for (int i = 0; i < 7; i++) {
         if (check_var(all_var[i], array) != 1)
