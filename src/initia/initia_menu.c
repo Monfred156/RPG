@@ -23,7 +23,6 @@ void initia_pos_particule_menu(global *gb)
     }
 }
 
-
 void initia_sprite_menu(global *gb)
 {
     gb->sprite[MENU_BACKGROUND] = *initia_sprite(&gb->sprite[MENU_BACKGROUND],

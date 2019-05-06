@@ -73,6 +73,7 @@ SRCS	=	./src/rpg.c									\
             ./src/main.c                                \
             ./src/manage_event.c                        \
             ./src/sceen/dialog.c
+            ./src/initia/initia_function3.c
 
 
 OBJS	=	$(SRCS:.c=.o)

@@ -20,7 +20,8 @@ void initia_window(global *gb)
 }
 
 struct s_mob *initia_sprite_mob(struct s_mob *mob, char *path, sfVector2f
-    pos, sfIntRect rect)
+pos, sfIntRect rect
+)
 {
     mob->texture = sfTexture_createFromFile(path, NULL);
     mob->sprite = sfSprite_create();
@@ -33,7 +34,8 @@ struct s_mob *initia_sprite_mob(struct s_mob *mob, char *path, sfVector2f
 }
 
 struct s_sprite *initia_sprite(struct s_sprite *sprite, char *path, sfVector2f
-    pos, sfIntRect rect)
+pos, sfIntRect rect
+)
 {
     sprite->texture = sfTexture_createFromFile(path, NULL);
     sprite->sprite = sfSprite_create();
@@ -46,7 +48,8 @@ struct s_sprite *initia_sprite(struct s_sprite *sprite, char *path, sfVector2f
 }
 
 struct s_text *initia_text(struct s_text *text, char **string, sfVector2f
-pos, sfColor color, unsigned int size)
+pos, sfColor color, unsigned int size
+)
 {
     text->pos = pos;
     text->text = sfText_create();
@@ -65,14 +68,4 @@ struct s_sound *initia_sound(struct s_sound *sound, char *path, bool loop)
     if (loop == true)
         sfMusic_setLoop(sound->music, sfTrue);
     return (sound);
-}
-
-struct s_button *initia_button(struct s_button *button, sfVector2f size,
-    sfVector2f pos)
-{
-    button->rect = sfRectangleShape_create();
-    sfRectangleShape_setSize(button->rect, size);
-    sfRectangleShape_setPosition(button->rect, pos);
-    return (button);
-
 }

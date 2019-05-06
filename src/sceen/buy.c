@@ -12,7 +12,7 @@
 int function_buy(global *gb, int i, int weap)
 {
     if (gb->inv.inv[i] == 0) {
-        gb->inv.inv[i] = SWORD;
+        gb->inv.inv[i] = weap;
         return (15);
     }
     return (0);

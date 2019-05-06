@@ -11,17 +11,21 @@
 
 void initia_var_tuto(global *gb)
 {
-    gb->hud[GREEN] = *initia_hud(&gb->hud[GREEN], (sfVector2f) {700, 20}, (sfVector2f) {100, 50});
-    gb->hud[RED] = *initia_hud(&gb->hud[RED], (sfVector2f) {700, 20}, (sfVector2f) {100, 50});
-    gb->hud_mob[GREEN] = *initia_hud_mob(&gb->hud_mob[GREEN], (sfVector2f) {700, 20}, (sfVector2f) {900, 50});
-    gb->hud_mob[RED] = *initia_hud_mob(&gb->hud_mob[RED], (sfVector2f) {700, 20}, (sfVector2f) {900, 50});
+    gb->hud[GREEN] = *initia_hud(&gb->hud[GREEN], (sfVector2f) {700, 20},
+        (sfVector2f) {100, 50});
+    gb->hud[RED] = *initia_hud(&gb->hud[RED], (sfVector2f) {700, 20},
+        (sfVector2f) {100, 50});
+    gb->hud_mob[GREEN] = *initia_hud_mob(&gb->hud_mob[GREEN],
+        (sfVector2f) {700, 20}, (sfVector2f) {900, 50});
+    gb->hud_mob[RED] = *initia_hud_mob(&gb->hud_mob[RED],
+        (sfVector2f) {700, 20}, (sfVector2f) {900, 50});
     gb->inv.open = 0;
 }
 
 void initia_button_tuto(global *gb)
 {
     gb->teleport[CHEST] = *initia_teleport(&gb->teleport[CHEST],
-        (sfVector2f){145, 200}, (sfVector2f){1960, 300});
+        (sfVector2f) {145, 200}, (sfVector2f) {1960, 300});
 }
 
 void initia_sprite_tuto(global *gb)
@@ -31,7 +35,7 @@ void initia_sprite_tuto(global *gb)
         (sfVector2f) {550, 200}, (sfIntRect) {0, 0, 1920, 1001});
     gb->sprite[HERO] = *initia_sprite(&gb->sprite[HERO],
         "./assets/graphics/hero.png", (sfVector2f) {800, 400}, (sfIntRect)
-        {0, 0, 150, 150});
+            {0, 0, 150, 150});
     gb->sprite[INVENTORY] = *initia_sprite(&gb->sprite[INVENTORY],
         "./assets/graphics/inventory.png", (sfVector2f) {530, 320},
         (sfIntRect) {0, 0, 818, 335});

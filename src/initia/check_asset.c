@@ -24,6 +24,8 @@ int check_sound(global *gb)
         if (gb->sound[i].music == NULL)
             return 84;
     }
+    if (gb->sound[0].music == NULL)
+        return 84;
     return 0;
 }
 
@@ -39,7 +41,7 @@ int check_mob(global *gb)
 int check_font(global *gb)
 {
     for (int i = 0; i <= NUMBER_TEXT; i++) {
-        if (gb->mob[i].texture == NULL)
+        if (gb->text[i].font == NULL)
             return 84;
     }
     return 0;

@@ -77,8 +77,6 @@ pos, sfIntRect rect);
 struct s_text *initia_text(struct s_text *text, char **string, sfVector2f
 pos, sfColor color, unsigned int size);
 struct s_sound *initia_sound(struct s_sound *sound, char *path, bool loop);
-struct s_button *initia_button(struct s_button *button, sfVector2f size,
-    sfVector2f pos);
 struct s_mob *initia_sprite_mob(struct s_mob *mob, char *path, sfVector2f
 pos, sfIntRect rect);
 
@@ -91,7 +89,11 @@ struct s_trader *initia_trader(struct s_trader *trader,
     sfVector2f size, sfVector2f pos);
 struct s_quest *initia_quest(struct s_quest *quest,
     sfVector2f size, sfVector2f pos, int nb_quest);
+
+///initia_function3.c///
 struct s_hud *initia_hud(struct s_hud *hud, sfVector2f size, sfVector2f pos);
+struct s_button *initia_button(struct s_button *button, sfVector2f size,
+    sfVector2f pos);
 
 ///initia_items.c///
 void initia_items(global *gb);

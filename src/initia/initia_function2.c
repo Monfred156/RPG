@@ -10,7 +10,8 @@
 #include "struct.h"
 
 struct s_hitbox *initia_hitbox(struct s_hitbox *hitbox, sfVector2f size,
-    sfVector2f pos)
+    sfVector2f pos
+)
 {
     hitbox->hitbox = sfRectangleShape_create();
     hitbox->pos = pos;
@@ -20,7 +21,8 @@ struct s_hitbox *initia_hitbox(struct s_hitbox *hitbox, sfVector2f size,
 }
 
 struct s_teleport *initia_teleport(struct s_teleport *teleport,
-    sfVector2f size, sfVector2f pos)
+    sfVector2f size, sfVector2f pos
+)
 {
     teleport->teleport = sfRectangleShape_create();
     teleport->pos = pos;
@@ -30,7 +32,8 @@ struct s_teleport *initia_teleport(struct s_teleport *teleport,
 }
 
 struct s_trader *initia_trader(struct s_trader *trader,
-    sfVector2f size, sfVector2f pos)
+    sfVector2f size, sfVector2f pos
+)
 {
     trader->talk = sfRectangleShape_create();
     trader->pos = pos;
@@ -40,7 +43,8 @@ struct s_trader *initia_trader(struct s_trader *trader,
 }
 
 struct s_quest *initia_quest(struct s_quest *quest,
-    sfVector2f size, sfVector2f pos, int nb_quest)
+    sfVector2f size, sfVector2f pos, int nb_quest
+)
 {
     quest->shape = sfRectangleShape_create();
     quest->pos = pos;
@@ -49,13 +53,4 @@ struct s_quest *initia_quest(struct s_quest *quest,
     sfRectangleShape_setPosition(quest->shape, pos);
     quest->quest = nb_quest;
     return (quest);
-}
-
-struct s_hud *initia_hud(struct s_hud *hud, sfVector2f size, sfVector2f pos)
-{
-    hud->rect = sfRectangleShape_create();
-    hud->pos = pos;
-    sfRectangleShape_setSize(hud->rect, size);
-    sfRectangleShape_setPosition(hud->rect, pos);
-    return (hud);
 }

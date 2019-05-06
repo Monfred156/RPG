@@ -11,10 +11,12 @@
 
 void dialogue_pnj_tuto(global *gb, int sprite, int quest)
 {
-    if (collision_between__sprite(gb->sprite[HERO].sprite, gb->quest[quest].shape)
+    if (collision_between__sprite(gb->sprite[HERO].sprite,
+        gb->quest[quest].shape)
         == 1 && sfKeyboard_isKeyPressed(sfKeyE))
         gb->quest[0].open = 1;
-    if (collision_between__sprite(gb->sprite[HERO].sprite, gb->quest[quest].shape)
+    if (collision_between__sprite(gb->sprite[HERO].sprite,
+        gb->quest[quest].shape)
         == 0)
         gb->quest[0].open = 0;
     if (gb->quest->open == 1) {
@@ -31,9 +33,9 @@ void teleport_to_place_tuto(global *gb)
     sfVector2f size = sfRectangleShape_getSize(gb->teleport[CHEST].teleport);
 
     if (player.x + 40 > gb->teleport[CHEST].pos.x &&
-    player.x + 50 < gb->teleport[CHEST].pos.x + size.x &&
-    player.y + 10 > gb->teleport[CHEST].pos.y - 10 &&
-    player.y + 70 < gb->teleport[CHEST].pos.y + size.y) {
+        player.x + 50 < gb->teleport[CHEST].pos.x + size.x &&
+        player.y + 10 > gb->teleport[CHEST].pos.y - 10 &&
+        player.y + 70 < gb->teleport[CHEST].pos.y + size.y) {
         if (sfKeyboard_isKeyPressed(sfKeyE)) {
             check_touche_key(gb, sfKeyE);
             gb->selecscreen.sc = 6;
@@ -55,7 +57,7 @@ void click_player(global *gb)
         gb->fght.time_tuto -= gb->clock.seconds - gb->clock.save_sec;
         anim_attack(gb, HERO);
         if (collision_between__mob(gb->sprite[HERO].sprite,
-        gb->mob[0].sprite) == 1) {
+            gb->mob[0].sprite) == 1) {
             gb->fght.time_tuto = 0;
             gb->fght.mob = 0;
             gb->selecscreen.sc = 9;
@@ -83,10 +85,11 @@ void display_tuto(global *gb)
         gb->sprite[TUTO_BACKGROUND].sprite, NULL);
     if (gb->mob[0].life > 0)
         sfRenderWindow_drawSprite(gb->disev.window,
-        gb->mob[0].sprite, NULL);
+            gb->mob[0].sprite, NULL);
     else
         sfSprite_setPosition(gb->mob[0].sprite, gb->fght.dead);
-    sfRenderWindow_drawSprite(gb->disev.window, gb->sprite[PNJ_MAJ].sprite, NULL);
+    sfRenderWindow_drawSprite(gb->disev.window, gb->sprite[PNJ_MAJ].sprite,
+        NULL);
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
     dialogue_pnj_tuto(gb, PNJ_TUTO, 0);

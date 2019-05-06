@@ -12,7 +12,6 @@
 #include "function.h"
 #include "struct.h"
 
-
 void initia_text_stats(global *gb)
 {
     char *send[3] = {my_int_to_str(gb->stats.lvl), "./assets/font/arial.ttf",

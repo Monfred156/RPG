@@ -17,11 +17,13 @@ void initia_button_inventory4(global *gb)
 {
     gb->button[BUTTON_INV_HEAD] = *initia_button(&gb->button[BUTTON_INV_HEAD],
         (sfVector2f) {40, 40}, (sfVector2f) {615, 378});
-    gb->button[BUTTON_INV_SHIELD] = *initia_button(&gb->button[BUTTON_INV_SHIELD],
+    gb->button[BUTTON_INV_SHIELD] = *initia_button
+        (&gb->button[BUTTON_INV_SHIELD],
         (sfVector2f) {40, 40}, (sfVector2f) {567, 474});
     gb->button[BUTTON_INV_ARMOR] = *initia_button(&gb->button[BUTTON_INV_ARMOR],
         (sfVector2f) {40, 40}, (sfVector2f) {615, 450});
-    gb->button[BUTTON_INV_WEAPON] = *initia_button(&gb->button[BUTTON_INV_WEAPON],
+    gb->button[BUTTON_INV_WEAPON] = *initia_button
+        (&gb->button[BUTTON_INV_WEAPON],
         (sfVector2f) {40, 40}, (sfVector2f) {663, 474});
     gb->button[BUTTON_INV_LEGS] = *initia_button(&gb->button[BUTTON_INV_LEGS],
         (sfVector2f) {40, 40}, (sfVector2f) {615, 546});
