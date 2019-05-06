@@ -22,7 +22,7 @@ void tp_in_town(global *gb, int posx, int posy)
     gb->trader.pos.x += posx - 600;
     gb->trader.pos.y += posy + 600;
     sfSprite_setPosition(gb->sprite[TOWN_BACKGROUND].sprite,
-                         gb->sprite[TOWN_BACKGROUND].pos);
+            gb->sprite[TOWN_BACKGROUND].pos);
     sfSprite_setPosition(gb->sprite[PORTAL].sprite, gb->sprite[PORTAL].pos);
     for (int i = VAL_MIN_TOWN; i <= VAL_MAX_TOWN; i++) {
         gb->hitbox[i].pos.x += posx - 600;
@@ -55,7 +55,7 @@ void tp_in_ashland(global *gb)
     gb->sprite[PORTAL_BACK].pos.x += gb->stats.posx;
     gb->sprite[PORTAL_BACK].pos.y += gb->stats.posy;
     sfSprite_setPosition(gb->sprite[ASH_BACKGROUND].sprite,
-                         gb->sprite[ASH_BACKGROUND].pos);
+            gb->sprite[ASH_BACKGROUND].pos);
     for (int i = VAL_MIN_ASH; i <= VAL_MAX_ASH; i++) {
         gb->hitbox[i].pos.x += gb->stats.posx;
         gb->hitbox[i].pos.y += gb->stats.posy;
