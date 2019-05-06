@@ -14,6 +14,7 @@ void reini_tuto(global *gb)
     int x = 0;
     int y = 0;
     sfVector2f pos;
+
     pos = sfRectangleShape_getPosition(gb->hitbox[VAL_MIN_TUTO].hitbox);
     gb->sprite[HERO].pos.x = 800;
     gb->sprite[HERO].pos.y = 400;
@@ -21,7 +22,7 @@ void reini_tuto(global *gb)
     gb->sprite[TUTO_BACKGROUND].pos.y = 200;
     gb->mob[0].pos.x = 1800;
     gb->mob[0].pos.y = 900;
-    gb->mob[0].life = 10;
+    gb->mob[0].life = 100;
     gb->teleport[CHEST].pos.x = 1960;
     gb->teleport[CHEST].pos.y = 300;
     sfSprite_setPosition(gb->sprite[HERO].sprite, gb->sprite[HERO].pos);

@@ -46,7 +46,8 @@ void display_esc(global *gb)
 {
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[OPTION_BACKGROUND].sprite, NULL);
-    sfRenderWindow_drawText(gb->disev.window, gb->text[TXT_BACK_MENU].text, NULL);
+    sfRenderWindow_drawText(gb->disev.window,
+    gb->text[TXT_BACK_MENU].text, NULL);
     sfRenderWindow_drawText(gb->disev.window, gb->text[TXT_RETOUR].text, NULL);
     sfRenderWindow_drawText(gb->disev.window, gb->text[TXT_SAVE].text, NULL);
     sfRenderWindow_drawText(gb->disev.window, gb->text[TXT_QUIT].text, NULL);
