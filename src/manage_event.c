@@ -12,6 +12,9 @@
 void manage_event_next(global *gb)
 {
     switch (gb->selecscreen.sc) {
+    case 3:
+        manage_event_esc(gb);
+        break;
     case 5:
         manage_event_tuto(gb);
         break;
@@ -47,13 +50,9 @@ void manage_event(global *gb)
     case 2:
         manage_event_option(gb);
         break;
-    case 3:
-        manage_event_esc(gb);
-        break;
     default:
         manage_event_next(gb);
         break;
-
     }
 }
 
