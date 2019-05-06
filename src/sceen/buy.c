@@ -22,11 +22,11 @@ void function_buy1(global *gb)
 {
     if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
     gb->button[BUTTON_BUY1].rect) == 0)
-        for (int i = 0; i <= 15; i++)
+        for (int i = 0; i < 15; i++)
             i += function_buy(gb, i, SWORD);
     if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
     gb->button[BUTTON_BUY2].rect) == 0)
-        for (int i = 0; i <= 15; i++)
+        for (int i = 0; i < 15; i++)
             i += function_buy(gb, i, SWORD1);
 }
 
@@ -34,11 +34,11 @@ void function_buy2(global *gb)
 {
     if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
     gb->button[BUTTON_BUY3].rect) == 0)
-        for (int i = 0; i <= 15; i++)
+        for (int i = 0; i < 15; i++)
             i += function_buy(gb, i, AXE);
     if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
     gb->button[BUTTON_BUY4].rect) == 0)
-        for (int i = 0; i <= 15; i++)
+        for (int i = 0; i < 15; i++)
             i += function_buy(gb, i, LANCE);
 }
 
@@ -46,10 +46,10 @@ void function_buy3(global *gb)
 {
     if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
     gb->button[BUTTON_BUY5].rect) == 0)
-        for (int i = 0; i <= 15; i++)
+        for (int i = 0; i < 15; i++)
             i += function_buy(gb, i, SWORD2);
     if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
     gb->button[BUTTON_BUY6].rect) == 0)
-        for (int i = 0; i <= 15; i++)
+        for (int i = 0; i < 15; i++)
             i += function_buy(gb, i, SHIELD);
 }
