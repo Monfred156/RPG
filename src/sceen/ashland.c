@@ -64,6 +64,8 @@ void manage_event_ash(global *gb)
     for (int i = 1; i < NB_MOB; i++)
         pattern_mob(gb, i);
     teleport_to_place_ash(gb);
+    open_inventory(gb);
+    event_inventory(gb);
 }
 
 void move_rect_portal_back(global *gb, int offset, int max_value, float *time)

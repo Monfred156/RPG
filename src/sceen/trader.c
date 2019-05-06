@@ -13,7 +13,7 @@ void function_buy4(global *gb)
 {
     if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
         gb->button[BUTTON_BUY7].rect) == 0) {
-        for (int i = 0; i <= 15; i++) {
+        for (int i = 0; i < 15; i++) {
             if (gb->inv.inv[i] == 0) {
                 gb->inv.inv[i] = HEAD2;
                 break;
@@ -22,7 +22,7 @@ void function_buy4(global *gb)
     }
     if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
         gb->button[BUTTON_BUY8].rect) == 0) {
-        for (int i = 0; i <= 15; i++) {
+        for (int i = 0; i < 15; i++) {
             if (gb->inv.inv[i] == 0) {
                 gb->inv.inv[i] = ARMOR2;
                 break;
@@ -35,7 +35,7 @@ void function_buy5(global *gb)
 {
     if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
         gb->button[BUTTON_BUY9].rect) == 0) {
-        for (int i = 0; i <= 15; i++) {
+        for (int i = 0; i < 15; i++) {
             if (gb->inv.inv[i] == 0) {
                 gb->inv.inv[i] = LEGS2;
                 break;
@@ -44,7 +44,7 @@ void function_buy5(global *gb)
     }
     if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
         gb->button[BUTTON_BUY10].rect) == 0) {
-        for (int i = 0; i <= 15; i++) {
+        for (int i = 0; i < 15; i++) {
             if (gb->inv.inv[i] == 0) {
                 gb->inv.inv[i] = HEAD;
                 break;
@@ -57,7 +57,7 @@ void function_buy6(global *gb)
 {
     if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
         gb->button[BUTTON_BUY11].rect) == 0) {
-        for (int i = 0; i <= 15; i++) {
+        for (int i = 0; i < 15; i++) {
             if (gb->inv.inv[i] == 0) {
                 gb->inv.inv[i] = ARMOR;
                 break;
@@ -66,7 +66,7 @@ void function_buy6(global *gb)
     }
     if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
         gb->button[BUTTON_BUY12].rect) == 0) {
-        for (int i = 0; i <= 15; i++) {
+        for (int i = 0; i < 15; i++) {
             if (gb->inv.inv[i] == 0) {
                 gb->inv.inv[i] = LEGS;
                 break;
