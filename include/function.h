@@ -323,6 +323,10 @@ void equip_legs(global *gb, const int *place);
 ///reiniti_all.c///
 void reini_all(global *gb);
 
+///reiniti_every_hitbox.c///
+void reini_every_hitbox(global *gb);
+void reini_every_hitbox2(global *gb);
+
 ///inventory_desequip.c///
 void desequip_head_shield(global *gb);
 void desequip_armor_weapon(global *gb);

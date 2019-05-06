@@ -11,7 +11,7 @@ CC	= gcc
 
 RM	= rm -f
 
-SRCS	=	./src/rpg.c									\
+SRCS	=		./src/rpg.c									\
 			./src/sceen/menu.c							\
 			./src/initia/initia_function.c				\
 			./src/sceen/tuto.c							\
@@ -81,6 +81,7 @@ SRCS	=	./src/rpg.c									\
 			./src/manage_event.c						\
 			./src/sceen/dialog.c						\
 			./src/initia/initia_function3.c				\
+			./src/save/reini_every_hitbox.c
 
 OBJS	=	$(SRCS:.c=.o)
 
