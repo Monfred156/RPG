@@ -87,10 +87,6 @@ void display_ash(global *gb)
         else
             sfSprite_setPosition(gb->mob[i].sprite, gb->fght.dead);
     }
-    for (int i = VAL_MIN_ASH; i <= VAL_MAX_ASH; i++) {
-        sfRenderWindow_drawRectangleShape(gb->disev.window,
-                gb->hitbox[i].hitbox, NULL);
-    }
     sfRenderWindow_drawSprite(gb->disev.window,
         gb->sprite[HERO].sprite, NULL);
     if (gb->inv.open == 1)
