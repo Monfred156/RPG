@@ -1,3 +1,10 @@
+##
+## EPITECH PROJECT, 2019
+## Makefile
+## File description:
+## Makefile
+##
+
 NAME	= my_rpg
 
 CC	= gcc
@@ -55,25 +62,25 @@ SRCS	=	./src/rpg.c									\
 			./src/save/continue.c						\
 			./src/end_fight.c							\
 			./src/initia/initia_speak.c					\
-            ./src/display_hud.c							\
-            ./src/sceen/trader.c						\
-            ./src/sceen/buy.c							\
-            ./src/player/display_inventory.c			\
-            ./src/player/event_inventory.c				\
-            ./src/player/inventory_equip.c				\
-            ./src/player/inventory_desequip.c			\
-            ./src/save/reiniti_all.c					\
-            ./src/sceen/escape.c						\
-            ./src/initia/initia_esc.c					\
-            ./src/player/info_inventory.c				\
-            ./src/player/decrease_stats.c				\
-            ./src/player/increase_stats.c				\
-            ./src/player/calculate_stats.c				\
-            ./src/player/mov_player_ini_town.c			\
-            ./src/main.c								\
-            ./src/manage_event.c						\
-            ./src/sceen/dialog.c						\
-            ./src/initia/initia_function3.c				\
+			./src/display_hud.c							\
+			./src/sceen/trader.c						\
+			./src/sceen/buy.c							\
+			./src/player/display_inventory.c			\
+			./src/player/event_inventory.c				\
+			./src/player/inventory_equip.c				\
+			./src/player/inventory_desequip.c			\
+			./src/save/reiniti_all.c					\
+			./src/sceen/escape.c						\
+			./src/initia/initia_esc.c					\
+			./src/player/info_inventory.c				\
+			./src/player/decrease_stats.c				\
+			./src/player/increase_stats.c				\
+			./src/player/calculate_stats.c				\
+			./src/player/mov_player_ini_town.c			\
+			./src/main.c								\
+			./src/manage_event.c						\
+			./src/sceen/dialog.c						\
+			./src/initia/initia_function3.c				\
 
 OBJS	=	$(SRCS:.c=.o)
 

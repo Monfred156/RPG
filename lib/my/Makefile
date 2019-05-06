@@ -25,7 +25,7 @@ all:	$(NAME)
 $(NAME):	$(OBJ)
 	ar rc $(NAME) $(OBJ)
 
-%.o: %.c 
+%.o: %.c
 	@$(CC) -o $@ -c $< $(CFLAGS)
 	@echo -e "\033[33m[LIB] [COMPILED]\033[0m.......$<"
 
