@@ -10,8 +10,7 @@
 #include "struct.h"
 
 void movement_top_player_pub(global *gb, float time_sec, int animation,
-    int sprite
-)
+int sprite)
 {
     static float save_time = 0;
 
@@ -33,8 +32,7 @@ void movement_top_player_pub(global *gb, float time_sec, int animation,
 }
 
 void movement_back_player_pub(global *gb, float time_sec, int animation,
-    int sprite
-)
+int sprite)
 {
     static float save_time = 0;
 
@@ -50,8 +48,8 @@ void movement_back_player_pub(global *gb, float time_sec, int animation,
     sfSprite_setPosition(gb->sprite[sprite].sprite, gb->sprite[sprite].pos);
     for (int i = VAL_MIN_PUB; i <= VAL_MAX_PUB; i++) {
         gb->hitbox[i].pos.y -= time_sec * 0.9;
-        sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
-            gb->hitbox[i].pos);
+        sfRectangleShape_setPosition(
+        gb->hitbox[i].hitbox, gb->hitbox[i].pos);
     }
 }
 
@@ -71,8 +69,8 @@ void movement_left_player_pub(global *gb, float time_sec, int sprite)
     sfSprite_setPosition(gb->sprite[sprite].sprite, gb->sprite[sprite].pos);
     for (int i = VAL_MIN_PUB; i <= VAL_MAX_PUB; i++) {
         gb->hitbox[i].pos.x += time_sec;
-        sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
-            gb->hitbox[i].pos);
+        sfRectangleShape_setPosition(
+        gb->hitbox[i].hitbox, gb->hitbox[i].pos);
     }
 }
 
@@ -92,7 +90,7 @@ void movement_right_player_pub(global *gb, float time_sec, int sprite)
     sfSprite_setPosition(gb->sprite[sprite].sprite, gb->sprite[sprite].pos);
     for (int i = VAL_MIN_PUB; i <= VAL_MAX_PUB; i++) {
         gb->hitbox[i].pos.x -= time_sec;
-        sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
-            gb->hitbox[i].pos);
+        sfRectangleShape_setPosition(
+        gb->hitbox[i].hitbox, gb->hitbox[i].pos);
     }
 }

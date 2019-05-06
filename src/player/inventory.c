@@ -15,7 +15,7 @@ void display_inventory(global *gb)
     sfVector2f pos = {1100, 354};
 
     sfRenderWindow_drawSprite(gb->disev.window,
-        gb->sprite[INVENTORY].sprite, NULL);
+    gb->sprite[INVENTORY].sprite, NULL);
     draw_item(gb, temp, &pos);
     set_stuff1(gb);
     set_stuff2(gb);
@@ -40,8 +40,8 @@ void open_inventory(global *gb)
 
     sec_open += gb->clock.seconds - gb->clock.save_sec;
     if (sec_open >= 0.15) {
-        if (sfKeyboard_isKeyPressed(sfKeyTab) || sfKeyboard_isKeyPressed(
-            sfKeyI)) {
+        if (sfKeyboard_isKeyPressed(sfKeyTab) ||
+        sfKeyboard_isKeyPressed(sfKeyI)) {
             if (gb->inv.open == 0)
                 gb->inv.open = 1;
             else if (gb->inv.open == 1)

@@ -9,7 +9,7 @@
 #include "function.h"
 #include "struct.h"
 
-void move_rect_pnj(global *gb,const int *value, float *time, int sprite)
+void move_rect_pnj(global *gb, const int *value, float *time, int sprite)
 {
     if (*time > 2) {
         gb->sprite[sprite].rect.left += value[0];
