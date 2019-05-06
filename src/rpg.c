@@ -16,25 +16,8 @@ void initia_screen(global *gb)
     gb->selecscreen.sc = 0;
 }
 
-void call_initia_function(global *gb)
+void call_initia_function_next(global *gb)
 {
-    initia_screen(gb);
-    initia_stats(gb);
-    initia_window(gb);
-    initia_time(gb);
-    initia_text_stats(gb);
-    initia_inventory(gb);
-    initia_button_inventory(gb);
-    initia_sprite_menu(gb);
-    initia_button_menu(gb);
-    initia_sound_menu(gb);
-    initia_pos_particule_menu(gb);
-    initia_sprite_launch(gb);
-    initia_button_launch(gb);
-    initia_var_tuto(gb);
-    initia_sprite_tuto(gb);
-    initia_hitbox_tuto(gb);
-    initia_button_tuto(gb);
     initia_var_town(gb);
     initia_button_town(gb);
     initia_hitbox_town(gb);
@@ -56,75 +39,27 @@ void call_initia_function(global *gb)
     initia_sprite_esc(gb);
 }
 
-void manage_event(global *gb)
+void call_initia_function(global *gb)
 {
-    while (sfRenderWindow_pollEvent(gb->disev.window, &gb->disev.event)) {
-        if (gb->disev.event.type == sfEvtClosed)
-            sfRenderWindow_close(gb->disev.window);
-    }
-    calculate_xp(gb);
-    switch (gb->selecscreen.sc) {
-        case 0:
-            manage_event_menu(gb);
-            break;
-        case 1:
-            manage_event_launch(gb);
-            break;
-        case 2:
-            manage_event_option(gb);
-            break;
-        case 3:
-            manage_event_esc(gb);
-            break;
-        case 5:
-            manage_event_tuto(gb);
-            break;
-        case 6:
-            manage_event_town(gb);
-            break;
-        case 7:
-            manage_event_pub(gb);
-            break;
-        case 8:
-            manage_event_ash(gb);
-            break;
-        case 9:
-            manage_event_fight(gb, gb->fght.mob);
-            break;
-    }
-}
+    initia_screen(gb);
+    initia_stats(gb);
+    initia_window(gb);
+    initia_time(gb);
+    initia_text_stats(gb);
+    initia_inventory(gb);
+    initia_button_inventory(gb);
+    initia_sprite_menu(gb);
+    initia_button_menu(gb);
+    initia_sound_menu(gb);
+    initia_pos_particule_menu(gb);
+    initia_sprite_launch(gb);
+    initia_button_launch(gb);
+    initia_var_tuto(gb);
+    initia_sprite_tuto(gb);
+    initia_hitbox_tuto(gb);
+    initia_button_tuto(gb);
+    call_initia_function_next(gb);
 
-void manage_screen(global *gb)
-{
-    switch (gb->selecscreen.sc) {
-        case 0:
-            display_menu(gb);
-            break;
-        case 1:
-            display_launch(gb);
-            break;
-        case 2:
-            display_option(gb);
-            break;
-        case 3:
-            display_esc(gb);
-            break;
-        case 5:
-            display_tuto(gb);
-            break;
-        case 6:
-            display_town(gb);
-            break;
-        case 7:
-            display_pub(gb);
-            break;
-        case 8:
-            display_ash(gb);
-            break;
-        case 9:
-            display_fight(gb);
-            break;
-    }
 }
 
 int game_loop(void)

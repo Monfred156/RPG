@@ -12,6 +12,12 @@
 #include "struct.h"
 ///////////////////////////////INITIA FOLDER////////////////////////////////////
 
+///manage_event.c///
+void manage_event_next(global *gb);
+void manage_event(global *gb);
+void manage_screen_next(global *gb);
+void manage_screen(global *gb);
+
 ///main.c///
 void call_destroy(global *gb);
 int main(int ac, char **av);
