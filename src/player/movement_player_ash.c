@@ -10,7 +10,7 @@
 #include "struct.h"
 
 void movement_top_player_ash(global *gb, float time_sec, int animation,
-    int sprite)
+int sprite)
 {
     static float save_time = 0;
 
@@ -27,13 +27,13 @@ void movement_top_player_ash(global *gb, float time_sec, int animation,
         gb->mob[i].pos.y += time_sec * 0.9;
     for (int i = VAL_MIN_ASH; i <= VAL_MAX_ASH; i++) {
         gb->hitbox[i].pos.y += time_sec * 0.9;
-        sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
-                gb->hitbox[i].pos);
+        sfRectangleShape_setPosition(
+        gb->hitbox[i].hitbox, gb->hitbox[i].pos);
     }
 }
 
 void movement_back_player_ash(global *gb, float time_sec, int animation,
-    int sprite)
+int sprite)
 {
     static float save_time = 0;
 
@@ -50,8 +50,8 @@ void movement_back_player_ash(global *gb, float time_sec, int animation,
         gb->mob[i].pos.y -= time_sec * 0.9;
     for (int i = VAL_MIN_ASH; i <= VAL_MAX_ASH; i++) {
         gb->hitbox[i].pos.y -= time_sec * 0.9;
-        sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
-                gb->hitbox[i].pos);
+        sfRectangleShape_setPosition(
+        gb->hitbox[i].hitbox, gb->hitbox[i].pos);
     }
 }
 
@@ -72,8 +72,8 @@ void movement_left_player_ash(global *gb, float time_sec, int sprite)
         gb->mob[i].pos.x += time_sec;
     for (int i = VAL_MIN_ASH; i <= VAL_MAX_ASH; i++) {
         gb->hitbox[i].pos.x += time_sec;
-        sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
-                gb->hitbox[i].pos);
+        sfRectangleShape_setPosition(
+        gb->hitbox[i].hitbox, gb->hitbox[i].pos);
     }
 }
 
@@ -94,7 +94,7 @@ void movement_right_player_ash(global *gb, float time_sec, int sprite)
         gb->mob[i].pos.x -= time_sec;
     for (int i = VAL_MIN_ASH; i <= VAL_MAX_ASH; i++) {
         gb->hitbox[i].pos.x -= time_sec;
-        sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
-                gb->hitbox[i].pos);
+        sfRectangleShape_setPosition(
+        gb->hitbox[i].hitbox, gb->hitbox[i].pos);
     }
 }

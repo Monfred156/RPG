@@ -11,8 +11,8 @@
 
 void desequip_head_shield(global *gb)
 {
-    if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
-        gb->button[BUTTON_INV_HEAD].rect) == 0) {
+    if (sfMouse_isButtonPressed(sfMouseLeft) &&
+    mouse_clic_button(gb, gb->button[BUTTON_INV_HEAD].rect) == 0)
         for (int j = 0; j <= 14; j++) {
             if (gb->inv.inv[j] == 0) {
                 gb->inv.inv[j] = gb->inv.inv[15];
@@ -21,9 +21,8 @@ void desequip_head_shield(global *gb)
                 break;
             }
         }
-    }
-    if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
-        gb->button[BUTTON_INV_SHIELD].rect) == 0) {
+    if (sfMouse_isButtonPressed(sfMouseLeft) &&
+    mouse_clic_button(gb, gb->button[BUTTON_INV_SHIELD].rect) == 0)
         for (int j = 0; j <= 14; j++) {
             if (gb->inv.inv[j] == 0) {
                 gb->inv.inv[j] = gb->inv.inv[16];
@@ -32,13 +31,12 @@ void desequip_head_shield(global *gb)
                 break;
             }
         }
-    }
 }
 
 void desequip_armor_weapon(global *gb)
 {
-    if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
-        gb->button[BUTTON_INV_ARMOR].rect) == 0) {
+    if (sfMouse_isButtonPressed(sfMouseLeft) &&
+    mouse_clic_button(gb, gb->button[BUTTON_INV_ARMOR].rect) == 0)
         for (int j = 0; j <= 14; j++) {
             if (gb->inv.inv[j] == 0) {
                 gb->inv.inv[j] = gb->inv.inv[17];
@@ -47,9 +45,8 @@ void desequip_armor_weapon(global *gb)
                 break;
             }
         }
-    }
-    if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
-        gb->button[BUTTON_INV_WEAPON].rect) == 0) {
+    if (sfMouse_isButtonPressed(sfMouseLeft) &&
+    mouse_clic_button(gb, gb->button[BUTTON_INV_WEAPON].rect) == 0)
         for (int j = 0; j <= 14; j++) {
             if (gb->inv.inv[j] == 0) {
                 gb->inv.inv[j] = gb->inv.inv[18];
@@ -58,13 +55,12 @@ void desequip_armor_weapon(global *gb)
                 break;
             }
         }
-    }
 }
 
 void desequip_legs(global *gb)
 {
-    if (sfMouse_isButtonPressed(sfMouseLeft) && mouse_clic_button(gb,
-        gb->button[BUTTON_INV_LEGS].rect) == 0) {
+    if (sfMouse_isButtonPressed(sfMouseLeft) &&
+    mouse_clic_button(gb, gb->button[BUTTON_INV_LEGS].rect) == 0)
         for (int j = 0; j <= 14; j++) {
             if (gb->inv.inv[j] == 0) {
                 gb->inv.inv[j] = gb->inv.inv[19];
@@ -73,5 +69,4 @@ void desequip_legs(global *gb)
                 break;
             }
         }
-    }
 }

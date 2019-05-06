@@ -26,8 +26,8 @@ void movement_top_player_tuto(global *gb, float time_sec, int animation,
     sfSprite_setPosition(gb->sprite[sprite].sprite, gb->sprite[sprite].pos);
     for (int i = VAL_MIN_TUTO; i <= VAL_MAX_TUTO; i++) {
         gb->hitbox[i].pos.y += time_sec * 0.9;
-        sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
-            gb->hitbox[i].pos);
+        sfRectangleShape_setPosition(
+        gb->hitbox[i].hitbox, gb->hitbox[i].pos);
     }
     gb->mob[0].pos.y += time_sec * 0.9;
 }
@@ -49,8 +49,8 @@ void movement_back_player_tuto(global *gb, float time_sec, int animation,
     sfSprite_setPosition(gb->sprite[sprite].sprite, gb->sprite[sprite].pos);
     for (int i = VAL_MIN_TUTO; i <= VAL_MAX_TUTO; i++) {
         gb->hitbox[i].pos.y -= time_sec * 0.9;
-        sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
-            gb->hitbox[i].pos);
+        sfRectangleShape_setPosition(
+        gb->hitbox[i].hitbox, gb->hitbox[i].pos);
     }
     gb->mob[0].pos.y -= time_sec * 0.9;
 }
@@ -71,8 +71,8 @@ void movement_left_player_tuto(global *gb, float time_sec, int sprite)
     sfSprite_setPosition(gb->sprite[sprite].sprite, gb->sprite[sprite].pos);
     for (int i = VAL_MIN_TUTO; i <= VAL_MAX_TUTO; i++) {
         gb->hitbox[i].pos.x += time_sec;
-        sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
-            gb->hitbox[i].pos);
+        sfRectangleShape_setPosition(
+        gb->hitbox[i].hitbox, gb->hitbox[i].pos);
     }
     gb->mob[0].pos.x += time_sec;
 }
@@ -93,8 +93,8 @@ void movement_right_player_tuto(global *gb, float time_sec, int sprite)
     sfSprite_setPosition(gb->sprite[sprite].sprite, gb->sprite[sprite].pos);
     for (int i = VAL_MIN_TUTO; i <= VAL_MAX_TUTO; i++) {
         gb->hitbox[i].pos.x -= time_sec;
-        sfRectangleShape_setPosition(gb->hitbox[i].hitbox,
-            gb->hitbox[i].pos);
+        sfRectangleShape_setPosition(
+        gb->hitbox[i].hitbox, gb->hitbox[i].pos);
     }
     gb->mob[0].pos.x -= time_sec;
 }
