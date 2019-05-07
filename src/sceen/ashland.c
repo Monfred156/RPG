@@ -29,6 +29,7 @@ void teleport_to_place_ash(global *gb)
     if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
         gb->selecscreen.sc = 3;
         gb->selecscreen.back = 8;
+        gb->selecscreen.back_back = 8;
     }
 }
 

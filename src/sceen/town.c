@@ -74,6 +74,7 @@ void move_rect_portal(global *gb, int offset, int max_value, float *time)
     if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
         gb->selecscreen.sc = 3;
         gb->selecscreen.back = 6;
+        gb->selecscreen.back_back = 6;
     }
 }
 

@@ -56,6 +56,7 @@ void manage_event_pub(global *gb)
     if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
         gb->selecscreen.sc = 3;
         gb->selecscreen.back = 7;
+        gb->selecscreen.back_back = 7;
     }
 }
 
