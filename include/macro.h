@@ -51,6 +51,8 @@
 #define BUTTON_INV_LEGS 39
 #define BUTTON_QUIT_ESC 40
 #define BUTTON_SAVE 41
+#define BUTTON_OPTION_ESC 42
+#define BUTTON_RETOUR_ESC 43
 
 ///TEXT///
 #define TXT_NEW_GAME 0
@@ -69,6 +71,8 @@
 #define TXT_ARMOR 13
 #define TXT_ATTACK 14
 #define TXT_QUEST 15
+#define TXT_OPTION 16
+#define TXT_CONTINUE 17
 
 ///NUMBER OF TEXT///
 #define NUMBER_TEXT 16

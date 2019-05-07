@@ -27,11 +27,6 @@ struct s_text {
     sfText *text;
     sfFont *font;
     sfVector2f pos;
-    sfUint8 red;
-    sfUint8 green;
-    sfUint8 blue;
-    sfUint8 alpha;
-    sfColor color;
 };
 
 struct s_sound {
@@ -47,6 +42,7 @@ struct s_button {
 struct s_selectscreen {
     int sc;
     int back;
+    int back_back;
 };
 
 struct s_display {
@@ -155,9 +151,9 @@ struct s_global {
     struct s_selectscreen selecscreen;
     struct s_display disev;
     struct s_sprite sprite[33];
-    struct s_text text[16];
+    struct s_text text[18];
     struct s_sound sound[2];
-    struct s_button button[42];
+    struct s_button button[44];
     struct s_hitbox hitbox[61];
     struct s_clock clock;
     struct s_movement move[7];

@@ -75,6 +75,7 @@ void manage_event_tuto(global *gb)
     if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
         gb->selecscreen.sc = 3;
         gb->selecscreen.back = 5;
+        gb->selecscreen.back_back = 5;
     }
     open_inventory(gb);
 }

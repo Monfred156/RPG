@@ -16,7 +16,7 @@ void manage_event_option(global *gb)
     sec_open += gb->clock.seconds - gb->clock.save_sec;
 
     sfText_setFillColor(gb->text[TXT_RETOUR].text, sfWhite);
-    sfText_setFillColor(gb->text[TXT_RETOUR].text, sfWhite);
+    sfText_setFillColor(gb->text[TXT_SON].text, sfWhite);
     if (mouse_clic_button(gb, gb->button[BUTTON_RETOUR].rect) == 0) {
         sfText_setFillColor(gb->text[TXT_RETOUR].text, sfRed);
         if (sfMouse_isButtonPressed(sfMouseLeft))

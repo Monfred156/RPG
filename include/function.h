@@ -10,6 +10,7 @@
 
 #include "my.h"
 #include "struct.h"
+
 ///////////////////////////////INITIA FOLDER////////////////////////////////////
 
 ///manage_event.c///
@@ -69,6 +70,7 @@ void initia_dialogue(global *gb);
 ///initia_option.c///
 void initia_button_option(global *gb);
 void initia_sprite_option(global *gb);
+void initia_text_option(global *gb);
 
 ///initia_function.c///
 void initia_window(global *gb);
@@ -108,6 +110,32 @@ void initia_button_inventory4(global *gb);
 ///initi_esc.c///
 void initia_sprite_esc(global *gb);
 void initia_button_esc(global *gb);
+void initia_text_esc(global *gb);
+
+///call_initia_function.c///
+void call_initia_function(global *gb);
+void call_initia_function_next(global *gb);
+
+///initia_menu.c///
+void initia_sprite_menu (global *gb);
+void initia_button_menu(global *gb);
+void initia_sound_menu(global *gb);
+void initia_pos_particule_menu(global *gb);
+
+///initia_tuto.c///
+void initia_hitbox_tuto(global *gb);
+void initia_sprite_tuto(global *gb);
+void initia_var_tuto(global *gb);
+
+///initia_fight.c///
+void initia_fight(global *gb);
+
+///call_initia_function2.c///
+void initia_all_lauch(global *gb);
+void initia_all_tuto(global *gb);
+void initia_all_town(global *gb);
+void initia_all_options(global *gb);
+void initia_all_ash(global *gb);
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -216,20 +244,6 @@ void pattern_mob(global *gb, int mob);
 ///check_asset.c///
 int check_assets(global *gb);
 
-///initia_menu.c///
-void initia_sprite_menu (global *gb);
-void initia_button_menu(global *gb);
-void initia_sound_menu(global *gb);
-void initia_pos_particule_menu(global *gb);
-
-///initia_tuto.c///
-void initia_hitbox_tuto(global *gb);
-void initia_sprite_tuto(global *gb);
-void initia_var_tuto(global *gb);
-
-///initia_fight.c///
-void initia_fight(global *gb);
-
 ///fight.c///
 void display_fight(global *gb);
 void manage_event_fight(global *gb, int mob);
@@ -246,9 +260,6 @@ void initia_time(global *gb);
 
 ///rpg.c///
 void initia_screen(global *gb);
-void call_initia_function(global *gb);
-void manage_event(global *gb);
-void manage_screen(global *gb);
 int game_loop(void);
 
 ///get_save.c///
@@ -354,5 +365,6 @@ void increase_stats_weapon(global *gb);
 void increase_stats_armor(global *gb);
 void increase_stats_head(global *gb);
 void increase_stats_shield(global *gb);
+
 
 #endif
