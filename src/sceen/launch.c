@@ -15,6 +15,7 @@ void delete_save_confirm(global *gb)
     gb->sv.save != 0 && sfMouse_isButtonPressed(sfMouseLeft)) {
         reini_all(gb);
         gb->selecscreen.sc = 5;
+        gb->sv.save = 0;
     }
     if (mouse_clic_button(gb, gb->button[BUTTON_SAVE_CONFIRM_N].rect) == 0 &&
     gb->sv.save != 0 && sfMouse_isButtonPressed(sfMouseLeft))
