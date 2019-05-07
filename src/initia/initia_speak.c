@@ -18,7 +18,7 @@ void initia_sprite_speak(global *gb)
 
 void initia_dialogue2(global *gb, char **send)
 {
-    send[0] = my_strdup("Avant j'etais aventurier.. Mais je me suis\n pris"
+    send[0] = my_strdup("Avant j'etais aventurier.. Mais je me suis\n pris "
                         "une fleche dans le genoux..\n\n"
                         "[+] Peux-tu tuer 2 orcs au nom d'Ulfric?");
     initia_text(&gb->text[PNJ_ULFRIC], send, (sfVector2f) {1000, 700},
