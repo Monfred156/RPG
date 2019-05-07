@@ -54,6 +54,7 @@ void click_player(global *gb)
         if (sfKeyboard_isKeyPressed(sfKeySpace))
             gb->fght.time_tuto = 0.45;
     } else {
+        gb->selecscreen.back = gb->selecscreen.sc;
         gb->fght.time_tuto -= gb->clock.seconds - gb->clock.save_sec;
         anim_attack(gb, HERO);
         if (collision_between__mob(gb->sprite[HERO].sprite,

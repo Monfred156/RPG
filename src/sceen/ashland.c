@@ -58,6 +58,7 @@ void manage_event_ash(global *gb)
         if (sfKeyboard_isKeyPressed(sfKeySpace))
             gb->fght.time_ash = 0.45;
     } else {
+        gb->selecscreen.back = gb->selecscreen.sc;
         gb->fght.time_ash -= gb->clock.seconds - gb->clock.save_sec;
         anim_attack(gb, HERO);
         touch_enemy_ash(gb);

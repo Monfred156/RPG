@@ -82,6 +82,7 @@ SRCS	=		./src/rpg.c									\
 			./src/sceen/dialog.c						\
 			./src/initia/initia_function3.c				\
 			./src/save/reini_every_hitbox.c				\
+			./src/save/reini_ashland.c                  \
 			./src/save/continue_town.c                  \
 			./src/initia/call_initia_function.c         \
 			./src/initia/call_initia_function2.c

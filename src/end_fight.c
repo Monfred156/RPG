@@ -27,6 +27,12 @@ void come_back_fght(global *gb, int sceen)
         gb->stats.xp += 5;
     }
     gb->fght.initia = 0;
+    if (sceen == 7 && gb->selecscreen.back == 5)
+        tp_in_town(gb, -1300, -500);
+    if (sceen == 7 && gb->selecscreen.back == 8) {
+        tp_in_town(gb, 2200, -750);
+        reini_ashland(gb);
+    }
     gb->selecscreen.sc = sceen;
 }
 

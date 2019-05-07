@@ -341,6 +341,9 @@ void reini_all(global *gb);
 void reini_every_hitbox(global *gb);
 void reini_every_hitbox2(global *gb);
 
+///reini_ashland.c///
+void reini_ashland(global *gb);
+
 ///inventory_desequip.c///
 void desequip_head_shield(global *gb);
 void desequip_armor_weapon(global *gb);
