@@ -57,7 +57,7 @@ void click_player(global *gb)
         gb->fght.time_tuto -= gb->clock.seconds - gb->clock.save_sec;
         anim_attack(gb, HERO);
         if (collision_between__mob(gb->sprite[HERO].sprite,
-            gb->mob[0].sprite) == 1) {
+            gb->mob[0].sprite) == 1 && gb->mob[0].life > 0) {
             gb->fght.time_tuto = 0;
             gb->fght.mob = 0;
             gb->selecscreen.sc = 9;
@@ -69,8 +69,7 @@ void manage_event_tuto(global *gb)
 {
     click_player(gb);
     pnj_rando_rect(gb, PNJ_MAJ, 32, 128);
-    if (gb->mob[0].life > 0)
-        pattern_mob(gb, 0);
+    pattern_mob(gb, 0);
     teleport_to_place_tuto(gb);
     if (sfKeyboard_isKeyPressed(sfKeyEscape)) {
         gb->selecscreen.sc = 3;

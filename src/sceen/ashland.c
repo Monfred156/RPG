@@ -37,7 +37,7 @@ void touch_enemy_ash(global *gb)
 {
     for (int i = 1; i < NB_MOB; i++) {
         if (collision_between__mob(gb->sprite[HERO].sprite,
-                gb->mob[i].sprite) == 1) {
+                gb->mob[i].sprite) == 1 && gb->mob[i].life > 0) {
             gb->fght.time_ash = 0;
             gb->fght.mob = i;
             gb->selecscreen.sc = 9;

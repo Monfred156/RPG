@@ -16,12 +16,11 @@ void initia_window(global *gb)
     gb->disev.video_mode.bitsPerPixel = 32;
 
     gb->disev.window = sfRenderWindow_create(gb->disev.video_mode, "RPG",
-        sfDefaultStyle, NULL);
+    sfDefaultStyle, NULL);
 }
 
-struct s_mob *initia_sprite_mob(struct s_mob *mob, char *path, sfVector2f
-pos, sfIntRect rect
-)
+struct s_mob *initia_sprite_mob(struct s_mob *mob, char *path,
+sfVector2f pos, sfIntRect rect)
 {
     mob->texture = sfTexture_createFromFile(path, NULL);
     mob->sprite = sfSprite_create();
@@ -33,9 +32,8 @@ pos, sfIntRect rect
     return (mob);
 }
 
-struct s_sprite *initia_sprite(struct s_sprite *sprite, char *path, sfVector2f
-pos, sfIntRect rect
-)
+struct s_sprite *initia_sprite(struct s_sprite *sprite, char *path,
+sfVector2f pos, sfIntRect rect)
 {
     sprite->texture = sfTexture_createFromFile(path, NULL);
     sprite->sprite = sfSprite_create();
@@ -47,9 +45,8 @@ pos, sfIntRect rect
     return (sprite);
 }
 
-struct s_text *initia_text(struct s_text *text, char **string, sfVector2f
-pos, sfColor color, unsigned int size
-)
+struct s_text *initia_text(struct s_text *text, char **string,
+sfVector2f pos, sfColor color, unsigned int size)
 {
     text->pos = pos;
     text->text = sfText_create();
