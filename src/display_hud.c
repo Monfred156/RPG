@@ -23,6 +23,8 @@ void display_hud(global *gb)
 
 void display_hud_mob(global *gb)
 {
+    if (gb->mob[gb->fght.mob].life <= 0)
+        gb->mob[gb->fght.mob].life = 0;
     sfRectangleShape_setSize(gb->hud_mob[GREEN].rect,
     (sfVector2f) {gb->mob[gb->fght.mob].life * 7, 20});
     sfRectangleShape_setFillColor(gb->hud_mob[RED].rect, sfRed);
