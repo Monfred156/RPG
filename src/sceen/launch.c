@@ -22,7 +22,7 @@ void delete_save_confirm(global *gb)
         gb->sv.save = 0;
 }
 
-void launch_intercat(global *gb, int nb)
+void launch_intercat(global *gb)
 {
     if (mouse_clic_button(gb, gb->button[BUTTON_RETOUR].rect) == 0 &&
     gb->sv.save == 0) {
@@ -64,7 +64,7 @@ void manage_event_launch(global *gb)
 {
     for (int i = 0; i < 3; i++)
         sfText_setFillColor(gb->text[i].text, sfWhite);
-    launch_intercat(gb, 0);
-    launch_intercat(gb, 1);
-    launch_intercat(gb, 2);
+    launch_intercat(gb);
+    launch_intercat(gb);
+    launch_intercat(gb);
 }
