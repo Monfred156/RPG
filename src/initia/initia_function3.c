@@ -20,8 +20,7 @@ struct s_hud *initia_hud(struct s_hud *hud, sfVector2f size, sfVector2f pos)
 }
 
 struct s_button *initia_button(struct s_button *button, sfVector2f size,
-    sfVector2f pos
-)
+sfVector2f pos)
 {
     button->rect = sfRectangleShape_create();
     sfRectangleShape_setSize(button->rect, size);

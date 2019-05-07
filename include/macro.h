@@ -53,6 +53,8 @@
 #define BUTTON_SAVE 41
 #define BUTTON_OPTION_ESC 42
 #define BUTTON_RETOUR_ESC 43
+#define BUTTON_SAVE_CONFIRM_Y 44
+#define BUTTON_SAVE_CONFIRM_N 45
 
 ///TEXT///
 #define TXT_NEW_GAME 0
@@ -111,9 +113,10 @@
 #define PNJ_PUB 30
 #define PNJ_MAJ 31
 #define BACK_TEXT 32
+#define SAVE_CONFIRM 33
 
 ///NUMBER OF SPRITE///
-#define NUMBER_SPRITE 33
+#define NUMBER_SPRITE 34
 
 ///NUMBER OF MOB///
 #define NB_MOB 6

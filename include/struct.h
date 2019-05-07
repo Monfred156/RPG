@@ -145,15 +145,19 @@ struct s_fight {
     float time_tuto;
 };
 
+struct s_save_confirm {
+    int save;
+};
+
 struct s_global {
     struct s_quest quest[4];
     struct s_teleport teleport[5];
     struct s_selectscreen selecscreen;
     struct s_display disev;
-    struct s_sprite sprite[33];
+    struct s_sprite sprite[34];
     struct s_text text[18];
     struct s_sound sound[2];
-    struct s_button button[44];
+    struct s_button button[46];
     struct s_hitbox hitbox[61];
     struct s_clock clock;
     struct s_movement move[7];
@@ -165,6 +169,7 @@ struct s_global {
     struct s_fight fght;
     struct s_hud hud[2];
     struct s_hud_mob hud_mob[2];
+    struct s_save_confirm sv;
 };
 typedef struct s_global global;
 
