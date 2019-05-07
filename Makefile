@@ -81,7 +81,8 @@ SRCS	=		./src/rpg.c									\
 			./src/manage_event.c						\
 			./src/sceen/dialog.c						\
 			./src/initia/initia_function3.c				\
-			./src/save/reini_every_hitbox.c
+			./src/save/reini_every_hitbox.c				\
+			./src/save/continue_town.c
 
 OBJS	=	$(SRCS:.c=.o)
 

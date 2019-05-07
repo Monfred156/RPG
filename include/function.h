@@ -303,6 +303,9 @@ sfVector2f size, sfVector2f pos);
 ///continue.c///
 void pressed_continued(global *gb);
 
+///continue_town.c///
+void tp_in_town(global *gb, int posx, int posy);
+
 ///trader.c///
 void event_trader(global *gb);
 

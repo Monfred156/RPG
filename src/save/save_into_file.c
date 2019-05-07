@@ -18,6 +18,8 @@ void save_into_file_next(global *gb, int fd)
     int posx = 0;
     int posy = 0;
 
+    if (gb->selecscreen.back == 5)
+        pos = sfSprite_getPosition(gb->sprite[TUTO_BACKGROUND].sprite);
     if (gb->selecscreen.back == 6)
         pos = sfSprite_getPosition(gb->sprite[TOWN_BACKGROUND].sprite);
     if (gb->selecscreen.back == 7)

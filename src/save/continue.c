@@ -1,44 +1,35 @@
 /*
 ** EPITECH PROJECT, 2018
-** lunch_game
+** continue
 ** File description:
-** lunch_game
+** .c
 */
 
 #include "my.h"
 #include "function.h"
 #include "struct.h"
 
-void tp_in_town_sprite(global *gb, int posx, int posy)
+void tp_in_tuto(global *gb)
 {
-    gb->sprite[TOWN_BACKGROUND].pos.x += posx - 600;
-    gb->sprite[TOWN_BACKGROUND].pos.y += posy + 600;
-    gb->sprite[PORTAL].pos.x += posx - 600;
-    gb->sprite[PORTAL].pos.y += posy + 600;
-    gb->sprite[PNJ_RED].pos.x += posx - 600;
-    gb->sprite[PNJ_RED].pos.y += posy + 600;
-    sfSprite_setPosition(gb->sprite[PNJ_RED].sprite, gb->sprite[PNJ_RED].pos);
-    sfSprite_setPosition(gb->sprite[TOWN_BACKGROUND].sprite,
-            gb->sprite[TOWN_BACKGROUND].pos);
-    sfSprite_setPosition(gb->sprite[PORTAL].sprite, gb->sprite[PORTAL].pos);
-}
-
-void tp_in_town(global *gb, int posx, int posy)
-{
-    gb->teleport[OPEN_PORTAL].pos.x += posx - 600;
-    gb->teleport[OPEN_PORTAL].pos.y += posy + 600;
-    gb->teleport[PUB].pos.x += posx - 600;
-    gb->teleport[PUB].pos.y += posy + 600;
-    gb->trader.pos.x += posx - 600;
-    gb->trader.pos.y += posy + 600;
-    gb->quest[1].pos.x += posx - 600;
-    gb->quest[1].pos.y += posy + 600;
-    for (int i = VAL_MIN_TOWN; i <= VAL_MAX_TOWN; i++) {
-        gb->hitbox[i].pos.x += posx - 600;
-        gb->hitbox[i].pos.y += posy + 600;
+    gb->sprite[TUTO_BACKGROUND].pos.x += gb->stats.posx - 550;
+    gb->sprite[TUTO_BACKGROUND].pos.y += gb->stats.posy - 200;
+    gb->sprite[PNJ_MAJ].pos.x += gb->stats.posx - 550;
+    gb->sprite[PNJ_MAJ].pos.y += gb->stats.posy - 200;
+    gb->quest[0].pos.x += gb->stats.posx - 550;
+    gb->quest[0].pos.y += gb->stats.posy - 200;
+    gb->mob[0].pos.x += gb->stats.posx - 550;
+    gb->mob[0].pos.y += gb->stats.posy - 200;
+    sfSprite_setPosition(gb->mob[0].sprite, gb->mob[0].pos);
+    sfSprite_setPosition(gb->sprite[PNJ_MAJ].sprite, gb->sprite[PNJ_MAJ].pos);
+    sfSprite_setPosition(gb->sprite[TUTO_BACKGROUND].sprite,
+            gb->sprite[TUTO_BACKGROUND].pos);
+    gb->teleport[CHEST].pos.x += gb->stats.posx - 550;
+    gb->teleport[CHEST].pos.y += gb->stats.posy - 200;
+    for (int i = VAL_MIN_TUTO; i <= VAL_MAX_TUTO; i++) {
+        gb->hitbox[i].pos.x += gb->stats.posx - 550;
+        gb->hitbox[i].pos.y += gb->stats.posy - 200;
         sfRectangleShape_setPosition(gb->hitbox[i].hitbox, gb->hitbox[i].pos);
     }
-    tp_in_town_sprite(gb, posx, posy);
 }
 
 void tp_in_pub(global *gb)
@@ -85,6 +76,8 @@ void pressed_continued(global *gb)
     if (get_save(gb) == -1)
         gb->selecscreen.sc = 5;
     else {
+        if (gb->stats.sceen == 5)
+            tp_in_tuto(gb);
         if (gb->stats.sceen == 6)
             tp_in_town(gb, gb->stats.posx, gb->stats.posy);
         if (gb->stats.sceen == 7)
