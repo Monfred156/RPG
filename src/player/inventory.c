@@ -9,6 +9,12 @@
 #include "function.h"
 #include "struct.h"
 
+void manage_life_and_life_max(global *gb)
+{
+    if (gb->stats.life > gb->stats.life_max)
+        gb->stats.life = gb->stats.life_max;
+}
+
 void display_inventory(global *gb)
 {
     int temp = 0;

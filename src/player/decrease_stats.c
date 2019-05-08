@@ -11,10 +11,14 @@
 
 void decrease_stats_legs(global *gb)
 {
-    if (gb->inv.inv[19] == LEGS)
-        gb->stats.life -= 5;
-    if (gb->inv.inv[19] == LEGS2)
-        gb->stats.life -= 15;
+    if (gb->inv.inv[19] == LEGS) {
+        gb->stats.life_max -= 15;
+        manage_life_and_life_max(gb);
+    }
+    if (gb->inv.inv[19] == LEGS2) {
+        gb->stats.life_max -= 5;
+        manage_life_and_life_max(gb);
+    }
 }
 
 void decrease_stats_weapon(global *gb)
@@ -33,22 +37,32 @@ void decrease_stats_weapon(global *gb)
 
 void decrease_stats_armor(global *gb)
 {
-    if (gb->inv.inv[17] == ARMOR2)
-        gb->stats.life -= 10;
-    if (gb->inv.inv[17] == ARMOR)
-        gb->stats.life -= 25;
+    if (gb->inv.inv[17] == ARMOR2) {
+        gb->stats.life_max -= 10;
+        manage_life_and_life_max(gb);
+    }
+    if (gb->inv.inv[17] == ARMOR) {
+        gb->stats.life_max -= 25;
+        manage_life_and_life_max(gb);
+    }
 }
 
 void decrease_stats_head(global *gb)
 {
-    if (gb->inv.inv[15] == HEAD2)
-        gb->stats.life -= 5;
-    if (gb->inv.inv[15] == HEAD)
-        gb->stats.life -= 15;
+    if (gb->inv.inv[15] == HEAD2) {
+        gb->stats.life_max -= 5;
+        manage_life_and_life_max(gb);
+    }
+    if (gb->inv.inv[15] == HEAD) {
+        gb->stats.life_max -= 15;
+        manage_life_and_life_max(gb);
+    }
 }
 
 void decrease_stats_shield(global *gb)
 {
-    if (gb->inv.inv[16] == SHIELD)
-        gb->stats.life -= 30;
+    if (gb->inv.inv[16] == SHIELD) {
+        gb->stats.life_max -= 30;
+        manage_life_and_life_max(gb);
+    }
 }

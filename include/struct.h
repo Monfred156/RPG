@@ -122,6 +122,7 @@ struct s_stats {
     int sceen;
     int posx;
     int posy;
+    int life_max;
 };
 
 struct s_quest {
