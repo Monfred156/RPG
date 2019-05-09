@@ -19,5 +19,3 @@ int mouse_clic_button(global *gb, sfRectangleShape *rect)
         return 0;
     return 1;
 }
-
-

@@ -26,5 +26,4 @@ sfVector2f pos)
     sfRectangleShape_setSize(button->rect, size);
     sfRectangleShape_setPosition(button->rect, pos);
     return (button);
-
 }
