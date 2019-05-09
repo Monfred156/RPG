@@ -12,7 +12,7 @@
 void display_hud(global *gb)
 {
     sfRectangleShape_setSize(gb->hud[GREEN].rect,
-    (sfVector2f) {gb->stats.life * 7, 20});
+    (sfVector2f) {700 * gb->stats.life / gb->stats.life_max, 20});
     sfRectangleShape_setFillColor(gb->hud[RED].rect, sfRed);
     sfRenderWindow_drawRectangleShape(gb->disev.window,
     gb->hud[RED].rect, NULL);

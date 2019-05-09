@@ -12,7 +12,93 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-void save_into_file_next(global *gb, int fd)
+void save_into_file_inventory3(global *gb, int fd)
+{
+    write(fd, "\nINV17=", 7);
+    write(fd, my_int_to_str(gb->inv.inv[17]),
+          my_strlen(my_int_to_str(gb->inv.inv[17])));
+    write(fd, "\nINV18=", 7);
+    write(fd, my_int_to_str(gb->inv.inv[18]),
+          my_strlen(my_int_to_str(gb->inv.inv[18])));
+    write(fd, "\nINV19=", 7);
+    write(fd, my_int_to_str(gb->inv.inv[19]),
+          my_strlen(my_int_to_str(gb->inv.inv[19])));
+    write(fd, "\nLIFE_MOB=", 10);
+    write(fd, my_int_to_str(gb->mob[0].life),
+          my_strlen(my_int_to_str(gb->mob[0].life)));
+    write(fd, "\n", 1);
+}
+
+void save_into_file_inventory2(global *gb, int fd)
+{
+    write(fd, "\nINV11=", 7);
+    write(fd, my_int_to_str(gb->inv.inv[11]),
+          my_strlen(my_int_to_str(gb->inv.inv[11])));
+    write(fd, "\nINV12=", 7);
+    write(fd, my_int_to_str(gb->inv.inv[12]),
+          my_strlen(my_int_to_str(gb->inv.inv[12])));
+    write(fd, "\nINV13=", 7);
+    write(fd, my_int_to_str(gb->inv.inv[13]),
+          my_strlen(my_int_to_str(gb->inv.inv[13])));
+    write(fd, "\nINV14=", 7);
+    write(fd, my_int_to_str(gb->inv.inv[14]),
+          my_strlen(my_int_to_str(gb->inv.inv[14])));
+    write(fd, "\nINV15=", 7);
+    write(fd, my_int_to_str(gb->inv.inv[15]),
+          my_strlen(my_int_to_str(gb->inv.inv[15])));
+    write(fd, "\nINV16=", 7);
+    write(fd, my_int_to_str(gb->inv.inv[16]),
+          my_strlen(my_int_to_str(gb->inv.inv[16])));
+    save_into_file_inventory3(gb, fd);
+}
+
+void save_into_file_inventory1(global *gb, int fd)
+{
+    write(fd, "\nINV5=", 6);
+    write(fd, my_int_to_str(gb->inv.inv[5]),
+          my_strlen(my_int_to_str(gb->inv.inv[5])));
+    write(fd, "\nINV6=", 6);
+    write(fd, my_int_to_str(gb->inv.inv[6]),
+          my_strlen(my_int_to_str(gb->inv.inv[6])));
+    write(fd, "\nINV7=", 6);
+    write(fd, my_int_to_str(gb->inv.inv[7]),
+          my_strlen(my_int_to_str(gb->inv.inv[7])));
+    write(fd, "\nINV8=", 6);
+    write(fd, my_int_to_str(gb->inv.inv[8]),
+          my_strlen(my_int_to_str(gb->inv.inv[8])));
+    write(fd, "\nINV9=", 6);
+    write(fd, my_int_to_str(gb->inv.inv[9]),
+          my_strlen(my_int_to_str(gb->inv.inv[9])));
+    write(fd, "\nINV10=", 7);
+    write(fd, my_int_to_str(gb->inv.inv[10]),
+          my_strlen(my_int_to_str(gb->inv.inv[10])));
+    save_into_file_inventory2(gb, fd);
+}
+
+void save_into_file3(global *gb, int fd)
+{
+    write(fd, "\nLIFE_MAX=", 10);
+    write(fd, my_int_to_str(gb->stats.life_max),
+          my_strlen(my_int_to_str(gb->stats.life_max)));
+    write(fd, "\nINV0=", 6);
+    write(fd, my_int_to_str(gb->inv.inv[0]),
+          my_strlen(my_int_to_str(gb->inv.inv[0])));
+    write(fd, "\nINV1=", 6);
+    write(fd, my_int_to_str(gb->inv.inv[1]),
+          my_strlen(my_int_to_str(gb->inv.inv[1])));
+    write(fd, "\nINV2=", 6);
+    write(fd, my_int_to_str(gb->inv.inv[2]),
+          my_strlen(my_int_to_str(gb->inv.inv[2])));
+    write(fd, "\nINV3=", 6);
+    write(fd, my_int_to_str(gb->inv.inv[3]),
+          my_strlen(my_int_to_str(gb->inv.inv[3])));
+    write(fd, "\nINV4=", 6);
+    write(fd, my_int_to_str(gb->inv.inv[4]),
+          my_strlen(my_int_to_str(gb->inv.inv[4])));
+    save_into_file_inventory1(gb, fd);
+}
+
+void save_into_file2(global *gb, int fd)
 {
     sfVector2f pos;
     int posx = 0;
@@ -32,7 +118,7 @@ void save_into_file_next(global *gb, int fd)
     write(fd, my_int_to_str(pos.x), my_strlen(my_int_to_str(pos.x)));
     write(fd, "\nPOSY=", 6);
     write(fd, my_int_to_str(pos.y), my_strlen(my_int_to_str(pos.y)));
-    write(fd, "\n", 1);
+    save_into_file3(gb, fd);
 }
 
 int save_into_file(global *gb)
@@ -42,19 +128,19 @@ int save_into_file(global *gb)
         return (-1);
     write(fd, "LIFE=", 5);
     write(fd, my_int_to_str(gb->stats.life),
-            my_strlen(my_int_to_str(gb->stats.life)));
+          my_strlen(my_int_to_str(gb->stats.life)));
     write(fd, "\nXP=", 4);
     write(fd, my_int_to_str(gb->stats.xp),
-            my_strlen(my_int_to_str(gb->stats.xp)));
+          my_strlen(my_int_to_str(gb->stats.xp)));
     write(fd, "\nGOLD=", 6);
     write(fd, my_int_to_str(gb->stats.gold),
-            my_strlen(my_int_to_str(gb->stats.gold)));
+          my_strlen(my_int_to_str(gb->stats.gold)));
     write(fd, "\nDAMAGE=", 8);
     write(fd, my_int_to_str(gb->stats.damage),
-            my_strlen(my_int_to_str(gb->stats.damage)));
+          my_strlen(my_int_to_str(gb->stats.damage)));
     write(fd, "\nSCEEN=", 7);
     write(fd, my_int_to_str(gb->selecscreen.back),
-            my_strlen(my_int_to_str(gb->selecscreen.back)));
-    save_into_file_next(gb, fd);
+          my_strlen(my_int_to_str(gb->selecscreen.back)));
+    save_into_file2(gb, fd);
     return (0);
 }

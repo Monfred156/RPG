@@ -17,7 +17,7 @@ void dialogue_pnj_pub(global *gb, int sprite, int quest)
             gb->quest[quest].shape) == 0)
         gb->quest[0].open = 0;
     if (gb->quest->open == 1) {
-        gb->stats.life = 100;
+        gb->stats.life = gb->stats.life_max;
         sfRenderWindow_drawSprite(gb->disev.window,
                 gb->sprite[BACK_TEXT].sprite, NULL);
         sfRenderWindow_drawText(gb->disev.window, gb->text[PNJ_LIFE].text,
