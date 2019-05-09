@@ -264,6 +264,7 @@ int game_loop(void);
 
 ///get_save.c///
 int get_save(global *gb);
+int get_one_stat(char **array, char *str);
 
 ///function_for_get_save.c///
 void decal(char *str, int counter);
@@ -273,6 +274,10 @@ int my_strncmp(char *str1, char *str2, int counter);
 
 ///save_into_file.c///
 int save_into_file(global *gb);
+
+///get_and_save_inventory.c///
+void get_all_inventory(global *gb, char **array);
+void save_into_file_inventory2(global *gb, int fd);
 
 ///check_hitbox.c///
 int check_hitbox_up(global *gb, sfSprite *sprite, float time_sec, int

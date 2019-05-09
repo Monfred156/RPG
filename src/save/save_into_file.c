@@ -12,46 +12,6 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-void save_into_file_inventory3(global *gb, int fd)
-{
-    write(fd, "\nINV17=", 7);
-    write(fd, my_int_to_str(gb->inv.inv[17]),
-          my_strlen(my_int_to_str(gb->inv.inv[17])));
-    write(fd, "\nINV18=", 7);
-    write(fd, my_int_to_str(gb->inv.inv[18]),
-          my_strlen(my_int_to_str(gb->inv.inv[18])));
-    write(fd, "\nINV19=", 7);
-    write(fd, my_int_to_str(gb->inv.inv[19]),
-          my_strlen(my_int_to_str(gb->inv.inv[19])));
-    write(fd, "\nLIFE_MOB=", 10);
-    write(fd, my_int_to_str(gb->mob[0].life),
-          my_strlen(my_int_to_str(gb->mob[0].life)));
-    write(fd, "\n", 1);
-}
-
-void save_into_file_inventory2(global *gb, int fd)
-{
-    write(fd, "\nINV11=", 7);
-    write(fd, my_int_to_str(gb->inv.inv[11]),
-          my_strlen(my_int_to_str(gb->inv.inv[11])));
-    write(fd, "\nINV12=", 7);
-    write(fd, my_int_to_str(gb->inv.inv[12]),
-          my_strlen(my_int_to_str(gb->inv.inv[12])));
-    write(fd, "\nINV13=", 7);
-    write(fd, my_int_to_str(gb->inv.inv[13]),
-          my_strlen(my_int_to_str(gb->inv.inv[13])));
-    write(fd, "\nINV14=", 7);
-    write(fd, my_int_to_str(gb->inv.inv[14]),
-          my_strlen(my_int_to_str(gb->inv.inv[14])));
-    write(fd, "\nINV15=", 7);
-    write(fd, my_int_to_str(gb->inv.inv[15]),
-          my_strlen(my_int_to_str(gb->inv.inv[15])));
-    write(fd, "\nINV16=", 7);
-    write(fd, my_int_to_str(gb->inv.inv[16]),
-          my_strlen(my_int_to_str(gb->inv.inv[16])));
-    save_into_file_inventory3(gb, fd);
-}
-
 void save_into_file_inventory1(global *gb, int fd)
 {
     write(fd, "\nINV5=", 6);
