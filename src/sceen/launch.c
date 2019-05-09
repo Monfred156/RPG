@@ -5,17 +5,22 @@
 ** lunch_game
 */
 
+#include <fcntl.h>
 #include "my.h"
 #include "function.h"
 #include "struct.h"
 
 void delete_save_confirm(global *gb)
 {
+    int fd;
     if (mouse_clic_button(gb, gb->button[BUTTON_SAVE_CONFIRM_Y].rect) == 0 &&
     gb->sv.save != 0 && sfMouse_isButtonPressed(sfMouseLeft)) {
         reini_all(gb);
         gb->selecscreen.sc = 5;
         gb->sv.save = 0;
+        fd = open("save.txt", O_CREAT | O_WRONLY, 0664);
+        write(fd, "Wrong_save\n", 11);
+        close(fd);
     }
     if (mouse_clic_button(gb, gb->button[BUTTON_SAVE_CONFIRM_N].rect) == 0 &&
     gb->sv.save != 0 && sfMouse_isButtonPressed(sfMouseLeft))
