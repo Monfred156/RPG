@@ -4,8 +4,8 @@ A little game made in C with the SFML library
 
 ### Prerequisites
 
--Linux
--SFML library
+- Linux
+- SFML library
 
 ### Installing
 
